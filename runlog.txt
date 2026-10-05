@@ -1,0 +1,155 @@
+2026-10-05 15:44:01,566 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-05 15:44:01,568 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("degreeprogram")
+2026-10-05 15:44:01,569 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,570 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("degreerequirement")
+2026-10-05 15:44:01,571 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,572 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("course")
+2026-10-05 15:44:01,573 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,574 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("studentcourse")
+2026-10-05 15:44:01,575 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,576 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("semesterplan")
+2026-10-05 15:44:01,576 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,577 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("plancourse")
+2026-10-05 15:44:01,577 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,578 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("user")
+2026-10-05 15:44:01,578 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,578 INFO sqlalchemy.engine.Engine COMMIT
+2026-10-05 15:44:01,579 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-05 15:44:01,579 INFO sqlalchemy.engine.Engine SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite~_%' ESCAPE '~' ORDER BY name
+2026-10-05 15:44:01,579 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,580 INFO sqlalchemy.engine.Engine PRAGMA main.table_xinfo("user")
+2026-10-05 15:44:01,580 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,581 INFO sqlalchemy.engine.Engine PRAGMA main.table_xinfo("course")
+2026-10-05 15:44:01,581 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,581 INFO sqlalchemy.engine.Engine PRAGMA main.table_xinfo("semesterplan")
+2026-10-05 15:44:01,582 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,582 INFO sqlalchemy.engine.Engine PRAGMA main.table_xinfo("studentcourse")
+2026-10-05 15:44:01,582 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,583 INFO sqlalchemy.engine.Engine UPDATE semesterplan SET submitted_at = CURRENT_TIMESTAMP WHERE submitted_at IS NULL
+2026-10-05 15:44:01,583 INFO sqlalchemy.engine.Engine [generated in 0.00029s] ()
+2026-10-05 15:44:01,584 INFO sqlalchemy.engine.Engine PRAGMA main.index_list("studentcourse")
+2026-10-05 15:44:01,584 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,584 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_studentcourse_course_id")
+2026-10-05 15:44:01,584 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,585 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_studentcourse_student_id")
+2026-10-05 15:44:01,585 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,585 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("sqlite_autoindex_studentcourse_1")
+2026-10-05 15:44:01,585 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,585 INFO sqlalchemy.engine.Engine SELECT sql FROM  (SELECT * FROM sqlite_master UNION ALL   SELECT * FROM sqlite_temp_master) WHERE name = ? AND type in ('table', 'view')
+2026-10-05 15:44:01,586 INFO sqlalchemy.engine.Engine [raw sql] ('studentcourse',)
+2026-10-05 15:44:01,587 INFO sqlalchemy.engine.Engine PRAGMA main.index_list("studentcourse")
+2026-10-05 15:44:01,588 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,588 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_studentcourse_course_id")
+2026-10-05 15:44:01,588 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,588 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_studentcourse_student_id")
+2026-10-05 15:44:01,588 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,589 INFO sqlalchemy.engine.Engine PRAGMA main.index_list("plancourse")
+2026-10-05 15:44:01,589 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,589 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_plancourse_course_id")
+2026-10-05 15:44:01,589 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,589 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_plancourse_plan_id")
+2026-10-05 15:44:01,589 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,590 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("sqlite_autoindex_plancourse_1")
+2026-10-05 15:44:01,590 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,590 INFO sqlalchemy.engine.Engine SELECT sql FROM  (SELECT * FROM sqlite_master UNION ALL   SELECT * FROM sqlite_temp_master) WHERE name = ? AND type in ('table', 'view')
+2026-10-05 15:44:01,590 INFO sqlalchemy.engine.Engine [raw sql] ('plancourse',)
+2026-10-05 15:44:01,590 INFO sqlalchemy.engine.Engine PRAGMA main.index_list("plancourse")
+2026-10-05 15:44:01,591 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,591 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_plancourse_course_id")
+2026-10-05 15:44:01,591 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,591 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_plancourse_plan_id")
+2026-10-05 15:44:01,591 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,592 INFO sqlalchemy.engine.Engine PRAGMA main.index_list("degreerequirement")
+2026-10-05 15:44:01,592 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,592 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_degreerequirement_program_id")
+2026-10-05 15:44:01,592 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,593 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("sqlite_autoindex_degreerequirement_1")
+2026-10-05 15:44:01,593 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,593 INFO sqlalchemy.engine.Engine SELECT sql FROM  (SELECT * FROM sqlite_master UNION ALL   SELECT * FROM sqlite_temp_master) WHERE name = ? AND type in ('table', 'view')
+2026-10-05 15:44:01,593 INFO sqlalchemy.engine.Engine [raw sql] ('degreerequirement',)
+2026-10-05 15:44:01,594 INFO sqlalchemy.engine.Engine PRAGMA main.index_list("degreerequirement")
+2026-10-05 15:44:01,594 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,594 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_degreerequirement_program_id")
+2026-10-05 15:44:01,594 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,595 INFO sqlalchemy.engine.Engine PRAGMA main.index_list("user")
+2026-10-05 15:44:01,595 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,595 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_user_student_number")
+2026-10-05 15:44:01,595 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,595 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_user_degree_program")
+2026-10-05 15:44:01,595 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,596 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_user_username")
+2026-10-05 15:44:01,596 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,596 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_user_email")
+2026-10-05 15:44:01,596 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,596 INFO sqlalchemy.engine.Engine SELECT sql FROM  (SELECT * FROM sqlite_master UNION ALL   SELECT * FROM sqlite_temp_master) WHERE name = ? AND type in ('table', 'view')
+2026-10-05 15:44:01,596 INFO sqlalchemy.engine.Engine [raw sql] ('user',)
+2026-10-05 15:44:01,597 INFO sqlalchemy.engine.Engine PRAGMA main.index_list("user")
+2026-10-05 15:44:01,597 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,597 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_user_student_number")
+2026-10-05 15:44:01,597 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,598 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_user_degree_program")
+2026-10-05 15:44:01,598 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,599 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_user_username")
+2026-10-05 15:44:01,599 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,599 INFO sqlalchemy.engine.Engine PRAGMA main.index_info("ix_user_email")
+2026-10-05 15:44:01,599 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,600 INFO sqlalchemy.engine.Engine CREATE INDEX IF NOT EXISTS "ix_user_degree_program" ON "user" ("degree_program")
+2026-10-05 15:44:01,600 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-05 15:44:01,600 INFO sqlalchemy.engine.Engine COMMIT
+2026-10-05 15:44:01,601 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-05 15:44:01,613 INFO sqlalchemy.engine.Engine SELECT degreeprogram.id, degreeprogram.name, degreeprogram.total_credits 
+FROM degreeprogram 
+WHERE degreeprogram.name = ?
+2026-10-05 15:44:01,614 INFO sqlalchemy.engine.Engine [generated in 0.00131s] ('Computer Science',)
+2026-10-05 15:44:01,616 INFO sqlalchemy.engine.Engine SELECT degreerequirement.id, degreerequirement.program_id, degreerequirement.category, degreerequirement.required_credits 
+FROM degreerequirement 
+WHERE degreerequirement.program_id = ? ORDER BY degreerequirement.id
+2026-10-05 15:44:01,616 INFO sqlalchemy.engine.Engine [generated in 0.00034s] (1,)
+2026-10-05 15:44:01,617 INFO sqlalchemy.engine.Engine COMMIT
+2026-10-05 15:44:01,618 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-05 15:44:01,619 INFO sqlalchemy.engine.Engine SELECT course.id, course.code, course.title, course.credits, course.prerequisite_text, course.category, course.department 
+FROM course ORDER BY course.code
+2026-10-05 15:44:01,619 INFO sqlalchemy.engine.Engine [generated in 0.00023s] ()
+2026-10-05 15:44:01,620 INFO sqlalchemy.engine.Engine COMMIT
+2026-10-05 15:44:01,621 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-05 15:44:01,621 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.password, user.role, user.name, user.student_number, user.degree_program, user.id 
+FROM user 
+WHERE user.username = ?
+2026-10-05 15:44:01,622 INFO sqlalchemy.engine.Engine [generated in 0.00039s] ('bob',)
+2026-10-05 15:44:01,623 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.password, user.role, user.name, user.student_number, user.degree_program, user.id 
+FROM user 
+WHERE user.username = ?
+2026-10-05 15:44:01,624 INFO sqlalchemy.engine.Engine [cached since 0.002062s ago] ('admin',)
+2026-10-05 15:44:01,624 INFO sqlalchemy.engine.Engine COMMIT
+2026-10-05 15:44:01,625 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-05 15:44:01,626 INFO sqlalchemy.engine.Engine SELECT user.username AS user_username, user.email AS user_email, user.password AS user_password, user.role AS user_role, user.name AS user_name, user.student_number AS user_student_number, user.degree_program AS user_degree_program, user.id AS user_id 
+FROM user 
+WHERE user.id = ?
+2026-10-05 15:44:01,626 INFO sqlalchemy.engine.Engine [generated in 0.00028s] (1,)
+2026-10-05 15:44:01,628 INFO sqlalchemy.engine.Engine SELECT studentcourse.id, studentcourse.student_id, studentcourse.course_id, studentcourse.completion_status, studentcourse.grade, studentcourse.completed_at 
+FROM studentcourse 
+WHERE studentcourse.student_id = ? ORDER BY studentcourse.completed_at DESC, studentcourse.id DESC
+2026-10-05 15:44:01,628 INFO sqlalchemy.engine.Engine [generated in 0.00040s] (1,)
+2026-10-05 15:44:01,630 INFO sqlalchemy.engine.Engine SELECT course.id AS course_id, course.code AS course_code, course.title AS course_title, course.credits AS course_credits, course.prerequisite_text AS course_prerequisite_text, course.category AS course_category, course.department AS course_department 
+FROM course 
+WHERE course.id = ?
+2026-10-05 15:44:01,630 INFO sqlalchemy.engine.Engine [generated in 0.00030s] (1,)
+2026-10-05 15:44:01,631 INFO sqlalchemy.engine.Engine SELECT studentcourse.id, studentcourse.student_id, studentcourse.course_id, studentcourse.completion_status, studentcourse.grade, studentcourse.completed_at 
+FROM studentcourse 
+WHERE studentcourse.student_id = ? ORDER BY studentcourse.completed_at DESC, studentcourse.id DESC
+2026-10-05 15:44:01,631 INFO sqlalchemy.engine.Engine [cached since 0.002933s ago] (1,)
+2026-10-05 15:44:01,631 INFO sqlalchemy.engine.Engine SELECT course.id AS course_id, course.code AS course_code, course.title AS course_title, course.credits AS course_credits, course.prerequisite_text AS course_prerequisite_text, course.category AS course_category, course.department AS course_department 
+FROM course 
+WHERE course.id = ?
+2026-10-05 15:44:01,632 INFO sqlalchemy.engine.Engine [cached since 0.002043s ago] (2,)
+2026-10-05 15:44:01,632 INFO sqlalchemy.engine.Engine SELECT studentcourse.id, studentcourse.student_id, studentcourse.course_id, studentcourse.completion_status, studentcourse.grade, studentcourse.completed_at 
+FROM studentcourse 
+WHERE studentcourse.student_id = ? ORDER BY studentcourse.completed_at DESC, studentcourse.id DESC
+2026-10-05 15:44:01,632 INFO sqlalchemy.engine.Engine [cached since 0.004467s ago] (1,)
+2026-10-05 15:44:01,633 INFO sqlalchemy.engine.Engine SELECT course.id AS course_id, course.code AS course_code, course.title AS course_title, course.credits AS course_credits, course.prerequisite_text AS course_prerequisite_text, course.category AS course_category, course.department AS course_department 
+FROM course 
+WHERE course.id = ?
+2026-10-05 15:44:01,633 INFO sqlalchemy.engine.Engine [cached since 0.003492s ago] (3,)
+2026-10-05 15:44:01,633 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:56759 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58097 - "GET / HTTP/1.1" 200 OK

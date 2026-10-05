@@ -1,14 +1,22 @@
 {% extends "base.html" %}
-{% block title %}Register{% endblock %}
+{% block title %}MyAdvisor · Register{% endblock %}
 
 {% block content %}
 <div class="auth-shell">
   <div class="auth-panel">
     <a class="auth-back" href="{{ url_for('index_view') }}">← Home</a>
-    <div class="brand-wordmark">FastStarter</div>
+    <div class="brand-wordmark">MyAdvisor</div>
     <p class="auth-tagline">Create an account</p>
 
     <form method="POST" action="{{ url_for('register_view') }}">
+      <div class="mb-3">
+        <label class="form-label" for="name">Full name</label>
+        <input class="form-control" type="text" id="name" name="name" autocomplete="name" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="student_number">Student ID</label>
+        <input class="form-control" type="text" id="student_number" name="student_number" autocomplete="off">
+      </div>
       <div class="mb-3">
         <label class="form-label" for="username">Username</label>
         <input class="form-control" type="text" id="username" name="username" required autofocus>

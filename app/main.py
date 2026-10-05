@@ -1,11 +1,12 @@
 import logging
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 import uvicorn
 from fastapi import FastAPI, Request, status
 from starlette.middleware import Middleware
 from starlette.middleware.sessions import SessionMiddleware
-from starlette.responses import RedirectResponse
+from starlette.responses import FileResponse, RedirectResponse
 
 from app.config import get_settings
 from app.routers import api_router, router, static_files, templates
@@ -15,10 +16,13 @@ logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    from app.database import ensure_db_and_tables
+    from app.database import ensure_db_and_tables, get_cli_session
+    from app.services.advising_service import AdvisingService
 
     # First boot on Render often races the free Postgres instance.
     ensure_db_and_tables()
+    with get_cli_session() as session:
+        AdvisingService(session).ensure_demo_data()
     yield
 
 
@@ -34,6 +38,14 @@ app.include_router(api_router)
 app.mount("/static", static_files, name="static")
 
 
+@app.get("/favicon.svg", name="favicon", include_in_schema=False)
+async def favicon():
+    return FileResponse(
+        Path(__file__).resolve().parent / "static" / "img" / "favicon.svg",
+        media_type="image/svg+xml",
+    )
+
+
 @app.middleware("http")
 async def recover_uninitialized_db(request: Request, call_next):
     """If a request hits a missing schema, create tables once and retry."""
@@ -41,7 +53,7 @@ async def recover_uninitialized_db(request: Request, call_next):
 
     try:
         return await call_next(request)
-    except Exception as exc:  # noqa: BLE001 — catch then re-raise if not DB init
+    except Exception as exc:
         if not recover_if_uninitialized(exc):
             raise
         logger.info("Retrying %s after database init", request.url.path)

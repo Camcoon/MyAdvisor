@@ -1,0 +1,6 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\camer\\OneDrive\\Documents\\UWI COURSES\\Year 3\\Semester 1\\COMP 3613\\Assignments\\Assignment 1\\comp3613a1']
+INFO:     Uvicorn running on http://127.0.0.1:5001 (Press CTRL+C to quit)
+INFO:     Started reloader process [24960] using WatchFiles
+INFO:     Started server process [36340]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

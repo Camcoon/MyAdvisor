@@ -3,8 +3,10 @@ import threading
 import time
 from contextlib import contextmanager
 
+from sqlalchemy import inspect, text
+from sqlalchemy.engine import Engine
 from sqlalchemy.exc import DBAPIError, OperationalError, ProgrammingError
-from sqlmodel import SQLModel, Session, create_engine
+from sqlmodel import Session, SQLModel, create_engine
 
 from app.config import get_settings
 
@@ -38,6 +40,93 @@ def create_db_and_tables() -> None:
     import app.models  # noqa: F401
 
     SQLModel.metadata.create_all(engine)
+    upgrade_existing_schema(engine)
+
+
+def upgrade_existing_schema(bind: Engine) -> None:
+    """Add the new MyAdvisor fields to databases created from the earlier MVP."""
+    column_additions = {
+        "user": {
+            "name": "VARCHAR NOT NULL DEFAULT ''",
+            "student_number": "VARCHAR",
+            "degree_program": "INTEGER REFERENCES degreeprogram (id)",
+        },
+        "course": {
+            "department": "VARCHAR NOT NULL DEFAULT 'Computer Science'",
+        },
+        "semesterplan": {
+            "submitted_at": "DATETIME",
+        },
+        "studentcourse": {
+            "completed_at": "DATETIME",
+        },
+    }
+
+    with bind.begin() as connection:
+        inspector = inspect(connection)
+        existing_tables = set(inspector.get_table_names())
+        for table_name, additions in column_additions.items():
+            if table_name not in existing_tables:
+                continue
+            columns = {column["name"] for column in inspector.get_columns(table_name)}
+            for column_name, definition in additions.items():
+                if column_name not in columns:
+                    connection.exec_driver_sql(
+                        f'ALTER TABLE "{table_name}" '
+                        f'ADD COLUMN "{column_name}" {definition}'
+                    )
+
+        if "semesterplan" in existing_tables:
+            connection.execute(
+                text(
+                    "UPDATE semesterplan SET submitted_at = CURRENT_TIMESTAMP "
+                    "WHERE submitted_at IS NULL"
+                )
+            )
+
+        unique_pairs = (
+            ("studentcourse", ("student_id", "course_id"), "uq_studentcourse_student_course"),
+            ("plancourse", ("plan_id", "course_id"), "uq_plancourse_plan_course"),
+            ("degreerequirement", ("program_id", "category"), "uq_requirement_program_category"),
+        )
+        for table_name, column_names, index_name in unique_pairs:
+            if table_name not in existing_tables:
+                continue
+            unique_constraints = {
+                tuple(constraint["column_names"])
+                for constraint in inspector.get_unique_constraints(table_name)
+            }
+            unique_indexes = {
+                tuple(index["column_names"])
+                for index in inspector.get_indexes(table_name)
+                if index["unique"]
+            }
+            if column_names not in unique_constraints | unique_indexes:
+                columns_sql = ", ".join(f'"{column}"' for column in column_names)
+                connection.exec_driver_sql(
+                    f'CREATE UNIQUE INDEX IF NOT EXISTS "{index_name}" '
+                    f'ON "{table_name}" ({columns_sql})'
+                )
+
+        if "user" in existing_tables:
+            user_unique_constraints = {
+                tuple(constraint["column_names"])
+                for constraint in inspector.get_unique_constraints("user")
+            }
+            user_unique_indexes = {
+                tuple(index["column_names"])
+                for index in inspector.get_indexes("user")
+                if index["unique"]
+            }
+            if ("student_number",) not in user_unique_constraints | user_unique_indexes:
+                connection.exec_driver_sql(
+                    "CREATE UNIQUE INDEX IF NOT EXISTS "
+                    '"uq_user_student_number" ON "user" ("student_number")'
+                )
+            connection.exec_driver_sql(
+                "CREATE INDEX IF NOT EXISTS "
+                '"ix_user_degree_program" ON "user" ("degree_program")'
+            )
 
 
 def drop_all() -> None:
@@ -86,7 +175,7 @@ def ensure_db_and_tables(
             if attempt > 1:
                 logger.info("Database schema ready after %s attempt(s)", attempt)
             return
-        except Exception as exc:  # noqa: BLE001 — first-boot resilience
+        except Exception as exc:
             last = exc
             if not is_db_not_ready_error(exc) or attempt >= retries:
                 raise

@@ -86,6 +86,10 @@ def cmd_seed(args: argparse.Namespace) -> None:
             print(f"  create {username} ({role})")
             created += 1
 
+        from app.services.advising_service import AdvisingService
+
+        AdvisingService(session).ensure_demo_data()
+
     print(f"Seed done — created {created}, skipped {skipped}.")
     print("Login with bob/bobpass or admin/adminpass")
 
