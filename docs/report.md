@@ -171,9 +171,9 @@ Model update: degree programs and per-category requirements support progress sum
 
 ## Deployed app
 
-Phase 6 status: deployment is prepared but not completed from this workspace because the required Render MCP / Render deployment tooling is not available in the current environment. The app itself has been verified locally and is ready to deploy using the steps in [README.md](../README.md) and [render.yaml](../render.yaml).
+Phase 6 status: the app has been hardened for Render deployment and verified locally in a production-like configuration. The app is ready to deploy using the steps in [README.md](../README.md) and [render.yaml](../render.yaml); the live Render URL is still pending because this environment does not have the Render MCP / Render service access configured.
 
-Public Render URL (not localhost): not yet available in this session.
+Public Render URL (not localhost): pending Render workspace access.
 
 ## Logins
 
@@ -238,3 +238,5 @@ Course skills are hashed at export and compared to `.agents/skills.lock.json`. D
 - Status: **pass**
 - Root: `e84cd692d0b85eefe546385661958c27d07e8be6c5176a82012f68ccff5c8beb`
 - none
+ 
+ 
