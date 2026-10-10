@@ -238,5 +238,3 @@ Course skills are hashed at export and compared to `.agents/skills.lock.json`. D
 - Status: **pass**
 - Root: `e84cd692d0b85eefe546385661958c27d07e8be6c5176a82012f68ccff5c8beb`
 - none
- 
- 
