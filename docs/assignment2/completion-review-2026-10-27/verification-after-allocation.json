@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-27",
+  "timezone": "America/La_Paz",
+  "approved_allocation": {
+    "Core Courses": 36,
+    "General Education": 18,
+    "Electives": 12,
+    "Major Requirements": 18,
+    "Additional Requirements": 9
+  },
+  "total": 93,
+  "fictional_not_official_uwi": true,
+  "full_run": {
+    "id": "full-20261028T015858Z-e5cbdcfb",
+    "exit_code": 0,
+    "suite_attributes": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "751",
+        "time": "122.665",
+        "timestamp": "2026-10-27T21:58:59.295574-04:00",
+        "hostname": "GamingLarry"
+      }
+    ],
+    "nodes": 751,
+    "unit_membership": 116,
+    "integration_membership": 227,
+    "other_membership": 408,
+    "source_files": 74,
+    "missing": [],
+    "mismatches": [],
+    "source_unchanged_during_run": true,
+    "postman_collection_sha256": "6f1a8d297bb5bc4b510963b7a244b7376d60d96531edcaa59c1840f169cad4d3"
+  },
+  "new_source_not_in_publication_checkout": [
+    "app/cli.py",
+    "app/demo_migration.py",
+    "app/demo_requirements.py",
+    "app/repositories/advising.py",
+    "app/services/advising_service.py",
+    "app/templates/myadvisor_dashboard.html",
+    "tests/integration/test_demo_requirement_migration.py",
+    "tests/test_advising_service.py",
+    "tests/unit/test_demo_requirements.py"
+  ],
+  "local_database_migration": {
+    "allocation": [
+      {
+        "category": "Core Courses",
+        "previous": 36,
+        "required": 36,
+        "changed": false
+      },
+      {
+        "category": "General Education",
+        "previous": 18,
+        "required": 18,
+        "changed": false
+      },
+      {
+        "category": "Electives",
+        "previous": 12,
+        "required": 12,
+        "changed": false
+      },
+      {
+        "category": "Major Requirements",
+        "previous": 18,
+        "required": 18,
+        "changed": false
+      },
+      {
+        "category": "Additional Requirements",
+        "previous": 9,
+        "required": 9,
+        "changed": false
+      }
+    ],
+    "applied": false,
+    "backup": null
+  },
+  "local_database_file_hash": {
+    "database": "database.db",
+    "before_sha256": null,
+    "after_sha256": null,
+    "file_unchanged": null,
+    "file_hash_verification": "UNVERIFIED: both Get-FileHash calls failed because another process holds the file. The initial null-equality result was invalid and has been corrected.",
+    "migration_write_performed": false,
+    "migration_record": "local-db-approved-noop.json",
+    "reason": "The migration reports all approved values already present and applies no changes. This does not attest to writes by other running processes."
+  },
+  "original_pdfs_unchanged": true,
+  "original_31_images_unchanged": true,
+  "new_manual_uat_performed": false,
+  "new_postman_runtime_performed": false,
+  "publication_checkout_status": "",
+  "readiness": "NOT SUBMISSION-READY"
+}

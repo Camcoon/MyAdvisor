@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-27",
+  "scope": "QA reproduction using existing F2 fixture, real advisor login, per-probe in-memory SQLite; not a UAT or pytest run",
+  "before_plan_count": 0,
+  "advisor_json_submit_http": 403,
+  "advisor_html_submit_http": 303,
+  "created_plan_count": 1,
+  "created_plan_owner_is_advisor": true,
+  "advisor_self_approval_http": 200,
+  "stored_status": "Approved"
+}

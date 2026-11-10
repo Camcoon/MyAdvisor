@@ -1,0 +1,40 @@
+{
+  "repository": "https://github.com/Camcoon/MyAdvisorWithTests",
+  "verified_utc": "2026-11-05T03:19:09.272659+00:00",
+  "http": {
+    "repository": 200,
+    "main_branch": 200,
+    "tree": 200,
+    "collection_link": 200,
+    "repository_blob_link": 200
+  },
+  "commit": "847e39a9cc6340e51bcc05c9864f75f8457021c1",
+  "tree_entries": 720,
+  "required_paths_present": true,
+  "missing_required_paths": [],
+  "uat_screenshots_referenced": 55,
+  "uat_screenshots_published": true,
+  "missing_uat_screenshots": [],
+  "published_uat_files": 71,
+  "key_files_identical_to_local_ignoring_line_endings": {
+    "app/demo_requirements.py": true,
+    "docs/assignment2/postman/MyAdvisor-Assignment2.postman_collection.json": true,
+    "docs/assignment2/reports/uat-execution.md": true,
+    "docs/assignment2/test-plans/uat-test-plan.md": true
+  },
+  "collection": {
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "2026.10.27-degree93",
+    "requests": 90,
+    "same_as_local_ignoring_line_endings": true
+  },
+  "approved_allocation": {
+    "total_93": true,
+    "core_36": true,
+    "general_education_18": true,
+    "electives_12": true,
+    "major_18": true,
+    "additional_9": true
+  },
+  "verified": true
+}

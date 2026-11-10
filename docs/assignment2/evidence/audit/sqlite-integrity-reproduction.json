@@ -1,0 +1,7 @@
+{
+  "audit_date": "2026-10-27",
+  "scope": "Actual application SQLite engine in a new disposable file; no existing database opened",
+  "foreign_keys_pragma": 0,
+  "orphan_plan_course_committed": true,
+  "test_fixture_difference": "tests/integration/conftest.py explicitly enables foreign_keys=ON; app/database.py does not"
+}

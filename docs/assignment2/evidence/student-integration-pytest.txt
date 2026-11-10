@@ -1,0 +1,75 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\camer\AppData\Local\Programs\Python\Python314\python.exe
+rootdir: C:\Users\camer\OneDrive\Documents\UWI COURSES\Year 3\Semester 1\COMP 3613\Assignments\Assignment 2\Assignment 2
+configfile: pyproject.toml
+plugins: anyio-4.15.1, asyncio-1.4.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 59 items
+
+tests/integration/test_student_workflow.py::test_student_login_cookie_and_logout PASSED [  1%]
+tests/integration/test_student_workflow.py::test_bad_credentials_never_authenticate[wrong-password] PASSED [  3%]
+tests/integration/test_student_workflow.py::test_bad_credentials_never_authenticate[unknown-user] PASSED [  5%]
+tests/integration/test_student_workflow.py::test_degree_progress_through_authenticated_html_and_json PASSED [  6%]
+tests/integration/test_student_workflow.py::test_available_courses_use_completed_prerequisites_and_tracked_status PASSED [  8%]
+tests/integration/test_student_workflow.py::test_valid_submission_persists_courses_and_can_be_retrieved[Year 1 semester 1] PASSED [ 10%]
+tests/integration/test_student_workflow.py::test_valid_submission_persists_courses_and_can_be_retrieved[Year 1 semester 2] PASSED [ 11%]
+tests/integration/test_student_workflow.py::test_valid_submission_persists_courses_and_can_be_retrieved[Year 1 semester 3] PASSED [ 13%]
+tests/integration/test_student_workflow.py::test_valid_submission_persists_courses_and_can_be_retrieved[Year 2 semester 1] PASSED [ 15%]
+tests/integration/test_student_workflow.py::test_valid_submission_persists_courses_and_can_be_retrieved[Year 2 semester 2] PASSED [ 16%]
+tests/integration/test_student_workflow.py::test_valid_submission_persists_courses_and_can_be_retrieved[Year 2 semester 3] PASSED [ 18%]
+tests/integration/test_student_workflow.py::test_valid_submission_persists_courses_and_can_be_retrieved[Year 3 semester 1] PASSED [ 20%]
+tests/integration/test_student_workflow.py::test_valid_submission_persists_courses_and_can_be_retrieved[Year 3 semester 2] PASSED [ 22%]
+tests/integration/test_student_workflow.py::test_valid_submission_persists_courses_and_can_be_retrieved[Year 3 semester 3] PASSED [ 23%]
+tests/integration/test_student_workflow.py::test_invalid_semester_rejects_without_writes[] PASSED [ 25%]
+tests/integration/test_student_workflow.py::test_invalid_semester_rejects_without_writes[ ] PASSED [ 27%]
+tests/integration/test_student_workflow.py::test_invalid_semester_rejects_without_writes[Fall 2026] PASSED [ 28%]
+tests/integration/test_student_workflow.py::test_invalid_semester_rejects_without_writes[Year 0 semester 1] PASSED [ 30%]
+tests/integration/test_student_workflow.py::test_invalid_semester_rejects_without_writes[Year 4 semester 1] PASSED [ 32%]
+tests/integration/test_student_workflow.py::test_invalid_semester_rejects_without_writes[Year 1 semester 4] PASSED [ 33%]
+tests/integration/test_student_workflow.py::test_invalid_semester_rejects_without_writes[year 1 semester 1] PASSED [ 35%]
+tests/integration/test_student_workflow.py::test_duplicate_missing_or_ineligible_courses_are_atomic_rejections[courses0-Select at least one course] PASSED [ 37%]
+tests/integration/test_student_workflow.py::test_duplicate_missing_or_ineligible_courses_are_atomic_rejections[courses1-A course may only appear once] PASSED [ 38%]
+tests/integration/test_student_workflow.py::test_duplicate_missing_or_ineligible_courses_are_atomic_rejections[courses2-Course ID 999999 is no longer available] PASSED [ 40%]
+tests/integration/test_student_workflow.py::test_duplicate_missing_or_ineligible_courses_are_atomic_rejections[courses3-COMP 1100: Already completed] PASSED [ 42%]
+tests/integration/test_student_workflow.py::test_duplicate_missing_or_ineligible_courses_are_atomic_rejections[courses4-MATH 1000: Already in progress] PASSED [ 44%]
+tests/integration/test_student_workflow.py::test_duplicate_missing_or_ineligible_courses_are_atomic_rejections[courses5-Missing prerequisite(s): MATH 9999] PASSED [ 45%]
+tests/integration/test_student_workflow.py::test_duplicate_missing_or_ineligible_courses_are_atomic_rejections[courses6-Course ID 999999 is no longer available] PASSED [ 47%]
+tests/integration/test_student_workflow.py::test_duplicate_missing_or_ineligible_courses_are_atomic_rejections[courses7-Missing prerequisite(s): MATH 9999] PASSED [ 49%]
+tests/integration/test_student_workflow.py::test_active_plan_blocks_duplicate_but_allows_different_semester[Pending] PASSED [ 50%]
+tests/integration/test_student_workflow.py::test_active_plan_blocks_duplicate_but_allows_different_semester[Approved] PASSED [ 52%]
+tests/integration/test_student_workflow.py::test_resubmission_reuses_plan_and_replaces_old_selection[Changes Requested] PASSED [ 54%]
+tests/integration/test_student_workflow.py::test_resubmission_reuses_plan_and_replaces_old_selection[Rejected] PASSED [ 55%]
+tests/integration/test_student_workflow.py::test_invalid_resubmission_preserves_review_and_old_courses[Rejected] PASSED [ 57%]
+tests/integration/test_student_workflow.py::test_invalid_resubmission_preserves_review_and_old_courses[Changes Requested] PASSED [ 59%]
+tests/integration/test_student_workflow.py::test_allowed_cancellation_retains_history_and_replacement_gets_new_id[Pending] PASSED [ 61%]
+tests/integration/test_student_workflow.py::test_allowed_cancellation_retains_history_and_replacement_gets_new_id[Approved] PASSED [ 62%]
+tests/integration/test_student_workflow.py::test_allowed_cancellation_retains_history_and_replacement_gets_new_id[Rejected] PASSED [ 64%]
+tests/integration/test_student_workflow.py::test_cancellation_rejected_for_forbidden_status[Changes Requested] PASSED [ 66%]
+tests/integration/test_student_workflow.py::test_cancellation_rejected_for_forbidden_status[Cancelled] PASSED [ 67%]
+tests/integration/test_student_workflow.py::test_pending_plan_can_remove_course_but_keeps_last_course PASSED [ 69%]
+tests/integration/test_student_workflow.py::test_course_removal_rejected_for_non_pending_plan[Approved] PASSED [ 71%]
+tests/integration/test_student_workflow.py::test_course_removal_rejected_for_non_pending_plan[Rejected] PASSED [ 72%]
+tests/integration/test_student_workflow.py::test_course_removal_rejected_for_non_pending_plan[Changes Requested] PASSED [ 74%]
+tests/integration/test_student_workflow.py::test_course_removal_rejected_for_non_pending_plan[Cancelled] PASSED [ 76%]
+tests/integration/test_student_workflow.py::test_other_students_plan_and_private_data_are_inaccessible PASSED [ 77%]
+tests/integration/test_student_workflow.py::test_protected_student_requests_deny_invalid_auth_without_writes[missing] PASSED [ 79%]
+tests/integration/test_student_workflow.py::test_protected_student_requests_deny_invalid_auth_without_writes[malformed] PASSED [ 81%]
+tests/integration/test_student_workflow.py::test_protected_student_requests_deny_invalid_auth_without_writes[expired] PASSED [ 83%]
+tests/integration/test_student_workflow.py::test_protected_student_requests_deny_invalid_auth_without_writes[signature] PASSED [ 84%]
+tests/integration/test_student_workflow.py::test_protected_student_requests_deny_invalid_auth_without_writes[missing-user] PASSED [ 86%]
+tests/integration/test_student_workflow.py::test_invalid_form_or_path_types_return_422_without_writes[course-text] PASSED [ 88%]
+tests/integration/test_student_workflow.py::test_invalid_form_or_path_types_return_422_without_writes[mixed-courses] PASSED [ 89%]
+tests/integration/test_student_workflow.py::test_invalid_form_or_path_types_return_422_without_writes[cancel-path] PASSED [ 91%]
+tests/integration/test_student_workflow.py::test_invalid_form_or_path_types_return_422_without_writes[remove-plan-path] PASSED [ 93%]
+tests/integration/test_student_workflow.py::test_invalid_form_or_path_types_return_422_without_writes[remove-course-path] PASSED [ 94%]
+tests/integration/test_student_workflow.py::test_missing_plan_or_course_warns_without_writes[missing-cancel] PASSED [ 96%]
+tests/integration/test_student_workflow.py::test_missing_plan_or_course_warns_without_writes[missing-remove] PASSED [ 98%]
+tests/integration/test_student_workflow.py::test_missing_plan_or_course_warns_without_writes[absent-course] PASSED [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\..\..\..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\camer\AppData\Local\Programs\Python\Python314\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 59 passed, 1 warning in 4.62s ========================

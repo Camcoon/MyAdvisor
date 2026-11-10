@@ -1,0 +1,68 @@
+erDiagram
+  DEGREE_PROGRAM o|--o{ USER : enrolls
+  DEGREE_PROGRAM ||--o{ DEGREE_REQUIREMENT : defines
+  USER ||--o{ SEMESTER_PLAN : creates
+  USER o|--o{ SEMESTER_PLAN : reviews
+  USER ||--o{ STUDENT_COURSE : completes
+  COURSE ||--o{ PLAN_COURSE : appears_in
+  COURSE ||--o{ STUDENT_COURSE : appears_in
+  SEMESTER_PLAN ||--o{ PLAN_COURSE : contains
+
+  USER {
+    int id
+    string username
+    string email
+    string password
+    string name
+    string student_number
+    string role
+    int degree_program FK
+  }
+
+  DEGREE_PROGRAM {
+    int id
+    string name
+    int total_credits
+  }
+
+  DEGREE_REQUIREMENT {
+    int id
+    int program_id FK
+    string category
+    int required_credits
+  }
+
+  COURSE {
+    int id
+    string code
+    string title
+    int credits
+    string prerequisite_text
+    string category
+    string department
+  }
+
+  STUDENT_COURSE {
+    int id
+    int student_id FK
+    int course_id FK
+    string completion_status
+    string grade
+    datetime completed_at
+  }
+
+  SEMESTER_PLAN {
+    int id
+    int student_id FK
+    int advisor_id FK
+    string semester_name "Year N semester N"
+    string status "Pending | Approved | Rejected | Changes Requested | Cancelled"
+    string advisor_feedback
+    datetime submitted_at
+  }
+
+  PLAN_COURSE {
+    int id
+    int plan_id FK
+    int course_id FK
+  }

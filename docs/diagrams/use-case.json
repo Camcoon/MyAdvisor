@@ -1,0 +1,22 @@
+{
+  "system": "MyAdvisor",
+  "actors": [
+    { "name": "Student", "side": "left" },
+    { "name": "Advisor", "side": "right" }
+  ],
+  "use_cases": [
+    { "name": "Track Degree Progress", "actors": ["Student"], "includes": [], "extends": [] },
+    { "name": "View Course Catalogue", "actors": ["Student", "Advisor"], "includes": [], "extends": [] },
+    { "name": "Plan Semester Course Selections", "actors": ["Student"], "includes": ["View Course Catalogue"], "extends": [] },
+    { "name": "Review and Approve Course Plan", "actors": ["Advisor"], "includes": ["View Course Catalogue"], "extends": [] },
+    { "name": "Cancel Semester Plan", "actors": ["Student"], "includes": [], "extends": [] },
+    { "name": "Request Changes to Course Plan", "actors": ["Advisor"], "includes": [], "extends": ["Review and Approve Course Plan"] }
+  ],
+  "includes": [
+    ["Plan Semester Course Selections", "View Course Catalogue"],
+    ["Review and Approve Course Plan", "View Course Catalogue"]
+  ],
+  "extends": [
+    ["Request Changes to Course Plan", "Review and Approve Course Plan"]
+  ]
+}

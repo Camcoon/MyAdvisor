@@ -1,0 +1,14 @@
+from app.dependencies import AdminDep, SessionDep
+from app.repositories.user import UserRepository
+from app.schemas import UserResponse
+from app.services.user_service import UserService
+
+from . import api_router
+
+
+# API endpoint for listing users
+@api_router.get("/users", response_model=list[UserResponse])
+async def list_users(user: AdminDep, db: SessionDep):
+    user_repo = UserRepository(db)
+    user_service = UserService(user_repo)
+    return user_service.get_all_users()

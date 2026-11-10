@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\camer\\OneDrive\\Documents\\UWI COURSES\\Year 3\\Semester 1\\COMP 3613\\Assignments\\Assignment 2\\Assignment 2\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "tests/integration/test_contrast_regression.py",
+    "-q",
+    "-s",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp=C:\\Users\\camer\\AppData\\Local\\Temp\\MyAdvisor-A2-Corrections-lcuhvnft\\pytest-base",
+    "--junitxml=C:\\Users\\camer\\OneDrive\\Documents\\UWI COURSES\\Year 3\\Semester 1\\COMP 3613\\Assignments\\Assignment 2\\Assignment 2\\docs\\assignment2\\evidence\\corrections-2026-10-27\\contrast-29709f52.xml"
+  ],
+  "exit_code": 1,
+  "run_id": "contrast-29709f52",
+  "scope": "automated browser computed contrast; not UAT"
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-27",
+  "markdown_files_checked": 24,
+  "local_reference_count": 679,
+  "broken_local_references": [],
+  "source_files_changed_since_pytest": [],
+  "collection_sha256": "409cffa7540cd73880d74139f77346cdb47d06a18d9ae8e1b11cf70ef2c44b6d",
+  "uat_case_count": 20,
+  "unique_uat_case_count": 20,
+  "uat_dispositions": {
+    "Pass": 1,
+    "Fail": 0,
+    "Not Run": 19
+  },
+  "pngs_decoded": 31,
+  "scope": "Static documentation/evidence checks; not a Postman or browser UAT rerun",
+  "markdown_rendered": true,
+  "renderer": "markdown-it-py CommonMark with table rule"
+}

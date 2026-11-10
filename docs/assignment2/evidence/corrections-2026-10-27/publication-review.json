@@ -1,0 +1,1695 @@
+{
+  "date": "2026-10-27",
+  "purpose": "Candidate overlay review only; no files staged/copied/committed/pushed. Validation and this manifest excluded to avoid self-referential hashes.",
+  "repository": "Camcoon/MyAdvisorWithTests",
+  "verified_remote_head": "864386fe10fa5e61869e07500d84e51ff7e46b9b",
+  "local_branch": "assignment-2-testing",
+  "candidate_files": [
+    {
+      "path": "app/cli.py",
+      "bytes": 11140,
+      "sha256": "9922fb1c06acca431147c79a20d2f0f468b11eb0a35af834a37b98fd72e55dfc",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/config.py",
+      "bytes": 3784,
+      "sha256": "98d30ab9499eb4442c2774a4c81d51da9bd203ed09745bde0be15cdb7ffbac30",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/database.py",
+      "bytes": 8730,
+      "sha256": "dca78c93890f6ce0a134ffc3ea84629ea807ac9703b6b97fa86557ca2e912fb1",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "app/dependencies/__init__.py",
+      "bytes": 86,
+      "sha256": "87e3ff435b22c95c87d51095519a5a291e2fff32268b5e5c2b080cb3691502a3",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/dependencies/auth.py",
+      "bytes": 2602,
+      "sha256": "326a32fa8a25fe45e1ca4c80b2346edce67e1ba34a6e0f5ef4f4e3803123d022",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/dependencies/session.py",
+      "bytes": 184,
+      "sha256": "ef7bffe173fe542f6706e9c1e9de96d0283abd64be11d6b08006a693ec6f102b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/main.py",
+      "bytes": 2977,
+      "sha256": "2020b102e81a83fcf20ffec562a4d148201f1f74cb83ad384525c6b5edadbc09",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/models/__init__.py",
+      "bytes": 455,
+      "sha256": "7002fd396a160de3972ce8ae7a49ec72f1f83729a7eec82546c25df129e106cf",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/models/advising.py",
+      "bytes": 2186,
+      "sha256": "2d1e695dad28f716f476b7b884f0895d576956f99278fd4d9adbe612f679ac1b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/models/user.py",
+      "bytes": 574,
+      "sha256": "accc83a66cfa41f3cb8f85ac5a0ef6090e39f4e7b5bcb435c612da16dacec9f8",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/report_pdf.py",
+      "bytes": 38882,
+      "sha256": "d00c80989d13837e2f7a20ef1eac5efc6e2bd2ecfe04695e01f6919021c9a4e1",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/repositories/__init__.py",
+      "bytes": 32,
+      "sha256": "b5f1793bec5af339bf474b223cc0ad8da2f2d144e1cae926ce9e6a5e9ebc7e25",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/repositories/advising.py",
+      "bytes": 6301,
+      "sha256": "ed4e1d7e046da20a7af96eab51cd911b4dd1f2398ac1b5f676cde2d460b003e3",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/repositories/user.py",
+      "bytes": 2813,
+      "sha256": "4dcebdb1dc2c563fb588658ba8a66d258a585ccf4cba0ba0a69b8211b3f6f71b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/routers/__init__.py",
+      "bytes": 1313,
+      "sha256": "61ea0167eb4b0f962b51b1869c0943f852c9de07240357b7e24fb724389a5c82",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/routers/admin_home.py",
+      "bytes": 2877,
+      "sha256": "d5777f339a78693a12d2322e168bb3fd3c58c3c35a5380e2ddb3b5c1634e73b1",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/routers/advising_api.py",
+      "bytes": 7548,
+      "sha256": "b4f5f82293a6b03821262737b6596e41ab73f22d3c7ba5c3ec02f18437ac2d03",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/routers/index.py",
+      "bytes": 919,
+      "sha256": "af701e1dda7d2974ea9bce10576ccfaa058ee03c0c9f563bacaa3d777c540c59",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/routers/login.py",
+      "bytes": 1454,
+      "sha256": "4117b812828e6608fd8e3ee7d44c4036b8f0a0759be33a2b0418a4e12e37d192",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/routers/logout.py",
+      "bytes": 471,
+      "sha256": "fe53cad3cd32b0157d9485611ddf4e0666625d38f9520ea7f65839f10b9e347a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/routers/register.py",
+      "bytes": 1729,
+      "sha256": "f385d3325a1088667cc18979c50937fc2f959b1041d39d3d6c6c7f36d087f5aa",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "app/routers/server_config.py",
+      "bytes": 13194,
+      "sha256": "db76bccbd1e01acfbda98c3fed56aacc6f71e41567a1851620c1db4724b46608",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/routers/user_home.py",
+      "bytes": 4952,
+      "sha256": "e758aa800f40894cbeadfe826b0c6b0ea4f9463efc677fd3d2bb013110be64cf",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "app/routers/users.py",
+      "bytes": 493,
+      "sha256": "d047c081e37c0f65332eb02b13a08502563cb959ba3ad82197cc6152e8c14fad",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/schemas/__init__.py",
+      "bytes": 40,
+      "sha256": "86435b9e8db9c487660159bd3428bf50e5c11a36a8043a11de085c5f3c438aec",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/schemas/advising.py",
+      "bytes": 2446,
+      "sha256": "d8f782ef1b93885b87d9cd0a03973242a6b17415f8c714d91f801b4accb6723d",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/schemas/auth.py",
+      "bytes": 189,
+      "sha256": "d3eef72cb0b55e8950345d001e208dc64c9d7ea22fd9996aeb606b3105669f2e",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/schemas/user.py",
+      "bytes": 526,
+      "sha256": "f364f89d682c8ebe62ada0bd77d53506cff435e4f09acc5d2ce5f55ff57d2533",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/services/advising_errors.py",
+      "bytes": 220,
+      "sha256": "1c5918d91a86ac419e506ae79d3a3ab6349553f3ae23eb78295ccdca49f9736a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/services/advising_service.py",
+      "bytes": 27091,
+      "sha256": "df2d9440ea829c39434feab24ac458a335fd547a022654f237c34a4a78cb226e",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/services/auth_service.py",
+      "bytes": 1569,
+      "sha256": "2ed3fb688069aae5589be514ad247c67c30c26cad56bc375a9564a43ca0cf686",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/services/user_service.py",
+      "bytes": 411,
+      "sha256": "cf6927ab6319ba71a8bfbb59124ce85050e2b393855d3cf0c23d02d2f2c2d49c",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/skill_integrity.py",
+      "bytes": 6838,
+      "sha256": "2e045a8989149dda4dfabb7b25be5a15a87b3bd768b5275014da2d5021e36104",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/static/css/app.css",
+      "bytes": 17106,
+      "sha256": "72394d773258b8ea30df110026502bfa298ee400cd6be01cac6a63e537bb8b16",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "app/static/img/favicon.ico",
+      "bytes": 15406,
+      "sha256": "a849865ba3345531d12fc897547277e293ea0ff2b21dc99cbe7fe02fb6fd81ce",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/static/img/favicon.svg",
+      "bytes": 397,
+      "sha256": "6a28dadc5f847df67f84e3ea6269a960c628ff58e76cfe92220e6bc45c89a117",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/static/js/app.js",
+      "bytes": 2109,
+      "sha256": "ec951e7056b923a12a7bb3117ae02737f1477792d6c17b7776696ab3495fd469",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/401.html",
+      "bytes": 2159,
+      "sha256": "94f36c11505dd6e71742773c303fee2be26ce69fdf44cfa8db9d2ac7bb741cd3",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/admin.html",
+      "bytes": 302,
+      "sha256": "1eff6ed141dd4536092f1c7ddf8fe8ff5f1477407b59f58abf49259c874a84dd",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/advisor_dashboard.html",
+      "bytes": 7048,
+      "sha256": "32fedb1b49a86882302bdd713728e82deed62d356e742655cc67cf4b3ba8b7d2",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/app.html",
+      "bytes": 294,
+      "sha256": "3b9786698a1305e2280cb4737254b540dc29e0caba8b8fd2b2c15d06d87383b2",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/authenticated-base.html",
+      "bytes": 9738,
+      "sha256": "b9a46f869f66ad1549099e1658c5adae831dc9d4bddb3f2773e4e400a6a115a9",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/base.html",
+      "bytes": 2214,
+      "sha256": "08c569f073bffdd8aa0997c56c7e82d4c1e40cc57c2d4664bdbbc916035846f3",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/config.html",
+      "bytes": 8543,
+      "sha256": "50b1d2953588b12405fc4277d2a1db741fa098314447002234f1834908012c30",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/landing.html",
+      "bytes": 1746,
+      "sha256": "1b6b4fb7004427d88d26c40cb6c11f0c3ff1228ffd19076e6ae221be58b7bd70",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/login.html",
+      "bytes": 1267,
+      "sha256": "4151014b5c12baf9249fefc10c5e4a67ef706169f8229a8609e8e48e19919b51",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/myadvisor_dashboard.html",
+      "bytes": 38978,
+      "sha256": "b0d1615d0694f81c5ed05dc1ecc93bdfec40121d100bd0d8c5d53b9ecbf93a6a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/templates/register.html",
+      "bytes": 1880,
+      "sha256": "1d650188b91212c30f1cd8c203d1f6bff52ad00a22a1aa6152be3707a147166e",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/transcript_export.py",
+      "bytes": 7439,
+      "sha256": "aab9839b36194361b62380344e0d09e8d4df33caa2bc51dfe8fdba99d8f0f557",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/usecase_diagram.py",
+      "bytes": 13269,
+      "sha256": "936d93c5865941ca8820ee1193a69c35ae86dfca6dc71b6f04b57f286d473aac",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/utilities/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/utilities/flash.py",
+      "bytes": 420,
+      "sha256": "112ead97852859a272a2f09ee87c637070f8f1088850917840731e89d2ac959a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/utilities/pagination.py",
+      "bytes": 1065,
+      "sha256": "ed8f5e0633f31a7cec0b7b0a6181f175be96c220358e97fc692780b2c0f49e08",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "app/utilities/security.py",
+      "bytes": 1170,
+      "sha256": "49bbb54bf46e445e4242b0ddd3498a9d19430f30f50f4527d41312c6d6686c4e",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/.gitignore",
+      "bytes": 87,
+      "sha256": "13c1dd3ac18770a1079ce418b8ff0236869e02cfce0e29d977c37fd518eb8db7",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/api.md",
+      "bytes": 15577,
+      "sha256": "eab9c242ca9c0e3e311851958068418986c1fceeb9f619e34cc0be7313769d19",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/build_submission.py",
+      "bytes": 53423,
+      "sha256": "ab1acc73ff42d138ddf474ea209f4859929ada3a4d3cd74822a80ee44d195470",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/authorization-reproduction.json",
+      "bytes": 399,
+      "sha256": "e64b7ec3e4405fb98a68bd3e4a73836da3b74c0c62dbbbe2f6f705d9d3e61db4",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/documentation-checks.json",
+      "bytes": 606,
+      "sha256": "2e68e483070b7b0d43294e3642df1fe1e4666b394179c57d42183c7a94385f5e",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/github-snapshot.json",
+      "bytes": 80551,
+      "sha256": "c1b80b4db62a058cd57c6d06c08891c90b8cbfbfced80fbee1a4003c9cf4a740",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/local-remote-comparison.json",
+      "bytes": 27030,
+      "sha256": "e7d02df6190f651042a750b5b9404269d6f2f8538d14ddcaba75f63dbc4b3f8e",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/pytest-output.txt",
+      "bytes": 1405,
+      "sha256": "4794ac973bbfd326b55c73d6fe406d2651f2d3bd2a311be96ff4d2c82d949bef",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/pytest-results.xml",
+      "bytes": 114650,
+      "sha256": "7d83807e059ddc654a55bcc033f0258d7e13ef371c33857868700244aa67082b",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/pytest-run.json",
+      "bytes": 7600,
+      "sha256": "42c57725de9da97b8a121db59609d95c90108c6057b6fb24000d0ef2ba4fb092",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/registration-reproduction.json",
+      "bytes": 243,
+      "sha256": "4600a97a92b4de2d7883eb235ead75b38f3aabebef533d94948f677633cde62f",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/sqlite-integrity-reproduction.json",
+      "bytes": 332,
+      "sha256": "3b0a2576251e560a791cd72ecaa306e0e4002defb73a1a8f9bb5ddba31cfc457",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-29709f52.json",
+      "bytes": 758,
+      "sha256": "6c6c9d8c2b7450b30bbb1faf9a7a28dbfffb5afffbbdfd577d9eda0765c43eab",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-29709f52.txt",
+      "bytes": 8061,
+      "sha256": "9687887fc6b42053bb4a663588185d251581be2c0436ce7c6af70aeb7f47b34a",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-29709f52.xml",
+      "bytes": 8310,
+      "sha256": "517b501fe9c3380b6cf60c4db82cfc8ded78aa4caebe0f26f6d1b007cc2e9ef3",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-4ddabb8e.json",
+      "bytes": 798,
+      "sha256": "04abdeaf2436bf6cdb720db36c4d4992f6aaf39b1492b36c70709a653a60a704",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-4ddabb8e.txt",
+      "bytes": 5353,
+      "sha256": "56a0e52fefba8be9dbd5d904919c78c3bfb1f86ce170ef973c57a957d7bbc222",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-4ddabb8e.xml",
+      "bytes": 520,
+      "sha256": "90613b885e578bc68dc74fa067718de33bfab64bf60af2842bcd4665822ded22",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-833f7e57.json",
+      "bytes": 758,
+      "sha256": "d66ee74f5f7762ba5bb6ea0d7d43c9d63c65a9b2859e79d8f2cab065d834f2cc",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-833f7e57.txt",
+      "bytes": 8061,
+      "sha256": "dc0e1bb7449f26ac5f68003dbfb583d8e1140f2f02505f21d219244eafb4055d",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-833f7e57.xml",
+      "bytes": 8310,
+      "sha256": "4f54d812475d6a558a591a960d41f040f5095a805bac195ff08cd53fa2909816",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/f01-before-ae8767c2.json",
+      "bytes": 850,
+      "sha256": "eb41460b54b383e320af94e93d96607c781531420c07fc532c07fcd8c07e46f3",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/f01-before-ae8767c2.txt",
+      "bytes": 28644,
+      "sha256": "864682eb342aca2bb728dff54f3e2b160649a1603f1f239e16c1d1959ec066ee",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/f01-before-ae8767c2.xml",
+      "bytes": 28803,
+      "sha256": "1d63a15bfca78054ec29978b41312041a3185084c60e9fbd26d90cbf99f54791",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.json",
+      "bytes": 8726,
+      "sha256": "6f6f90e82ecd41ce52780a901ec90020cc04cc3481265b173c00df4627d740f5",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.txt",
+      "bytes": 1476,
+      "sha256": "b6a2fef24acfc6c3e406a09dcb09f01bf448f8e3eb024012851e935c8ff78cd8",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.xml",
+      "bytes": 118072,
+      "sha256": "615f921c84cd218a204ab3df2cf6363aa1b6737624da62ebdad4dd47c1eadf34",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/git-remotes.txt",
+      "bytes": 113,
+      "sha256": "ff10796713dc5c39ce0ccd42137ad46b6b8446505a68da16d602af0b2da53d69",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/README.md",
+      "bytes": 2596,
+      "sha256": "f332ba7aa1fd85dc558a180be6599a60787d30709a3c22bcb18e0769f4b27c2d",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.json",
+      "bytes": 8824,
+      "sha256": "9f80771b79d926a6fcc62f5d4f8755e63ba6c90b0c15baf41607ff79f8423a59",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.txt",
+      "bytes": 919,
+      "sha256": "904c107fdcdca264d4bf10e81c51b897a88c380688256fc49ce334a13449af9f",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.xml",
+      "bytes": 44185,
+      "sha256": "ca15cda1357d9064951dacf19a81b4a26f851d7a4a192c5b5f194d3121140ce4",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-cf752b27.json",
+      "bytes": 7868,
+      "sha256": "34fce00fac4bfca97ef0350d5c55726189cb492a3ee118ce7b5af0209497f1a7",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-cf752b27.txt",
+      "bytes": 909,
+      "sha256": "fb4ee9412804d1e175b0aeebd7705ba389a0e170de334b990612c92a8a193336",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-cf752b27.xml",
+      "bytes": 43912,
+      "sha256": "b32c5eae7650b339650193fb85358e0274dff081b7ce443dc8a9dc9d9328a360",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/verified-summary.json",
+      "bytes": 572,
+      "sha256": "b5a15d9e11de30ec46d341a3f4c6d8b421be55848d3a401e385cb3028effd2ab",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/working-tree-status.txt",
+      "bytes": 752,
+      "sha256": "510cb29524e3d64d3fcb0655d186d037e56238a5a68e35745bd0cb5e7dc1feae",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/evidence/student-integration-pytest.txt",
+      "bytes": 9132,
+      "sha256": "d31c4af5c86578ebbffaa7d2ef8f8d11445a51f75e222bd55b2eb059e41ac633",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/evidence/student-integration.md",
+      "bytes": 8411,
+      "sha256": "e84bffb754234c24de614ea9dfd4b1bcc822ed0beef1b126aa5e41db970c04bd",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/pytest-output.txt",
+      "bytes": 25140,
+      "sha256": "c9e3c27c5a16b828f78e73c9e2039d39176a4ebc73fdacce6fa2ef9461732307",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/README.md",
+      "bytes": 2607,
+      "sha256": "ee63e3279743ff0dbcd840894a570cf29bdb858fe120fc855a92839c25c65fd3",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/results.xml",
+      "bytes": 14179,
+      "sha256": "e35cf3090fae104726c4f995e2a44e407989cbc66507d5323acc3719fc686e8c",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow1-api.md",
+      "bytes": 2915,
+      "sha256": "227fdd46a01970a6be22565f580904f18cc795233ab414533943bfdd9674d104",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow2-api.md",
+      "bytes": 4326,
+      "sha256": "2703bd5e36441061ad585080c33c872369104442ce1ed619514c1226d87c6766",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow3-api.md",
+      "bytes": 5322,
+      "sha256": "42435292a85a6ae5d7514deef7771bb8987300b298751119a33f8bd57f144050",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/final-quality-audit.md",
+      "bytes": 51224,
+      "sha256": "d700e1a25bcc3fcd4596dd477ee1047d94ddf84e2d8d80c2cc41f55dc03e9584",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/final-submission-checklist.md",
+      "bytes": 16418,
+      "sha256": "e764eaa497167d00f9300ae041c169712eb6a2df52027f3961e505d0417d0b64",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/official-assignment-brief.md",
+      "bytes": 3029,
+      "sha256": "ad7b448af178c89ef5596c7babba61dfc168acfe197117ea1767b423a0d6fc35",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/.resources/definition.yaml",
+      "bytes": 1787,
+      "sha256": "4e6aed60d23568154a8433f2facc25da927430f15f0fc2e7ce949148fa210cb1",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/.resources/definition.yaml",
+      "bytes": 32,
+      "sha256": "e32f41fc018e7018ac06dff9d296525a8843f8a66caa968bd07476e9099a327e",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/01 - Server health and initialize run variables.request.yaml",
+      "bytes": 2127,
+      "sha256": "dc9237955863d5398ecf6260db1774e9d2cc9d82f2c6d6df4de02934a9a27faf",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/02 - Unauthenticated -api-degree-progress.request.yaml",
+      "bytes": 4631,
+      "sha256": "1c7e400d268d712b95277aafdd54c877915110645f8ed0fc7a51c93b540861f4",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/03 - Unauthenticated -api-courses.request.yaml",
+      "bytes": 4607,
+      "sha256": "aa590ae8929172a1d6028b3057ce16f9307ff98613c4e873962acb82bdfc9f9e",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/04 - Unauthenticated -api-semester-plans.request.yaml",
+      "bytes": 4628,
+      "sha256": "fe0b552ff5e435ceb362d9589f35919da7796ad08231452701ca3eb61c87226c",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/05 - Unauthenticated -api-advisor-plans.request.yaml",
+      "bytes": 4625,
+      "sha256": "7738aa3560660f655baf771166482368f489896bb13193148cf775e6cd889bb7",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/06 - Unauthenticated -api-users.request.yaml",
+      "bytes": 4601,
+      "sha256": "c5bdbb61dcec1b3fc577ae1b526a399609e1be3c9b93ca3a6dfc703ce6ad0a4e",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/07 - Malformed cookie denied.request.yaml",
+      "bytes": 4728,
+      "sha256": "94c61bcf7a7bc9454f52b4700fc7436b34849525de9a7af16ec306eb1c5dc41d",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/08 - Incorrect login rejected.request.yaml",
+      "bytes": 1567,
+      "sha256": "ba67387bd05fc94b0a10251828a25170bcf4610fe13dae862aa545a53bc1bb8e",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/09 - Student login and capture cookie.request.yaml",
+      "bytes": 1975,
+      "sha256": "7d65ae5a4e994cf521f937c7b2c91d692bcf706163e3de6a6d659cf04525507c",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/10 - Advisor login and capture cookie.request.yaml",
+      "bytes": 1976,
+      "sha256": "54aa4660648a1cf6c9f54325b52f318d072bacefd0f9ac17f4e6ac88c0e67887",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/11 - Register independent student for ownership checks.request.yaml",
+      "bytes": 1169,
+      "sha256": "e8a1b3576a9f5cbbc0e1a1cea14a946cbf93b0d521d2cec10202438547afc0d0",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/12 - Other login and capture cookie.request.yaml",
+      "bytes": 1968,
+      "sha256": "fb950173f537660bde17196b4bc1cefa84e05f4ecb13dae5a8b9f13d7a34e3e2",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/.resources/definition.yaml",
+      "bytes": 32,
+      "sha256": "cc96357dd520cad0e0182228e61046d2bdf59d2da832bc6073f9aa99b0b4dfa2",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/13 - Student forbidden from -api-advisor-plans.request.yaml",
+      "bytes": 4543,
+      "sha256": "15876a83e931e3ae8800ec90b2327c4a1c41d2a55da89f619cd6ca612dc3e6dd",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/14 - Student forbidden from -api-users.request.yaml",
+      "bytes": 4519,
+      "sha256": "16ecfa2122799853d2657952acc9ff3952713bd5adf1a463e7cd8c858dec118a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/15 - Advisor forbidden from -api-degree-progress.request.yaml",
+      "bytes": 4549,
+      "sha256": "da0291043f7cb6d4af7dfebd44f24709ec93778c9a54663ee72ab536948281d1",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/16 - Advisor forbidden from -api-courses.request.yaml",
+      "bytes": 4525,
+      "sha256": "d18bc593e10f6b55ca3db0fb65a956ed9a96ee850aa084005378c9c2893c4b1a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/17 - Advisor forbidden from -api-semester-plans.request.yaml",
+      "bytes": 4546,
+      "sha256": "3bec57b680e4cf0213ee6b5cd8e9ecd842d7dd881d561dc1e654b8bd31cd6ca9",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/18 - Advisor users list excludes passwords.request.yaml",
+      "bytes": 5385,
+      "sha256": "8c4d3395f2c0e15fed728778d58f4582cb720b652a85106aa13064431f39a08a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/19 - Student degree progress calculations and privacy.request.yaml",
+      "bytes": 5417,
+      "sha256": "aa353bbe09b463b5f32f41494df4ef97de6f759cdc5ffcbc87604eca0b65c9a9",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/20 - Discover eligible and blocked dynamic course IDs.request.yaml",
+      "bytes": 5778,
+      "sha256": "72927e76504794f9dda2af9ba9456ce99cd91b765cafd611b00243b405225666",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/21 - Choose a semester without an existing active plan.request.yaml",
+      "bytes": 5357,
+      "sha256": "bade87260e9fbe6186db4e0e9b09eab223155cec261a20a917a7216c34d97ab6",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/.resources/definition.yaml",
+      "bytes": 32,
+      "sha256": "ef21e0a5ab5bc700104f7a36cceca431bd991e76b332d9d5c5dcc1dc8cc41f6a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/22 - Empty selection rejected.request.yaml",
+      "bytes": 4844,
+      "sha256": "043c29e9fedb2c948857408fa88491490ed117f1cc87ba9da7b8785f8e84cf3a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/23 - Duplicate selection rejected.request.yaml",
+      "bytes": 4864,
+      "sha256": "d60c09322089e25177c9a3c431c66b6e777f0d9447b45e324fbc05b26010b335",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/24 - Unknown course rejected.request.yaml",
+      "bytes": 4702,
+      "sha256": "35bab2d9f92ccb0b4f7e9e4761169795f41ad7364ff94c3ef6e812297229531e",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/25 - Missing prerequisites rejected explicitly.request.yaml",
+      "bytes": 4886,
+      "sha256": "3cd125b2750c4b545c700c2f0b91c105972fc4de395b2ebac51744fc52a49abc",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/26 - Invalid semester rejected.request.yaml",
+      "bytes": 4845,
+      "sha256": "93df63d33d8f97a594cf3af65edfd3b6ea60ee9cc7db7c3ae18c342de53196b3",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/27 - String course ID rejected.request.yaml",
+      "bytes": 4847,
+      "sha256": "3d82ae0cb019893db6ed7de9a94f801777a961690bc09ef76db9cf53b1236e9f",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/28 - Spoof student ID rejected.request.yaml",
+      "bytes": 4878,
+      "sha256": "0f9f25a1d49c8cc0ca0a4c9e2c7899e4f8c35e9285c0ba00c5242ce67cc6902d",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/29 - Malformed JSON rejected.request.yaml",
+      "bytes": 4780,
+      "sha256": "595c32eacd69500f51f4a908fa9fc1a595642254753e0f3ef3183c86e224e2f0",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/30 - Verify invalid submissions created no records.request.yaml",
+      "bytes": 4695,
+      "sha256": "c64f282d0288d7e6a862d37d32bd891b2b60b063ce871eee511508b8af7b95da",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/31 - Submit two eligible courses and capture plan ID.request.yaml",
+      "bytes": 5997,
+      "sha256": "f7473159fc4cd4665a2a21a88f000fca559a41e61caa7b17064b81a4dc396511",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/32 - Retrieve persisted pending plan.request.yaml",
+      "bytes": 5363,
+      "sha256": "a0a703aef2d5e3e4d8bdf9bd04d3eb0d0b9cded557177eeaf9d5a31281fbe3d2",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/33 - Other student cannot read foreign plan.request.yaml",
+      "bytes": 4662,
+      "sha256": "c6155b3e6b701093634941196675a070d7ead5e3e4dda1614a46c8bcbaa75232",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/34 - Missing plan conceals ownership identically.request.yaml",
+      "bytes": 4736,
+      "sha256": "7815a5ce33a9bd5b262cbcbba840443ffca4523e4b46a1962db30b1944e8f850",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/35 - Other student cannot revise foreign plan.request.yaml",
+      "bytes": 4716,
+      "sha256": "2ebf839cfc568e2ca1c4e58a2f2c837ba4a3f80196e9f5dd8eeb76382c26a993",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/36 - Other student cannot remove foreign course.request.yaml",
+      "bytes": 4619,
+      "sha256": "5e70421d6dd9daf5010971b97bb02548d863e75958e31c754a564b2f76e7921e",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/37 - Other student cannot cancel foreign plan.request.yaml",
+      "bytes": 4593,
+      "sha256": "ac993fe4aacd07b1b490f92554b8ace8785b7d10cdefa8251410ff60394a3015",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/38 - Other student list excludes foreign plan.request.yaml",
+      "bytes": 4663,
+      "sha256": "68e63bb4d043ed8815f5d3450d0d2c8acce78a4a1419af32cdeaff59267f2090",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/39 - Duplicate pending submission conflicts.request.yaml",
+      "bytes": 4737,
+      "sha256": "8ca7977cbfbb07223408c6d40e19b0adc0fd736c643e553ceff34f9a24944dc9",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/40 - Pending plan cannot be revised.request.yaml",
+      "bytes": 4712,
+      "sha256": "0ba60ad5a311958a640bac030abe6188b299633bd5a41b48597eb15733c17730",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/41 - Invalid path ID rejected.request.yaml",
+      "bytes": 4720,
+      "sha256": "c5ede08837a5a9c3a9e003deafa9089ff3848865471b2b3c3439e4daee74ed03",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/42 - Student denied advisor action detail.request.yaml",
+      "bytes": 4497,
+      "sha256": "7885e064ad2ed87eaed0dfe8bc5497775cf8e6139bb02ca2b65e09ab17facd9b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/43 - Student denied advisor action -review.request.yaml",
+      "bytes": 4649,
+      "sha256": "11210647f7165c0374bb492563c2e0ba3ffe2dacc85f9d6bf6e6acc19bfc0c5b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/44 - Student denied advisor action -approve.request.yaml",
+      "bytes": 4631,
+      "sha256": "584864401e3c0d2e40fbd4bfa5b7985e356b9256ef25a400c99f7da5a0d10897",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/45 - Student denied advisor action -reject.request.yaml",
+      "bytes": 4628,
+      "sha256": "4f64e523eb5a473cd63214ea0d94ba3e4e603c87e79b66de0aae7475e14b3e1c",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/46 - Student denied advisor action -request-changes.request.yaml",
+      "bytes": 4655,
+      "sha256": "229ff7abd17fe5c04d10de37b1f714bca07ec9d52e255af60d42f64bbdbe502c",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/47 - Verify ownership and role denials left pending plan intact.request.yaml",
+      "bytes": 5483,
+      "sha256": "b0a3778ca55adf47f791672e3736a6f395562140223d99064117e23bd615274b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/48 - Remove selected course from pending plan.request.yaml",
+      "bytes": 5349,
+      "sha256": "d54a816bdac45b47d08caea2036a767f1ba46c94c5d703609e3928508e5702f4",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/49 - Cannot remove final course.request.yaml",
+      "bytes": 4609,
+      "sha256": "92df8faef133e6fba7022876146dd0390dd7e9989b3924168dc6f6e3ac046e00",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/50 - Absent selected course returns not found.request.yaml",
+      "bytes": 4619,
+      "sha256": "64c21a8836b07570f8c7d73fba3c2daae000dea4040ee92dba28cf8836642d8b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/.resources/definition.yaml",
+      "bytes": 105,
+      "sha256": "94ea0566773d1c5dd2f958f96d71b53595808eb238fa0ace18d5bfd92107dd67",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/51 - Advisor pending queue includes submitted plan.request.yaml",
+      "bytes": 4781,
+      "sha256": "344f5a15fe8f38515b9dff7d6462db432842047043591cefd8a93a2e71af8c6c",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/52 - Advisor sees student plan detail.request.yaml",
+      "bytes": 5372,
+      "sha256": "3ebd9258a51095aff08b25e04e8f1dbac8cc11b31e3e4a4992fc83d60051137f",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/53 - Advisor missing plan returns not found.request.yaml",
+      "bytes": 4587,
+      "sha256": "86af6c8a4d5d23847a2a3f0ff59c171a8a568087b6850f25511c0c94c5a9b144",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/54 - Unknown decision rejected.request.yaml",
+      "bytes": 4811,
+      "sha256": "593329c8f19d5b9cc9a78167b5c884ca45d5ab567b5c32cd168541ff9308e477",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/55 - Missing decision rejected.request.yaml",
+      "bytes": 4805,
+      "sha256": "9fab4536fced93d2b8db7d820d9753e543e06096fe9a7c5f0a04645741509444",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/56 - Oversized feedback rejected.request.yaml",
+      "bytes": 5331,
+      "sha256": "bd54b1703ce806101aa7b76b3082c4de739ae50ee8698fa218897597b7cdcef3",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/57 - Nonstring feedback rejected.request.yaml",
+      "bytes": 4824,
+      "sha256": "05eb8f2d7ff86d22a0b5fd355812d59638f9fb75f560d78393ff585cf268a917",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/58 - Spoof advisor identity rejected.request.yaml",
+      "bytes": 4859,
+      "sha256": "da6cf24769fcbb7f63fee0da30191b777b7981775f37d549d0c5a4b9524e1156",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/59 - Action cannot override decision rejected.request.yaml",
+      "bytes": 4849,
+      "sha256": "ab1d5817f221c172648229db515a6058e3a58871d21b25ef9da29aaa1dd77d5b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/60 - Verify invalid reviews left pending plan unassigned.request.yaml",
+      "bytes": 5681,
+      "sha256": "e3d5a67931a0fbce02a6f878f5ffb15403f103bc08561a5186c972375d54aae2",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/61 - Generic review requests changes and trims feedback.request.yaml",
+      "bytes": 5766,
+      "sha256": "e30769aa8ef30cabec5e12b558f9114ab34a4f7f72b45436a2b25dafcf5f70df",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/62 - Reviewed plan leaves pending queue.request.yaml",
+      "bytes": 4663,
+      "sha256": "f9841e24884345a0c6f99df1cadcbba697e073ec9543495e06b2f9684675d332",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/63 - Student sees changes and feedback.request.yaml",
+      "bytes": 5245,
+      "sha256": "9952e1a10e805c1b63973505966bcdc0ca3d978ebab44a90a8a0b0de6728ac74",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/64 - Changes requested cannot be cancelled.request.yaml",
+      "bytes": 4596,
+      "sha256": "726a2cfb699d5a0f6060b2f5884da6da1dfbda3a4df64b5d133aa2e88a476ab8",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/65 - Student revises and resubmits with same ID.request.yaml",
+      "bytes": 5585,
+      "sha256": "66627acdd2ed9774786846b739e33d2d829224054728b1e4afdf4aa8bc0285da",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/66 - Advisor assignment cleared after resubmission.request.yaml",
+      "bytes": 5476,
+      "sha256": "11ef3994bd6e9abeaed12a3d0de3703098d0b664288b84b0e1f71b1481a91def",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/67 - Dedicated request-changes action.request.yaml",
+      "bytes": 5752,
+      "sha256": "f405aa28d2b040d48b1d64f7f7ec0662a0bbfc322b6b4607c6c488e53fed1fb5",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/68 - POST resubmits existing changes-requested plan.request.yaml",
+      "bytes": 5521,
+      "sha256": "60c3c780fa69de8dd08d6a2798cfac00bec3465977ffe6e5feb5ba21e0af4833",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/69 - Dedicated reject action accepts 500-character boundary.request.yaml",
+      "bytes": 6329,
+      "sha256": "61f7963897e6555323b0e4545da665b4972c55fc5c5f3805fadfbd7a3efc8e51",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/70 - Student sees rejection.request.yaml",
+      "bytes": 5238,
+      "sha256": "2e2b4943ab6e74dd09442681de55d1d8ab5dc5eea28797f264eeb160bbcbfced",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/71 - Repeated review conflicts.request.yaml",
+      "bytes": 4661,
+      "sha256": "6c59d9efd1a95601f026ef929b54277c0468417f9234ff3113fdd58d9d117827",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/72 - POST resubmits rejected plan with same ID.request.yaml",
+      "bytes": 5282,
+      "sha256": "71bf220f2fadc39b0a5504c67689e50f11c8a74c1d428bdca6582e92108d5757",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/73 - Dedicated approve action.request.yaml",
+      "bytes": 5684,
+      "sha256": "34b6c9ff559ec7cca15cd3d65f0f50d1074e04d43e7bd70a29773144ea6b5bda",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/74 - Student sees approval and feedback.request.yaml",
+      "bytes": 5253,
+      "sha256": "512103f2235135860b74eee75b55362d5c68b18cebcd9662761ce287daeca73a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/75 - Approved plan cannot be edited.request.yaml",
+      "bytes": 4712,
+      "sha256": "b910075f67482e300f087a729130089b96f4da39a049433ae95621b0edf7e5a7",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/76 - Approved plan cannot be reviewed again.request.yaml",
+      "bytes": 4673,
+      "sha256": "b70f2e30ab9094e15b7c54e4f853d384e0283304058b6351cf34fb68aae1b0bb",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/.resources/definition.yaml",
+      "bytes": 32,
+      "sha256": "ff5d742ee094a798ba21c430e48795e2a79d9848f217478ea74ada57fd80b146",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/77 - Verify forbidden edits and reviews preserved approval.request.yaml",
+      "bytes": 5271,
+      "sha256": "c7d224cc1b7efd71760afeca92fb34d5453e459375788e22d9815b61829fa4df",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/78 - Cancel approved plan and retain selections.request.yaml",
+      "bytes": 5490,
+      "sha256": "52200f99ff6c94eaf86a2eefb67b451189c1d37624e5740451f69c9d0a315404",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/79 - Repeated cancellation conflicts.request.yaml",
+      "bytes": 4589,
+      "sha256": "ecfc542a966692c7a5f807e2e227919b48cee60e2e22c012a91f2adc8a466dad",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/80 - Retrieve cancelled history.request.yaml",
+      "bytes": 5125,
+      "sha256": "2e6ab4d88aa9d147912a7fa6110bfa946a87168657d0458b2f2db5a426107e03",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/81 - Cancelled plan remains visible to advisor.request.yaml",
+      "bytes": 5383,
+      "sha256": "12c7e86ea68ae5892d9924f0a40703859e746b5a21524943c4486d08ebcfee9f",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/82 - Cancelled plan cannot be reviewed.request.yaml",
+      "bytes": 4668,
+      "sha256": "7f436e3c9790a07f9bcd1684941281e6e38e73b37f885fdf3e67d00c60be021c",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/83 - Cancelled plan allows new submission with new ID.request.yaml",
+      "bytes": 5913,
+      "sha256": "589f4daf2804451c4f3c9adf5ccf5c00def9bdc6278a126625a71a2c5e31cc15",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/84 - Cancel replacement pending plan for repeatable run.request.yaml",
+      "bytes": 5386,
+      "sha256": "069dfb7ab89c18984905b554e3b81d827ac0f2dd12141a9f6209fe159bc08157",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/85 - Student list retains both cancelled records.request.yaml",
+      "bytes": 4847,
+      "sha256": "a48dbd7682e8026b8cf8f1f4bd1935ee0aadc2b9b3ae5d12ecad74160c044a74",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/86 - Final advisor queue excludes collection plans.request.yaml",
+      "bytes": 4735,
+      "sha256": "412f2cec9374df6eb222a404f2112c959b07f824050469cb6c835f9515575832",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/87 - Student logout clears browser cookie.request.yaml",
+      "bytes": 1272,
+      "sha256": "a496cf1ef0ad895afd3c900f1dcb53a6b92069a9b475392eac500f2eb9d4d4ce",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/88 - Advisor logout clears browser cookie.request.yaml",
+      "bytes": 1272,
+      "sha256": "53028cb97d075a54f3b2bf189819854142b6c0edb26e79b25500825c6641cb48",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/89 - Other logout clears browser cookie.request.yaml",
+      "bytes": 1357,
+      "sha256": "4f03408079add83511db38ef5bd82b8f3eabd4733b4b09a0027fc3157907527b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/90 - No cookie after logout is denied.request.yaml",
+      "bytes": 4455,
+      "sha256": "2237d6af1ce8e07f4a333d4334321d146196dedebebb324892fc6ee0bc2059ec",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor-Assignment2.postman_collection.json",
+      "bytes": 593539,
+      "sha256": "409cffa7540cd73880d74139f77346cdb47d06a18d9ae8e1b11cf70ef2c44b6d",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012608.png",
+      "bytes": 273662,
+      "sha256": "67133b5e6e06692db4212b0f8cc1b9802130892861f66f11bcb8492681919f60",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012643.png",
+      "bytes": 255284,
+      "sha256": "352634fa1ac1f0564219e9ece89641971024708c49dc0433d748a714e53b4145",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012658.png",
+      "bytes": 255714,
+      "sha256": "6fb2b970c6e1748be3af0aad26e99e4b47136b63c3359a1e97e3f388f11ee991",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012739.png",
+      "bytes": 261362,
+      "sha256": "e90198d68159698fd5deac521d71f259410c235a52375344482ba31d6e550680",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012839.png",
+      "bytes": 251518,
+      "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/postman/README.md",
+      "bytes": 14603,
+      "sha256": "c42312515de6291f3054a1c5e09ea613be66d1e7aa7a0fa795cb2daaac07fa48",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/postman/validate_collection.cjs",
+      "bytes": 5372,
+      "sha256": "2e8068a14ec6311f4613a53634b09e50e70b9c053e0509f09090933e4ff3a544",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/PROGRESS.md",
+      "bytes": 31262,
+      "sha256": "bb93f0eba5cccbc2e46a65b83f878f1fba29e511ca6a2d16d96e37d0b02c011f",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/reports/audit-correction-report.md",
+      "bytes": 17261,
+      "sha256": "0287fd5ff155f317b5dcc501878e97bbcbc5830fa47fc6196d8062d77a37ce0a",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/reports/correction-retest-guide.md",
+      "bytes": 16960,
+      "sha256": "23548c7a5bc8ece67d4fcd948c073424db451d802e0ab2b7133acf1a75d42e7d",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/reports/evidence-inventory.md",
+      "bytes": 14517,
+      "sha256": "c5d28a3f688801cfc6839f02a3a9af1826a2de019aa525284a7c63a008d5716b",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/reports/integration-test-report.md",
+      "bytes": 16381,
+      "sha256": "d1b8de2eaf7077ee69119ee6e2c320c0dc79738815815fcb9d1aa988610a5c7d",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/reports/postman-test-report.md",
+      "bytes": 18076,
+      "sha256": "e32b4fa1410545a7cba05ef606f107b4586644d667ab0a1b332949d43ccbcda9",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/reports/repository-publication-plan.md",
+      "bytes": 6252,
+      "sha256": "e5bd2245fd7c465c2f8ba3c5b2961888f100919d66dea9a3ef17bc16a50d65d7",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/reports/requirements-test-traceability.md",
+      "bytes": 9331,
+      "sha256": "e4f855d23702fae5d2b5f1ad9fcb84a28adcd16cc6e0a38c4ff506485edfac4e",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-evidence-review.md",
+      "bytes": 23128,
+      "sha256": "fe2d53c4e02708bd15806700ccaca901d83ec4a82b6edadabdd017bba889c037",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-execution.md",
+      "bytes": 73521,
+      "sha256": "50ac8d7f6b7714160640eaccbc2d7a73ab141fe82fdb6edfb8a70a709cdc78e3",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-final-report.md",
+      "bytes": 20421,
+      "sha256": "0663228b58fc09f6e95d39988d03e5b2b607f00369592949e413dcfc2630ac1e",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-supplemental-evidence.md",
+      "bytes": 9456,
+      "sha256": "5be63f989347f666912024388d37ca914579c535c0cf8b2586354485caae7ea2",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/reports/unit-test-report.md",
+      "bytes": 11247,
+      "sha256": "f3ccd06a94b59ebb8b6647af4990e3751405c42858bd7abfd31f0de72ad9da07",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/run_correction_checks.py",
+      "bytes": 3861,
+      "sha256": "0048ae54ddea7741364b55256b1e5d29f89a163b19cbd969577ab41bc79fd340",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 231956.png",
+      "bytes": 294719,
+      "sha256": "3364ab7f47373b1b33ecea87ee7ac3f1c548f63ebdc9a1b24489ca1ab2f70c79",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232025.png",
+      "bytes": 311214,
+      "sha256": "aa72e3c4d8a74378d73c0ebe058f21fc4629e9ce5cc8c9e2b9aa6957adeff638",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232058.png",
+      "bytes": 287709,
+      "sha256": "c86c7c62b0b441b0b5eaec64477071131d37e86138c21a9fd3966469738667e7",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/screenshots/postman-results.png",
+      "bytes": 251518,
+      "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-01.png",
+      "bytes": 591955,
+      "sha256": "bf412eeff9e96cf3db09adf9160fff5917b1eda288c69bc31affbf27cad3715d",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-02.png",
+      "bytes": 480740,
+      "sha256": "24ea5a2fdabf2242b8066d6a339b9ee174f7b33f9aa3c86bd133191f6bfffa48",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-03.png",
+      "bytes": 355247,
+      "sha256": "8d4cec27cd21edae870ae3f1471b62b5210667919271bed326df99601359c4b1",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-04.png",
+      "bytes": 539394,
+      "sha256": "6824dc242e9bb973598674a6036f9f3b2551be523eb15f5843a83bec929352bf",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-05.png",
+      "bytes": 301388,
+      "sha256": "3607804370df6bb5b059ffa25cfb653bbfe85f4aabf83b9a6ae2732c10a5e8b7",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-request-changes.png",
+      "bytes": 236248,
+      "sha256": "8db4bdd961e1d0cf83eb0f58a738b7a863a16d38863dafd7b661049b9ebcbeda",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-student-feedback.png",
+      "bytes": 414545,
+      "sha256": "dc2f1005839df415c7cb2a0060bb95fd96c8659fe908588c7105148275dcc602",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-08-resubmitted.png",
+      "bytes": 313746,
+      "sha256": "9966625b1a4e967adf913bf1c0a3ccf8306cd1a9694833634a50e6852b699dd1",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-09-approved.png",
+      "bytes": 412285,
+      "sha256": "e1d75b613bb7f4c14031b80325cf393b718d01ba6ccb722c299c865093e0b8f6",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-10-second-plan.png",
+      "bytes": 406036,
+      "sha256": "f2568f9542ad117328bf0ea2aadeaabd99339ccf39ca3260d3902b50debdd67e",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-11-rejected.png",
+      "bytes": 271613,
+      "sha256": "0bb29427029aceac1497dfe6b67f77fea23909ce7b6875c1a6dcdfabfa58ae97",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-12-pending-plan.png",
+      "bytes": 300422,
+      "sha256": "98cd545c84dfaa5d4f94d2582fad6933714dcc025840987bba933b59315e6d54",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-13-course-removed.png",
+      "bytes": 396848,
+      "sha256": "7331af326052e8a2a50aaafd5b3ab0555a9c3497486b2749ffaecfa2ad29f67b",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-14-approved-cancelled.png",
+      "bytes": 378235,
+      "sha256": "8246babad1e7f4a64c557d92da07847ded7084c0e5f623c6c245f1330841d3f8",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-15-rejected-cancelled.png",
+      "bytes": 374454,
+      "sha256": "c364204a98212b1be1232ffa2e42820bfb4c422ec352ec2d8c88fe9baee13b08",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-16-pending-cancelled.png",
+      "bytes": 380972,
+      "sha256": "6c3105bc588355d900802b4aa94c2fb26dffee37a349227ecc6181e46978bc7c",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-17-new-plan.png",
+      "bytes": 390332,
+      "sha256": "2b2b4ab359fdcdd35b42482db82c4e19dc9687b6868b01a42fd226159c417721",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-20-access-denied.png",
+      "bytes": 662467,
+      "sha256": "67052c79456aaf8b19a4b12cc136e9ce333ccae7fea508a8b6f13cf278a26e52",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-20-logged-out.png",
+      "bytes": 1161279,
+      "sha256": "b384522cc18d960ebce781bfb10eccdc219e58a48b0929da714f39ef26b3e6ae",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231703.png",
+      "bytes": 258373,
+      "sha256": "b1562bb4cc08d29b237410a5148539bd8f8e7ee04c17374843a26835893f091e",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231742.png",
+      "bytes": 269167,
+      "sha256": "c2cc2fbfaac255b39c982648c039b658413a7b5e470eaff12505c8e8281ea2b5",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231747.png",
+      "bytes": 266053,
+      "sha256": "ac16371f04d6dade7b85b3053cfc8c9360071ea30722df245bbade67fa56f41a",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/test-plans/integration-test-plan.md",
+      "bytes": 46402,
+      "sha256": "6739aaa45c0a1786ec85baebaa9fa9d714dc2744438f75040abcfc49b459caff",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/test-plans/uat-test-plan.md",
+      "bytes": 37419,
+      "sha256": "e741c78c9e48f164afeccbcefd4973457abc349c1c79c331b5e367fb136d02ad",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/test-plans/unit-test-plan.md",
+      "bytes": 49575,
+      "sha256": "201719a36afc3a8c395f101d3ac8e8a15f75d560944ded8f98968e895955200b",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/assignment2/validate_submission.py",
+      "bytes": 7002,
+      "sha256": "51dc2045de57e9cf062529e64a5eba74bca7c8441dac51b8f57a77d033a2fe52",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "docs/diagrams/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/diagrams/application-components.jpg",
+      "bytes": 197680,
+      "sha256": "17dbb1be6c7168f83e5b7119ca24dd711898b078dfdcf88bba8874089be06602",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/diagrams/use-case.json",
+      "bytes": 1106,
+      "sha256": "dcbee150dbab9ff4cfe49bd2d466c78cacd9008d8333517ae27014943ce1d30a",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/diagrams/use-case.png",
+      "bytes": 26960,
+      "sha256": "7345d0472d69bc440b5698255eaf472fe8667ffab85f9f6bf16d210a828afbbc",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/diagrams/use-case.puml",
+      "bytes": 1376,
+      "sha256": "bbdb9ef6ac6974716a833e70a7217e155d46c23f001739dabbdf90ae24ff437b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/report.md",
+      "bytes": 23886,
+      "sha256": "bcad6e96d62dff36dfe0acc1c3a4ada3bfb12d62c655d5506c14dac98c208abe",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "docs/wireframes/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "docs/wireframes/Three-Panel Student Advisor Dashboard Mockup.png",
+      "bytes": 1380454,
+      "sha256": "9441f107ea45fb4046339b0e87921035bd01a27aaf21f5b39174a0046f48257c",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 89760,
+      "sha256": "ab929f1edc1279d1711bada3306bde533d9dbef84e81938c6d1730fdc49267ac",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "package.json",
+      "bytes": 210,
+      "sha256": "b015b89e2842fbda4eb59584efea8a833f77a5196e93f2f0a62e35b0b48712ab",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 846,
+      "sha256": "1705dc60071052a7f56f696133be2cf89c7ae1f16649059d63c969691f2a0eb3",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "README.md",
+      "bytes": 17208,
+      "sha256": "42702ffb2cdf47f8ee03bf79922d72a037f92f2306ab7c8135d07ffd7a8e536b",
+      "remote_disposition": "changed"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 460,
+      "sha256": "2cf7bf3849dafe77ecd8469d3d76b746090d2a94534ba1ffbc593fa880cb7fe7",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/browser/contrast_probe.cjs",
+      "bytes": 5397,
+      "sha256": "bb27630382f413b2e9acd714c3fbfa5717fe2810529699953c5605cb8eb39aab",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "tests/integration/conftest.py",
+      "bytes": 10297,
+      "sha256": "3acdbb3bcc698b442700ccb1508d89b51187eea78b498b07f2da9415b1f24c3b",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/integration/test_advisor_workflow.py",
+      "bytes": 19842,
+      "sha256": "3a540c9dd00567de4dbee846b2a031e4421f3f68a50c9d05ba3b5a77fc50b9ac",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/integration/test_audit_corrections.py",
+      "bytes": 6654,
+      "sha256": "ee763c698822ff8207479f0e397b46c6e748af28fb12d42aa4b245fea3b115b4",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "tests/integration/test_contrast_regression.py",
+      "bytes": 3850,
+      "sha256": "a37922c40be4b082f241fea13fc349c1979abb36558c9b9aae2b7cb094ee915a",
+      "remote_disposition": "new"
+    },
+    {
+      "path": "tests/integration/test_database_integrity.py",
+      "bytes": 2901,
+      "sha256": "1e8db0969dcb844582bb19e2f1be7d56dba84d02d172d291b0c2c2a143a79ed3",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/integration/test_student_workflow.py",
+      "bytes": 21776,
+      "sha256": "e88c6107bc9925c40ff562c42257148ac99de388d516aeb57c14c0f64f75dc28",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/test_advising_api.py",
+      "bytes": 12012,
+      "sha256": "5763e085119065ef6dec6607457cf065e352bc69a666e5a22b2c6119591195d8",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/test_advising_service.py",
+      "bytes": 34146,
+      "sha256": "874ff532ebaf65245f838042955dba28727ba70285785492c391b5607686af50",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/test_advisor_plans_api.py",
+      "bytes": 20423,
+      "sha256": "a71b2fc0cfe5d0fc5e9358ad6e1c91c4963a55e530bb38f6040ac76c7f2518b7",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/test_api_security.py",
+      "bytes": 7637,
+      "sha256": "2cfa0cc9d430b4f48a02d289ac04f8864d1cbf7eafd8a8b34f0d0a2b788770a1",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/test_login_routing.py",
+      "bytes": 1479,
+      "sha256": "bb9bf34ac6cfa77dcce9f81e46d6f639834fcc0fedb03cf36411e23f12a011ed",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/test_semester_plans_api.py",
+      "bytes": 20812,
+      "sha256": "cf89bc360ebe1631d4c28a622ae9ddaeb135bc2cdcc92a0d24d1a6d347a381cd",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/unit/conftest.py",
+      "bytes": 2811,
+      "sha256": "f41338c8db7fb0238cda121f06372d733e2833aea0ae43817a0c49907fbe15a1",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/unit/test_advising.py",
+      "bytes": 13517,
+      "sha256": "f410d727f7740e34e9301a3183e71888c98b8681d6e0f6521f6c9b72080d5c71",
+      "remote_disposition": "same-normalized-blob"
+    },
+    {
+      "path": "tests/unit/test_auth.py",
+      "bytes": 6309,
+      "sha256": "607013eaf8c5ad9dab2485eb9bfda74b646554193746edd213f4a657cef47fb7",
+      "remote_disposition": "same-normalized-blob"
+    }
+  ],
+  "excluded_files": 4644,
+  "secret_pattern_findings": [
+    {
+      "path": "docs/assignment2/validate_submission.py",
+      "pattern": "private-key-header",
+      "disposition": "reviewed-false-positive",
+      "reason": "Literal private-key marker in the PDF secret scanner; no key material present."
+    }
+  ],
+  "unresolved_secret_pattern_findings": 0,
+  "populated_exported_credential_variables": [],
+  "hold": "Existing PDF is historical and excluded; no revised PDF generated. Final staged-diff/history review remains required."
+}

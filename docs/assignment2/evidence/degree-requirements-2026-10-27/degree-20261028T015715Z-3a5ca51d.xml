@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.672" timestamp="2026-10-27T21:57:17.839967-04:00" hostname="GamingLarry"><testcase classname="" name="tests.integration.test_demo_requirements" time="0.000"><error message="collection failure">import file mismatch:
+imported module 'test_demo_requirements' has this __file__ attribute:
+  C:\Users\camer\OneDrive\Documents\UWI COURSES\Year 3\Semester 1\COMP 3613\Assignments\Assignment 2\Assignment 2\tests\unit\test_demo_requirements.py
+which is not the same as the test file we want to collect:
+  C:\Users\camer\OneDrive\Documents\UWI COURSES\Year 3\Semester 1\COMP 3613\Assignments\Assignment 2\Assignment 2\tests\integration\test_demo_requirements.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules</error></testcase></testsuite></testsuites>

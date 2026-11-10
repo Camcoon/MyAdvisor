@@ -1,0 +1,10 @@
+﻿{
+    "database":  "database.db",
+    "before_sha256":  null,
+    "after_sha256":  null,
+    "file_unchanged":  null,
+    "file_hash_verification":  "UNVERIFIED: both Get-FileHash calls failed because another process holds the file. The initial null-equality result was invalid and has been corrected.",
+    "migration_write_performed":  false,
+    "migration_record":  "local-db-approved-noop.json",
+    "reason":  "The migration reports all approved values already present and applies no changes. This does not attest to writes by other running processes."
+}

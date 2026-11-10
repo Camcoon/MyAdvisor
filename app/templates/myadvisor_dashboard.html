@@ -1,0 +1,727 @@
+{% extends "authenticated-base.html" %}
+{% block title %}MyAdvisor dashboard{% endblock %}
+
+{% block additional_styles %}
+<style>
+  .profile-summary,
+  .requirement-row,
+  .activity-row,
+  .course-row,
+  .selection-row { border-bottom: 1px solid #e4ebf3; }
+  .requirement-row:last-child,
+  .activity-row:last-child,
+  .course-row:last-child,
+  .selection-row:last-child { border-bottom: 0; }
+  .requirement-progress { height: .55rem; background: #e8eff7; }
+  .requirement-progress .progress-bar { background: var(--brand-accent); }
+  .step-indicator { display: flex; gap: .5rem; align-items: center; color: var(--brand-muted); }
+  .step-indicator span { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; background: #e8eff7; font-weight: 700; }
+  .step-indicator .active span { color: white; background: var(--brand-accent); }
+  .course-list-scroll { max-height: 31rem; overflow-y: auto; }
+  .course-row.is-hidden { display: none !important; }
+  .course-row.is-ineligible { background: #f8fafc; }
+  .requirement-meta { min-width: 9rem; }
+  @media (max-width: 575.98px) {
+    .requirement-meta { min-width: 6rem; }
+  }
+</style>
+{% endblock %}
+
+{% block subpage_content %}
+{% set current_plan = dashboard.current_plan if dashboard else none %}
+<div class="container-fluid py-3">
+  <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+    <div>
+      <p class="eyebrow mb-1">{{ 'Advisor workspace' if user.role == 'admin' else 'Student workspace' }}</p>
+      <h1 class="page-title mb-1">
+        {% if active_tab == 'degree-progress' %}Degree Progress
+        {% elif active_tab == 'plan-courses' %}Plan Courses
+        {% elif active_tab == 'messages' %}Messages
+        {% elif active_tab == 'profile' %}Profile
+        {% else %}Home{% endif %}
+      </h1>
+      <p class="muted mb-0">
+        {% if active_tab == 'degree-progress' %}Track completed credits and remaining degree requirements.
+        {% elif active_tab == 'plan-courses' %}Choose eligible courses and submit a semester plan for review.
+        {% elif user.role == 'admin' and active_tab == 'messages' %}Review feedback and decisions from your recent student plan reviews.
+        {% elif user.role == 'admin' and active_tab == 'profile' %}View your advisor account and review activity.
+        {% elif user.role == 'admin' %}Monitor student plans and keep reviews moving.
+        {% elif active_tab == 'messages' %}Review advisor feedback and updates to your semester plans.
+        {% elif active_tab == 'profile' %}View your student and degree program information.
+        {% else %}Your degree progress and advising activity at a glance.{% endif %}
+      </p>
+    </div>
+    {% if user.role == 'admin' %}
+    <div class="profile-summary panel-card py-2 px-3 d-flex align-items-center gap-3">
+      <div class="avatar-mark" aria-hidden="true">{{ (user.name or user.username)[:1]|upper }}</div>
+      <div>
+        <strong>{{ user.name or user.username }}</strong>
+        <div class="small muted">Advisor · {{ user.email }}</div>
+      </div>
+    </div>
+    {% else %}
+    <div class="profile-summary panel-card py-2 px-3 d-flex align-items-center gap-3">
+      <div class="avatar-mark" aria-hidden="true">{{ (dashboard.student.name or user.username)[:1]|upper }}</div>
+      <div>
+        <strong>{{ dashboard.student.name or user.username }}</strong>
+        <div class="small muted">
+          {{ dashboard.student.student_number or 'Student number not set' }}
+          · {{ dashboard.program.name if dashboard.program else 'Degree program not set' }}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  {% if active_tab == 'home' %}
+  {% if user.role == 'admin' %}
+  <section class="row g-3 mb-4" aria-label="Advisor dashboard statistics">
+    <div class="col-6 col-xl-3">
+      <div class="dashboard-card accent h-100">
+        <div class="dashboard-label">Students</div>
+        <div class="dashboard-value">{{ advisor_dashboard.student_count }}</div>
+        <div class="muted">registered student accounts</div>
+      </div>
+    </div>
+    <div class="col-6 col-xl-3">
+      <div class="dashboard-card h-100">
+        <div class="dashboard-label">Awaiting review</div>
+        <div class="dashboard-value">{{ advisor_dashboard.pending_count }}</div>
+        <div class="muted">plans in your review queue</div>
+      </div>
+    </div>
+    <div class="col-6 col-xl-3">
+      <div class="dashboard-card h-100">
+        <div class="dashboard-label">Reviewed by you</div>
+        <div class="dashboard-value">{{ advisor_dashboard.reviewed_count }}</div>
+        <div class="muted">plans with your decision</div>
+      </div>
+    </div>
+    <div class="col-6 col-xl-3">
+      <div class="dashboard-card h-100">
+        <div class="dashboard-label">Approved plans</div>
+        <div class="dashboard-value">{{ advisor_dashboard.approved_count }}</div>
+        <div class="muted">plans approved overall</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row g-4" aria-label="Advisor review queue and recent activity">
+    <div class="col-xl-7">
+      <div class="panel-card h-100">
+        <div class="panel-header">
+          <div>
+            <h2>Plans awaiting your review</h2>
+            <p class="muted mb-0">Review submissions and provide a decision or feedback.</p>
+          </div>
+          <a class="btn btn-primary btn-sm" href="{{ url_for('admin_home_view') }}">Open Advisor Review</a>
+        </div>
+        {% for item in advisor_dashboard.pending_plans %}
+        <div class="activity-row py-3 d-flex flex-wrap align-items-center justify-content-between gap-3">
+          <div>
+            <strong>{{ item.student.name or item.student.username }} · {{ item.plan.semester_name }}</strong>
+            <div class="small muted">{{ item.courses|length }} courses · {{ item.courses|sum(attribute='credits') }} credits</div>
+          </div>
+          <a class="btn btn-sm btn-outline-primary" href="{{ url_for('admin_home_view') }}">Review Plans</a>
+        </div>
+        {% else %}
+        <div class="empty-state">
+          <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-inboxes"></i></div>
+          <p class="muted mb-0">No plans are waiting for review. New student submissions will appear here.</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-xl-5">
+      <div class="panel-card h-100">
+        <div class="panel-header"><h2>Recent review activity</h2></div>
+        {% for item in advisor_dashboard.reviewed_activity[:3] %}
+        <div class="activity-row py-3">
+          <div class="d-flex flex-wrap justify-content-between gap-2">
+            <strong>{{ item.student_name }} · {{ item.plan.semester_name }}</strong>
+            <span class="status-pill {{ 'approved' if item.plan.status == 'Approved' else 'rejected' if item.plan.status == 'Rejected' else 'changes-requested' }}">{{ item.plan.status }}</span>
+          </div>
+          <div class="small muted mt-1">{{ item.message }}</div>
+        </div>
+        {% else %}
+        <div class="empty-state">
+          <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-journal-text"></i></div>
+          <p class="muted mb-3">Your review decisions and feedback will appear here.</p>
+          <a class="btn btn-outline-primary" href="{{ url_for('admin_home_view') }}">View Review Queue</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% else %}
+  <section class="row g-4 mb-4" aria-label="Student dashboard overview">
+    <div class="col-xl-7">
+      <div class="panel-card h-100 home-welcome-card">
+        <p class="eyebrow mb-2">Your advising workspace</p>
+        <h2 class="h3 mb-2">Welcome back, {{ dashboard.student.name or user.username }}</h2>
+        <p class="muted mb-4">Pick up where you left off: check your latest plan update or continue planning your next semester.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-primary" href="{{ url_for('user_home_view').include_query_params(tab='plan-courses') }}">
+            <i class="bi bi-calendar2-check me-1" aria-hidden="true"></i>Plan Courses
+          </a>
+          <a class="btn btn-outline-primary" href="{{ url_for('user_home_view').include_query_params(tab='degree-progress') }}">
+            View Degree Progress
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-5">
+      <section class="panel-card h-100" aria-labelledby="home-plan-heading">
+        <div class="panel-header">
+          <h2 id="home-plan-heading">Latest semester plan</h2>
+          {% if current_plan %}
+          <span class="status-pill {{ 'approved' if current_plan.status == 'Approved' else 'rejected' if current_plan.status == 'Rejected' else 'changes-requested' if current_plan.status == 'Changes Requested' else 'cancelled' if current_plan.status == 'Cancelled' else 'pending' }}">{{ current_plan.status }}</span>
+          {% endif %}
+        </div>
+        {% if current_plan %}
+        <p class="h5 mb-2">{{ current_plan.semester_name }}</p>
+        <p class="muted mb-3">
+          {{ dashboard.planned_courses|length }} course{% if dashboard.planned_courses|length != 1 %}s{% endif %}
+          · {{ dashboard.planned_courses|sum(attribute='credits') }} credits
+        </p>
+        {% if current_plan.advisor_feedback %}
+        <div class="home-feedback">
+          <strong class="d-block mb-1">Advisor feedback</strong>
+          <span>{{ current_plan.advisor_feedback }}</span>
+        </div>
+        {% elif current_plan.status == 'Pending' %}
+        <p class="muted mb-0">Your plan is waiting for advisor review.</p>
+        {% else %}
+        <p class="muted mb-0">Check your plan details and next steps.</p>
+        {% endif %}
+        {% else %}
+        <div class="empty-state">
+          <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-calendar2-plus"></i></div>
+          <p class="muted mb-3">You have not submitted a semester plan yet. Start by choosing courses for an upcoming semester.</p>
+          <a class="btn btn-primary" href="{{ url_for('user_home_view').include_query_params(tab='plan-courses') }}">Choose Courses</a>
+        </div>
+        {% endif %}
+      </section>
+    </div>
+  </section>
+
+  <section class="row g-4" aria-label="Recent activity and quick links">
+    <div class="col-lg-7">
+      <div class="panel-card h-100">
+        <div class="panel-header">
+          <h2>Recent course activity</h2>
+          <a class="small fw-semibold" href="{{ url_for('user_home_view').include_query_params(tab='degree-progress') }}">Degree Progress</a>
+        </div>
+        {% for item in dashboard.activity[:3] %}
+        <div class="activity-row py-3 d-flex align-items-center justify-content-between gap-3">
+          <div>
+            <strong>{{ item.course.code }}</strong>
+            <div class="small muted">{{ item.course.title }}</div>
+          </div>
+          <span class="status-pill {{ 'complete' if item.status|lower == 'completed' else 'in-progress' }}">{{ item.status }}</span>
+        </div>
+        {% else %}
+        <div class="empty-state">
+          <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-bookmark-star"></i></div>
+          <p class="muted mb-3">Your course activity will appear here after you start planning your semester.</p>
+          <a class="btn btn-primary btn-sm" href="{{ url_for('user_home_view').include_query_params(tab='plan-courses') }}">Choose Courses</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="panel-card h-100">
+        <div class="panel-header">
+          <h2>Stay on track</h2>
+        </div>
+        <a class="home-quick-link" href="{{ url_for('user_home_view').include_query_params(tab='degree-progress') }}">
+          <span><strong class="d-block">Review degree requirements</strong><span class="small muted">See credits earned and what remains.</span></span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="home-quick-link" href="{{ url_for('user_home_view').include_query_params(tab='messages') }}">
+          <span><strong class="d-block">Check advisor messages</strong><span class="small muted">{{ dashboard.plan_messages|length }} plan update{% if dashboard.plan_messages|length != 1 %}s{% endif %} available.</span></span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="home-quick-link" href="{{ url_for('user_home_view').include_query_params(tab='profile') }}">
+          <span><strong class="d-block">View your profile</strong><span class="small muted">Confirm your student information.</span></span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  {% endif %}
+
+  {% if active_tab == 'degree-progress' %}
+  <section aria-labelledby="progress-heading">
+    <h2 id="progress-heading" class="visually-hidden">Degree credit progress</h2>
+    {% if dashboard.program and dashboard.program.name == 'Computer Science' %}
+    <p class="small muted">Fictional coursework demonstration requirements; these are not official UWI programme requirements. Each completed course counts toward one category.</p>
+    {% endif %}
+    <div class="row g-3 mb-3">
+      <div class="col-6 col-xl-3">
+        <div class="dashboard-card accent h-100">
+          <div class="dashboard-label">Completed</div>
+          <div class="dashboard-value">{{ dashboard.completed_credits }}</div>
+          <div class="muted">credits earned</div>
+        </div>
+      </div>
+      <div class="col-6 col-xl-3">
+        <div class="dashboard-card h-100">
+          <div class="dashboard-label">In progress</div>
+          <div class="dashboard-value">{{ dashboard.in_progress_credits }}</div>
+          <div class="muted">credits this term</div>
+        </div>
+      </div>
+      <div class="col-6 col-xl-3">
+        <div class="dashboard-card h-100">
+          <div class="dashboard-label">Remaining</div>
+          <div class="dashboard-value">{{ dashboard.remaining_credits }}</div>
+          <div class="muted">credits after this term</div>
+        </div>
+      </div>
+      <div class="col-6 col-xl-3">
+        <div class="dashboard-card h-100">
+          <div class="dashboard-label">Total required</div>
+          <div class="dashboard-value">{{ dashboard.total_credits }}</div>
+          <div class="muted">credits for your degree</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-card mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <strong>Overall progress</strong>
+        <span class="small muted">{{ dashboard.completed_credits }} / {{ dashboard.total_credits }} credits ({{ dashboard.progress_percent }}%)</span>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Completed degree credits"
+           aria-valuenow="{{ dashboard.progress_percent }}" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: {{ dashboard.progress_percent }}%"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="row g-4">
+    <section class="col-lg-7" aria-labelledby="requirements-heading">
+      <div class="panel-card h-100">
+        <div class="panel-header">
+          <h2 id="requirements-heading">Requirement breakdown</h2>
+          <span class="small muted">{{ dashboard.category_progress|length }} categories</span>
+        </div>
+        {% if dashboard.category_progress %}
+          {% for item in dashboard.category_progress %}
+          <div class="requirement-row py-3">
+            <div class="d-flex justify-content-between gap-3 mb-2">
+              <strong>{{ item.category }}</strong>
+              <span class="small muted requirement-meta text-end">
+                {{ item.earned }} / {{ item.required }} credits
+                <span class="d-block">{{ item.remaining }} remaining</span>
+              </span>
+            </div>
+            <div class="progress requirement-progress" role="progressbar"
+                 aria-label="{{ item.category }} requirement progress"
+                 aria-valuenow="{{ item.percent }}" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" style="width: {{ item.percent }}%"></div>
+            </div>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="empty-state">
+            <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-list-check"></i></div>
+            <p class="muted mb-3">Your advisor has not configured requirement categories for this degree program yet.</p>
+            <a class="btn btn-outline-primary" href="{{ url_for('user_home_view').include_query_params(tab='messages') }}">View Advisor Messages</a>
+          </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="col-lg-5" aria-labelledby="activity-heading">
+      <div class="panel-card h-100">
+        <div class="panel-header">
+          <h2 id="activity-heading">Recent course activity</h2>
+        </div>
+        {% for item in dashboard.activity %}
+        <div class="activity-row py-3 d-flex align-items-center justify-content-between gap-3">
+          <div>
+            <strong>{{ item.course.code }}</strong>
+            <div class="small muted">{{ item.course.title }}</div>
+          </div>
+          <div class="text-end">
+            <span class="status-pill {{ 'complete' if item.status|lower == 'completed' else 'pending' }}">{{ item.status }}</span>
+            <div class="small muted mt-1">
+              {% if item.completed_at %}{{ item.completed_at.strftime('%b %Y') }}{% else %}Current term{% endif %}
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="empty-state">
+          <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-mortarboard"></i></div>
+          <p class="muted mb-3">No courses are recorded yet. Begin planning a semester to get started.</p>
+          <a class="btn btn-primary btn-sm" href="{{ url_for('user_home_view').include_query_params(tab='plan-courses') }}">Choose Courses</a>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+  {% endif %}
+
+  {% if active_tab == 'plan-courses' %}
+  <section class="panel-card plan-courses mt-4" aria-labelledby="planning-heading">
+    <div class="panel-header flex-wrap gap-3">
+      <div>
+        <h2 id="planning-heading">Plan semester courses</h2>
+        <p class="muted mb-0">Choose eligible courses and submit your selection for advisor review.</p>
+      </div>
+      <form method="get" action="{{ url_for('user_home_view') }}" class="d-flex flex-wrap align-items-center gap-2">
+        <input type="hidden" name="tab" value="plan-courses">
+        <label class="form-label mb-0 small" for="semester-filter">Semester</label>
+        <select class="form-select form-select-sm" id="semester-filter" name="semester"
+                aria-describedby="semester-help" onchange="this.form.submit()">
+          {% for semester in dashboard.semester_options %}
+          <option value="{{ semester }}" {% if semester == dashboard.selected_semester %}selected{% endif %}>{{ semester }}</option>
+          {% endfor %}
+        </select>
+        <small id="semester-help" class="w-100 muted">Semester 3 is the summer semester.</small>
+        <noscript><button class="btn btn-sm btn-outline-primary" type="submit">View</button></noscript>
+      </form>
+    </div>
+
+    {% if current_plan %}
+    <div class="alert plan-status-alert {{ 'plan-status-cancelled' if current_plan.status == 'Cancelled' else '' }} {{ 'alert-warning' if current_plan.status in ['Rejected', 'Changes Requested', 'Cancelled'] else 'alert-success' if current_plan.status == 'Approved' else 'alert-info' }} d-flex flex-wrap justify-content-between align-items-start gap-2">
+      <div>
+        <strong>{{ current_plan.status }} · {{ current_plan.semester_name }}</strong>
+        {% if current_plan.advisor_feedback %}
+        <div class="mt-1">Advisor feedback: {{ current_plan.advisor_feedback }}</div>
+        {% endif %}
+      </div>
+        {% if current_plan.status in ['Pending', 'Rejected', 'Approved'] %}
+        <form method="post" action="{{ url_for('cancel_plan', plan_id=current_plan.id) }}"
+              onsubmit="return confirm('Cancel this plan? You can start a brand new plan for this semester.');">
+          <button class="btn btn-sm btn-cancel-plan" type="submit">Cancel Plan</button>
+        </form>
+        {% endif %}
+        {% if current_plan.status in ['Rejected', 'Changes Requested'] %}
+        <p class="small mb-0 w-100">Update the selection below to resubmit.</p>
+        {% elif current_plan.status == 'Cancelled' %}
+        <p class="small mb-0 w-100">Start a new course selection below for this semester.</p>
+        {% elif current_plan.status == 'Approved' %}
+        <p class="small mb-0 w-100">This plan has been approved.</p>
+        {% elif current_plan.status == 'Pending' %}
+        <p class="small mb-0 w-100">This plan is awaiting advisor review.</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if dashboard.planned_courses %}
+    <div class="mb-3">
+      <h3 class="h6">Selected courses for {{ dashboard.selected_semester }}</h3>
+      <ul class="simple-list mb-0">
+        {% for course in dashboard.planned_courses %}
+        <li class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+          <span>{{ course.code }} — {{ course.title }} <span class="muted">({{ course.credits }} credits)</span></span>
+          {% if current_plan and current_plan.status == 'Pending' %}
+          {% if dashboard.planned_courses|length > 1 %}
+          <form method="post" action="{{ url_for('remove_submitted_course', plan_id=current_plan.id, course_id=course.id) }}"
+                onsubmit="return confirm('Remove this course from the submitted plan?');">
+            <button class="btn btn-sm btn-outline-danger" type="submit" aria-label="Remove {{ course.code }} from the submitted plan">Remove</button>
+          </form>
+          {% else %}
+          <span class="small muted">Cancel the plan to remove its last course.</span>
+          {% endif %}
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <form method="post" action="{{ url_for('submit_plan') }}" id="semester-plan-form"
+          data-plan-locked="{{ 'true' if current_plan and not dashboard.can_edit_plan else 'false' }}">
+      <input type="hidden" name="semester_name" value="{{ dashboard.selected_semester }}">
+      <div class="step-indicator mb-3" aria-label="Course planning steps">
+        <div class="active" data-plan-step="1"><span>1</span> Select courses</div>
+        <div aria-hidden="true">—</div>
+        <div data-plan-step="2"><span>2</span> Review plan</div>
+        <div aria-hidden="true">—</div>
+        <div data-plan-step="3"><span>3</span> Submit plan</div>
+      </div>
+
+      {% if current_plan and not dashboard.can_edit_plan %}
+      <div class="alert alert-light border">A plan for this semester is already submitted. You can select courses for another semester above.</div>
+      {% endif %}
+      {% if current_plan and current_plan.status == 'Cancelled' %}
+      <div class="alert alert-info">Your previous plan was cancelled. Choose courses below to create a brand new plan for {{ dashboard.selected_semester }}.</div>
+      {% endif %}
+
+      <div id="course-selection-step">
+        <div class="row g-2 mb-3">
+          <div class="col-md-7">
+            <label class="visually-hidden" for="course-search">Search courses</label>
+            <input class="form-control" id="course-search" type="search" placeholder="Search by code or course name">
+          </div>
+          <div class="col-md-5">
+            <label class="visually-hidden" for="department-filter">Filter by department</label>
+            <select class="form-select" id="department-filter">
+              <option value="">All departments</option>
+              {% for department in departments %}
+              <option value="{{ department|lower }}">{{ department }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="course-list-scroll border rounded-3">
+          {% for item in catalog_items %}
+          {% set course = item.course %}
+          {% set is_selected = course.id in dashboard.selected_course_ids %}
+          <label class="course-row d-flex align-items-center gap-3 p-3 {% if not item.eligible %}is-ineligible{% endif %}"
+                 data-course-row data-search="{{ (course.code ~ ' ' ~ course.title)|lower }}"
+                 data-department="{{ course.department|lower }}">
+            <input class="form-check-input flex-shrink-0 mt-0" type="checkbox" name="course_ids"
+                   value="{{ course.id }}" data-course-choice data-code="{{ course.code }}"
+                   data-title="{{ course.title }}" data-credits="{{ course.credits }}"
+                   data-prerequisites="{{ course.prerequisite_text or 'None' }}"
+                   {% if is_selected %}checked{% endif %}
+                   {% if (not item.eligible and not is_selected) or (current_plan and not dashboard.can_edit_plan) %}disabled{% endif %}>
+            <span class="flex-grow-1">
+              <span class="d-flex flex-wrap justify-content-between gap-2">
+                <strong>{{ course.code }} <span class="fw-normal">— {{ course.title }}</span></strong>
+                <span class="small">{{ course.credits }} credits</span>
+              </span>
+              <span class="d-flex flex-wrap justify-content-between gap-2 small muted mt-1">
+                <span>{{ course.department }} · Prerequisite: {{ course.prerequisite_text or 'None' }}</span>
+                <span class="{{ 'text-success' if item.eligible else 'text-secondary' }}">{{ item.eligibility_message }}</span>
+              </span>
+            </span>
+          </label>
+          {% else %}
+          <div class="empty-state">
+            <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-bookshelf"></i></div>
+            <p class="muted mb-3">There are no courses in the catalog yet. Check your advisor messages for updates.</p>
+            <a class="btn btn-outline-primary" href="{{ url_for('user_home_view').include_query_params(tab='messages') }}">View Advisor Messages</a>
+          </div>
+          {% endfor %}
+          {% if catalog_items %}
+          <div class="empty-state" id="course-search-empty" role="status" aria-live="polite" hidden>
+            <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-search"></i></div>
+            <p class="muted mb-3">No courses match your search and department filters.</p>
+            <button class="btn btn-outline-secondary btn-sm" type="button" id="clear-course-filters">Clear Filters</button>
+          </div>
+          {% endif %}
+        </div>
+        {% if catalog_items and not (catalog_items|selectattr('eligible')|list) %}
+        <div class="alert alert-info mt-3 mb-0">
+          <p class="mb-2"><strong>No courses are currently available to add.</strong> Courses you've completed, started, or still need prerequisites for are disabled.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary btn-sm" href="{{ url_for('user_home_view').include_query_params(tab='degree-progress') }}">View Degree Progress</a>
+            <a class="btn btn-outline-primary btn-sm" href="{{ url_for('user_home_view').include_query_params(tab='messages') }}">View Advisor Messages</a>
+          </div>
+        </div>
+        {% endif %}
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-3">
+          <span class="small muted"><span id="selected-course-count">0</span> courses selected</span>
+          <button class="btn btn-primary" type="button" id="review-selection" {% if current_plan and not dashboard.can_edit_plan %}disabled{% endif %}>Review Selected Courses</button>
+        </div>
+      </div>
+
+      <div id="course-review-step" hidden>
+        <h3 class="h5">Review your selection</h3>
+        <p class="muted">Confirm the course list and credit load before sending the plan to your advisor.</p>
+        <div class="border rounded-3 mb-3">
+          <div id="selected-course-review"></div>
+          <div class="selection-row p-3 d-flex justify-content-between fw-semibold">
+            <span>Total selected credits</span><span id="selected-credit-total">0</span>
+          </div>
+        </div>
+        <div class="d-flex flex-wrap justify-content-between gap-2">
+          <button class="btn btn-outline-secondary" type="button" id="edit-selection">Back to course selection</button>
+          <button class="btn btn-primary" type="submit" id="submit-plan" disabled>
+            {{ 'Resubmit Plan for Advisor Review' if current_plan and dashboard.can_edit_plan else 'Submit Plan for Advisor Review' }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+  {% endif %}
+
+  {% if active_tab == 'messages' %}
+  <section class="panel-card mt-4" aria-labelledby="messages-heading">
+    {% if user.role == 'admin' %}
+    <div class="panel-header">
+      <div>
+        <h2 id="messages-heading">Your plan review decisions</h2>
+        <p class="muted mb-0">Recent student plans you reviewed, including your feedback.</p>
+      </div>
+      <a class="btn btn-outline-primary" href="{{ url_for('admin_home_view') }}">Open Review Queue</a>
+    </div>
+    {% for item in advisor_dashboard.reviewed_activity %}
+    <article class="activity-row py-3">
+      <div class="d-flex flex-wrap justify-content-between gap-2">
+        <div>
+          <strong>{{ item.student_name }} · {{ item.plan.semester_name }} plan</strong>
+          <div class="small muted">Reviewed {{ item.plan.submitted_at.strftime('%b %d, %Y') if item.plan.submitted_at else 'date unavailable' }}</div>
+        </div>
+        <span class="status-pill {{ 'approved' if item.plan.status == 'Approved' else 'rejected' if item.plan.status == 'Rejected' else 'changes-requested' }}">{{ item.plan.status }}</span>
+      </div>
+      <p class="mb-0 mt-2">{{ item.message }}</p>
+    </article>
+    {% else %}
+    <div class="empty-state">
+      <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-clipboard2-data"></i></div>
+      <p class="muted mb-3">You have not reviewed any student plans yet. Pending submissions are available in your review queue.</p>
+      <a class="btn btn-primary" href="{{ url_for('admin_home_view') }}">Review Pending Plans</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="panel-header">
+      <div>
+        <h2 id="messages-heading">Advisor messages and plan updates</h2>
+        <p class="muted mb-0">Feedback is attached to the semester plan it refers to.</p>
+      </div>
+    </div>
+    {% for item in dashboard.plan_messages %}
+    <article class="activity-row py-3">
+      <div class="d-flex flex-wrap justify-content-between gap-2">
+        <div>
+          <strong>{{ item.plan.semester_name }} plan</strong>
+          <div class="small muted">From {{ item.advisor_name }}</div>
+        </div>
+        <span class="status-pill {{ 'approved' if item.plan.status == 'Approved' else 'rejected' if item.plan.status == 'Rejected' else 'changes-requested' if item.plan.status == 'Changes Requested' else 'cancelled' if item.plan.status == 'Cancelled' else 'pending' }}">
+          {{ item.plan.status }}
+        </span>
+      </div>
+      <p class="mb-0 mt-2">{{ item.message }}</p>
+      {% if item.plan.status in ['Rejected', 'Changes Requested'] %}
+      <a class="btn btn-sm btn-outline-primary mt-3" href="{{ url_for('user_home_view').include_query_params(tab='plan-courses', semester=item.plan.semester_name) }}">Review and update plan</a>
+      {% endif %}
+    </article>
+    {% else %}
+    <div class="empty-state">
+      <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-chat-square-text"></i></div>
+      <p class="muted mb-3">No advisor updates yet. Submit a semester plan to start your review.</p>
+      <a class="btn btn-primary" href="{{ url_for('user_home_view').include_query_params(tab='plan-courses') }}">Plan Courses</a>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </section>
+  {% endif %}
+
+  {% if active_tab == 'profile' %}
+  <section class="panel-card mt-4" aria-labelledby="profile-heading">
+    {% if user.role == 'admin' %}
+    <div class="panel-header"><h2 id="profile-heading">Advisor profile</h2></div>
+    <dl class="row mb-4">
+      <dt class="col-sm-4 py-2">Full name</dt><dd class="col-sm-8 py-2">{{ user.name or 'Not provided' }}</dd>
+      <dt class="col-sm-4 py-2">Username</dt><dd class="col-sm-8 py-2">{{ user.username }}</dd>
+      <dt class="col-sm-4 py-2">Email</dt><dd class="col-sm-8 py-2">{{ user.email }}</dd>
+      <dt class="col-sm-4 py-2">Role</dt><dd class="col-sm-8 py-2">Advisor administrator</dd>
+    </dl>
+    <div class="row g-3 mb-4" aria-label="Advisor activity totals">
+      <div class="col-sm-4"><div class="dashboard-card h-100"><div class="dashboard-label">Reviewed</div><div class="dashboard-value">{{ advisor_dashboard.reviewed_count }}</div><div class="muted">plans reviewed by you</div></div></div>
+      <div class="col-sm-4"><div class="dashboard-card h-100"><div class="dashboard-label">Approved</div><div class="dashboard-value">{{ advisor_dashboard.approved_count }}</div><div class="muted">plans approved overall</div></div></div>
+      <div class="col-sm-4"><div class="dashboard-card h-100"><div class="dashboard-label">Pending</div><div class="dashboard-value">{{ advisor_dashboard.pending_count }}</div><div class="muted">plans awaiting review</div></div></div>
+    </div>
+    <a class="btn btn-primary" href="{{ url_for('admin_home_view') }}">Go to Advisor Review</a>
+    {% else %}
+    <div class="panel-header"><h2 id="profile-heading">Student profile</h2></div>
+    <dl class="row mb-0">
+      <dt class="col-sm-4 py-2">Full name</dt><dd class="col-sm-8 py-2">{{ dashboard.student.name or 'Not provided' }}</dd>
+      <dt class="col-sm-4 py-2">Student ID</dt><dd class="col-sm-8 py-2">{{ dashboard.student.student_number or 'Not provided' }}</dd>
+      <dt class="col-sm-4 py-2">Username</dt><dd class="col-sm-8 py-2">{{ dashboard.student.username }}</dd>
+      <dt class="col-sm-4 py-2">Email</dt><dd class="col-sm-8 py-2">{{ dashboard.student.email }}</dd>
+      <dt class="col-sm-4 py-2">Degree program</dt><dd class="col-sm-8 py-2">{{ dashboard.program.name if dashboard.program else 'Not assigned' }}</dd>
+    </dl>
+    {% endif %}
+  </section>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block subpage_scripts %}
+<script>
+(() => {
+  const form = document.getElementById("semester-plan-form");
+  if (!form) return;
+
+  const choices = Array.from(form.querySelectorAll("[data-course-choice]"));
+  const rows = Array.from(form.querySelectorAll("[data-course-row]"));
+  const search = document.getElementById("course-search");
+  const department = document.getElementById("department-filter");
+  const clearFiltersButton = document.getElementById("clear-course-filters");
+  const noSearchResults = document.getElementById("course-search-empty");
+  const count = document.getElementById("selected-course-count");
+  const reviewList = document.getElementById("selected-course-review");
+  const creditTotal = document.getElementById("selected-credit-total");
+  const submitButton = document.getElementById("submit-plan");
+  const selectionStep = document.getElementById("course-selection-step");
+  const reviewStep = document.getElementById("course-review-step");
+  const reviewButton = document.getElementById("review-selection");
+  const editButton = document.getElementById("edit-selection");
+  const steps = Array.from(form.querySelectorAll("[data-plan-step]"));
+
+  const selectedChoices = () => choices.filter((choice) => choice.checked);
+  const updateCount = () => {
+    const selected = selectedChoices();
+    count.textContent = String(selected.length);
+    reviewButton.disabled = selected.length === 0 || form.dataset.planLocked === "true";
+  };
+  const filterCourses = () => {
+    const term = search.value.trim().toLowerCase();
+    const selectedDepartment = department.value;
+    let visibleCount = 0;
+    rows.forEach((row) => {
+      const visible = row.dataset.search.includes(term)
+        && (!selectedDepartment || row.dataset.department === selectedDepartment);
+      row.classList.toggle("is-hidden", !visible);
+      if (visible) visibleCount += 1;
+    });
+    if (noSearchResults) noSearchResults.hidden = visibleCount > 0;
+  };
+  const showStep = (step) => {
+    selectionStep.hidden = step !== 1;
+    reviewStep.hidden = step !== 2;
+    steps.forEach((item) => item.classList.toggle("active", item.dataset.planStep === String(step)));
+  };
+  const buildReview = () => {
+    const selected = selectedChoices();
+    reviewList.replaceChildren();
+    let credits = 0;
+    selected.forEach((choice) => {
+      credits += Number(choice.dataset.credits);
+      const row = document.createElement("div");
+      row.className = "selection-row p-3 d-flex justify-content-between gap-3";
+      const title = document.createElement("span");
+      title.textContent = `${choice.dataset.code} — ${choice.dataset.title}`;
+      const details = document.createElement("span");
+      details.className = "small text-end";
+      details.textContent = `${choice.dataset.credits} credits · Prerequisites: ${choice.dataset.prerequisites}`;
+      row.append(title, details);
+      reviewList.append(row);
+    });
+    creditTotal.textContent = `${credits} credits`;
+    submitButton.disabled = selected.length === 0;
+  };
+
+  choices.forEach((choice) => choice.addEventListener("change", updateCount));
+  search.addEventListener("input", filterCourses);
+  department.addEventListener("change", filterCourses);
+  clearFiltersButton?.addEventListener("click", () => {
+    search.value = "";
+    department.value = "";
+    filterCourses();
+    search.focus();
+  });
+  reviewButton.addEventListener("click", () => {
+    buildReview();
+    showStep(2);
+  });
+  editButton.addEventListener("click", () => showStep(1));
+  form.addEventListener("submit", (event) => {
+    if (selectedChoices().length === 0) {
+      event.preventDefault();
+      updateCount();
+      showStep(1);
+    }
+  });
+  updateCount();
+})();
+</script>
+{% endblock %}

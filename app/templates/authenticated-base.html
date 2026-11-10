@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% block body_class %}layout-fixed sidebar-expand-lg bg-body-tertiary{% endblock %}
+
+{% block external_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@4.10.0/dist/css/adminlte.min.css">
+{% endblock %}
+
+{% block internal_css %}
+<style>
+    body { overflow-x: hidden; }
+
+    .app-sidebar[data-bs-theme="dark"] {
+        background-color: var(--brand-sidebar) !important;
+        color: #fff;
+    }
+
+    .app-sidebar .sidebar-brand {
+        min-height: 4.25rem;
+        border-bottom: 1px solid rgb(255 255 255 / 12%);
+    }
+
+    .app-sidebar .brand-link {
+        color: #fff;
+        font-family: var(--brand-font-display);
+        font-size: 1.35rem;
+        font-weight: 650;
+        text-decoration: none;
+    }
+
+    .app-sidebar .sidebar-menu .nav-link {
+        margin: 0.15rem 0.65rem;
+        border-radius: 0.65rem;
+        color: var(--brand-sidebar-text);
+        font-weight: 600;
+        transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .app-sidebar .sidebar-menu .nav-link:hover {
+        color: #fff;
+        background-color: rgb(255 255 255 / 10%);
+        transform: translateX(2px);
+    }
+
+    .app-sidebar .sidebar-menu .nav-link.active {
+        color: #fff;
+        background: linear-gradient(110deg, var(--brand-accent), #3684dc);
+        box-shadow: 0 0.35rem 0.9rem rgb(0 0 0 / 18%);
+    }
+
+    .app-sidebar .nav-icon {
+        font-size: 1.05rem;
+    }
+
+    .sidebar-section-label {
+        padding: 1.1rem 1.25rem 0.4rem;
+        color: #d7e8ff;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+    }
+
+    .app-header {
+        min-height: 4.25rem;
+        border-bottom: 1px solid #e1eaf4;
+        box-shadow: 0 0.25rem 0.9rem rgb(19 49 77 / 5%);
+    }
+
+    .app-header .nav-link {
+        color: var(--brand-ink);
+    }
+
+    .app-header .header-account-name {
+        color: var(--brand-ink) !important;
+    }
+
+    .app-main {
+        background: #f4f7fb;
+    }
+
+    .app-footer {
+        border-top: 1px solid #e1eaf4;
+        background: #fff;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .app-sidebar .sidebar-menu .nav-link { transition: none; }
+        .app-sidebar .sidebar-menu .nav-link:hover { transform: none; }
+    }
+</style>
+{% block additional_styles %}{% endblock %}
+{% endblock %}
+
+{% block content %}
+<div class="app-wrapper">
+    <nav class="app-header navbar navbar-expand bg-white">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button class="nav-link border-0 bg-transparent" type="button" data-sidebar-toggle
+                       aria-label="Toggle sidebar" aria-controls="app-sidebar" aria-expanded="false">
+                        <i class="bi bi-list fs-4" aria-hidden="true"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="ms-auto d-flex align-items-center gap-2">
+                <span class="avatar-mark" aria-hidden="true">{{ (user.name or user.username)[:1]|upper }}</span>
+                <span class="header-account-name fw-semibold">{{ user.name or user.username }}</span>
+            </div>
+        </div>
+    </nav>
+
+    <aside id="app-sidebar" class="app-sidebar shadow" data-bs-theme="dark">
+        <div class="sidebar-brand">
+            <a class="brand-link d-flex align-items-center gap-2" href="{{ url_for('user_home_view').include_query_params(tab='home') }}">
+                <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+                <span>MyAdvisor</span>
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <nav class="mt-2" aria-label="Main navigation">
+                <div class="sidebar-section-label">Workspace</div>
+                <ul class="nav sidebar-menu flex-column" role="menu">
+                    <li class="nav-item" role="none">
+                        <a class="nav-link {{ 'active' if active_tab == 'home' }}"
+                           href="{{ url_for('user_home_view').include_query_params(tab='home') }}"
+                           {% if active_tab == 'home' %}aria-current="page"{% endif %} role="menuitem">
+                            <i class="nav-icon bi bi-house-door-fill" aria-hidden="true"></i><p>Home</p>
+                        </a>
+                    </li>
+                    {% if user.role != 'admin' %}
+                    <li class="nav-item" role="none">
+                        <a class="nav-link {{ 'active' if active_tab == 'degree-progress' }}"
+                           href="{{ url_for('user_home_view').include_query_params(tab='degree-progress') }}"
+                           {% if active_tab == 'degree-progress' %}aria-current="page"{% endif %} role="menuitem">
+                            <i class="nav-icon bi bi-graph-up-arrow" aria-hidden="true"></i><p>Degree Progress</p>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a class="nav-link {{ 'active' if active_tab == 'plan-courses' }}"
+                           href="{{ url_for('user_home_view').include_query_params(tab='plan-courses') }}"
+                           {% if active_tab == 'plan-courses' %}aria-current="page"{% endif %} role="menuitem">
+                            <i class="nav-icon bi bi-calendar2-check-fill" aria-hidden="true"></i><p>Plan Courses</p>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item" role="none">
+                        <a class="nav-link {{ 'active' if active_tab == 'messages' }}"
+                           href="{{ url_for('user_home_view').include_query_params(tab='messages') }}"
+                           {% if active_tab == 'messages' %}aria-current="page"{% endif %} role="menuitem">
+                            <i class="nav-icon bi bi-chat-left-text-fill" aria-hidden="true"></i><p>Messages</p>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a class="nav-link {{ 'active' if active_tab == 'profile' }}"
+                           href="{{ url_for('user_home_view').include_query_params(tab='profile') }}"
+                           {% if active_tab == 'profile' %}aria-current="page"{% endif %} role="menuitem">
+                            <i class="nav-icon bi bi-person-circle" aria-hidden="true"></i><p>Profile</p>
+                        </a>
+                    </li>
+                    {% if user.role == 'admin' %}
+                    <li class="nav-item" role="none">
+                        <a class="nav-link {{ 'active' if active_tab == 'advisor-review' or request.url.path.startswith('/admin') }}"
+                           href="{{ url_for('admin_home_view') }}"
+                           {% if active_tab == 'advisor-review' or request.url.path.startswith('/admin') %}aria-current="page"{% endif %} role="menuitem">
+                            <i class="nav-icon bi bi-clipboard2-check-fill" aria-hidden="true"></i><p>Advisor Review</p>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <div class="sidebar-section-label">Account</div>
+                <ul class="nav sidebar-menu flex-column" role="menu">
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="{{ url_for('logout') }}" role="menuitem">
+                            <i class="nav-icon bi bi-box-arrow-left" aria-hidden="true"></i><p>Sign out</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="app-main">
+        <div class="app-content">
+            <div class="container-fluid py-3">
+                {% for message in get_flashed_messages(request) %}
+                <div class="alert alert-{{ message.type }}" role="alert">{{ message.message }}</div>
+                {% endfor %}
+            </div>
+            {% block subpage_content %}{% endblock %}
+        </div>
+    </main>
+</div>
+
+{% block external_js %}
+<script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@4.10.0/dist/js/adminlte.min.js"></script>
+<script>
+    const sidebarToggle = document.querySelector("[data-sidebar-toggle]");
+    const sidebar = document.querySelector("#app-sidebar");
+
+    if (sidebarToggle && sidebar) {
+        const pushMenu = window.adminlte.PushMenu.getOrCreateInstance(sidebar);
+        const updateExpandedState = () => {
+            sidebarToggle.setAttribute(
+                "aria-expanded",
+                String(!document.body.classList.contains("sidebar-collapse"))
+            );
+        };
+
+        sidebarToggle.addEventListener("click", () => {
+            pushMenu.toggle();
+            updateExpandedState();
+        });
+        document.addEventListener("DOMContentLoaded", updateExpandedState, { once: true });
+    }
+</script>
+{% endblock %}
+{% block subpage_scripts %}{% endblock %}
+{% endblock %}

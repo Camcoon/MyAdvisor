@@ -1,0 +1,622 @@
+{
+  "review_date": "2026-10-27",
+  "timezone": "America/La_Paz",
+  "scope": "Read-only verification and new review records; no application/test changes or runtime reruns",
+  "source_checks": {
+    "evidence_checkout": {
+      "files": 70,
+      "missing": [],
+      "mismatches": []
+    },
+    "publication_checkout": {
+      "files": 70,
+      "missing": [],
+      "mismatches": []
+    }
+  },
+  "remote": {
+    "commit": "edc71e8d8fadecc6c2d173eeddce1a66360a6126",
+    "tree": "99a1ff1fa222feea3ea34778753bd8b610b87da5",
+    "tree_truncated": false,
+    "tree_entries": 442,
+    "publication_checkout_tree": "99a1ff1fa222feea3ea34778753bd8b610b87da5",
+    "entire_tree_matches": true,
+    "source_blob_mismatches": [],
+    "evidence_groups": {
+      "uat_images": 0,
+      "postman_images": 0,
+      "correction_evidence": 0,
+      "postman_summary_image": false
+    }
+  },
+  "runs": [
+    {
+      "id": "full-20261027T193800Z-7227960f",
+      "exit_code": 0,
+      "source_unchanged_during_run": true,
+      "suites": [
+        {
+          "name": "pytest",
+          "errors": "0",
+          "failures": "0",
+          "skipped": "0",
+          "tests": "735",
+          "time": "58.093",
+          "timestamp": "2026-10-27T15:38:01.131278-04:00",
+          "hostname": "GamingLarry"
+        }
+      ],
+      "node_count": 735,
+      "unit_membership": 113,
+      "integration_membership": 214,
+      "other_membership": 408,
+      "records": [
+        {
+          "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.json",
+          "sha256": "6f6f90e82ecd41ce52780a901ec90020cc04cc3481265b173c00df4627d740f5"
+        },
+        {
+          "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.txt",
+          "sha256": "b6a2fef24acfc6c3e406a09dcb09f01bf448f8e3eb024012851e935c8ff78cd8"
+        },
+        {
+          "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.xml",
+          "sha256": "615f921c84cd218a204ab3df2cf6363aa1b6737624da62ebdad4dd47c1eadf34"
+        }
+      ]
+    },
+    {
+      "id": "targeted-20261027T193352Z-b6385978",
+      "exit_code": 0,
+      "source_unchanged_during_run": true,
+      "suites": [
+        {
+          "name": "pytest",
+          "errors": "0",
+          "failures": "0",
+          "skipped": "0",
+          "tests": "284",
+          "time": "86.398",
+          "timestamp": "2026-10-27T15:33:54.591056-04:00",
+          "hostname": "GamingLarry"
+        }
+      ],
+      "node_count": 284,
+      "unit_membership": 0,
+      "integration_membership": 214,
+      "other_membership": 70,
+      "records": [
+        {
+          "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.json",
+          "sha256": "9f80771b79d926a6fcc62f5d4f8755e63ba6c90b0c15baf41607ff79f8423a59"
+        },
+        {
+          "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.txt",
+          "sha256": "904c107fdcdca264d4bf10e81c51b897a88c380688256fc49ce334a13449af9f"
+        },
+        {
+          "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.xml",
+          "sha256": "ca15cda1357d9064951dacf19a81b4a26f851d7a4a192c5b5f194d3121140ce4"
+        }
+      ]
+    }
+  ],
+  "pdfs": [
+    {
+      "path": "docs/assignment2/final-review/COMP3613_Assignment2_MyAdvisor_Final.candidate.pdf",
+      "sha256": "e26ab1fe95ab668a2bbf46871493ce82821bccd41e58aa22440dcd26d7d37acd",
+      "pages": 57,
+      "attachments": 56,
+      "links": 56,
+      "top_level_toc": [
+        [
+          1,
+          "1. Cover Page",
+          1
+        ],
+        [
+          1,
+          "2. Project Description",
+          3
+        ],
+        [
+          1,
+          "3. Use Case Diagram",
+          4
+        ],
+        [
+          1,
+          "4. Entity Relationship Diagram",
+          5
+        ],
+        [
+          1,
+          "5. Application Wireframe",
+          7
+        ],
+        [
+          1,
+          "6. Test Plans",
+          11
+        ],
+        [
+          1,
+          "7. Implementation",
+          32
+        ],
+        [
+          1,
+          "8. Test Reports",
+          36
+        ],
+        [
+          1,
+          "Appendix A \u2014 UAT Execution Summary",
+          52
+        ],
+        [
+          1,
+          "Appendix B \u2014 Findings and Readiness",
+          55
+        ],
+        [
+          1,
+          "Appendix C \u2014 Compact Requirements Traceability",
+          56
+        ],
+        [
+          1,
+          "Appendix D \u2014 Lecturer Deliverables Checklist",
+          57
+        ]
+      ],
+      "original_images": [
+        {
+          "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012608.png",
+          "sha256": "67133b5e6e06692db4212b0f8cc1b9802130892861f66f11bcb8492681919f60",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012643.png",
+          "sha256": "352634fa1ac1f0564219e9ece89641971024708c49dc0433d748a714e53b4145",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012658.png",
+          "sha256": "6fb2b970c6e1748be3af0aad26e99e4b47136b63c3359a1e97e3f388f11ee991",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012739.png",
+          "sha256": "e90198d68159698fd5deac521d71f259410c235a52375344482ba31d6e550680",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012839.png",
+          "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 231956.png",
+          "sha256": "3364ab7f47373b1b33ecea87ee7ac3f1c548f63ebdc9a1b24489ca1ab2f70c79",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232025.png",
+          "sha256": "aa72e3c4d8a74378d73c0ebe058f21fc4629e9ce5cc8c9e2b9aa6957adeff638",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232058.png",
+          "sha256": "c86c7c62b0b441b0b5eaec64477071131d37e86138c21a9fd3966469738667e7",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/postman-results.png",
+          "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-01.png",
+          "sha256": "bf412eeff9e96cf3db09adf9160fff5917b1eda288c69bc31affbf27cad3715d",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-02.png",
+          "sha256": "24ea5a2fdabf2242b8066d6a339b9ee174f7b33f9aa3c86bd133191f6bfffa48",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-03.png",
+          "sha256": "8d4cec27cd21edae870ae3f1471b62b5210667919271bed326df99601359c4b1",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-04.png",
+          "sha256": "6824dc242e9bb973598674a6036f9f3b2551be523eb15f5843a83bec929352bf",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-05.png",
+          "sha256": "3607804370df6bb5b059ffa25cfb653bbfe85f4aabf83b9a6ae2732c10a5e8b7",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-07-request-changes.png",
+          "sha256": "8db4bdd961e1d0cf83eb0f58a738b7a863a16d38863dafd7b661049b9ebcbeda",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-07-student-feedback.png",
+          "sha256": "dc2f1005839df415c7cb2a0060bb95fd96c8659fe908588c7105148275dcc602",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-08-resubmitted.png",
+          "sha256": "9966625b1a4e967adf913bf1c0a3ccf8306cd1a9694833634a50e6852b699dd1",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-09-approved.png",
+          "sha256": "e1d75b613bb7f4c14031b80325cf393b718d01ba6ccb722c299c865093e0b8f6",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-10-second-plan.png",
+          "sha256": "f2568f9542ad117328bf0ea2aadeaabd99339ccf39ca3260d3902b50debdd67e",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-11-rejected.png",
+          "sha256": "0bb29427029aceac1497dfe6b67f77fea23909ce7b6875c1a6dcdfabfa58ae97",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-12-pending-plan.png",
+          "sha256": "98cd545c84dfaa5d4f94d2582fad6933714dcc025840987bba933b59315e6d54",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-13-course-removed.png",
+          "sha256": "7331af326052e8a2a50aaafd5b3ab0555a9c3497486b2749ffaecfa2ad29f67b",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-14-approved-cancelled.png",
+          "sha256": "8246babad1e7f4a64c557d92da07847ded7084c0e5f623c6c245f1330841d3f8",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-15-rejected-cancelled.png",
+          "sha256": "c364204a98212b1be1232ffa2e42820bfb4c422ec352ec2d8c88fe9baee13b08",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-16-pending-cancelled.png",
+          "sha256": "6c3105bc588355d900802b4aa94c2fb26dffee37a349227ecc6181e46978bc7c",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-17-new-plan.png",
+          "sha256": "2b2b4ab359fdcdd35b42482db82c4e19dc9687b6868b01a42fd226159c417721",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-20-access-denied.png",
+          "sha256": "67052c79456aaf8b19a4b12cc136e9ce333ccae7fea508a8b6f13cf278a26e52",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-20-logged-out.png",
+          "sha256": "b384522cc18d960ebce781bfb10eccdc219e58a48b0929da714f39ef26b3e6ae",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231703.png",
+          "sha256": "b1562bb4cc08d29b237410a5148539bd8f8e7ee04c17374843a26835893f091e",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231742.png",
+          "sha256": "c2cc2fbfaac255b39c982648c039b658413a7b5e470eaff12505c8e8281ea2b5",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231747.png",
+          "sha256": "ac16371f04d6dade7b85b3053cfc8c9360071ea30722df245bbade67fa56f41a",
+          "identical_pdf_attachment": true
+        }
+      ],
+      "uris": [
+        "https://docs.google.com/document/d/1LIPdWA39zJCuzTgSkwTKjnaqi8Yn9STFZckn4MBsf48/edit",
+        "https://docs.google.com/document/d/1YQPB1vPS0SFb6tIUAxmxrSUIsj-d6u98USWzvMi4mJs/edit",
+        "https://github.com/Camcoon/MyAdvisorWithTests",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/docs/assignment2/postman/MyAdvisor-Assignment2.postman_collection.json",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/tests/integration/test_advisor_workflow.py",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/tests/integration/test_database_integrity.py",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/tests/integration/test_student_workflow.py",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/tests/unit/test_advising.py",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/tests/unit/test_auth.py"
+      ]
+    },
+    {
+      "path": "docs/assignment2/COMP3613_Assignment2_MyAdvisor_Final.pdf",
+      "sha256": "e26ab1fe95ab668a2bbf46871493ce82821bccd41e58aa22440dcd26d7d37acd",
+      "pages": 57,
+      "attachments": 56,
+      "links": 56,
+      "top_level_toc": [
+        [
+          1,
+          "1. Cover Page",
+          1
+        ],
+        [
+          1,
+          "2. Project Description",
+          3
+        ],
+        [
+          1,
+          "3. Use Case Diagram",
+          4
+        ],
+        [
+          1,
+          "4. Entity Relationship Diagram",
+          5
+        ],
+        [
+          1,
+          "5. Application Wireframe",
+          7
+        ],
+        [
+          1,
+          "6. Test Plans",
+          11
+        ],
+        [
+          1,
+          "7. Implementation",
+          32
+        ],
+        [
+          1,
+          "8. Test Reports",
+          36
+        ],
+        [
+          1,
+          "Appendix A \u2014 UAT Execution Summary",
+          52
+        ],
+        [
+          1,
+          "Appendix B \u2014 Findings and Readiness",
+          55
+        ],
+        [
+          1,
+          "Appendix C \u2014 Compact Requirements Traceability",
+          56
+        ],
+        [
+          1,
+          "Appendix D \u2014 Lecturer Deliverables Checklist",
+          57
+        ]
+      ],
+      "original_images": [
+        {
+          "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012608.png",
+          "sha256": "67133b5e6e06692db4212b0f8cc1b9802130892861f66f11bcb8492681919f60",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012643.png",
+          "sha256": "352634fa1ac1f0564219e9ece89641971024708c49dc0433d748a714e53b4145",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012658.png",
+          "sha256": "6fb2b970c6e1748be3af0aad26e99e4b47136b63c3359a1e97e3f388f11ee991",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012739.png",
+          "sha256": "e90198d68159698fd5deac521d71f259410c235a52375344482ba31d6e550680",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012839.png",
+          "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 231956.png",
+          "sha256": "3364ab7f47373b1b33ecea87ee7ac3f1c548f63ebdc9a1b24489ca1ab2f70c79",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232025.png",
+          "sha256": "aa72e3c4d8a74378d73c0ebe058f21fc4629e9ce5cc8c9e2b9aa6957adeff638",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232058.png",
+          "sha256": "c86c7c62b0b441b0b5eaec64477071131d37e86138c21a9fd3966469738667e7",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/postman-results.png",
+          "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-01.png",
+          "sha256": "bf412eeff9e96cf3db09adf9160fff5917b1eda288c69bc31affbf27cad3715d",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-02.png",
+          "sha256": "24ea5a2fdabf2242b8066d6a339b9ee174f7b33f9aa3c86bd133191f6bfffa48",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-03.png",
+          "sha256": "8d4cec27cd21edae870ae3f1471b62b5210667919271bed326df99601359c4b1",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-04.png",
+          "sha256": "6824dc242e9bb973598674a6036f9f3b2551be523eb15f5843a83bec929352bf",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-05.png",
+          "sha256": "3607804370df6bb5b059ffa25cfb653bbfe85f4aabf83b9a6ae2732c10a5e8b7",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-07-request-changes.png",
+          "sha256": "8db4bdd961e1d0cf83eb0f58a738b7a863a16d38863dafd7b661049b9ebcbeda",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-07-student-feedback.png",
+          "sha256": "dc2f1005839df415c7cb2a0060bb95fd96c8659fe908588c7105148275dcc602",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-08-resubmitted.png",
+          "sha256": "9966625b1a4e967adf913bf1c0a3ccf8306cd1a9694833634a50e6852b699dd1",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-09-approved.png",
+          "sha256": "e1d75b613bb7f4c14031b80325cf393b718d01ba6ccb722c299c865093e0b8f6",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-10-second-plan.png",
+          "sha256": "f2568f9542ad117328bf0ea2aadeaabd99339ccf39ca3260d3902b50debdd67e",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-11-rejected.png",
+          "sha256": "0bb29427029aceac1497dfe6b67f77fea23909ce7b6875c1a6dcdfabfa58ae97",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-12-pending-plan.png",
+          "sha256": "98cd545c84dfaa5d4f94d2582fad6933714dcc025840987bba933b59315e6d54",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-13-course-removed.png",
+          "sha256": "7331af326052e8a2a50aaafd5b3ab0555a9c3497486b2749ffaecfa2ad29f67b",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-14-approved-cancelled.png",
+          "sha256": "8246babad1e7f4a64c557d92da07847ded7084c0e5f623c6c245f1330841d3f8",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-15-rejected-cancelled.png",
+          "sha256": "c364204a98212b1be1232ffa2e42820bfb4c422ec352ec2d8c88fe9baee13b08",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-16-pending-cancelled.png",
+          "sha256": "6c3105bc588355d900802b4aa94c2fb26dffee37a349227ecc6181e46978bc7c",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-17-new-plan.png",
+          "sha256": "2b2b4ab359fdcdd35b42482db82c4e19dc9687b6868b01a42fd226159c417721",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-20-access-denied.png",
+          "sha256": "67052c79456aaf8b19a4b12cc136e9ce333ccae7fea508a8b6f13cf278a26e52",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/UAT/UAT-20-logged-out.png",
+          "sha256": "b384522cc18d960ebce781bfb10eccdc219e58a48b0929da714f39ef26b3e6ae",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231703.png",
+          "sha256": "b1562bb4cc08d29b237410a5148539bd8f8e7ee04c17374843a26835893f091e",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231742.png",
+          "sha256": "c2cc2fbfaac255b39c982648c039b658413a7b5e470eaff12505c8e8281ea2b5",
+          "identical_pdf_attachment": true
+        },
+        {
+          "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231747.png",
+          "sha256": "ac16371f04d6dade7b85b3053cfc8c9360071ea30722df245bbade67fa56f41a",
+          "identical_pdf_attachment": true
+        }
+      ],
+      "uris": [
+        "https://docs.google.com/document/d/1LIPdWA39zJCuzTgSkwTKjnaqi8Yn9STFZckn4MBsf48/edit",
+        "https://docs.google.com/document/d/1YQPB1vPS0SFb6tIUAxmxrSUIsj-d6u98USWzvMi4mJs/edit",
+        "https://github.com/Camcoon/MyAdvisorWithTests",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/docs/assignment2/postman/MyAdvisor-Assignment2.postman_collection.json",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/tests/integration/test_advisor_workflow.py",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/tests/integration/test_database_integrity.py",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/tests/integration/test_student_workflow.py",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/tests/unit/test_advising.py",
+        "https://github.com/Camcoon/MyAdvisorWithTests/blob/main/tests/unit/test_auth.py"
+      ]
+    }
+  ],
+  "publication_candidates": {
+    "count": 95,
+    "missing_in_publication_checkout": 72,
+    "different_in_publication_checkout": 9
+  },
+  "historical_uat": {
+    "fully_passed": [
+      "UAT-06"
+    ],
+    "partial": [
+      "UAT-01",
+      "UAT-02",
+      "UAT-03",
+      "UAT-04",
+      "UAT-07",
+      "UAT-08",
+      "UAT-09",
+      "UAT-10",
+      "UAT-11",
+      "UAT-12",
+      "UAT-13",
+      "UAT-14",
+      "UAT-15",
+      "UAT-16",
+      "UAT-17",
+      "UAT-18",
+      "UAT-19",
+      "UAT-20"
+    ],
+    "unverified_required_workflow": [
+      "UAT-05"
+    ],
+    "full_case_report_totals": {
+      "Pass": 1,
+      "Fail": 0,
+      "Not Run": 19
+    }
+  },
+  "new_manual_uat_performed": false,
+  "new_postman_runtime_performed": false,
+  "degree_allocation_applied": false,
+  "readiness": "NOT SUBMISSION-READY"
+}

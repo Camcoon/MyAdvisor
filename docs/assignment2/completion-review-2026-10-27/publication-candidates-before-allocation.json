@@ -1,0 +1,673 @@
+{
+  "status": "REVIEW CANDIDATES ONLY; NO COPY/STAGE/COMMIT/PUSH AUTHORIZATION",
+  "source_checkout": "C:\\Users\\camer\\OneDrive\\Documents\\UWI COURSES\\Year 3\\Semester 1\\COMP 3613\\Assignments\\Assignment 2\\Assignment 2",
+  "publication_checkout": "C:\\Users\\camer\\OneDrive\\Documents\\UWI COURSES\\Year 3\\Semester 1\\COMP 3613\\Assignments\\Assignment 2\\myadvisor-upload-yfjf6d9s",
+  "exclude_pdfs_until_final_verified": true,
+  "files": [
+    {
+      "path": "docs/assignment2/COMP3613_Assignment2_MyAdvisor_Final_Checklist.md",
+      "sha256": "d52de889f4fefa24f98fe2cd565fda708c87a85a5193e1c2fde8b1f723a5ce0d",
+      "bytes": 8705,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/authorization-reproduction.json",
+      "sha256": "e64b7ec3e4405fb98a68bd3e4a73836da3b74c0c62dbbbe2f6f705d9d3e61db4",
+      "bytes": 399,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/documentation-checks.json",
+      "sha256": "2e68e483070b7b0d43294e3642df1fe1e4666b394179c57d42183c7a94385f5e",
+      "bytes": 606,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/github-snapshot.json",
+      "sha256": "c1b80b4db62a058cd57c6d06c08891c90b8cbfbfced80fbee1a4003c9cf4a740",
+      "bytes": 80551,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/local-remote-comparison.json",
+      "sha256": "e7d02df6190f651042a750b5b9404269d6f2f8538d14ddcaba75f63dbc4b3f8e",
+      "bytes": 27030,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/pytest-output.txt",
+      "sha256": "4794ac973bbfd326b55c73d6fe406d2651f2d3bd2a311be96ff4d2c82d949bef",
+      "bytes": 1405,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/pytest-results.xml",
+      "sha256": "7d83807e059ddc654a55bcc033f0258d7e13ef371c33857868700244aa67082b",
+      "bytes": 114650,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/pytest-run.json",
+      "sha256": "42c57725de9da97b8a121db59609d95c90108c6057b6fb24000d0ef2ba4fb092",
+      "bytes": 7600,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/registration-reproduction.json",
+      "sha256": "4600a97a92b4de2d7883eb235ead75b38f3aabebef533d94948f677633cde62f",
+      "bytes": 243,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/sqlite-integrity-reproduction.json",
+      "sha256": "3b0a2576251e560a791cd72ecaa306e0e4002defb73a1a8f9bb5ddba31cfc457",
+      "bytes": 332,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-29709f52.json",
+      "sha256": "6c6c9d8c2b7450b30bbb1faf9a7a28dbfffb5afffbbdfd577d9eda0765c43eab",
+      "bytes": 758,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-29709f52.txt",
+      "sha256": "9687887fc6b42053bb4a663588185d251581be2c0436ce7c6af70aeb7f47b34a",
+      "bytes": 8061,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-29709f52.xml",
+      "sha256": "517b501fe9c3380b6cf60c4db82cfc8ded78aa4caebe0f26f6d1b007cc2e9ef3",
+      "bytes": 8310,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-4ddabb8e.json",
+      "sha256": "04abdeaf2436bf6cdb720db36c4d4992f6aaf39b1492b36c70709a653a60a704",
+      "bytes": 798,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-4ddabb8e.txt",
+      "sha256": "56a0e52fefba8be9dbd5d904919c78c3bfb1f86ce170ef973c57a957d7bbc222",
+      "bytes": 5353,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-4ddabb8e.xml",
+      "sha256": "90613b885e578bc68dc74fa067718de33bfab64bf60af2842bcd4665822ded22",
+      "bytes": 520,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-833f7e57.json",
+      "sha256": "d66ee74f5f7762ba5bb6ea0d7d43c9d63c65a9b2859e79d8f2cab065d834f2cc",
+      "bytes": 758,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-833f7e57.txt",
+      "sha256": "dc0e1bb7449f26ac5f68003dbfb583d8e1140f2f02505f21d219244eafb4055d",
+      "bytes": 8061,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-833f7e57.xml",
+      "sha256": "4f54d812475d6a558a591a960d41f040f5095a805bac195ff08cd53fa2909816",
+      "bytes": 8310,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/f01-before-ae8767c2.json",
+      "sha256": "eb41460b54b383e320af94e93d96607c781531420c07fc532c07fcd8c07e46f3",
+      "bytes": 850,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/f01-before-ae8767c2.txt",
+      "sha256": "864682eb342aca2bb728dff54f3e2b160649a1603f1f239e16c1d1959ec066ee",
+      "bytes": 28644,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/f01-before-ae8767c2.xml",
+      "sha256": "1d63a15bfca78054ec29978b41312041a3185084c60e9fbd26d90cbf99f54791",
+      "bytes": 28803,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.json",
+      "sha256": "6f6f90e82ecd41ce52780a901ec90020cc04cc3481265b173c00df4627d740f5",
+      "bytes": 8726,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.txt",
+      "sha256": "b6a2fef24acfc6c3e406a09dcb09f01bf448f8e3eb024012851e935c8ff78cd8",
+      "bytes": 1476,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.xml",
+      "sha256": "615f921c84cd218a204ab3df2cf6363aa1b6737624da62ebdad4dd47c1eadf34",
+      "bytes": 118072,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/git-remotes.txt",
+      "sha256": "ff10796713dc5c39ce0ccd42137ad46b6b8446505a68da16d602af0b2da53d69",
+      "bytes": 113,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/publication-review.json",
+      "sha256": "64521ffb7b109fc9b3cbb1c8110f57aa20c8a20604d2f58d4fd4c78062db3000",
+      "bytes": 77033,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/README.md",
+      "sha256": "f332ba7aa1fd85dc558a180be6599a60787d30709a3c22bcb18e0769f4b27c2d",
+      "bytes": 2596,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.json",
+      "sha256": "9f80771b79d926a6fcc62f5d4f8755e63ba6c90b0c15baf41607ff79f8423a59",
+      "bytes": 8824,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.txt",
+      "sha256": "904c107fdcdca264d4bf10e81c51b897a88c380688256fc49ce334a13449af9f",
+      "bytes": 919,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.xml",
+      "sha256": "ca15cda1357d9064951dacf19a81b4a26f851d7a4a192c5b5f194d3121140ce4",
+      "bytes": 44185,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-cf752b27.json",
+      "sha256": "34fce00fac4bfca97ef0350d5c55726189cb492a3ee118ce7b5af0209497f1a7",
+      "bytes": 7868,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-cf752b27.txt",
+      "sha256": "fb4ee9412804d1e175b0aeebd7705ba389a0e170de334b990612c92a8a193336",
+      "bytes": 909,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-cf752b27.xml",
+      "sha256": "b32c5eae7650b339650193fb85358e0274dff081b7ce443dc8a9dc9d9328a360",
+      "bytes": 43912,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/validation-review.json",
+      "sha256": "e59759fce085db89bdfbbcea4805918fe9fd6ac58f9a511d365ac2719b0221d0",
+      "bytes": 2808,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/verified-summary.json",
+      "sha256": "b5a15d9e11de30ec46d341a3f4c6d8b421be55848d3a401e385cb3028effd2ab",
+      "bytes": 572,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/working-tree-status.txt",
+      "sha256": "510cb29524e3d64d3fcb0655d186d037e56238a5a68e35745bd0cb5e7dc1feae",
+      "bytes": 752,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/student-integration-pytest.txt",
+      "sha256": "d31c4af5c86578ebbffaa7d2ef8f8d11445a51f75e222bd55b2eb059e41ac633",
+      "bytes": 9132,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/evidence/student-integration.md",
+      "sha256": "e84bffb754234c24de614ea9dfd4b1bcc822ed0beef1b126aa5e41db970c04bd",
+      "bytes": 8411,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/pytest-output.txt",
+      "sha256": "c9e3c27c5a16b828f78e73c9e2039d39176a4ebc73fdacce6fa2ef9461732307",
+      "bytes": 25140,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/README.md",
+      "sha256": "ee63e3279743ff0dbcd840894a570cf29bdb858fe120fc855a92839c25c65fd3",
+      "bytes": 2607,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/results.xml",
+      "sha256": "e35cf3090fae104726c4f995e2a44e407989cbc66507d5323acc3719fc686e8c",
+      "bytes": 14179,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow1-api.md",
+      "sha256": "227fdd46a01970a6be22565f580904f18cc795233ab414533943bfdd9674d104",
+      "bytes": 2915,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow2-api.md",
+      "sha256": "2703bd5e36441061ad585080c33c872369104442ce1ed619514c1226d87c6766",
+      "bytes": 4326,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow3-api.md",
+      "sha256": "42435292a85a6ae5d7514deef7771bb8987300b298751119a33f8bd57f144050",
+      "bytes": 5322,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/final-quality-audit.md",
+      "sha256": "d700e1a25bcc3fcd4596dd477ee1047d94ddf84e2d8d80c2cc41f55dc03e9584",
+      "bytes": 51224,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/final-submission-checklist.md",
+      "sha256": "e764eaa497167d00f9300ae041c169712eb6a2df52027f3961e505d0417d0b64",
+      "bytes": 16418,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/official-assignment-brief.md",
+      "sha256": "ad7b448af178c89ef5596c7babba61dfc168acfe197117ea1767b423a0d6fc35",
+      "bytes": 3029,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012608.png",
+      "sha256": "67133b5e6e06692db4212b0f8cc1b9802130892861f66f11bcb8492681919f60",
+      "bytes": 273662,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012643.png",
+      "sha256": "352634fa1ac1f0564219e9ece89641971024708c49dc0433d748a714e53b4145",
+      "bytes": 255284,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012658.png",
+      "sha256": "6fb2b970c6e1748be3af0aad26e99e4b47136b63c3359a1e97e3f388f11ee991",
+      "bytes": 255714,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012739.png",
+      "sha256": "e90198d68159698fd5deac521d71f259410c235a52375344482ba31d6e550680",
+      "bytes": 261362,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012839.png",
+      "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c",
+      "bytes": 251518,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/PROGRESS.md",
+      "sha256": "bb93f0eba5cccbc2e46a65b83f878f1fba29e511ca6a2d16d96e37d0b02c011f",
+      "bytes": 31262,
+      "publication_checkout": "different",
+      "remote": "different_blob_review_line_endings"
+    },
+    {
+      "path": "docs/assignment2/reports/audit-correction-report.md",
+      "sha256": "0287fd5ff155f317b5dcc501878e97bbcbc5830fa47fc6196d8062d77a37ce0a",
+      "bytes": 17261,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/correction-retest-guide.md",
+      "sha256": "23548c7a5bc8ece67d4fcd948c073424db451d802e0ab2b7133acf1a75d42e7d",
+      "bytes": 16960,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/evidence-inventory.md",
+      "sha256": "c5d28a3f688801cfc6839f02a3a9af1826a2de019aa525284a7c63a008d5716b",
+      "bytes": 14517,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/integration-test-report.md",
+      "sha256": "d1b8de2eaf7077ee69119ee6e2c320c0dc79738815815fcb9d1aa988610a5c7d",
+      "bytes": 16381,
+      "publication_checkout": "different",
+      "remote": "different_blob_review_line_endings"
+    },
+    {
+      "path": "docs/assignment2/reports/postman-test-report.md",
+      "sha256": "e32b4fa1410545a7cba05ef606f107b4586644d667ab0a1b332949d43ccbcda9",
+      "bytes": 18076,
+      "publication_checkout": "different",
+      "remote": "different_blob_review_line_endings"
+    },
+    {
+      "path": "docs/assignment2/reports/repository-publication-plan.md",
+      "sha256": "e5bd2245fd7c465c2f8ba3c5b2961888f100919d66dea9a3ef17bc16a50d65d7",
+      "bytes": 6252,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/requirements-test-traceability.md",
+      "sha256": "e4f855d23702fae5d2b5f1ad9fcb84a28adcd16cc6e0a38c4ff506485edfac4e",
+      "bytes": 9331,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-evidence-review.md",
+      "sha256": "fe2d53c4e02708bd15806700ccaca901d83ec4a82b6edadabdd017bba889c037",
+      "bytes": 23128,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-execution.md",
+      "sha256": "50ac8d7f6b7714160640eaccbc2d7a73ab141fe82fdb6edfb8a70a709cdc78e3",
+      "bytes": 73521,
+      "publication_checkout": "different",
+      "remote": "different_blob_review_line_endings"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-final-report.md",
+      "sha256": "0663228b58fc09f6e95d39988d03e5b2b607f00369592949e413dcfc2630ac1e",
+      "bytes": 20421,
+      "publication_checkout": "different",
+      "remote": "different_blob_review_line_endings"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-supplemental-evidence.md",
+      "sha256": "5be63f989347f666912024388d37ca914579c535c0cf8b2586354485caae7ea2",
+      "bytes": 9456,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/unit-test-report.md",
+      "sha256": "f3ccd06a94b59ebb8b6647af4990e3751405c42858bd7abfd31f0de72ad9da07",
+      "bytes": 11247,
+      "publication_checkout": "different",
+      "remote": "different_blob_review_line_endings"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 231956.png",
+      "sha256": "3364ab7f47373b1b33ecea87ee7ac3f1c548f63ebdc9a1b24489ca1ab2f70c79",
+      "bytes": 294719,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232025.png",
+      "sha256": "aa72e3c4d8a74378d73c0ebe058f21fc4629e9ce5cc8c9e2b9aa6957adeff638",
+      "bytes": 311214,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232058.png",
+      "sha256": "c86c7c62b0b441b0b5eaec64477071131d37e86138c21a9fd3966469738667e7",
+      "bytes": 287709,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/screenshots/postman-results.png",
+      "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c",
+      "bytes": 251518,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-01.png",
+      "sha256": "bf412eeff9e96cf3db09adf9160fff5917b1eda288c69bc31affbf27cad3715d",
+      "bytes": 591955,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-02.png",
+      "sha256": "24ea5a2fdabf2242b8066d6a339b9ee174f7b33f9aa3c86bd133191f6bfffa48",
+      "bytes": 480740,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-03.png",
+      "sha256": "8d4cec27cd21edae870ae3f1471b62b5210667919271bed326df99601359c4b1",
+      "bytes": 355247,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-04.png",
+      "sha256": "6824dc242e9bb973598674a6036f9f3b2551be523eb15f5843a83bec929352bf",
+      "bytes": 539394,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-05.png",
+      "sha256": "3607804370df6bb5b059ffa25cfb653bbfe85f4aabf83b9a6ae2732c10a5e8b7",
+      "bytes": 301388,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-request-changes.png",
+      "sha256": "8db4bdd961e1d0cf83eb0f58a738b7a863a16d38863dafd7b661049b9ebcbeda",
+      "bytes": 236248,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-student-feedback.png",
+      "sha256": "dc2f1005839df415c7cb2a0060bb95fd96c8659fe908588c7105148275dcc602",
+      "bytes": 414545,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-08-resubmitted.png",
+      "sha256": "9966625b1a4e967adf913bf1c0a3ccf8306cd1a9694833634a50e6852b699dd1",
+      "bytes": 313746,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-09-approved.png",
+      "sha256": "e1d75b613bb7f4c14031b80325cf393b718d01ba6ccb722c299c865093e0b8f6",
+      "bytes": 412285,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-10-second-plan.png",
+      "sha256": "f2568f9542ad117328bf0ea2aadeaabd99339ccf39ca3260d3902b50debdd67e",
+      "bytes": 406036,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-11-rejected.png",
+      "sha256": "0bb29427029aceac1497dfe6b67f77fea23909ce7b6875c1a6dcdfabfa58ae97",
+      "bytes": 271613,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-12-pending-plan.png",
+      "sha256": "98cd545c84dfaa5d4f94d2582fad6933714dcc025840987bba933b59315e6d54",
+      "bytes": 300422,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-13-course-removed.png",
+      "sha256": "7331af326052e8a2a50aaafd5b3ab0555a9c3497486b2749ffaecfa2ad29f67b",
+      "bytes": 396848,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-14-approved-cancelled.png",
+      "sha256": "8246babad1e7f4a64c557d92da07847ded7084c0e5f623c6c245f1330841d3f8",
+      "bytes": 378235,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-15-rejected-cancelled.png",
+      "sha256": "c364204a98212b1be1232ffa2e42820bfb4c422ec352ec2d8c88fe9baee13b08",
+      "bytes": 374454,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-16-pending-cancelled.png",
+      "sha256": "6c3105bc588355d900802b4aa94c2fb26dffee37a349227ecc6181e46978bc7c",
+      "bytes": 380972,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-17-new-plan.png",
+      "sha256": "2b2b4ab359fdcdd35b42482db82c4e19dc9687b6868b01a42fd226159c417721",
+      "bytes": 390332,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-20-access-denied.png",
+      "sha256": "67052c79456aaf8b19a4b12cc136e9ce333ccae7fea508a8b6f13cf278a26e52",
+      "bytes": 662467,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-20-logged-out.png",
+      "sha256": "b384522cc18d960ebce781bfb10eccdc219e58a48b0929da714f39ef26b3e6ae",
+      "bytes": 1161279,
+      "publication_checkout": "missing",
+      "remote": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231703.png",
+      "sha256": "b1562bb4cc08d29b237410a5148539bd8f8e7ee04c17374843a26835893f091e",
+      "bytes": 258373,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231742.png",
+      "sha256": "c2cc2fbfaac255b39c982648c039b658413a7b5e470eaff12505c8e8281ea2b5",
+      "bytes": 269167,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231747.png",
+      "sha256": "ac16371f04d6dade7b85b3053cfc8c9360071ea30722df245bbade67fa56f41a",
+      "bytes": 266053,
+      "publication_checkout": "identical",
+      "remote": "identical_bytes"
+    },
+    {
+      "path": "docs/assignment2/test-plans/integration-test-plan.md",
+      "sha256": "6739aaa45c0a1786ec85baebaa9fa9d714dc2744438f75040abcfc49b459caff",
+      "bytes": 46402,
+      "publication_checkout": "different",
+      "remote": "different_blob_review_line_endings"
+    },
+    {
+      "path": "docs/assignment2/test-plans/uat-test-plan.md",
+      "sha256": "e741c78c9e48f164afeccbcefd4973457abc349c1c79c331b5e367fb136d02ad",
+      "bytes": 37419,
+      "publication_checkout": "different",
+      "remote": "different_blob_review_line_endings"
+    },
+    {
+      "path": "docs/assignment2/test-plans/unit-test-plan.md",
+      "sha256": "201719a36afc3a8c395f101d3ac8e8a15f75d560944ded8f98968e895955200b",
+      "bytes": 49575,
+      "publication_checkout": "different",
+      "remote": "different_blob_review_line_endings"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+$kind: collection
+description: 90 sequential requests covering all three MyAdvisor workflows and all 15 JSON API operations. Student=regular_user; Advisor=admin. Explicit role-specific access_token cookies, disabled cookie jar and redirects. Set collection credentials locally; run in order against a disposable localhost database. Dynamic plan/course/account IDs; explicit missing-prerequisite negative case; four read-back checkpoints for failed writes. Creates one isolation Student and two retained Cancelled plans per successful run. See README.md. Statically reviewed only; Postman/Newman execution pending.
+variables:
+  base_url: http://127.0.0.1:5001
+  student_username: bob
+  student_password: ""
+  advisor_username: admin
+  advisor_password: ""
+  student_token: ""
+  advisor_token: ""
+  other_token: ""
+  invalid_token: ""
+  other_username: ""
+  other_password: ""
+  plan_id: ""
+  old_plan_id: ""
+  course_a_id: ""
+  course_b_id: ""
+  blocked_course_id: ""
+  semester_name: ""
+  advisor_id: ""
+  foreign_error: ""
+  baseline_plans: ""
+  prerequisite_course_id: ""
+  prerequisite_reason: ""
+  student_id: ""
+  other_id: ""
+scripts:
+  - type: http:beforeRequest
+    code: |-
+      try {
+        const base = pm.collectionVariables.get("base_url");
+        if (!/^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(base)) throw new Error("Use the disposable localhost server URL without a trailing slash");
+        Object.keys(pm.collectionVariables.toObject()).forEach(k => pm.variables.set(k, pm.collectionVariables.get(k)));
+      } catch (error) {
+        pm.execution.setNextRequest(null);
+        pm.execution.skipRequest();
+        throw error;
+      }
+    language: text/javascript
+auth:
+  - id: ""
+    type: noauth
+    name: No Auth

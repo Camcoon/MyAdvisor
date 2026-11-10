@@ -1,0 +1,563 @@
+{
+  "pdf": "docs/assignment2/COMP3613_Assignment2_MyAdvisor.pdf",
+  "date": "2026-10-27",
+  "uat": {
+    "Pass": 1,
+    "Fail": 0,
+    "Not Run": 19,
+    "partially_verified": 18
+  },
+  "automated": {
+    "unit_passed": 113,
+    "unit_deselected": 602,
+    "integration_passed": 194,
+    "integration_deselected": 521,
+    "full_passed": 715,
+    "warnings_per_run": 1
+  },
+  "postman": {
+    "requests": 90,
+    "passed_assertions": 470,
+    "assertion_failures": 0,
+    "execution_errors": 0,
+    "iterations": 1
+  },
+  "checked_local_references": 212,
+  "missing_references": [],
+  "images": [
+    {
+      "path": "docs/wireframes/Three-Panel Student Advisor Dashboard Mockup.png",
+      "title": "Figure 6.1. Original Assignment 1 wireframe",
+      "crop": null
+    },
+    {
+      "path": "docs/wireframes/Three-Panel Student Advisor Dashboard Mockup.png",
+      "title": "Figure 6.2. Wireframe panel 1 — enlarged original detail",
+      "crop": [
+        0,
+        0,
+        512,
+        1024
+      ]
+    },
+    {
+      "path": "docs/wireframes/Three-Panel Student Advisor Dashboard Mockup.png",
+      "title": "Figure 6.3. Wireframe panel 2 — enlarged original detail",
+      "crop": [
+        512,
+        0,
+        1024,
+        1024
+      ]
+    },
+    {
+      "path": "docs/wireframes/Three-Panel Student Advisor Dashboard Mockup.png",
+      "title": "Figure 6.4. Wireframe panel 3 — enlarged original detail",
+      "crop": [
+        1024,
+        0,
+        1536,
+        1024
+      ]
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231703.png",
+      "title": "Figure 9.1.1. Unit terminal evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231742.png",
+      "title": "Figure 9.1.2. Unit terminal evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231747.png",
+      "title": "Figure 9.1.3. Unit terminal evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 231956.png",
+      "title": "Figure 9.2.1. Integration terminal evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232025.png",
+      "title": "Figure 9.2.2. Integration terminal evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232058.png",
+      "title": "Figure 9.2.3. Integration terminal evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/postman-results.png",
+      "title": "Figure 9.4.1. Genuine Postman Runner evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012608.png",
+      "title": "Figure 9.4.2. Genuine Postman Runner evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012643.png",
+      "title": "Figure 9.4.3. Genuine Postman Runner evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012658.png",
+      "title": "Figure 9.4.4. Genuine Postman Runner evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012739.png",
+      "title": "Figure 9.4.5. Genuine Postman Runner evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012839.png",
+      "title": "Figure 9.4.6. Genuine Postman Runner evidence",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-01.png",
+      "title": "Figure 9.5.1. UAT-01",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-02.png",
+      "title": "Figure 9.5.2. UAT-02",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-03.png",
+      "title": "Figure 9.5.3. UAT-03",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-04.png",
+      "title": "Figure 9.5.4. UAT-04",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-04.png",
+      "title": "Figure 9.5.4a. Enlarged original workflow detail",
+      "crop": [
+        240,
+        200,
+        1920,
+        1250
+      ]
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-05.png",
+      "title": "Figure 9.5.5. UAT-05",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-request-changes.png",
+      "title": "Figure 9.5.6. UAT-07-request-changes",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-student-feedback.png",
+      "title": "Figure 9.5.7. UAT-07-student-feedback",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-student-feedback.png",
+      "title": "Figure 9.5.7a. Enlarged original workflow detail",
+      "crop": [
+        240,
+        200,
+        1920,
+        1250
+      ]
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-08-resubmitted.png",
+      "title": "Figure 9.5.8. UAT-08-resubmitted",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-09-approved.png",
+      "title": "Figure 9.5.9. UAT-09-approved",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-09-approved.png",
+      "title": "Figure 9.5.9a. Enlarged original workflow detail",
+      "crop": [
+        240,
+        200,
+        1920,
+        1250
+      ]
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-10-second-plan.png",
+      "title": "Figure 9.5.10. UAT-10-second-plan",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-10-second-plan.png",
+      "title": "Figure 9.5.10a. Enlarged original workflow detail",
+      "crop": [
+        240,
+        200,
+        1920,
+        1250
+      ]
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-11-rejected.png",
+      "title": "Figure 9.5.11. UAT-11-rejected",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-12-pending-plan.png",
+      "title": "Figure 9.5.12. UAT-12-pending-plan",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-13-course-removed.png",
+      "title": "Figure 9.5.13. UAT-13-course-removed",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-13-course-removed.png",
+      "title": "Figure 9.5.13a. Enlarged original workflow detail",
+      "crop": [
+        240,
+        200,
+        1920,
+        1250
+      ]
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-14-approved-cancelled.png",
+      "title": "Figure 9.5.14. UAT-14-approved-cancelled",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-14-approved-cancelled.png",
+      "title": "Figure 9.5.14a. Enlarged original workflow detail",
+      "crop": [
+        240,
+        200,
+        1920,
+        1250
+      ]
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-15-rejected-cancelled.png",
+      "title": "Figure 9.5.15. UAT-15-rejected-cancelled",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-15-rejected-cancelled.png",
+      "title": "Figure 9.5.15a. Enlarged original workflow detail",
+      "crop": [
+        240,
+        200,
+        1920,
+        1250
+      ]
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-16-pending-cancelled.png",
+      "title": "Figure 9.5.16. UAT-16-pending-cancelled",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-16-pending-cancelled.png",
+      "title": "Figure 9.5.16a. Enlarged original workflow detail",
+      "crop": [
+        240,
+        200,
+        1920,
+        1250
+      ]
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-17-new-plan.png",
+      "title": "Figure 9.5.17. UAT-17-new-plan",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-17-new-plan.png",
+      "title": "Figure 9.5.17a. Enlarged original workflow detail",
+      "crop": [
+        240,
+        200,
+        1920,
+        1250
+      ]
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-20-access-denied.png",
+      "title": "Figure 9.5.18. UAT-20-access-denied",
+      "crop": null
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-20-logged-out.png",
+      "title": "Figure 9.5.19. UAT-20-logged-out",
+      "crop": null
+    }
+  ],
+  "source_files": [
+    {
+      "path": "docs/assignment2/evidence/audit/authorization-reproduction.json",
+      "sha256": "e64b7ec3e4405fb98a68bd3e4a73836da3b74c0c62dbbbe2f6f705d9d3e61db4"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/pytest-output.txt",
+      "sha256": "4794ac973bbfd326b55c73d6fe406d2651f2d3bd2a311be96ff4d2c82d949bef"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/registration-reproduction.json",
+      "sha256": "4600a97a92b4de2d7883eb235ead75b38f3aabebef533d94948f677633cde62f"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/sqlite-integrity-reproduction.json",
+      "sha256": "3b0a2576251e560a791cd72ecaa306e0e4002defb73a1a8f9bb5ddba31cfc457"
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow1-api.md",
+      "sha256": "227fdd46a01970a6be22565f580904f18cc795233ab414533943bfdd9674d104"
+    },
+    {
+      "path": "docs/assignment2/final-quality-audit.md",
+      "sha256": "5e12a99c3a8d166f826a05f43c4309e794cfc742e7f02fa77d509aee95b65e77"
+    },
+    {
+      "path": "docs/assignment2/official-assignment-brief.md",
+      "sha256": "ad7b448af178c89ef5596c7babba61dfc168acfe197117ea1767b423a0d6fc35"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor-Assignment2.postman_collection.json",
+      "sha256": "409cffa7540cd73880d74139f77346cdb47d06a18d9ae8e1b11cf70ef2c44b6d"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012608.png",
+      "sha256": "67133b5e6e06692db4212b0f8cc1b9802130892861f66f11bcb8492681919f60"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012643.png",
+      "sha256": "352634fa1ac1f0564219e9ece89641971024708c49dc0433d748a714e53b4145"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012658.png",
+      "sha256": "6fb2b970c6e1748be3af0aad26e99e4b47136b63c3359a1e97e3f388f11ee991"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012739.png",
+      "sha256": "e90198d68159698fd5deac521d71f259410c235a52375344482ba31d6e550680"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012839.png",
+      "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c"
+    },
+    {
+      "path": "docs/assignment2/PROGRESS.md",
+      "sha256": "978d93c3557794d937fbcb80147d7828dc92cef35fd4b5a220fe6e4f009861a0"
+    },
+    {
+      "path": "docs/assignment2/reports/integration-test-report.md",
+      "sha256": "ad62f27c5a5b698c986fba1ee6515e7104cd8032be3a4cd4091edc664c7aa3df"
+    },
+    {
+      "path": "docs/assignment2/reports/postman-test-report.md",
+      "sha256": "0690f8b9c7dd0f87d2011a489be32440abd23b9f98c7d5aefaaf84352a62a6aa"
+    },
+    {
+      "path": "docs/assignment2/reports/requirements-test-traceability.md",
+      "sha256": "8f710499f516b5cfadd7e3f87c4f7bd6c02e284375d1622c3709b4c64dd3617a"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-evidence-review.md",
+      "sha256": "02a3d0c39f8c50ba023457bbe665940bb208f90940fe57e6c38adcd9600144d1"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-execution.md",
+      "sha256": "5704e28f3f88524099857d3ad9d641b28807bfabdb7865f15aa0b6cb0d96df52"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-final-report.md",
+      "sha256": "bd44286645a75ef3db39b77f84ed0fd4967a4d435cc04bcef94d79bce533808c"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-supplemental-evidence.md",
+      "sha256": "11c1789971963b926c643619d4bd853115fc928785d3011f901d3f83b6e6e449"
+    },
+    {
+      "path": "docs/assignment2/reports/unit-test-report.md",
+      "sha256": "7860c8e48cd76b57dfbea24cf309dc8918f06226863b847c60cd5c8b2393d98f"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 231956.png",
+      "sha256": "3364ab7f47373b1b33ecea87ee7ac3f1c548f63ebdc9a1b24489ca1ab2f70c79"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232025.png",
+      "sha256": "aa72e3c4d8a74378d73c0ebe058f21fc4629e9ce5cc8c9e2b9aa6957adeff638"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232058.png",
+      "sha256": "c86c7c62b0b441b0b5eaec64477071131d37e86138c21a9fd3966469738667e7"
+    },
+    {
+      "path": "docs/assignment2/screenshots/postman-results.png",
+      "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-01.png",
+      "sha256": "bf412eeff9e96cf3db09adf9160fff5917b1eda288c69bc31affbf27cad3715d"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-02.png",
+      "sha256": "24ea5a2fdabf2242b8066d6a339b9ee174f7b33f9aa3c86bd133191f6bfffa48"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-03.png",
+      "sha256": "8d4cec27cd21edae870ae3f1471b62b5210667919271bed326df99601359c4b1"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-04.png",
+      "sha256": "6824dc242e9bb973598674a6036f9f3b2551be523eb15f5843a83bec929352bf"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-05.png",
+      "sha256": "3607804370df6bb5b059ffa25cfb653bbfe85f4aabf83b9a6ae2732c10a5e8b7"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-request-changes.png",
+      "sha256": "8db4bdd961e1d0cf83eb0f58a738b7a863a16d38863dafd7b661049b9ebcbeda"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-student-feedback.png",
+      "sha256": "dc2f1005839df415c7cb2a0060bb95fd96c8659fe908588c7105148275dcc602"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-08-resubmitted.png",
+      "sha256": "9966625b1a4e967adf913bf1c0a3ccf8306cd1a9694833634a50e6852b699dd1"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-09-approved.png",
+      "sha256": "e1d75b613bb7f4c14031b80325cf393b718d01ba6ccb722c299c865093e0b8f6"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-10-second-plan.png",
+      "sha256": "f2568f9542ad117328bf0ea2aadeaabd99339ccf39ca3260d3902b50debdd67e"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-11-rejected.png",
+      "sha256": "0bb29427029aceac1497dfe6b67f77fea23909ce7b6875c1a6dcdfabfa58ae97"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-12-pending-plan.png",
+      "sha256": "98cd545c84dfaa5d4f94d2582fad6933714dcc025840987bba933b59315e6d54"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-13-course-removed.png",
+      "sha256": "7331af326052e8a2a50aaafd5b3ab0555a9c3497486b2749ffaecfa2ad29f67b"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-14-approved-cancelled.png",
+      "sha256": "8246babad1e7f4a64c557d92da07847ded7084c0e5f623c6c245f1330841d3f8"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-15-rejected-cancelled.png",
+      "sha256": "c364204a98212b1be1232ffa2e42820bfb4c422ec352ec2d8c88fe9baee13b08"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-16-pending-cancelled.png",
+      "sha256": "6c3105bc588355d900802b4aa94c2fb26dffee37a349227ecc6181e46978bc7c"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-17-new-plan.png",
+      "sha256": "2b2b4ab359fdcdd35b42482db82c4e19dc9687b6868b01a42fd226159c417721"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-20-access-denied.png",
+      "sha256": "67052c79456aaf8b19a4b12cc136e9ce333ccae7fea508a8b6f13cf278a26e52"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-20-logged-out.png",
+      "sha256": "b384522cc18d960ebce781bfb10eccdc219e58a48b0929da714f39ef26b3e6ae"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231703.png",
+      "sha256": "b1562bb4cc08d29b237410a5148539bd8f8e7ee04c17374843a26835893f091e"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231742.png",
+      "sha256": "c2cc2fbfaac255b39c982648c039b658413a7b5e470eaff12505c8e8281ea2b5"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231747.png",
+      "sha256": "ac16371f04d6dade7b85b3053cfc8c9360071ea30722df245bbade67fa56f41a"
+    },
+    {
+      "path": "docs/assignment2/test-plans/integration-test-plan.md",
+      "sha256": "725e6c1b3cecae825edc4f6d706484051ce584cd416ac0d5278e8f188977a732"
+    },
+    {
+      "path": "docs/assignment2/test-plans/uat-test-plan.md",
+      "sha256": "de604af4a119f73bd0de310765ab7a882246689e757967c527ab2c577defac28"
+    },
+    {
+      "path": "docs/assignment2/test-plans/unit-test-plan.md",
+      "sha256": "719ae64796c887fcad6c03e368c65798409ebe3540d75d35a69c2daae9b5b3ad"
+    },
+    {
+      "path": "docs/diagrams/use-case.png",
+      "sha256": "7345d0472d69bc440b5698255eaf472fe8667ffab85f9f6bf16d210a828afbbc"
+    },
+    {
+      "path": "docs/report.md",
+      "sha256": "bcad6e96d62dff36dfe0acc1c3a4ada3bfb12d62c655d5506c14dac98c208abe"
+    },
+    {
+      "path": "docs/transcripts/current-report-export.md",
+      "sha256": "d173bf344ca320c3bc16440e03d375da8db3aeafd2a32560b7d385ba72869a02"
+    },
+    {
+      "path": "docs/wireframes/Three-Panel Student Advisor Dashboard Mockup.png",
+      "sha256": "9441f107ea45fb4046339b0e87921035bd01a27aaf21f5b39174a0046f48257c"
+    },
+    {
+      "path": "tests/integration/conftest.py",
+      "sha256": "3acdbb3bcc698b442700ccb1508d89b51187eea78b498b07f2da9415b1f24c3b"
+    },
+    {
+      "path": "tests/unit/test_advising.py",
+      "sha256": "f410d727f7740e34e9301a3183e71888c98b8681d6e0f6521f6c9b72080d5c71"
+    }
+  ],
+  "readiness": "NOT SUBMISSION-READY; F01–F05 remain High and open",
+  "source_manifest_timing": "Source hashes identify inputs at assembly; PROGRESS and the final checklist receive post-assembly completion records. Application/test hashes independently match retained audit metadata.",
+  "completion_artifacts": [
+    {
+      "path": "docs/assignment2/PROGRESS.md",
+      "sha256": "77f45fac5eb62c3a51cb1a4fb8c277953a1e2f96cde5145df6e8ebddfb46ca37"
+    },
+    {
+      "path": "docs/assignment2/final-submission-checklist.md",
+      "sha256": "5e867eb6bf014e431dd7543fb46e61e75a5892e32dc7d43febe650aab3699a43"
+    },
+    {
+      "path": "docs/assignment2/build_submission.py",
+      "sha256": "ab1acc73ff42d138ddf474ea209f4859929ada3a4d3cd74822a80ee44d195470"
+    },
+    {
+      "path": "docs/assignment2/validate_submission.py",
+      "sha256": "51dc2045de57e9cf062529e64a5eba74bca7c8441dac51b8f57a77d033a2fe52"
+    },
+    {
+      "path": "docs/report.pdf",
+      "sha256": "bb85adb0eb69b888be2a9042066adda05fe6609ff28f941b3554b63efe5eef18"
+    }
+  ]
+}

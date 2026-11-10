@@ -1,0 +1,43 @@
+$kind: http-request
+description: Advisor login and capture cookie. Run the complete collection in order against the disposable local database; see README.md.
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+  Cookie: ""
+body:
+  type: urlencoded
+  content:
+    username: "{{advisor_username}}"
+    password: "{{advisor_password}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      try {
+      let assertionFailed = false;
+      function check(name, fn) {
+        pm.test(name, function() {
+          try { fn(); } catch (error) { assertionFailed = true; throw error; }
+        });
+      }
+      check("HTTP 303", () => pm.response.to.have.status(303));
+      check("Success redirects to app", () => pm.expect(pm.response.headers.get("Location")).to.match(/\/app$/));
+      const cookie = pm.response.headers.all()
+        .filter(h => h.key.toLowerCase() === "set-cookie")
+        .map(h => h.value.trim())
+        .find(value => value.startsWith("access_token="));
+      const cookieValue = cookie ? cookie.split(";", 1)[0].slice("access_token=".length).trim() : "";
+      const token = cookieValue.startsWith('"') && cookieValue.endsWith('"') ? cookieValue.slice(1, -1) : cookieValue;
+      check("Login issues access_token", () => pm.expect(token).to.be.a("string").and.not.empty);
+      if (pm.response.code !== 303 || !token) { pm.execution.setNextRequest(null); throw new Error("Login failed; check credentials"); }
+      pm.collectionVariables.set("advisor_token", token);
+      check("Local login cookie security flags", () => {
+        pm.expect(cookie).to.match(/;\s*HttpOnly\s*(?:;|$)/i); pm.expect(cookie).to.match(/;\s*SameSite=lax\s*(?:;|$)/i);
+      });
+      if (assertionFailed) pm.execution.setNextRequest(null);
+      } catch (error) { pm.execution.setNextRequest(null); throw error; }
+    language: text/javascript
+settings:
+  followRedirects: false
+  disableCookies: true
+order: 10000

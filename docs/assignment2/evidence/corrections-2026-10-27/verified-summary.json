@@ -1,0 +1,26 @@
+{
+  "targeted": {
+    "run_id": "targeted-20261027T193352Z-b6385978",
+    "tests": 284,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "source_unchanged": true,
+    "bootstrap_created": false,
+    "source_files": 70
+  },
+  "full": {
+    "run_id": "full-20261027T193800Z-7227960f",
+    "tests": 735,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "source_unchanged": true,
+    "bootstrap_created": false,
+    "source_files": 70,
+    "integration_nodes": 214,
+    "unit_nodes": 113
+  }
+}

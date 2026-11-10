@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-27",
+  "scope": "Final documentation/evidence review; no new application execution or PDF generation",
+  "source_hashes_checked": 70,
+  "source_hash_mismatches": [],
+  "original_pdf_unchanged": true,
+  "original_image_hashes_checked": 33,
+  "original_image_hash_mismatches": [],
+  "original_uat_pngs": 19,
+  "local_document_links_checked": 731,
+  "missing_local_links": [],
+  "runs": {
+    "targeted-20261027T193352Z-b6385978": {
+      "tests": 284,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "full-20261027T193800Z-7227960f": {
+      "tests": 735,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "postman_collection_unchanged": true,
+  "populated_exported_credential_variables": [],
+  "tracked_env_or_database_paths": [],
+  "manual_uat_new_build": "pending",
+  "postman_runtime_new_build": "pending",
+  "curriculum_change": "not applied; owner approval pending",
+  "git_mutations": "none",
+  "final_static_checks": [
+    {
+      "command": [
+        "node",
+        "docs/assignment2/postman/validate_collection.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Static checks passed: valid JSON, 90 requests, 93 JavaScript scripts compile, all 15 API operations covered.\nStructured URLs, methods/paths, variables, body JSON, blank exported credentials, and redirect/cookie settings checked.\nPostman/Newman runtime execution: NOT PERFORMED.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "tests/browser/contrast_probe.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\camer\\OneDrive\\Documents\\UWI COURSES\\Year 3\\Semester 1\\COMP 3613\\Assignments\\Assignment 2\\Assignment 2\\.venv\\Scripts\\ruff.exe",
+        "check",
+        "app/database.py",
+        "app/routers/register.py",
+        "app/routers/user_home.py",
+        "tests/integration/test_audit_corrections.py",
+        "tests/integration/test_contrast_regression.py",
+        "docs/assignment2/run_correction_checks.py"
+      ],
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "app/database.py",
+        "app/routers/register.py",
+        "app/routers/user_home.py",
+        "app/static/css/app.css"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "publication_candidate_files": 279,
+  "publication_secret_scan": "No unresolved candidate pattern findings; one reviewed false positive is a literal scanner marker, not key material. Final staged/history review still required."
+}

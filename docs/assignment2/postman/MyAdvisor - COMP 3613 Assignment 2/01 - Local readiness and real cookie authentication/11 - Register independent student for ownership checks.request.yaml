@@ -1,0 +1,33 @@
+$kind: http-request
+description: Register independent student for ownership checks. Run the complete collection in order against the disposable local database; see README.md.
+url: "{{base_url}}/register"
+method: POST
+headers:
+  Accept: application/json
+  Cookie: ""
+body:
+  type: urlencoded
+  content:
+    username: "{{other_username}}"
+    email: "{{other_username}}@example.com"
+    password: "{{other_password}}"
+    name: Postman isolation student
+scripts:
+  - type: afterResponse
+    code: |-
+      try {
+      let assertionFailed = false;
+      function check(name, fn) {
+        pm.test(name, function() {
+          try { fn(); } catch (error) { assertionFailed = true; throw error; }
+        });
+      }
+      check("HTTP 303", () => pm.response.to.have.status(303));
+      check("Registration redirects to login", () => pm.expect(pm.response.headers.get("Location")).to.match(/\/login$/));
+      if (assertionFailed) pm.execution.setNextRequest(null);
+      } catch (error) { pm.execution.setNextRequest(null); throw error; }
+    language: text/javascript
+settings:
+  followRedirects: false
+  disableCookies: true
+order: 11000

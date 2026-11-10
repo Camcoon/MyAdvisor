@@ -1,0 +1,167 @@
+{% extends "authenticated-base.html" %}
+{% block title %}Advisor plan review{% endblock %}
+
+{% block additional_styles %}
+<style>
+  .student-summary { background: #f5f9fe; border: 1px solid #e1ebf7; border-radius: .75rem; }
+  .course-review-table th { color: var(--brand-muted); font-weight: 600; white-space: nowrap; }
+  .course-review-table td { vertical-align: middle; }
+  .review-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .feedback-count { font-variant-numeric: tabular-nums; }
+</style>
+{% endblock %}
+
+{% block subpage_content %}
+<div class="container-fluid py-3">
+  <div class="mb-4">
+    <p class="eyebrow mb-1">Advisor workspace</p>
+    <h1 class="page-title mb-1">Student plan review</h1>
+    <p class="muted mb-0">Review eligibility and selected courses, then approve, reject, or request revisions.</p>
+  </div>
+
+  {% if not plans %}
+  <div class="panel-card empty-state">
+    <div class="empty-state-icon" aria-hidden="true"><i class="bi bi-clipboard-check"></i></div>
+    <h2 class="h5">All caught up</h2>
+    <p class="mb-3 muted">There are no pending student semester plans to review. New submissions will appear here.</p>
+    <a class="btn btn-primary" href="{{ url_for('admin_home_view') }}">Check for New Plans</a>
+  </div>
+  {% else %}
+  <div class="review-stack">
+    {% for plan_item in plans %}
+    {% set student = plan_item.student %}
+    <article class="panel-card review-panel mb-4">
+      <div class="panel-header flex-wrap gap-2">
+        <div>
+          <h2>{{ student.name or student.username }} · {{ plan_item.plan.semester_name }}</h2>
+          <div class="small muted">Submitted {{ plan_item.plan.submitted_at.strftime('%b %d, %Y') if plan_item.plan.submitted_at else 'date unavailable' }}</div>
+        </div>
+        <span class="status-pill pending">{{ plan_item.plan.status }}</span>
+      </div>
+
+      <div class="student-summary p-3 mb-4">
+        <div class="row g-3 align-items-center">
+          <div class="col-auto"><div class="avatar-mark" aria-hidden="true">{{ (student.name or student.username)[:1]|upper }}</div></div>
+          <div class="col">
+            <strong>{{ student.name or student.username }}</strong>
+            <div class="small muted">Student ID: {{ student.student_number or 'Not provided' }}</div>
+            <div class="small muted">{{ plan_item.program.name if plan_item.program else 'Degree program not set' }}</div>
+          </div>
+          <div class="col-md-auto border-start-md ps-md-4">
+            <div class="small muted">Courses requested</div>
+            <strong>{{ plan_item.courses|length }} · {{ plan_item.plan.semester_name }}</strong>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h5">Selected courses</h3>
+      <div class="table-responsive mb-4">
+        <table class="table table-hover course-review-table mb-0">
+          <thead>
+            <tr>
+              <th scope="col">Course code</th>
+              <th scope="col">Title</th>
+              <th scope="col">Credits</th>
+              <th scope="col">Prerequisites</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for course in plan_item.courses %}
+            <tr>
+              <td><strong>{{ course.code }}</strong></td>
+              <td>{{ course.title }}</td>
+              <td>{{ course.credits }}</td>
+              <td>{{ course.prerequisite_text or 'None' }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="4" class="muted">No courses were attached to this plan.</td></tr>
+            {% endfor %}
+          </tbody>
+          {% if plan_item.courses %}
+          <tfoot>
+            <tr><th colspan="2" class="text-end">Total requested credits</th><th>{{ plan_item.courses|sum(attribute='credits') }}</th><td></td></tr>
+          </tfoot>
+          {% endif %}
+        </table>
+      </div>
+
+      <form method="post" action="{{ url_for('review_plan', plan_id=plan_item.plan.id) }}">
+        <div class="mb-3">
+          <label class="form-label" for="feedback-{{ plan_item.plan.id }}">Comments (optional)</label>
+          <textarea class="form-control advisor-feedback" id="feedback-{{ plan_item.plan.id }}"
+                    name="feedback" rows="3" maxlength="500"
+                    placeholder="Add feedback or notes for the student."></textarea>
+          <div class="small muted text-end mt-1"><span class="feedback-count">0</span>/500</div>
+        </div>
+        <div class="review-actions">
+          <button class="btn btn-success" type="submit" name="decision" value="approve">Approve Plan</button>
+          <button class="btn btn-outline-danger" type="submit" name="decision" value="reject">Reject Plan</button>
+          <button class="btn btn-outline-primary" type="submit" name="decision" value="request_changes">Request Changes</button>
+        </div>
+      </form>
+    </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block subpage_scripts %}
+<script>
+document.querySelectorAll(".advisor-feedback").forEach((field) => {
+  const counter = field.closest("form").querySelector(".feedback-count");
+  const update = () => { counter.textContent = String(field.value.length); };
+  field.addEventListener("input", update);
+  update();
+});
+
+document.querySelectorAll(".review-panel form").forEach((form) => {
+  let selectedDecision = "";
+  form.querySelectorAll('button[name="decision"]').forEach((button) => {
+    button.addEventListener("click", () => {
+      selectedDecision = button.value;
+    });
+  });
+
+  form.addEventListener("submit", async (event) => {
+    const submitter = event.submitter;
+    const decision = submitter?.name === "decision"
+      ? submitter.value
+      : selectedDecision;
+    if (!decision) return;
+
+    event.preventDefault();
+    if (submitter) submitter.disabled = true;
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          decision,
+          feedback: form.elements.namedItem("feedback").value,
+        }),
+      });
+      if (!response.ok) {
+        const responseText = await response.text();
+        let message = responseText;
+        try {
+          const payload = JSON.parse(responseText);
+          message = typeof payload.detail === "string"
+            ? payload.detail
+            : Array.isArray(payload.detail)
+              ? payload.detail.map((item) => item.msg).join(" ")
+              : responseText;
+        } catch {
+          message = responseText;
+        }
+        throw new Error(message || `Review submission failed (${response.status}).`);
+      }
+      window.location.assign(response.url);
+    } catch (error) {
+      if (submitter) submitter.disabled = false;
+      window.alert(error.message || "Could not submit the plan review. Please try again.");
+    }
+  });
+});
+</script>
+{% endblock %}

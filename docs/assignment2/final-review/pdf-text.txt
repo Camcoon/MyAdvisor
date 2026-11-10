@@ -1,0 +1,2370 @@
+27 October 2026  |  Evidence qualified; acceptance incomplete
+1
+1. Cover Page
+COMP 3613
+Assignment 2
+MyAdvisor
+Project, Test Plans, Implementation and Reports
+Student name
+Cameron Ramesar
+University ID
+816044668
+Submission date
+27 October 2026
+Repository
+https://github.com/Camcoon/MyAdvisorWithTests
+Readiness: NOT SUBMISSION-READY. The document is restructured and evidence is included; repository
+publication, acceptance and other material findings remain unresolved. See Appendix B.
+Identity verified against the retained student statement and Assignment 1 cover. The eight-digit Student ID in the original
+wireframe and browser evidence is demonstration data.
+This report distinguishes planned outcomes, historical executions and corrected-build regression evidence. It does not certify
+unperformed tests.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+2
+Table of Contents
+Physical PDF page numbers include the cover. The eight numbered sections follow the lecturer’s deliverables; supporting
+material follows in appendices.
+1
+1. Cover Page
+3
+2. Project Description
+4
+3. Use Case Diagram
+5
+4. Entity Relationship Diagram
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 6
+4.1 Readable entity keys and relationships
+7
+5. Application Wireframe
+11
+6. Test Plans
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 11
+6.1 User Acceptance Test Plan
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 23
+6.2 Unit Test Plan
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 27
+6.3 Integration Test Plan
+32
+7. Implementation
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 32
+7.1 GitHub Repository
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 32
+7.2 Unit Test Implementation
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 33
+7.3 Integration Test Implementation
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 34
+7.4 API Test Implementation — Postman
+36
+8. Test Reports
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 36
+8.1 Unit Test Report
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 40
+8.2 Integration Test Report
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 45
+8.3 Postman Collection Run Report
+52
+Appendix A — UAT Execution Summary
+55
+Appendix B — Findings and Readiness
+56
+Appendix C — Compact Requirements Traceability
+57
+Appendix D — Lecturer Deliverables Checklist
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+3
+2. Project Description
+MyAdvisor is a coursework prototype for Student–Advisor academic planning. It brings degree progress,
+prerequisite-aware course selection and plan decisions into connected workspaces, addressing the difficulty of
+reconciling completed work, current courses and proposed semester choices across separate records.
+Workflow / user
+Purpose and implemented behavior
+WF1: Track Degree Progress —
+Student
+View completed, in-progress and remaining credits; overall progress;
+requirement categories; recent academic activity.
+WF2: Plan Semester Course
+Selections — Student
+Search/filter the catalogue, inspect eligibility, review and submit
+selections, read feedback, revise returned plans, remove permitted
+courses and cancel/replace plans.
+WF3: Review and Approve
+Course Plans — Advisor
+Inspect the shared Pending queue and Student/course details; Approve,
+Reject or Request Changes, with optional feedback.
+Students use Home, Degree Progress, Plan Courses, Messages and Profile. Advisors use their own Home/Profile
+and Advisor Review. Student identity comes from the authenticated account; Advisor decisions update a plan’s
+status, reviewer and feedback. Semesters use the nine fixed Year 1–3 / semester 1–3 options, with semester 3
+designated summer.
+Technology
+Role
+Python / FastAPI / Pydantic
+HTTP application, request validation and JSON APIs.
+SQLModel / SQLAlchemy / SQLite
+Models, repository persistence and isolated local tests. The Render
+blueprint targets PostgreSQL; no production database test is claimed.
+Jinja2 / Bootstrap / AdminLTE /
+JavaScript
+Rendered Student/Advisor pages and selection/review interactions.
+pwdlib / PyJWT / signed cookies
+Password verification, signed login token, current-role and ownership
+checks.
+pytest / TestClient / mocks / Postman
+Isolated unit decisions, integrated HTTP/database checks and
+automated API collection.
+Assignment 2 scope. Extends the Assignment 1 workflows with explicit JSON API contracts, unit/integration
+plans and pytest implementations, a 90-request Postman collection, manual UAT specifications and execution
+records, screenshots and traceability. This is demonstration data, not an authoritative UWI curriculum: the
+93-credit degree and 120-credit category total remain inconsistent (F05).
+Source: docs/report.md; app/models; app/routers; docs/assignment2/api.md.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+4
+3. Use Case Diagram
+Figure 3.1. Original Assignment 1 MyAdvisor use case diagram, reproduced from docs/diagrams/use-case.png without
+redrawing.
+The Student tracks degree progress, plans semester selections, views the catalogue and cancels semester
+plans. The Advisor reviews course plans and can request changes. Catalogue viewing is included in the
+planning/review workflows; Request Changes extends review. These are the original diagram’s actors and
+relationships. Authentication supports their implementation and is tested separately.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+5
+4. Entity Relationship Diagram
+Figure 4.1. Original MyAdvisor ERD image extracted losslessly from Assignment 1 docs/report.pdf, page 3 (image 29).
+The readable keyed rendering follows.
+A program defines requirements and optionally enrolls users. A Student creates plans and has course records; an optional
+Advisor reviews each plan. PLAN_COURSE joins plans to courses; STUDENT_COURSE joins users to academic course records.
+All seven id fields are primary keys. Unique pairs constrain program/category, student/course and plan/course. The password
+field names stored data; no value is printed.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+6
+4.1 Readable entity keys and relationships
+enrolls 0..1 : 0..*
+defines 1 : 0..*
+creates 1 : 0..*
+reviews 0..1 : 0..*
+completes 1 : 0..*
+appears 1 : 0..*
+appears 1 : 0..*
+contains 1 : 0..*
+DEGREE_PROGRAM
+int id PK
+string name
+int total_credits
+DEGREE_REQUIREMENT
+int id PK
+int program_id FK
+string category
+int required_credits
+USER
+int id PK
+string username
+string email
+string password
+string name
+string student_number
+string role
+int degree_program FK
+COURSE
+int id PK
+string code
+string title
+int credits
+string prerequisite_text
+string category
+string department
+SEMESTER_PLAN
+int id PK
+int student_id FK
+int advisor_id FK
+string semester_name
+string status
+string advisor_feedback
+datetime submitted_at
+PLAN_COURSE
+int id PK
+int plan_id FK
+int course_id FK
+STUDENT_COURSE
+int id PK
+int student_id FK
+int course_id FK
+string completion_status
+string grade
+datetime completed_at
+Figure 4.2. Enlarged vector rendering of the same original seven-entity Mermaid ERD. All original fields/relationships are retained; PK labels are added from app/models/user.py
+and app/models/advising.py. FK fields retain their original names. Numeric edge labels state source:target cardinality; “appears” abbreviates “appears_in”.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+7
+5. Application Wireframe
+Figure 5.1. Original three-panel Assignment 1 wireframe, unmodified. W1: Student Degree Progress; W2: Student Semester Planning; W3: Advisor Plan Review. Sample credits,
+dates, course labels and the eight-digit ID are illustrative, not execution results.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+8
+5.1 Wireframe detail: W1 — Student Degree Progress
+Figure 5.2. Enlarged crop of the original panel. W1 maps to UAT-01; W2 to UAT-02–05 and UAT-08–17; W3 to
+UAT-06–11 and queue checks. Login and cancellation extensions are documented in the plan.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+9
+5.2 Wireframe detail: W2 — Student Semester Planning
+Figure 5.3. Enlarged crop of the original panel. W1 maps to UAT-01; W2 to UAT-02–05 and UAT-08–17; W3 to
+UAT-06–11 and queue checks. Login and cancellation extensions are documented in the plan.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+10
+5.3 Wireframe detail: W3 — Advisor Plan Review
+Figure 5.4. Enlarged crop of the original panel. W1 maps to UAT-01; W2 to UAT-02–05 and UAT-08–17; W3 to
+UAT-06–11 and queue checks. Login and cancellation extensions are documented in the plan.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+11
+6. Test Plans
+6.1 User Acceptance Test Plan
+Objective and scope. Verify that Students can understand degree progress and complete eligible semester
+planning, and Advisors can review and return decisions. These are planned browser tasks and expected
+outcomes. Actual results and latest statuses appear only in Appendix A; automated executions appear in Section
+8.
+Template access. Both lecturer Google Docs templates were requested through their edit and text-export
+URLs on 27 October 2026; the tool reported them inaccessible. Their exact headings, extra fields, sign-offs and
+formatting are unverified, and are not invented. This section adapts the retained plans to the fields explicitly
+required in the supplied brief. Test Plans template; User Acceptance Tests Plan template.
+Plan control
+Specification
+Actors
+Student (regular_user), Advisor (admin); separate browser profiles to isolate
+cookies.
+Environment
+Prepared disposable SQLite database; current local app; JavaScript enabled;
+planned base URL http://127.0.0.1:5002. Record actual URL, build/source hashes,
+browser/version, OS, date/time zone and tester at execution. Existing historic
+browser/build details are incomplete.
+Preparation
+Use the existing safe setup in reports/uat-execution.md and the corrected-build
+retest guide. Do not reset an existing database. Confirm empty A/B/C semesters
+and expected demo identities. Use supplied account credentials privately; no
+password values appear here.
+Execution order
+UAT-18 → UAT-01–05 → UAT-19 → UAT-06–17 → UAT-20. Numeric IDs are retained.
+References
+W1/W2/W3 are the panels in Figures 5.2/5.3/5.4. W4 means Student
+Messages/feedback; W5 means cancellation/resubmission extensions to W2/W3,
+not additional original panels.
+Recording and
+completion
+Record observed outcome, evidence, deviation and defect for every step. Pass
+only when the complete expected outcome is observed. Partial evidence remains
+Not Run; missing evidence is not an invented failure.
+6.1.1 Planned UAT data and baseline
+Symbol / item
+Planned data
+A / B / C
+Year 1 semester 1 / Year 1 semester 2 / Year 1 semester 3.
+E1 / E2 / E3
+COMP 1201 Object-Oriented Programming (requires completed COMP 1101) /
+MATH 2250 Industrial Statistics / ENGL 1000 Academic Writing. Each is 3 credits;
+E2/E3 have no prerequisites.
+Academic records
+COMP 1101 and MATH 1200 Completed, 3 credits each; COMP 1600 In Progress, 3
+credits. COMP 2100 is blocked because COMP 1600 is not completed.
+Degree / categories
+93 required; 6 completed; 3 in progress; 84 remaining; 6% completed. Core 3/36
+(33 remaining), General Education 3/18 (15), Electives 0/18 (18), Major 0/24 (24),
+Additional 0/24 (24). Category denominator total 120 is the unresolved F05
+concern.
+The following case specifications come from the latest execution companion’s planned fields. They preserve the original
+two-course inputs and expected results; the historical three-course deviation is recorded separately. Source-only stale Not
+Run/Passed fields are excluded from the plan.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+12
+UAT-01 — View degree progress
+Field — UAT-01
+Planned specification
+Actor / wireframe
+Student; W1: Overall Progress, credit cards, Requirement Breakdown, Recent Activity.
+Objective
+Understand completed, current, and remaining degree requirements.
+Preconditions
+Local setup and UAT-18 completed; Student signed in; compare displayed data with
+the documented seed baseline.
+Test data
+Student demo account; baseline progress and category values above.
+Steps
+1. In the signed-in Student window click Degree Progress in the sidebar. 2. Read
+Overall progress, all four credit cards, every Requirement breakdown row, and Recent
+course activity. Capture the displayed values. 3. Refresh the page and compare the
+values again.
+Expected result
+Student workspace opens. Credits are 6 completed, 3 in progress, 84 remaining, and
+93 required; overall progress is 6 / 93 (6%). Breakdown matches the baseline and
+distinguishes completed from in-progress courses. Recent activity shows the three
+recorded courses with their correct statuses. Refresh preserves the values. Record the
+category-total inconsistency noted above for acceptance review.
+UAT-02 — Browse, search, and filter available courses
+Field — UAT-02
+Planned specification
+Actor / wireframe
+Student; W2: semester dropdown, search, department filter, course list.
+Objective
+Find courses and understand their credits, prerequisites, and eligibility.
+Preconditions
+UAT-01 completed; Student signed in; A has no plan.
+Test data
+A; E1/E2; search COMP 1201, Industrial Statistics, and ZZZ-UAT-NO-COURSE.
+Steps
+1. Click Plan Courses. Open Semester and inspect the nine Year 1–3/semester 1–3
+options; choose Year 1 semester 1. 2. Scroll the course list and inspect course codes,
+titles, credits, departments, prerequisites, and eligibility messages. 3. Enter COMP
+1201 in Search by code or course name; inspect the matching row. 4. Replace the
+search with Industrial Statistics; inspect MATH 2250. 5. Clear the search and choose
+Mathematics in the department dropdown; inspect the remaining rows. 6. With
+Mathematics still selected, search COMP 1201; inspect the no-match message, then
+click Clear Filters. 7. Search ZZZ-UAT-NO-COURSE; inspect the no-match message
+and click Clear Filters again.
+Expected result
+The chosen semester loads, and semester 3 is identified as summer. E1 and E2 show
+their documented details. Search matches code or title, and the department filter
+restricts results. Combined incompatible filters and the nonexistent search show “No
+courses match your search and department filters.” Clear Filters restores the catalog
+and All departments. No plan is submitted.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+13
+UAT-03 — Select only eligible courses and review the selection
+Field — UAT-03
+Planned specification
+Actor / wireframe
+Student; W2: checkboxes, Selected Courses, Next/Review Plan.
+Objective
+Prevent an empty or ineligible selection and check the proposed credit load.
+Preconditions
+UAT-02 completed; A selected; filters clear; no boxes selected.
+Test data
+E1 and E2 (6 credits); ineligible baseline examples.
+Steps
+1. Observe 0 courses selected and attempt to click Review Selected Courses. 2.
+Locate COMP 1101, COMP 1600, and COMP 2100, scrolling as necessary. Read their
+eligibility messages and attempt to select each checkbox. 3. Select COMP 1201 and
+MATH 2250. Check the count, then click Review Selected Courses. 4. Read the two
+reviewed courses, their prerequisites, and Total selected credits. 5. Click Back to
+course selection, uncheck MATH 2250, and check the count. Recheck it and click
+Review Selected Courses again.
+Expected result
+Empty selection cannot advance. The three ineligible checkboxes are disabled with the
+documented reasons; an in-progress prerequisite does not count as completed. Only
+E1/E2 are selected. The count moves 0 → 2 → 1 → 2; review shows exactly E1/E2 and 6
+credits. Returning to selection retains choices. Nothing is submitted yet; leave the
+browser on review for UAT-04.
+UAT-04 — Submit semester plan A
+Field — UAT-04
+Planned specification
+Actor / wireframe
+Student; W2: Review Plan and Submit.
+Objective
+Send the reviewed selection to an Advisor.
+Preconditions
+UAT-03 left E1/E2 on the review step for A; no existing A plan.
+Test data
+A; E1/E2, 6 credits.
+Steps
+1. Confirm E1/E2 and 6 credits on Review your selection. 2. Click Submit Plan for
+Advisor Review once. 3. Read the confirmation, semester/status banner, and
+Selected courses for Year 1 semester 1 list. 4. Refresh the page. Attempt to alter a
+course checkbox and click Review Selected Courses.
+Expected result
+“Semester plan submitted for advisor review.” appears. A is Pending with exactly E1/E2
+and is awaiting advisor review. Refresh preserves the submission. Standard selection
+controls and the review button are disabled for the submitted semester, preventing
+another submission through this form. Pending-plan Remove/Cancel controls remain
+available as separate permitted actions; leave them untouched here.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+14
+UAT-05 — View submission status
+Field — UAT-05
+Planned specification
+Actor / wireframe
+Student; W2/W4: submitted plan, Home, Messages navigation.
+Objective
+Find the current submission state after navigating away and signing in again.
+Preconditions
+UAT-04 completed; only A has been submitted.
+Test data
+A Pending; E1/E2, 6 credits.
+Steps
+1. Click Home and read Latest semester plan. 2. Click Messages and find the Year
+1 semester 1 plan entry. 3. Click Sign out, open /login, enter the Student
+credentials, and click Sign in. 4. Click Plan Courses, choose Year 1 semester 1, and
+inspect its status and selected courses.
+Expected result
+Home shows A Pending, 2 courses, 6 credits, and a waiting-for-review message.
+Messages identifies the same semester as Pending. Signing in again preserves A and
+its selection; no decision is implied before the Advisor acts.
+UAT-06 — Advisor reviews the submitted plan
+Field — UAT-06
+Planned specification
+Actor / wireframe
+Advisor; W3: Student Plans, student summary, Selected Courses table.
+Objective
+Inspect the correct Student's submission and credit load before deciding.
+Preconditions
+UAT-05 and UAT-19 completed; A Pending; Advisor signed in in its separate browser
+profile.
+Test data
+Advisor demo account; Student identity recorded during setup; A; E1/E2.
+Steps
+1. Confirm the separate Advisor window shows Dr. Williams and Advisor workspace
+after UAT-19. 2. Click Advisor Review in the sidebar. 3. Find the card matching the
+recorded Student identity and Year 1 semester 1. 4. Inspect student ID, program,
+submitted date, Pending status, course count, each course row, prerequisites, and
+Total requested credits. 5. Locate Comments (optional), its 0/500 counter,
+Approve Plan, Reject Plan, and Request Changes. Do not click a decision yet.
+Expected result
+The Advisor sees A in the queue with the correct Student identity, Computer Science
+program, submission date matching execution, E1/E2, 2 courses, and 6 total credits. All
+three decision controls are present. Reading the card leaves the plan Pending. Match
+by Student plus semester because the queue may contain other students.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+15
+UAT-07 — Request changes and deliver feedback
+Field — UAT-07
+Planned specification
+Actor / wireframe
+Advisor (Student verifies delivery in the named Student steps); W3: Comments and
+Request Changes; W4/W5: feedback and returned plan.
+Objective
+Return a plan with clear revision instructions that the Student can read.
+Preconditions
+UAT-06 completed; A still Pending.
+Test data
+Feedback: Replace MATH 2250 with ENGL 1000, then resubmit.
+Steps
+1. In the Advisor's A card, enter the exact feedback above into Comments (optional).
+Observe the character counter. 2. Click Request Changes and read the confirmation;
+refresh Advisor Review. 3. Click Advisor Messages and locate the Student/A
+decision. 4. In the Student window click Messages, refreshing if already there, and
+locate A. 5. Read the feedback and click Review and update plan. Inspect the
+semester, status, selected courses, and available actions.
+Expected result
+Advisor confirmation says changes were requested. A disappears from the Pending
+queue and appears in Advisor Messages as Changes Requested with the entered
+feedback. The Student sees the same status/feedback and opens editable A with E1/E2
+preselected. Cancel Plan is absent for Changes Requested; the instruction to update
+and resubmit is visible. No approval or rejection has occurred.
+UAT-08 — Modify and resubmit the returned plan
+Field — UAT-08
+Planned specification
+Actor / wireframe
+Student (Advisor verifies the queue in the named Advisor steps); W2/W5: editable
+selection, Review Plan, resubmission; W3: revised queue card.
+Objective
+Apply the requested change and return the revised selection for review.
+Preconditions
+UAT-07 completed; Student viewing editable A with E1/E2 selected.
+Test data
+Keep E1; replace E2 with E3; revised total 6 credits.
+Steps
+1. In Student Plan Courses for A, uncheck MATH 2250 and check ENGL 1000, scrolling
+the list as necessary. 2. Click Review Selected Courses and confirm COMP 1201 plus
+ENGL 1000 and 6 credits. 3. Click Resubmit Plan for Advisor Review and inspect
+the resulting status and selected-course list. 4. Click Student Messages and inspect
+A's current update. 5. In the Advisor window click Advisor Review, refresh, and
+inspect the Student/A card.
+Expected result
+A returns to Pending with exactly E1/E3. The old request-changes feedback is cleared
+on resubmission; Messages reflects the current Pending state rather than promising
+immutable feedback history. Advisor queue contains one A card for this Student with
+the revised courses and 6 credits, ready for another decision. Capture the previous
+feedback in UAT-07 before this step replaces it.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+16
+UAT-09 — Approve the revised plan
+Field — UAT-09
+Planned specification
+Actor / wireframe
+Advisor (Student verifies delivery in the named Student steps); W3: Comments and
+Approve; W2/W4: plan status and Messages.
+Objective
+Approve the revised plan and let the Student see the decision.
+Preconditions
+UAT-08 completed; revised A Pending.
+Test data
+A; E1/E3; feedback Revised selection approved.
+Steps
+1. In Advisor Advisor Review, find the Student/A card and confirm E1/E3. 2. Enter
+Revised selection approved. into its Comments (optional) and click Approve Plan.
+3. Read the confirmation and refresh the review queue. Click Advisor Messages and
+inspect A. 4. In the Student window click Messages and read A's status/feedback. 5.
+Click Plan Courses, choose A, and inspect the selected courses and editing controls.
+Refresh once.
+Expected result
+“Plan approved.” appears and A leaves the Pending queue. Both actors see Approved
+and the exact feedback. Student A retains E1/E3 and remains Approved after refresh.
+Course checkboxes/review button are locked; Pending-only Remove buttons are
+absent. Cancel Plan remains available because the current implementation permits
+cancellation of Approved plans; do not cancel until UAT-14.
+UAT-10 — Submit a separate plan for rejection
+Field — UAT-10
+Planned specification
+Actor / wireframe
+Student; W2: semester, selection, review, submit.
+Objective
+Submit a different semester without altering the approved plan.
+Preconditions
+UAT-09 completed; A Approved; B has no plan.
+Test data
+B = Year 1 semester 2; E2 only, 3 credits.
+Steps
+1. Click Student Plan Courses and choose Year 1 semester 2. 2. Select only MATH
+2250; click Review Selected Courses and confirm one course, 3 credits. 3. Click
+Submit Plan for Advisor Review and inspect B's status/list. 4. Choose Year 1
+semester 1 to inspect A, then switch back to Year 1 semester 2.
+Expected result
+B is Pending with only E2; A remains Approved with E1/E3. Switching semesters
+displays the selected semester's own plan and status without mixing the two
+selections.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+17
+UAT-11 — Reject the separate plan
+Field — UAT-11
+Planned specification
+Actor / wireframe
+Advisor (Student verifies delivery in the named Student steps); W3: Comments and
+Reject; W4/W5: rejected status and revision option.
+Objective
+Reject B and communicate the reason to the Student.
+Preconditions
+UAT-10 completed; B Pending.
+Test data
+B; feedback Plan rejected for this UAT scenario; choose a different course mix.
+Steps
+1. In the Advisor window click Advisor Review, refresh, and find the Student's Year 1
+semester 2 card containing only MATH 2250. 2. Enter the exact feedback above into
+that card's Comments (optional) and click Reject Plan. 3. Read the confirmation,
+refresh the queue, then inspect B in Advisor Messages. 4. In the Student window click
+Messages and inspect B's status and feedback. 5. Click B's Review and update plan
+link; inspect the editable course selection and Cancel Plan control without using either
+yet.
+Expected result
+“Plan rejected.” appears; B leaves the Pending queue. Both actors see Rejected with
+the exact reason. Student B is editable for resubmission and cancellation is available.
+A's approval remains unchanged. Leave B Rejected for UAT-15.
+UAT-12 — Submit a pending plan for cancellation checks
+Field — UAT-12
+Planned specification
+Actor / wireframe
+Student (Advisor verifies the queue in the named Advisor steps); W2: semester,
+selection, review, submit; W3: queue.
+Objective
+Prepare a Pending plan through normal browser submission.
+Preconditions
+UAT-11 completed; C has no plan.
+Test data
+C = Year 1 semester 3; E1/E2, 6 credits.
+Steps
+1. Click Student Plan Courses, choose Year 1 semester 3, and select COMP 1201
+and MATH 2250. 2. Click Review Selected Courses, verify 6 credits, and click
+Submit Plan for Advisor Review. 3. Inspect C's Pending status and its
+selected-course list. 4. In the Advisor window click Advisor Review, refresh, and find
+the Student/C card; make no decision.
+Expected result
+C is Pending with E1/E2 and is visible to the Advisor with 6 credits. A remains Approved
+and B remains Rejected. C stays Pending for UAT-13 and UAT-16.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+18
+UAT-13 — Remove a course from a Pending plan and protect the last course
+Field — UAT-13
+Planned specification
+Actor / wireframe
+Student (Advisor verifies the queue in the named Advisor steps); W2/W5:
+selected-course removal; submitted-plan Remove is an implementation extension.
+Objective
+Adjust a submitted Pending plan without leaving an empty plan.
+Preconditions
+UAT-12 completed; C Pending with E1/E2.
+Test data
+Remove E2; retain E1, 3 credits.
+Steps
+1. In Student Plan Courses, choose C and click Remove beside MATH 2250 in
+Selected courses for Year 1 semester 3. 2. Dismiss the browser confirmation with
+Cancel and verify both courses remain. 3. Click the same Remove again and accept
+the confirmation with OK. 4. Read the confirmation and inspect the remaining course
+and available removal action. Refresh. 5. Refresh Advisor Advisor Review and inspect
+C's course table and total.
+Expected result
+Dismissing the dialog changes nothing. Confirming removes only E2 and shows
+“Course removed from the submitted plan.” C stays Pending with E1 and 3 credits. The
+remaining course has no Remove button and displays “Cancel the plan to remove its
+last course.” Advisor queue reflects E1/3 credits after refresh.
+UAT-14 — Cancel an Approved plan
+Field — UAT-14
+Planned specification
+Actor / wireframe
+Student; W5: cancellation extension to panel 2.
+Objective
+Cancel A using the implemented permission for Approved plans.
+Preconditions
+UAT-09 approval retained; A Approved; UAT-12/13 completed.
+Test data
+A; Approved → Cancelled.
+Steps
+1. Click Student Plan Courses, choose A, and confirm its current status is Approved. 2.
+Click Cancel Plan and dismiss the confirmation with Cancel; verify A remains
+Approved with E1/E3. 3. Click Cancel Plan again and accept the confirmation with OK.
+4. Read the success message; refresh and inspect status, selected courses, and
+available actions. 5. Click Messages and find A's status.
+Expected result
+Dismissing cancellation leaves approval unchanged. Confirming shows “Semester plan
+cancelled. You can edit it and resubmit.” A becomes Cancelled and remains so after
+refresh; Messages also shows Cancelled. The planning screen clears the active
+selection, permits a new choice, and hides Cancel Plan. Previous feedback may remain
+attached to the cancelled record; it must not make the current status appear
+Approved.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+19
+UAT-15 — Cancel a Rejected plan
+Field — UAT-15
+Planned specification
+Actor / wireframe
+Student; W5: cancellation extension to returned plan.
+Objective
+Cancel B instead of resubmitting the rejected selection.
+Preconditions
+UAT-11 rejection retained; B Rejected.
+Test data
+B; Rejected → Cancelled.
+Steps
+1. Click Student Plan Courses and choose B; confirm Rejected and its rejection
+feedback. 2. Click Cancel Plan and accept the confirmation with OK. 3. Read the
+success message, refresh, and inspect the status, selection count, and actions. 4. Click
+Messages and find B's entry.
+Expected result
+B becomes Cancelled and persists after refresh. No active courses are selected; a new
+selection is possible and Cancel Plan is absent. Messages reports Cancelled. A's
+cancellation and C's Pending state are unaffected. Retained rejection feedback does
+not override the current Cancelled status.
+UAT-16 — Cancel a Pending plan and remove it from the review queue
+Field — UAT-16
+Planned specification
+Actor / wireframe
+Student (Advisor verifies the queue in the named Advisor steps); W5: Cancel Plan; W3:
+Pending review queue.
+Objective
+Withdraw C before the Advisor makes a decision.
+Preconditions
+UAT-13 completed; C Pending with E1; no Advisor decision on C.
+Test data
+C; Pending → Cancelled.
+Steps
+1. Click Student Plan Courses, choose C, and confirm Pending with only COMP 1201.
+2. Click Cancel Plan and accept the confirmation with OK. 3. Read the success
+message and refresh; inspect the Cancelled banner, selection count, and available
+actions. 4. Click Student Messages and inspect C's status. 5. In the Advisor window
+click Advisor Review, refresh, and look for the Student/C card.
+Expected result
+C becomes Cancelled, the active selection clears, and no repeat cancellation control
+appears. Student Messages shows Cancelled. The Student/C card is absent from the
+refreshed Pending queue, so it cannot be reviewed there. Other students' Pending
+submissions, if any, remain available.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+20
+UAT-17 — Start a new plan after cancellation
+Field — UAT-17
+Planned specification
+Actor / wireframe
+Student (Advisor verifies the queue in the named Advisor steps); W2/W5: new selection
+after cancellation, review and submit; W3: queue.
+Objective
+Submit a fresh selection for the same semester after withdrawing its previous plan.
+Preconditions
+UAT-16 completed; C Cancelled with no active selection.
+Test data
+C; E3 only, 3 credits.
+Steps
+1. Click Student Plan Courses, choose C, and confirm no course is selected. 2. Select
+only ENGL 1000 and click Review Selected Courses. 3. Confirm ENGL 1000 and 3
+credits, then click Resubmit Plan for Advisor Review (the implemented label on the
+cancelled-plan screen). 4. Inspect the resulting Pending status and selected-course list;
+refresh once. 5. In the Advisor window click Advisor Review, refresh, and inspect the
+Student/C card.
+Expected result
+C's current plan is Pending with only E3 and 3 credits; the previously cancelled E1
+selection does not reappear. Advisor queue contains one active Pending C card for this
+Student with E3. The screen describes this as a brand new plan even though the action
+label says Resubmit. Historical Cancelled entries may remain in Messages. Do not infer
+database identifiers from the browser or require deletion of history.
+UAT-18 — Student login and clean-run baseline (execute first)
+Field — UAT-18
+Planned specification
+Actor / wireframe
+Student; Student identity/sidebar in panels 1–2; login form is outside the original
+wireframe
+Objective
+Verify Student login, identity, empty baseline and persistent session.
+Preconditions
+Safe local setup complete; fresh database; dedicated Student browser profile signed
+out; server running
+Test data
+[Student test account] / [Student test password]; invalid password [invalid Student test
+password]; semesters A/B/C
+Steps
+1. In the Student window open http://127.0.0.1:5002/login. 2. Enter [Student test
+account] in Username, [invalid Student test password] in Password, then click Sign
+in. Inspect the response. 3. Enter [Student test account] and [Student test password]
+and click Sign in. 4. Confirm Student workspace, Home, Cameron Ramesar and
+Student ID 12345678/Computer Science. Click Profile if needed to read Username,
+Student ID and degree program. 5. Click Home and confirm the no-submitted-plan
+message in Latest semester plan. Click Messages and confirm No advisor
+updates yet. 6. Click Plan Courses. Choose Year 1 semester 1, then Year 1
+semester 2, then Year 1 semester 3, waiting for each reload. Confirm each has zero
+selected courses and no existing plan status banner or selected-course list. Return to
+Year 1 semester 1. 7. Click Home and refresh. Confirm the Student remains signed
+in. Continue with UAT-01.
+Expected result
+Invalid credentials show Incorrect username or password on the login page without
+opening the workspace. Valid credentials open /app as the Student, with the seeded
+identity, Student navigation and no Advisor Review link. Home, Messages and A/B/C
+have the fresh empty baseline. Refresh preserves the authenticated Student session. If
+the baseline is occupied, record a setup blocker and do not begin dependent cases.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+21
+UAT-19 — Advisor login (execute after UAT-05, before UAT-06)
+Field — UAT-19
+Planned specification
+Actor / wireframe
+Advisor; Advisor identity/navigation in panel 3; shared login form is outside the original
+wireframe
+Objective
+Verify Advisor login, identity and isolated persistent session.
+Preconditions
+UAT-05 complete; A Pending; separate Advisor profile/private session signed out;
+Student window stays open
+Test data
+[Advisor test account] / [Advisor test password]; invalid password [invalid Advisor test
+password]
+Steps
+1. In the isolated Advisor window open http://127.0.0.1:5002/login. 2. Enter [Advisor
+test account] in Username, [invalid Advisor test password] in Password, and click
+Sign in. 3. Check the login error, then enter [Advisor test account] / [Advisor test
+password] and click Sign in. 4. Inspect Advisor workspace, Home, Dr. Williams and
+the Advisor Review sidebar link. Click Profile and check Username supplied for the
+Advisor test account and Role Advisor administrator. 5. Click Home and refresh.
+Confirm the Advisor session remains active. Refresh Student Home in its separate
+window and confirm it still shows the Student identity. Continue with UAT-06 in the
+Advisor window.
+Expected result
+Invalid credentials show Incorrect username or password. Valid login opens Advisor
+Home at /app, with Advisor navigation and no Degree Progress or Plan Courses sidebar
+links. It does not automatically open the review queue. Refresh retains the Advisor
+session, and the separate Student session is unaffected. If Student identity changes,
+stop and correct profile isolation before making decisions.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+22
+UAT-20 — Browser-visible role and signed-out restrictions (execute last)
+Field — UAT-20
+Planned specification
+Actor / wireframe
+Student (Advisor checks use the isolated Advisor window in steps 4–6); Different
+Student navigation in panels 1–2 and Advisor navigation in panel 3; access-denied
+pages are supporting implementation
+Objective
+Verify browser role restrictions and signed-out access denial.
+Preconditions
+UAT-17 complete; both role sessions authenticated and isolated; A/B Cancelled, new C
+Pending with E3
+Test data
+Direct URLs /admin, /app?tab=plan-courses and /app?tab=degree-progress; no plan
+IDs or request tampering
+Steps
+1. In Student Home, confirm Degree Progress and Plan Courses links exist and
+Advisor Review is absent. 2. In that Student window type
+http://127.0.0.1:5002/admin directly into the address bar and load it. 3. Record the
+response. Return by typing http://127.0.0.1:5002/app?tab=home; confirm Student
+Home still opens. 4. In the Advisor window confirm Advisor Review exists while
+Degree Progress and Plan Courses sidebar links are absent. 5. In the Advisor
+address bar load http://127.0.0.1:5002/app?tab=plan-courses, then
+http://127.0.0.1:5002/app?tab=degree-progress. Inspect the content after each load.
+6. Click Advisor Review and verify the Student/C Pending card still contains only
+ENGL 1000, 3 credits. Make no decision. 7. In the Student window click Sign out. Type
+http://127.0.0.1:5002/app in the address bar and load it afresh (do not rely on a cached
+Back page). Inspect the response, then click Return to Login. 8. In the Advisor
+window click Sign out, then directly load http://127.0.0.1:5002/admin. Inspect the
+response and click Return to Login.
+Expected result
+Student direct access to /admin is denied with You are not authorized to access
+this resource (HTTP 403; the browser can display JSON, not a custom denial
+dashboard). No queue or review controls are exposed. Advisor attempts to use
+Student-only tab query values render Advisor Home at /app, because unsupported
+tabs fall back to Home; they do not display a Student planning/progress screen and do
+not promise HTTP 403. The valid Advisor queue remains accessible with unchanged C.
+After sign-out, direct /app and /admin loads show the implemented 401 Unauthorized
+/ Session Expired page with Return to Login. No plan state changes occur.
+This case demonstrates these specific browser restrictions only. It does not test forged
+POSTs, all API permissions, or another Student's ownership. Do not mark those as
+manually passed by inference.
+Source: docs/assignment2/test-plans/uat-test-plan.md; reports/uat-execution.md (planned fields only).
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+23
+6.2 Unit Test Plan
+Objective. Verify business decisions in isolation from HTTP, templates and persistence. Test the real
+AdvisingService with autospecced repository doubles and in-memory SQLModel objects; reject accidental
+database connections. AuthService orchestration uses mocked repository/security collaborators. UT-23
+exercises real local cryptography with controlled time and test-only settings, without database or network
+access.
+Components. AdvisingService dashboard totals, prerequisite eligibility, semester/selection validation,
+submission delegation, plan edit/review/cancel/removal rules; AuthService; current-user/role dependencies;
+password/JWT utilities. UT-01–23 identify specifications, not counts of parameterized executions.
+6.2.1 F1 fixture and test design
+Fixture / design
+Planned specification
+Actors / terms
+S1 Student id 1; S2 independent Student; A1 Advisor. T1=Year 1 semester 1;
+T2=Year 1 semester 2.
+Courses
+C1 id101 COMP 1100, Core; C2 id102 MATH 1000, General Education; C3 id103
+COMP 2000, Core, requires C1; C4 id104 MATH 2000, Electives, no prerequisite;
+C5 id105 COMP 3000, requires C1 and unknown MATH 9999. Each is 3 credits.
+Default state
+C1 Completed; C2 In Progress; C3/C4 untracked; 93-credit degree; Core
+requirement 30; empty plan history. Cases override explicitly. F1 is synthetic
+test data, distinct from the browser seed.
+Positive / negative /
+boundary
+Positive: eligible selections and legal decisions. Negative: invalid terms,
+duplicates, missing/foreign resources, bad identity. Boundary: zero totals, cap at
+100%, duplicate records, last remaining course and 0/499/500/501 raw feedback
+characters.
+Oracle
+Literal independently expected values and exact repository calls/no calls. Never
+mock the method under test or derive the expected answer by calling it. No
+observed outcomes are included in the tables below.
+Case / planned inputs and setup
+Expected output (not an observed result)
+UT-01 — Degree totals and category calculation
+Component: AdvisingService.get_student_dashboard
+Preconditions: Mock repositories return fixture S1 and no
+plans.
+Inputs: F1 baseline: completed C1=3; in-progress C2=3;
+program=93; Core requirement=30.
+Completed=3; in-progress=3; remaining=87;
+total=93; progress=3%; Core earned=3,
+remaining=27, percent=10. E01 already
+checks baseline persistence: add only isolated
+calculation assertions.
+UT-02 — Empty academic record and missing
+program fallback
+Component: AdvisingService.get_student_dashboard
+Preconditions: Mock user/program/record lookups; no
+plans.
+Inputs: Variants: existing 93-credit program with no
+records; missing degree program.
+Credits=0/0, remaining=93, progress=0;
+category earned=0 for configured
+requirements; absent program uses 93 and
+category_progress=[].
+UT-03 — Progress limits, zero denominators and
+duplicate records
+Component: AdvisingService.get_student_dashboard
+Preconditions: Repository doubles only; deliberately
+synthetic boundary data.
+Inputs: Variants: total=6, completed=9, in-progress=3;
+total=0; category required=0; repeated completed record
+for C1.
+Remaining never negative; progress and
+category percent capped at 100; zero
+denominator yields 0; duplicate same-status
+course records count its credits once. Do not
+claim service sanitizes all inconsistent records.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+24
+Case / planned inputs and setup
+Expected output (not an observed result)
+UT-04 — Prerequisites satisfied or absent
+Component: AdvisingService.prerequisite_ok;
+get_course_availability
+Preconditions: Mock catalogue, completed IDs and course
+records.
+Inputs: C3 requires C1; C4 requires none; advanced course
+requires ' COMP 1100, MATH 1000 '; both completed in last
+variant.
+Untracked targets eligible if all named
+prerequisites completed; whitespace ignored;
+no prerequisites eligible; availability=(True,
+'Eligible').
+UT-05 — Missing and in-progress prerequisites
+Component: AdvisingService.prerequisite_ok;
+get_course_availability
+Preconditions: Mock completed IDs exclude C2; C2 is In
+Progress.
+Inputs: C3 requiring C2; advanced course requiring C1 and
+unknown MATH 9999; blank comma-separated tokens.
+In-progress prerequisite does not satisfy
+completion; unknown code fails; availability
+names only unmet codes; empty comma
+tokens ignored. E08 supplies DB-backed
+missing-code baseline.
+UT-06 — Tracked or unknown target courses
+Component: AdvisingService.prerequisite_ok;
+get_course_availability
+Preconditions: Mock repository returns completed C1,
+in-progress C2 and absent ID 999999.
+Inputs: Targets C1, C2, 999999.
+False for all three; C1 says Already completed;
+C2 says Already in progress; nonexistent
+course absent from availability map.
+UT-07 — Valid semester names and trimming
+Component: AdvisingService.submit_plan;
+SEMESTER_OPTIONS
+Preconditions: Mock eligible C3, no existing plan,
+create_plan sentinel.
+Inputs: All nine Year {1..3} semester {1..3}; padded ' Year
+1 semester 1 '.
+Each accepted; exactly nine options including
+semester 3; padded input stored trimmed. E06
+baseline reused rather than copied.
+UT-08 — Invalid semester names
+Component: AdvisingService.submit_plan
+Preconditions: Mock repositories; mutation methods are
+spies.
+Inputs: '', whitespace, Fall 2026, Year 0 semester 1, Year 4
+semester 1, Year 1 semester 4, Year 1 Semester 1.
+ValueError 'Choose a valid year and semester
+before submitting a plan.'; no create/resubmit
+call. E07 reused for its legacy-name variant.
+UT-09 — Empty selection
+Component: AdvisingService.submit_plan
+Preconditions: No database; repository spies.
+Inputs: [] with valid T1.
+ValueError 'Select at least one course for the
+semester plan.'; no persistence or eligibility
+lookup.
+UT-10 — Duplicate selected course IDs
+Component: AdvisingService.submit_plan
+Preconditions: No database; repository spies.
+Inputs: [C3,C3] and [C3,C4,C3] with T1.
+ValueError 'A course may only appear once in
+a semester plan.'; no create/resubmit call.
+Distinct from duplicate semester plan in E05.
+UT-11 — Missing or ineligible selection aborts
+submission
+Component: AdvisingService.submit_plan
+Preconditions: Mock availability and course lookup, no
+real repository operations.
+Inputs: [C3,999999]; [C1]; [C2]; [advanced course missing
+MATH 9999].
+Missing ID reports no longer available;
+ineligible selection includes course code and
+reason; no create/resubmit call even when
+earlier list item was valid.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+25
+Case / planned inputs and setup
+Expected output (not an observed result)
+UT-12 — Submission status decision table
+Component: AdvisingService.submit_plan
+Preconditions: Mock existing-plan lookup and mutation
+return sentinels.
+Inputs: Existing status: none, Pending, Approved, Rejected,
+Changes Requested, Cancelled; valid [C3],T1.
+None/Cancelled -> create_plan;
+Rejected/Changes Requested ->
+resubmit_plan(existing,[C3]);
+Pending/Approved -> ValueError already
+under review or approved and no mutation.
+Database replacement/reset details belong to
+integration tests.
+UT-13 — Dashboard edit and cancelled-selection
+rules
+Component: AdvisingService.get_student_dashboard
+Preconditions: Mock current plan and its C3 link, no DB.
+Inputs: Each status Pending, Approved, Rejected, Changes
+Requested, Cancelled; also no plan.
+Edit true only Rejected/Changes
+Requested/Cancelled; false
+Pending/Approved/no plan. Cancelled hides
+saved course links; other existing statuses
+retain selected C3.
+UT-14 — Advisor decisions and feedback
+normalization
+Component: AdvisingService.review_plan
+Preconditions: Mock Pending plan, update_plan sentinel.
+Inputs: approve, reject, request_changes; feedback='
+Review note '; advisor=A1.
+Mapped statuses Approved, Rejected,
+Changes Requested; feedback='Review note';
+advisor_id=A1; exactly one update call. Empty
+feedback is allowed for every decision.
+UT-15 — Invalid advisor decision
+Component: AdvisingService.review_plan
+Preconditions: Repository lookup/update spies.
+Inputs: '', APPROVE, cancel, unknown; valid short feedback.
+ValueError 'Choose approve, reject, or request
+changes.' before persistence; no update call.
+UT-16 — Feedback length boundary before trimming
+Component: AdvisingService.review_plan
+Preconditions: Mock Pending plan and update spy.
+Inputs: For each legal decision: lengths 0,499,500,501; 501
+spaces; ' '+499 characters+' ' (501 total).
+0/499/500 accepted, stored stripped; 501
+rejected with 'Advisor feedback must be 500
+characters or fewer.' even if trimming would
+shorten it; no update on rejection.
+UT-17 — Review only existing Pending plans
+Component: AdvisingService.review_plan
+Preconditions: Mock lookup absent or returning status
+variant.
+Inputs: Missing plan; Approved, Rejected, Changes
+Requested, Cancelled; valid approve/feedback.
+Missing -> ValueError 'Plan not found'; each
+non-Pending -> 'Only pending plans can be
+reviewed.'; no update.
+UT-18 — Cancellation status and ownership matrix
+Component: AdvisingService.cancel_plan
+Preconditions: Mock owned/foreign/missing plan and
+cancel spy.
+Inputs: Owned Pending, Approved, Rejected, Changes
+Requested, Cancelled; foreign S2 plan; missing plan.
+Only owned Pending/Approved/Rejected
+delegated to repo.cancel_plan; other owned
+statuses reject; foreign/missing -> 'Plan not
+found.'; no mutation on denial.
+UT-19 — Remove course guard matrix
+Component: AdvisingService.remove_submitted_course
+Preconditions: Mock owned Pending plan with C3/C4 links
+and remove spy.
+Inputs: Remove C4 from two links; last C3; absent course;
+non-Pending statuses; foreign or absent plan.
+Only an owned Pending plan with matching
+course and more than one link permits
+deletion; others reject with existing guard
+messages; no deletion on failure.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+26
+Case / planned inputs and setup
+Expected output (not an observed result)
+UT-20 — Authentication success
+Component: AuthService.authenticate_user
+Preconditions: Mock UserRepository; patch
+verify_password and create_access_token in
+app.services.auth_service.
+Inputs: Stored user id=S1, role=regular_user,
+password='stored-hash'; verifier=True.
+Returns token sentinel; verifier receives
+plaintext and stored hash; token data={'sub':
+str(S1), 'role':'regular_user'}; no real
+DB/hash/JWT needed.
+UT-21 — Authentication failures and short circuit
+Component: AuthService.authenticate_user
+Preconditions: Mock repository and security collaborators.
+Inputs: Unknown username; known user with
+verifier=False.
+Returns None; missing user never invokes
+verifier; neither case issues token. No token or
+password material recorded as evidence.
+UT-22 — Cookie token resolution and admin role
+Component: get_current_user; is_admin_dep in
+app.dependencies.auth
+Preconditions: Synthetic Request, mocked
+jwt.decode/settings/UserRepository; async invocation.
+Inputs: Missing cookie; decoder InvalidTokenError;
+nonexistent subject user; valid S1; valid A1.
+Missing/invalid/unresolved identity raises HTTP
+401; valid identity resolves the repository
+user. Current require_roles denies
+regular_user at the Advisor guard with 403
+and returns admin. Test the current database
+role, independently of a token role claim.
+UT-23 — Password hash and JWT utility contracts
+Component: encrypt_password; verify_password;
+create_access_token
+Preconditions: No DB; actual local hash/JWT utilities, fixed
+test settings and controlled clock.
+Inputs: Test-only password; correct/wrong password;
+claims sub=S1,role=regular_user; explicit 5-minute lifetime.
+Hash differs from plaintext; correct verifies
+true, wrong false; signed token carries
+sub/role and exp at fixed time +5 minutes;
+input dict not mutated. Patch time/settings
+only, not functions under test.
+Current role-contract clarification for UT-22 is adapted from the actual require_roles implementation (401 identity / 403 wrong
+role). Other original inputs/oracles are retained. E01/E06/E07/E08 references denote existing database-backed baseline tests
+in tests/test_advising_service.py; their original planning notes avoid duplicate coverage.
+Source: docs/assignment2/test-plans/unit-test-plan.md; tests/unit/test_advising.py; tests/unit/test_auth.py.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+27
+6.3 Integration Test Plan
+Objective and boundary. Join real FastAPI routes/dependencies, form/JSON parsing, real cookie/JWT
+authentication, services, repositories and SQLModel persistence. Exercise Student/Advisor workflows and
+database rollback. IT-19/20 deliberately reach database failures directly because service validation rejects those
+inputs before SQL.
+Setup / coverage
+Planned specification
+F2 data
+Reuse F1 course/degree meanings but resolve generated row IDs. Seed two
+Students S1/S2 and Advisor A1, real password hashes, C1 Completed/C2 In
+Progress for S1, distinctive S2-only records/feedback, and independent plan
+state per variant.
+Isolation
+Fresh per-case SQLite engine (StaticPool, check_same_thread=False), metadata
+and foreign keys enabled. New Session per HTTP request and per persistence
+check. Separate Student/Advisor cookie jars; follow_redirects=False.
+Startup and cleanup
+Rebind test engine/session dependencies and startup/recovery initialization so
+normal/private DBs cannot be touched. Do not replace authentication, handlers,
+business methods or CRUD. Close clients/sessions, restore
+overrides/lifespan/settings and dispose engine.
+Coverage
+Real login/logout; invalid credentials/tokens; current DB roles; course eligibility;
+Student submission and persistence; Advisor queue and decisions;
+feedback/resubmission; removal/cancellation/replacement; ownership/privacy;
+invalid schemas, constraints and atomic rollback.
+Current contracts
+Unauthenticated protected HTML/JSON: 401; authenticated wrong-role guard:
+403. HTML business errors: 303 + warning flash. Strict JSON APIs use
+documented 401/403/404/409/422 semantics. Historical H3/HTTP-200 plan
+wording is obsolete and adapted below.
+Limits
+SQLite and local HTTP do not prove PostgreSQL, production cookies/CSRF,
+concurrency or human usability. Current runtime-engine and corrected
+browser-style tests supplement, rather than replace, F2.
+Case / planned input and procedure
+Expected output (not an observed result)
+IT-01 — Real login, cookie and logout
+Component: POST /login; GET /app; GET /logout
+Preconditions: F2 database, separate unauthenticated
+client, real hash/JWT/auth dependencies.
+Inputs: S1 correct password; wrong password; unknown
+username.
+Procedure: POST form credentials for each variant; capture
+cookie/redirect; with successful client GET /app; GET /logout
+then protected GET.
+Success ->303 /app and access_token cookie,
+authenticated page 200; wrong/unknown
+->303 /login, Incorrect username or password
+flash, no new access_token on clean client;
+logout ->303 /login, cookie removed,
+protected HTML/JSON access denied with HTTP
+401.
+IT-02 — Student degree progress through HTTP
+Component: GET
+/app?tab=degree-progress&semester=T1
+Preconditions: F2; login S1 using IT-01 setup.
+Inputs: C1 Completed=3; C2 In Progress=3; 93-credit
+program; Core required=30; S2 distinct records.
+Procedure: GET page; inspect rendered totals and
+category; query records in fresh session.
+200; completed=3, in-progress=3,
+remaining=87, overall=3%; Core earned=3/30
+and remaining=27; no S2 activity or profile; no
+database mutation.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+28
+Case / planned input and procedure
+Expected output (not an observed result)
+IT-03 — Eligible selection, submission and advisor
+queue
+Component: GET /app?tab=plan-courses; POST /app/plan;
+GET /admin
+Preconditions: F2; S1 and A1 authenticated in separate
+clients; no T1 plan.
+Inputs: Repeated form course_ids=C3 and C4;
+semester_name=T1.
+Procedure: GET catalogue; inspect eligible/disabled
+options; POST form selection; follow redirect manually; GET
+/admin as A1; query saved plan/links.
+Catalogue eligibility reflects completed C1 and
+in-progress C2; POST ->303 with semester and
+tab=plan-courses; success flash; exactly one
+Pending S1/T1 plan, two unique links,
+submitted_at set, advisor_id=None; appears in
+real advisor queue.
+IT-04 — Persistence across requests and sessions
+Component: POST /app/plan; GET /app;
+AdvisingRepository.get_plan_for_student/get_plan_courses
+Preconditions: F2; S1 authenticated; no T1 plan.
+Inputs: [C3,C4],T1.
+Procedure: Submit through HTTP; close request-scoped
+session; open a fresh Session on same isolated engine; read
+plan/links; issue another GET.
+Committed plan ID, S1, T1, Pending and both
+links survive session boundaries and render as
+selected; no reliance on Python object identity.
+E02/E09 do not prove full authenticated
+request chain.
+IT-05 — Advisor approval and rejection
+Component: POST /admin/review/{plan_id}; GET /admin;
+GET /app?tab=messages
+Preconditions: F2; seed a separate Pending S1 plan for
+each decision; S1 and A1 logged in.
+Inputs: approve with ''; reject with 'Please choose another
+course.'; JSON and form variants.
+Procedure: A1 POST each review; inspect redirect/flash;
+read row in fresh session; GET advisor queue and student
+messages.
+303 /admin; matching success flash; Approved
+or Rejected stored with A1 and stripped
+feedback; reviewed plan leaves Pending
+queue; student sees own decision/message;
+plan course links preserved.
+IT-06 — Request changes and resubmit
+Component: POST /admin/review/{id}; POST /app/plan;
+GET /app and /admin
+Preconditions: F2; Pending S1/T1 plan containing C3,
+A1/S1 authenticated.
+Inputs: request_changes, feedback=' Choose another
+course. '; replacement=[C4].
+Procedure: A1 request changes through HTTP; verify
+persisted status/student message; S1 submit replacement
+for same semester; query fresh session and advisor queue.
+Changes Requested, A1, trimmed feedback
+initially; resubmission ->303; same plan ID
+becomes Pending; links exactly [C4]; old C3
+link removed; advisor_id=None, feedback='';
+submitted_at refreshed; returns to Pending
+queue.
+IT-07 — Rejected plan resubmission without
+cancellation
+Component: POST /admin/review/{id}; POST /app/plan
+Preconditions: F2; S1/A1 authenticated; S1 Pending T1
+plan containing C3.
+Inputs: reject with feedback; replacement=[C4].
+Procedure: Reject via HTTP; submit C4 for same semester
+without cancel; read fresh-session plan and links.
+303 for both requests; same ID reset to
+Pending; C4 replaces C3; feedback and advisor
+cleared; timestamp refreshed. Distinct from
+E10 cancellation/new-ID behavior.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+29
+Case / planned input and procedure
+Expected output (not an observed result)
+IT-08 — Allowed cancellation and replacement
+Component: POST /app/plan/{id}/cancel; POST /app/plan;
+GET /admin and /app
+Preconditions: F2; independently owned Pending,
+Approved and Rejected plans; S1 logged in.
+Inputs: Each allowed status with existing [C3] links;
+replacement [C4], same semester.
+Procedure: Cancel per variant; inspect row, links, UI and
+advisor queue; submit replacement; query all matching plan
+rows.
+303; original row Cancelled and retains
+links/history; hidden from Pending queue;
+cancelled plan displays no selected/planned
+courses; replacement has new ID and Pending
+status, old Cancelled row remains.
+IT-09 — Forbidden cancellation statuses
+Component: POST /app/plan/{id}/cancel
+Preconditions: F2; S1 authenticated; independently owned
+Changes Requested and Cancelled plans.
+Inputs: Each disallowed status; unchanged links/feedback
+snapshots.
+Procedure: POST cancel per variant; follow redirect for
+warning; query fresh state.
+303 tab=plan-courses with 'Only pending,
+rejected, or approved plans can be cancelled.'
+warning; status, links and feedback
+unchanged. Changes Requested permits
+resubmission, not cancellation.
+IT-10 — Submitted course removal and last-course
+rule
+Component: POST
+/app/plan/{id}/courses/{course_id}/remove
+Preconditions: F2; S1 authenticated, owned Pending plan
+[C3,C4]; separate non-Pending variants.
+Inputs: C4 then C3; absent course ID; each
+Approved/Rejected/Changes Requested/Cancelled.
+Procedure: Remove C4; try last C3; test absent and
+non-Pending variants independently; query DB after each.
+First request 303/success, one C3 link
+remains; last-course, absent-course and
+non-Pending requests 303/warning without
+state change; no orphaned/deleted plan.
+IT-11 — Cross-student ownership and data visibility
+Component: GET /app?tab=degree-progress; GET
+/app?tab=messages; POST /app/plan/{id}/cancel; POST
+/app/plan/{id}/courses/{course_id}/remove; POST /app/plan
+Preconditions: F2; S1 and S2 logged in separately; S2
+owns Pending [C3,C4] and distinctive records/feedback.
+Inputs: S1 uses S2 plan ID for cancel/remove; submits valid
+own selection with extra student_id=S2 field.
+Procedure: S1 GET dashboard/messages; POST foreign
+cancel/remove; POST own plan with forged student_id field;
+compare DB before/after.
+Foreign operations ->303 warning 'Plan not
+found.' with S2 row/links untouched; no S2
+private record/message in S1 output; new
+submission belongs to cookie-authenticated
+S1, extra form student_id does not override
+identity.
+IT-12 — Unauthenticated and invalid-token access
+Component: GET /app; GET /admin; POST /app/plan; POST
+/admin/review/{id}; POST /app/plan/{id}/cancel; POST
+/app/plan/{id}/courses/{course_id}/remove
+Preconditions: F2; valid target plan; clean client per token
+variant; no auth override.
+Inputs: No cookie; malformed token; expired correctly
+signed token; wrong-signature token; valid token for
+nonexistent user.
+Procedure: Send each protected request with otherwise
+valid payload under each variant; compare entire relevant
+DB state.
+Protected HTML and JSON requests return
+HTTP 401 for missing/malformed/expired/wron
+g-signature/nonexistent-user tokens, with no
+private data and no database writes. This
+replaces the obsolete H3/HTTP-200
+expectation.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+30
+Case / planned input and procedure
+Expected output (not an observed result)
+IT-13 — Student cannot use advisor operations
+Component: GET /admin; POST /admin/review/{id}
+Preconditions: F2; S1 logged in; Pending S2 plan.
+Inputs: Valid approve/reject/request_changes payloads as
+regular_user.
+Procedure: GET queue; POST each decision; query plan in
+fresh session.
+Authenticated Student access to Advisor
+queue/review returns HTTP 403. No
+queue/private data or
+status/feedback/advisor/course-link changes.
+This replaces obsolete H3/HTTP-200 wording.
+IT-14 — Business-invalid submission inputs
+Component: POST /app/plan
+Preconditions: F2; S1 logged in; no plan for target
+semester; reset DB per variant.
+Inputs: Omitted/empty course_ids; [C3,C3]; [999999]; [C1]
+completed; [C2] in progress; unmet prerequisite C5;
+invalid/blank semester; valid C3 plus invalid item.
+Procedure: POST form per variant; capture redirect; GET
+warning; compare SemesterPlan/PlanCourse counts.
+303 warning for each business rejection, no
+partial plan/links. Messages identify
+empty/duplicate/missing/ineligible selections
+or invalid semester. Whitespace around a valid
+semester is accepted and stored trimmed
+(positive control).
+IT-15 — Duplicate active semester plan
+Component: POST /app/plan
+Preconditions: F2; S1 logged in; owned T1 plan separately
+Pending or Approved.
+Inputs: Same-semester [C4]; second positive control uses
+T2.
+Procedure: POST duplicate; snapshot row/links; then
+submit to T2.
+Pending/Approved duplicate ->303 warning
+already under review or approved; original
+plan/links unchanged, no extra T1 plan;
+independent T2 submission accepted.
+IT-16 — Invalid review payload shapes and syntax
+Component: POST /admin/review/{id}
+Preconditions: F2; A1 logged in, Pending plan; reset per
+variant.
+Inputs: Malformed JSON '{'; JSON [] or null; {}; decision=''
+or integer; feedback=null/list/integer; noninteger plan path
+ID; valid form control.
+Procedure: POST with accurate Content-Type per variant;
+capture raw response; compare persisted snapshot.
+Malformed JSON ->400;
+non-object/missing-or-invalid
+decision/non-string feedback/noninteger path
+->422; no state changes; valid form decision
+with string feedback ->303 and normal review.
+JSON syntax checks must send raw malformed
+bytes, not client JSON serialization.
+IT-17 — Review business validation and feedback
+boundary
+Component: POST /admin/review/{id}
+Preconditions: F2; A1 authenticated; independent
+Pending/non-Pending/missing plan cases.
+Inputs: Unknown decision; feedback lengths
+0,499,500,501; 501 spaces; non-Pending statuses; missing
+integer ID.
+Procedure: POST JSON and form boundary variants; follow
+redirect for flash; query fresh state.
+Business-invalid cases ->303 /admin warning,
+unchanged DB; valid 0/499/500 feedback
+accepted and trimmed; 501 rejected before
+trimming. Missing plan says Plan not found;
+non-Pending says Only pending plans can be
+reviewed. No invented mandatory-feedback
+rule.
+IT-18 — Invalid form types and path identifiers
+Component: POST /app/plan; POST /app/plan/{id}/cancel;
+POST /app/plan/{id}/courses/{course_id}/remove
+Preconditions: F2; S1 logged in, owned Pending [C3,C4].
+Inputs: course_ids='abc' or mixed [C3,'abc']; plan_id='abc';
+course_id='abc'; missing integer plan ID 999999; missing
+course membership.
+Procedure: Send repeated form fields or path variants;
+capture validation response and DB snapshot.
+Noninteger form/path IDs ->422 before service
+mutation; nonexistent integer plan or absent
+plan course ->303 warning; plan and links
+unchanged. Student submission endpoint
+expects form data; do not assume a JSON
+REST contract.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+31
+Case / planned input and procedure
+Expected output (not an observed result)
+IT-19 — Database uniqueness constraints
+Component: PlanCourse and StudentCourse SQLModel
+tables; AdvisingRepository.create_plan
+Preconditions: F2 fresh engine with foreign keys enabled;
+seed referenced users/courses and valid Pending plan.
+Inputs: Duplicate (plan_id,C3); duplicate (S1,C1); invalid
+foreign-key link.
+Procedure: Use isolated repository/session boundary to
+insert each invalid row; catch IntegrityError; rollback; open
+fresh session.
+Real database rejects duplicate pairs and
+dangling foreign key; committed valid rows
+remain intact. This is a DB integration case
+rather than HTTP; UT-10 covers the earlier
+service guard.
+IT-20 — Create/resubmit transaction rollback
+Component: AdvisingRepository.create_plan;
+resubmit_plan
+Preconditions: F2 real isolated DB; existing Rejected plan
+[C3] for resubmit case.
+Inputs: Create with [C4,C4]; resubmit existing plan with
+[C4,C4] to trigger real unique-constraint failure.
+Procedure: Invoke repository directly to reach DB failure
+past service duplicate guard; catch IntegrityError; inspect a
+fresh session after rollback.
+Failed create leaves no new plan or links;
+failed resubmit preserves original
+status/feedback/advisor/timestamp/C3 links;
+session usable after rollback. Keep actual
+DB/CRUD real; do not mock commit. Normal
+route persistence remains covered by
+IT-03/04/06.
+IT-01/12/13 explicitly use the current 401/403 contract in place of historical H3. The original source documents remain
+attached unchanged. These adaptations are planned expectations, not new observations.
+6.3.1 Corrected-build supplemental plan
+The retained correction plan adds HTML Student-role denials, actual application SQLite engine enforcement,
+malformed registration email and computed table/Approved-notice contrast. Expect 403 and unchanged full
+database snapshots for admin/unknown-role HTML mutations; 422 and no registration writes for malformed
+email; IntegrityError for orphan links on separately pooled application-engine connections; and readable
+contrast in normal/hover/Approved states. Manual browser and full Postman retests are still planned, not
+executed results.
+Source: docs/assignment2/test-plans/integration-test-plan.md; reports/correction-retest-guide.md;
+tests/integration/test_audit_corrections.py; test_contrast_regression.py.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+32
+7. Implementation
+7.1 GitHub Repository
+Repository: https://github.com/Camcoon/MyAdvisorWithTests. Default branch main. Live read-only GitHub
+verification on 27 October 2026 found head 864386fe10fa5e61869e07500d84e51ff7e46b9b; its complete
+recursive tree contains 430 entries and is not truncated.
+Publication is incomplete. Main contains the Assignment 2 API and unit/integration tests, six original pytest
+screenshots and Postman workspace YAML. It does not contain the exported collection JSON, Runner/UAT PNGs
+or latest corrected source/reports. The corrected local code is verified by retained hashes, but is not the
+published main snapshot. The local Git origin points to Camcoon/MyAdvisor, a different repository; this PDF task
+does not push or change remotes.
+Artifact
+Repository / local verification
+Unit implementation
+tests/unit/test_advising.py and tests/unit/test_auth.py are present on main.
+Integration
+implementation
+tests/integration/test_student_workflow.py,
+tests/integration/test_advisor_workflow.py and
+tests/integration/test_database_integrity.py are present. Correction tests and
+four changed application/CSS files remain local.
+Postman JSON
+docs/assignment2/postman/MyAdvisor-Assignment2.postman_collection.json
+exists locally, parses as v2.1 and contains 90 requests. Remote contents lookup
+returned 404 and recursive tree confirms absence.
+Execution evidence
+Six unit/integration PNGs are published. Runner/UAT images and corrected-build
+text/XML/hash evidence are retained locally; relevant evidence is embedded in
+this PDF.
+7.2 Unit Test Implementation
+pytest markers select unit tests with -m unit. tests/unit/conftest.py patches repository constructors where
+AdvisingService imports them, supplies autospecced doubles/in-memory model objects, and guards database
+connections. It preserves the real service logic and tracks mutation calls. test_advising.py implements UT-01–19;
+test_auth.py implements UT-20–23. An existing mocked login companion is also in the historical selection.
+The functions under test include get_student_dashboard, prerequisite_ok, get_course_availability, submit_plan,
+review_plan, cancel_plan, remove_submitted_course, authenticate_user, get_current_user, the role guard and
+password/JWT utilities. Parameterization covers legal/illegal status matrices and raw feedback-length
+boundaries. UT-23 uses real hashing/signing; credentials and tokens are never printed here.
+7.2.1 Actual unit implementation example
+def test_UT_09_empty_selection(advising):
+    with pytest.raises(ValueError, match="^Select at least one course for the semester plan\\.$"):
+        advising.service.submit_plan(1, [], T1)
+    no_submission(advising)
+    advising.repo.list_courses.assert_not_called()
+    advising.repo.get_completed_course_ids.assert_not_called()
+    advising.repo.get_completed_courses.assert_not_called()
+Verbatim test from tests/unit/test_advising.py. no_submission asserts that neither create_plan nor resubmit_plan was called.
+This checks both the error and early short-circuit behavior; Section 6 contains the plan and Section 8 contains observed
+execution.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+33
+7.3 Integration Test Implementation
+FastAPI/Starlette TestClient sends real requests through the application. tests/integration/conftest.py creates a
+fresh SQLite engine and schema per case, enables foreign keys, isolates startup/recovery, overrides request
+sessions and opens independent actor clients. Real password hashing, JWT decoding, current database role
+lookup, request parsing, services and CRUD remain active. Teardown restores app settings/overrides and closes
+database resources.
+Test file
+Actual implementation
+tests/integration/test_student_workflow.py
+Student login/cookies/logout, progress/catalogue, form and
+JSON submission, committed state, ownership/privacy,
+validation, removal, cancellation and same-ID resubmission.
+tests/integration/test_advisor_workflow.py
+Real Student-to-Advisor queue delivery; decisions through
+form, generic JSON and named JSON actions; feedback;
+resubmission and replacement; authorization and validation
+boundaries.
+tests/integration/test_database_integrity.py
+Real uniqueness/foreign-key constraints and rollback for
+failed create/resubmit; fresh-session checks of committed
+state.
+tests/integration/test_audit_corrections.py
+18 additional variants: 12 HTML role denials, 3
+malformed-email no-write cases, valid/duplicate registration,
+and 2 actual engine-integrity cases.
+tests/integration/test_contrast_regression.py
+2 additional variants use the rendered templates and pinned
+CSS in Chromium; normal/hover table and Approved
+explanatory text contrast. Browser harness is
+tests/browser/contrast_probe.cjs.
+7.3.1 Actual workflow implementation example
+def test_cancelled_plan_leaves_advisor_queue_and_replacement_returns(student):
+    env, client = student.env, student.client
+    advisor = env.login("a1")
+    plan_id = env.seed_plan()
+    queue(advisor, [plan_id])
+    before = env.snapshot()
+    response = client.post(f"/app/plan/{plan_id}/cancel")
+    assert response.status_code == 303
+    assert "Semester plan cancelled." in client.get(response.headers["location"]).text
+    assert env.plan(plan_id) == {**before["semesterplan"][0], "status": "Cancelled"}
+    assert env.snapshot()["plancourse"] == before["plancourse"]
+    queue(advisor, [])
+Verbatim opening of the cancellation/queue/replacement test. A real Student cancels a Pending plan, a fresh database
+snapshot verifies Cancelled status and retained links, and the real Advisor queue becomes empty. The remainder submits a
+replacement and verifies the new Pending plan. No browser UAT conclusion is inferred.
+Separate S1/S2/A1 clients check missing/invalid/expired tokens, current roles, Student denial from Advisor
+operations and concealment of foreign plans. Negative tests compare committed snapshots after denied writes.
+tests/test_advising_api.py, test_semester_plans_api.py, test_advisor_plans_api.py and test_api_security.py
+provide additional API/regression coverage in the full suite.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+34
+7.4 API Test Implementation — Postman
+Collection: MyAdvisor - COMP 3613 Assignment 2. Format: Postman Collection v2.1.0 (schema format, not a
+release number). Filename/path:
+docs/assignment2/postman/MyAdvisor-Assignment2.postman_collection.json. SHA-256:
+409cffa7540cd73880d74139f77346cdb47d06a18d9ae8e1b11cf70ef2c44b6d.
+Required GitHub export link — currently unavailable:
+docs/assignment2/postman/MyAdvisor-Assignment2.postman_collection.json. Live lookup returned 404; no
+matching exported JSON exists anywhere in the complete remote tree. This is an unresolved lecturer deliverable
+(F02), not a working download. The genuine local JSON is also attached inside this PDF for evidence
+preservation; this does not satisfy publication in the repository.
+Ordered request group
+Requests
+Coverage
+01 Readiness and real cookie
+authentication
+01–12 (12)
+Health; anonymous access; malformed cookie;
+bad/valid Student and Advisor login; independent
+Student registration/login.
+02 Role boundaries, progress
+and catalogue
+13–21 (9)
+Role denials; response privacy; progress; dynamic
+eligible/blocked course discovery; free-semester
+selection.
+03 Student plan lifecycle and
+validation
+22–50 (29)
+Empty/duplicate/unknown/ineligible/invalid
+submissions; persistence; foreign ownership;
+duplicate active plan; Pending removal and
+last-course protection.
+04 Advisor decisions and
+resubmission
+51–76 (26)
+Queue/detail, invalid decisions/shapes,
+500/501-character feedback, change request,
+same-ID resubmission, reject and approve.
+05 Cancellation, history and
+logout
+77–90 (14)
+Preserved approval, cancellation/history/new-ID
+replacement, queue cleanup, actor logout and
+no-cookie denial.
+Authentication/cookies. Login captures each actor’s access_token into separate collection variables.
+Requests send the intended actor’s Cookie explicitly; the prescribed run disables automatic cookie-jar and
+redirect handling. HttpOnly cookies are server controls; exported password/token values are blank. Populate
+run-only credentials privately on a disposable instance. Do not use a normal/private database.
+Dynamic state. Collection variables include base_url, actor tokens, discovered course IDs, selected semester
+and generated plan IDs. Scripts validate response status/schema/privacy, select eligible data, assert persisted
+decisions and read back after denials. Request 01 initializes run state. Execute one iteration in the original
+01–90 order; later requests depend on earlier state.
+Positive/negative coverage. Valid operations are paired with expected 401/403/404/409/422 denials,
+malformed JSON/IDs, spoofed fields, foreign resources, illegal status transitions and feedback boundaries. Static
+validation parses 90 requests, compiles 93 JavaScript script blocks and covers all 15 JSON operations; static
+success is distinct from Runner execution.
+Source: docs/assignment2/postman/MyAdvisor-Assignment2.postman_collection.json; postman/validate_collection.cjs;
+docs/assignment2/api.md.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+35
+7.4.1 API endpoint coverage
+Method
+Implemented JSON endpoint
+GET
+/api/degree-progress
+GET
+/api/courses
+GET / POST
+/api/semester-plans
+GET / DELETE
+/api/semester-plans/{plan_id}
+PUT
+/api/semester-plans/{plan_id}/courses
+DELETE
+/api/semester-plans/{plan_id}/courses/{course_id}
+GET
+/api/advisor/plans
+GET
+/api/advisor/plans/{plan_id}
+POST
+/api/advisor/plans/{plan_id}/review
+POST
+/api/advisor/plans/{plan_id}/approve
+POST
+/api/advisor/plans/{plan_id}/reject
+POST
+/api/advisor/plans/{plan_id}/request-changes
+GET
+/api/users
+The combined GET/POST and GET/DELETE rows each represent two operations: 15 JSON operations in total.
+GET /health, POST /login, POST /register and GET /logout provide supporting readiness/session operations. HTML
+mutation denials and corrected registration behavior require supplemental new-build requests; the historical
+collection run does not attest them.
+7.4.2 Actual collection-script excerpt
+49 - Cannot remove final course
+try {
+let assertionFailed = false;
+function check(name, fn) {
+  pm.test(name, function() {
+    try { fn(); } catch (error) { assertionFailed = true; throw error; }
+  });
+}
+check("HTTP 409", () => pm.response.to.have.status(409));
+Contiguous verbatim opening excerpt. The complete exported script is in the attached JSON. F13 remains: request 19’s
+percentage range checks are weaker than an exact independent percentage oracle, and initial course discovery alone trusts
+returned eligibility. No assertion enhancement or new Runner pass is claimed.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+36
+8. Test Reports
+Results below are observed executions, kept separate from Section 6’s expectations. The final corrected local
+implementation matches the retained 735-pass source hashes; historical marked/Runner/UAT images do not
+identify that corrected snapshot. No pytest, Postman or manual UAT was re-executed during PDF restructuring.
+Execution
+Verified actual result
+Build / evidence qualification
+Unit-marker run
+113 passed; 602 deselected; 1
+warning; 6.23s
+26 Oct historical terminal screenshots;
+numeric exit code/build hash absent.
+Integration-marker run
+194 passed; 521 deselected; 1
+warning; 30.52s
+26 Oct historical terminal screenshots;
+numeric exit code/build hash absent.
+Supporting full
+regression
+715 passed; 1 warning; 76.25s; exit 0
+27 Oct pre-correction audit text/XML and
+source hashes.
+Corrected full
+regression
+735 passed; 1 warning; 58.11s; exit 0
+27 Oct corrected source, text/XML, 70
+source-file hashes; zero
+failures/errors/skips.
+Corrected targeted
+suite
+284 passed; 1 warning; 86.42s; exit 0
+27 Oct affected/correction coverage;
+overlaps complete suite.
+Postman Runner
+90 requests; 470 assertions passed; 0
+assertion failures; 0 execution errors
+27 Oct original Runner; 1 iteration; 10s
+697ms; exact tested build/browser/DB
+unrecorded.
+Manual UAT
+(supporting)
+1 Pass / 0 Fail / 19 Not Run
+27 Oct latest confirmed disposition; 18
+partial, UAT-05 unverified; corrected-build
+manual run pending.
+Counts are not additive across runs. The historical 715-item suite contains 113 unit + 194 integration + 408
+other nodes. The corrected 735-item XML contains 113 unit + 214 integration + 408 other nodes (20 added
+correction variants). These corrected membership counts are not new separately executed unit/integration
+selections; the required historical 113/194 reports retain their dates and scope.
+8.1 Unit Test Report
+Objective: demonstrate isolated service/authentication rules and repository delegation. Environment:
+Windows/win32; repository .venv; Python 3.14.0; pytest 9.1.1; pluggy 1.6.0; anyio 4.15.1; pytest-asyncio 1.4.0;
+pyproject.toml. The historical screenshots do not establish a complete dependency lock or exact source/build
+identifier.
+Actual command (from the start capture; run from the repository root):
+$base = Join-Path $env:LOCALAPPDATA "MyAdvisor-A2-Pytest"
+.\.venv\Scripts\python.exe -m pytest tests -m unit -v --basetemp="$base\unit"
+Observed summary: 715 collected, 113 selected, 602 deselected; 113 passed, 1 warning in 6.23s.
+Genuine final-result Figure 8.3 follows. No numeric exit code is visible, so none is invented. The latest marked
+scrollback/XML is incomplete; earlier retained unit XML and the full audit records provide separate supporting
+evidence.
+Warning and conclusion: StarletteDeprecationWarning reports deprecated httpx use with starlette.testclient
+and suggests httpx2. It is a dependency-maintenance warning, not a failed assertion. The selected run passed
+its tested cases; it does not establish full UAT, production security or a corrected-build marked rerun.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+37
+8.1 Unit terminal evidence — run capture 1
+Figure 8.1. Genuine terminal capture Screenshot 2026-10-26 231703.png; 26 October 2026. Unmodified actual command/environment or passed variants; the final result is in
+Figure 8.3. Historical source attribution remains qualified.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+38
+8.1 Unit terminal evidence — run capture 2
+Figure 8.2. Genuine terminal capture Screenshot 2026-10-26 231742.png; 26 October 2026. Unmodified actual command/environment or passed variants; the final result is in
+Figure 8.3. Historical source attribution remains qualified.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+39
+8.1 Unit terminal evidence — completed result
+Figure 8.3. Genuine terminal capture Screenshot 2026-10-26 231747.png; 26 October 2026. Full image plus enlarged original result strip: 113 passed, 602 deselected, 1
+warning in 6.23s. Historical source attribution remains qualified.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+40
+8.2 Integration Test Report
+Objective: verify that real authentication, role/ownership dependencies, HTTP parsing, Student/Advisor
+workflows and database persistence work together. Components include TestClient, FastAPI,
+services/repositories and per-case SQLModel/SQLite with independent request sessions; database-only cases
+reach real constraints and rollback.
+Environment: Windows/win32, Python 3.14.0, pytest 9.1.1, pluggy 1.6.0, anyio 4.15.1, pytest-asyncio 1.4.0 and
+pyproject.toml in the repository .venv. Separate actor clients perform real login and cookie handling. Exact
+latest marked dependency inventory/source hash and numeric exit-code record are missing.
+Actual command (same writable temporary base defined in the unit start capture):
+.\.venv\Scripts\python.exe -m pytest tests -m integration -v --basetemp="$base\integration"
+Observed summary: 715 collected, 194 selected, 521 deselected; 194 passed, 1 warning in 30.52s. Figure
+8.6 shows the genuine terminal summary. The warning is the same disclosed TestClient/httpx deprecation.
+Latest complete marked text/XML is missing; a retained 59-pass Student-only run is narrower and is not
+substituted for 194.
+Coverage/conclusion: queue receipt, approve/reject/request-changes decisions, feedback delivery, same-ID
+resubmission, removal, allowed/forbidden cancellation, replacement history, cross-user privacy, missing/invalid
+authentication, validation and fresh-session state assertions. All selected cases passed, but SQLite does not
+establish PostgreSQL, concurrency, deployed CSRF protection or human acceptance. The 20 correction variants
+were added later; their full-suite results are reported separately.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+41
+8.2 Integration terminal evidence — run capture 1
+Figure 8.4. Genuine terminal capture Screenshot 2026-10-26 231956.png; 26 October 2026. Unmodified real Advisor/Student integration variants; final summary in Figure 8.6.
+Historical source attribution remains qualified.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+42
+8.2 Integration terminal evidence — run capture 2
+Figure 8.5. Genuine terminal capture Screenshot 2026-10-26 232025.png; 26 October 2026. Unmodified real Advisor/Student integration variants; final summary in Figure 8.6.
+Historical source attribution remains qualified.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+43
+8.2 Integration terminal evidence — completed result
+Figure 8.6. Genuine terminal capture Screenshot 2026-10-26 232058.png; 26 October 2026. Full image plus enlarged original result strip: 194 passed, 521 deselected, 1
+warning in 30.52s. Historical source attribution remains qualified.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+44
+8.2.1 Supporting full-suite and corrected-build regression
+Historical support: evidence/audit/pytest-output.txt, pytest-results.xml and pytest-run.json retain 715
+passed, 0 failures/errors/skips, 1 warning, 76.25s, exit 0. This broader run supports regression reporting
+and includes both marked groups; it is not a third category to add to 113 and 194.
+Latest corrected source: evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.* retains 735
+passed, 0 failures/errors/skips, 1 warning, 58.11s, exit 0, started 27 October 2026 15:38 UTC−04:00. The
+metadata’s 70 application/test SHA-256 entries were rechecked during assembly and all match the current files.
+Targeted correction record targeted-20261027T193352Z-b6385978.* separately retains 284 passes, 86.42s,
+exit 0; it overlaps the full suite.
+Actual full-run command from retained metadata (absolute paths abbreviated with bracketed location
+placeholders; original command remains in the attachment):
+python -m pytest tests -q -p no:cacheprovider
+  --basetemp=[unique disposable path] --junitxml=[retained full-run XML]
+Verbatim retained final text line, not a screenshot:
+735 passed, 1 warning in 58.11s
+Corrected environment metadata records FastAPI 0.141.1, SQLModel 0.0.42, SQLAlchemy 2.0.54, PyJWT 2.14.0,
+pwdlib 0.3.1 and SQLite 3.50.4. Runs used fresh writable temporary directories and no normal/private database;
+the unused bootstrap database was not created.
+F01 HTML Student-role guards, F07 actual SQLite connection foreign keys and F08 registration boundary
+validation are fixed and covered locally. F06 computed contrast checks pass: normal table 14.81:1; hovered row
+13.73:1; Approved paragraph 6.56:1. Human readability acceptance and corrected-build Postman/UAT checks
+remain pending. Old screenshots have not been relabelled as corrected-build proof.
+Source: docs/assignment2/reports/audit-correction-report.md; evidence/corrections-2026-10-27/verified-summary.json.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+45
+8.3 Postman Collection Run Report
+Collection: MyAdvisor - COMP 3613 Assignment 2, v2.1 export. Objective: exercise all 15 JSON operations and
+supporting real login/registration/logout through the dependent Student/Advisor plan lifecycle, including
+negative status/role/ownership requests.
+Execution detail
+Observed / qualified value
+Evidence date
+27 October 2026, user-confirmed; Runner displays 01:25:19 AM without an
+independent time-zone record.
+Environment
+Postman Collection Runner; UI shows environment none / No Environment; 1
+iteration, duration 10s 697ms and average response time 29ms. Prescribed
+local isolated SQLite-backed setup is documented, but exact actual server URL,
+DB path, Postman version and tested build were not retained.
+Requests / assertions
+90 requests executed; 470 assertions passed; zero observed assertion
+failures; zero execution errors. Six genuine captures collectively show
+requests 01–90; rows cut at scroll boundaries are not reconstructed.
+Authentication/authorizatio
+n
+Separate Student/Advisor/independent Student login; expected anonymous
+and wrong-role denials; foreign ownership concealment and no-write
+read-back; response privacy.
+Workflow scenarios
+Progress/catalogue, invalid/valid submission, Pending queue, feedback limits,
+request changes/resubmit, reject/approve, immutable states,
+removal/cancellation/history/replacement and logout.
+Conclusion
+The recorded historical iteration passed its assertions. The corrected local build
+requires a new complete collection run and supplemental HTML/registration
+checks. A passing historical run does not close F05, F09, F13 or F15.
+The following are genuine supplied Runner captures, not generated terminal text or reconstructed results. The
+exported JSON itself remains missing on GitHub despite being retained locally and attached to this PDF.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+46
+8.3 Postman Runner evidence — 1
+Figure 8.7. Genuine Runner capture Screenshot 2026-10-27 012608.png. Visible summary: 470 assertions, 0 errors, 1
+iteration, 10s 697ms. The sequence collectively covers 90 requests; this is historical evidence. Unchanged crop of the
+run-results area; original file attached.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+47
+8.3 Postman Runner evidence — 2
+Figure 8.8. Genuine Runner capture Screenshot 2026-10-27 012643.png. Visible summary: 470 assertions, 0 errors, 1
+iteration, 10s 697ms. The sequence collectively covers 90 requests; this is historical evidence. Unchanged crop of the
+run-results area; original file attached.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+48
+8.3 Postman Runner evidence — 3
+Figure 8.9. Genuine Runner capture Screenshot 2026-10-27 012658.png. Visible summary: 470 assertions, 0 errors, 1
+iteration, 10s 697ms. The sequence collectively covers 90 requests; this is historical evidence. Unchanged crop of the
+run-results area; original file attached.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+49
+8.3 Postman Runner evidence — 4
+Figure 8.10. Genuine Runner capture Screenshot 2026-10-27 012739.png. Visible summary: 470 assertions, 0 errors,
+1 iteration, 10s 697ms. The sequence collectively covers 90 requests; this is historical evidence. Unchanged crop of
+the run-results area; original file attached.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+50
+8.3 Postman Runner evidence — 5
+Figure 8.11. Genuine Runner capture Screenshot 2026-10-27 012839.png. Visible summary: 470 assertions, 0 errors,
+1 iteration, 10s 697ms. The sequence collectively covers 90 requests; this is historical evidence. Unchanged crop of
+the run-results area; original file attached.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+51
+8.3 Postman Runner evidence — 6
+Figure 8.12. Genuine Runner capture postman-results.png. Visible summary: 470 assertions, 0 errors, 1 iteration, 10s
+697ms. The sequence collectively covers 90 requests; this is historical evidence. Unchanged crop of the run-results
+area; original file attached.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+52
+Appendix A — UAT Execution Summary
+Latest confirmed status: 1 Pass / 0 Fail / 19 Not Run. Tester Cameron Ramesar confirmed the 27 October
+2026 execution/captures. Eighteen cases are partial; UAT-05 remains unverified. Pass applies only to UAT-06’s
+recorded review objective with substituted data. No manual correction-stage execution is claimed.
+Data deviation: actual initial A used MATH 1300 + MATH 2200 + MATH 2250 (3 courses / 9 credits); revised A
+used MATH 1300 + MATH 2200 + ENGL 1000 (3 / 9). The planned A was COMP 1201 + MATH 2250 (2 / 6),
+revised to COMP 1201 + ENGL 1000. Initial no-prerequisite choices do not demonstrate the planned
+nonempty-prerequisite path. Full actual-result fields and all 19 original UAT images are embedded as PDF
+attachments.
+Case
+Latest status
+Observed evidence / remaining conditions
+UAT-01
+Not Run
+Degree Progress shows 6 completed, 3 in progress, 84 remaining, 93
+required and 6/93 (6%); category denominators total 120; recent academic
+activity is visible. Remaining: Confirm totals/activity after refresh; reviewer
+disposition of DATA-01 (120 category credits versus 93 degree credits).
+Evidence: UAT-02.png
+UAT-02
+Not Run
+Year 1 semester 1, math search and All departments are visible; MATH 1300,
+MATH 2200 and MATH 2250 are Eligible, each 3 credits; MATH 1200 is
+already completed. Remaining: Confirm semester switching, code and title
+searches, department and combined filters, no-match search and Clear
+Filters outcomes. Evidence: UAT-03.png
+UAT-03
+Not Run
+Three eligible Mathematics courses are selected; selection count is 3.
+Completed-course restriction is visible. Post-submission image also shows
+in-progress and missing-prerequisite reasons, but that form is locked.
+Remaining: Confirm empty-selection prevention, pre-submission ineligible
+controls, actual count changes, review total and Back preserving choices;
+exact planned 0?2?1?2 sequence was not established. Evidence:
+UAT-03.png; UAT-04.png
+UAT-04
+Not Run
+Submission success message; semester 1 Pending with MATH 1300, MATH
+2200 and MATH 2250 (9 credits). Standard selection is locked; Remove and
+Cancel controls are visible. Remaining: Confirm refresh persistence and
+repeat submission prevention through the Pending form. Evidence:
+UAT-04.png
+UAT-05
+Not Run
+No screenshot or supplied observation establishes the originally required
+Pending Home/Messages and sign-out/sign-in workflow. Later decision
+Messages are corroborating navigation evidence only. Remaining: Confirm
+Pending Home/Messages summary (actual 3 courses/9 credits) and selection
+retained after sign-out/sign-in. Evidence: None for the required workflow
+UAT-06
+Pass
+Advisor Review shows the correct Student identity/ID/program, October 27
+submission date, semester 1 Pending, MATH 1300/2200/2250, 3 courses and
+9 credits, comments counter and all three decision controls. Reading the
+card leaves it Pending. Actual data satisfies the review objective with the
+documented substitution. Remaining: No remaining outcome check for this
+review objective with substituted data. Separate-profile setup/login attempts
+remain unverified under UAT-18/19; table contrast issue UI-01 remains open.
+Evidence: UAT-05.png
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+53
+Case
+Latest status
+Observed evidence / remaining conditions
+UAT-07
+Not Run
+Advisor Messages and Student Plan Courses show Changes Requested for
+semester 1 with identical feedback: "Replace MATH 2250 with ENGL 1000,
+then resubmit." Original three Mathematics selections remain selected in the
+editable form; update/resubmit instruction is visible and Cancel is absent.
+Remaining: Confirm Advisor action confirmation, removal from Pending
+queue, and Student Messages delivery (Student Plan Courses delivery is
+established). Evidence: UAT-07-request-changes.png;
+UAT-07-student-feedback.png
+UAT-08
+Not Run
+Advisor Pending queue shows revised semester 1: ENGL 1000, MATH 1300
+and MATH 2200; 3 courses, 9 credits. MATH 2250 was replaced. Empty
+Advisor comments input is visible; it does not independently prove stored
+feedback was cleared. Remaining: Confirm Student Pending state and review
+total for the actual 3-course/9-credit revision, current Pending Messages with
+prior feedback cleared, and exactly one revised Advisor queue entry after
+refresh. Evidence: UAT-08-resubmitted.png
+UAT-09
+Not Run
+Student semester 1 is Approved; feedback: "Revised selection approved."
+ENGL 1000, MATH 1300 and MATH 2200 remain selected (9 credits);
+standard selection is locked, Remove absent and Cancel available. Student
+Messages in UAT-11 also shows this approval/feedback. Remaining: Confirm
+Advisor action confirmation and Advisor Approved feedback/queue removal;
+Student refresh persistence. Evidence: UAT-09-approved.png;
+UAT-11-rejected.png
+UAT-10
+Not Run
+Student semester 2 submission success and Pending state with only MATH
+2250, Industrial Statistics, 3 credits. Remaining: Confirm switching between
+semesters preserves each separate selection/status; later UAT-11 supports
+retained approval, not every switch. Evidence: UAT-10-second-plan.png
+UAT-11
+Not Run
+Student Messages shows semester 2 Rejected with feedback: "Plan rejected
+for this UAT scenario; choose a different course mix." Semester 1 remains
+Approved with its approval feedback. Remaining: Confirm Advisor rejection
+confirmation/feedback and queue removal; Student rejected plan editability
+and Cancel availability. Evidence: UAT-11-rejected.png
+UAT-12
+Not Run
+Advisor Review shows semester 3 Pending with COMP 1201 and MATH 2250,
+2 courses and 6 credits. Remaining: Confirm Student Pending view and that
+A Approved/B Rejected were unchanged during this submission. Evidence:
+UAT-12-pending-plan.png
+UAT-13
+Not Run
+"Course removed from the submitted plan." appears. Semester 3 stays
+Pending with only COMP 1201, 3 credits. No Remove button for the final
+course; "Cancel the plan to remove its last course." is visible. Remaining:
+Confirm dismissing Remove changed nothing and refreshed Advisor queue
+showed COMP 1201/3 credits. Final-course UI guard is established; no forged
+removal request is claimed. Evidence: UAT-13-course-removed.png
+UAT-14
+Not Run
+Cancellation success; semester 1 Cancelled; "Revised selection approved."
+retained as feedback. Zero courses selected; new-selection instruction and
+eligible unchecked choice are visible; Cancel absent. Remaining: Confirm
+dismissing cancellation preserved approval, refresh persisted Cancelled, and
+Messages showed Cancelled. Evidence: UAT-14-approved-cancelled.png
+UAT-15
+Not Run
+Cancellation success; semester 2 Cancelled; rejection feedback retained
+exactly. Zero courses selected, new selection possible and Cancel absent.
+Remaining: Confirm refresh/Messages Cancelled and A Cancelled/C Pending
+unchanged. Evidence: UAT-16-pending-cancelled.png
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+54
+Case
+Latest status
+Observed evidence / remaining conditions
+UAT-16
+Not Run
+Cancellation success; semester 3 Cancelled; zero selected courses;
+new-selection instruction and eligible unchecked choice visible; repeat
+Cancel absent. Remaining: Confirm Student Messages Cancelled, removal
+from refreshed Advisor Pending queue and preservation of other students if
+present. Evidence: UAT-15-rejected-cancelled.png
+UAT-17
+Not Run
+After cancellation, semester 3 shows successful submission and a new
+Pending selection containing only ENGL 1000, Academic Writing, 3 credits.
+Old COMP 1201/MATH 2250 selection is absent. Remaining: Confirm Student
+refresh persistence and exactly one active new Advisor queue entry after
+refresh with ENGL 1000/3 credits. Historical Cancelled Messages entries are
+permitted, not a required additional check. Evidence: UAT-17-new-plan.png
+UAT-18
+Not Run
+Student Home shows the seeded identity and Student navigation, no
+submitted semester plan and 0 updates. This is authenticated-state
+evidence, not a capture of the login attempts. Remaining: Confirm
+incorrect-login denial, valid-login destination, initial empty Messages/all
+A/B/C semesters and refresh retaining session. Evidence: UAT-01.png
+UAT-19
+Not Run
+Advisor Review shows Dr. Williams and Advisor navigation, with no Student
+planning/progress links. This is authenticated-state evidence, not a capture
+of login attempts. Remaining: Confirm incorrect-login denial, valid Advisor
+Home destination and refresh preserving independent Student/Advisor
+sessions. Evidence: UAT-05.png
+UAT-20
+Not Run
+401 Unauthorized / Session Expired page with Return to Login, plus an empty
+login screen. User attributes these to signed-out access restriction. No
+Student /admin 403 or Advisor restricted-tab fallback is demonstrated.
+Remaining: Confirm logged-in Student direct /admin 403, Advisor
+Student-tab fallback, unchanged queue, and fresh protected-page denial
+after each role signed out (which actor/URL for each). Evidence:
+UAT-20-access-denied.png; UAT-20-logged-out.png
+Image mapping correction retained: UAT-16-pending-cancelled.png actually shows rejected semester B Cancelled and
+supports UAT-15; UAT-15-rejected-cancelled.png shows semester C Cancelled and supports UAT-16. Filenames/image bytes
+are preserved. No refresh, queue removal, unaffected-semester or chronology claim is inferred.
+Browser/version, exact URL/DB and historical build remain unrecorded. New-build checks must cover missing login/logout,
+refresh/persistence, Student /admin 403, Advisor tab fallback, queue uniqueness/removal, feedback reset, corrected role
+guards/registration and human contrast acceptance.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+55
+Appendix B — Findings and Readiness
+Not submission-ready. The final PDF structure and embedded evidence do not resolve functional acceptance,
+security deployment or repository publication requirements. This summary supersedes stale open/fixed labels
+only where the later correction evidence proves a change; full historical audit and correction reports remain
+attached.
+Finding
+Current verified disposition
+F01 High — HTML role bypass
+Fixed locally with StudentDep on submit/remove/cancel; 12 real-auth no-write
+regression variants. Corrected-build manual/Postman HTML checks pending;
+old wrong-role-owned data not inspected/repaired.
+F02 High — Postman export absent
+Open. Local JSON is genuine and sanitized; intended repository main returns
+404 for the export and has only workspace YAML.
+F03 High — publication
+Open. Corrected app/CSS, new tests and current evidence are not published;
+Runner/UAT PNGs are absent remotely.
+F04 High — UAT incomplete
+Open. Only 1 complete Pass, 19 Not Run (18 partial). No corrected-build
+manual run.
+F05 High / DATA-01 — degree data
+Open. Fictional demonstration data: degree total 93 versus non-overlapping
+category total 120. Owner curriculum/allocation decision remains pending;
+seed/tests/screenshots unchanged. No authoritative UWI curriculum claim.
+F06 Medium — contrast
+Code corrected locally; measured normal/hover/Approved text ratios pass
+automated checks. Human/browser acceptance evidence still pending;
+original low-contrast screenshots remain historical.
+F07 Medium — runtime SQLite FKs
+Fixed locally for new app-created connections and regression-tested with real
+engine factory/pooling. Existing private DB integrity and PostgreSQL behavior
+unverified. Restart an old process to use the updated engine.
+F08 Medium — malformed email
+Fixed locally: request-boundary EmailStr yields 422 and no writes;
+valid/duplicate control tested. New browser/Postman evidence pending.
+F09 Medium — CSRF
+Open. No explicit CSRF token/Origin check on authenticated form writes;
+production cookie configured SameSite=None; logout remains GET. No live
+exploit executed. Deployment design/trusted-origin decision and regressions
+required.
+F10 Medium — historical
+provenance
+Partly addressed. Corrected pytest has text/XML, numeric exit and matching
+70-file hashes. Historical marked/Runner/UAT images cannot be tied
+retroactively to the corrected build.
+F11 Medium — identity / assembly
+Identity verified; requested revised PDF assembled and document checks
+recorded. Overall readiness still depends on the other findings.
+F12 Low — documentation
+Clarifications are local; current PDF uses authoritative statuses/contracts.
+Remote documents remain older.
+F13 Low — assertion depth
+Open. Postman percentage range and discovery checks need stronger
+independent oracles and a new recorded run, after degree-data decision.
+F14 Low — repository cleanup
+Open suggestion. Duplicate nested Assignment 1 tree and old logs can
+confuse execution targets. Use top-level app/tests; no deletion made.
+F15 Medium — signing-key config
+Open. Blueprint requests generated production key, but live runtime was not
+verified. Settings permit fallback to public example key without a
+production-strength guard. No private secret leak or actual production use is
+established.
+F16 Low — warning
+Open/disclosed. One Starlette/httpx deprecation; selected assertions pass.
+Dependency changes require separate regression evidence.
+No secrets, password values or authentication-token values are intentionally reproduced. Private
+database/deployment credentials were neither opened nor copied. Attached source excerpts and text evidence
+are scanned for known password constants, JWT patterns, private-key headers and credential-bearing URLs;
+original screenshots are visually reviewed. This is a scoped document check, not a certification of the deployed
+service.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+56
+Appendix C — Compact Requirements
+Traceability
+R01–R15 are existing local traceability IDs, not invented lecturer requirements. “Mapped” denotes scope;
+execution is governed by the qualified reports in Section 8 and Appendix A. The full retained matrix is attached.
+Requirement
+Unit / integration plan
+UAT / Postman requests
+R01 Degree totals/categories
+UT-01–03; IT-02
+UAT-01; PM19. F05/F13 open.
+R02 Completed-only prerequisites
+UT-04–06,11; IT-03,14
+UAT-02–03; PM20,25.
+R03 Valid nine semester choices
+UT-07–08; IT-14
+UAT-02,04,10,12; PM21,26,31.
+R04 Nonempty/unique eligible
+selection
+UT-09–11; IT-03,14,19
+UAT-03–04; PM22–25,27–31.
+R05 Plan lifecycle and duplicates
+UT-12–13,17; IT-05–07,15,17
+UAT-04–12; PM39–40,61–80.
+R06 Advisor decisions / Pending
+review
+UT-14–15,17; IT-05–07,13,17
+UAT-06–09,11,20; PM51–78.
+R07 Optional/500-character
+feedback
+UT-14,16; IT-05–07,16–17
+UAT-07–09,11;
+PM54–60,61,63,69,70,74.
+R08 Returned-plan same-ID
+resubmission
+UT-12–13; IT-06–07
+UAT-08; PM65–68,72.
+R09 Removal / last-course
+protection
+UT-19; IT-10–11,18
+UAT-13; PM36,48–50.
+R10
+Cancellation/history/replacement
+UT-18; IT-08–09
+UAT-14–17; PM37,64,78–86.
+R11 Ownership/privacy/role isolation
+UT-22; IT-02,11–13
+UAT-20; PM13–18,33–38,42–47,81.
+R12 Authentication/logout
+UT-20–23; IT-01,12–13
+UAT-18–20; PM02–12,87–90.
+R13 Persistence / atomic rollback
+UT delegation; IT-03–08,19–20
+Lifecycle UAT/PM read-backs; fresh
+DB assertions.
+R14 Validation/no partial writes
+UT-08–11,15–17; IT-14–20
+PM22–30,39–47,54–60,71,75–79.
+R15 Public JSON API contracts
+Additional API/security pytest
+files
+All 15 JSON operations in PM01–90;
+Section 7.4.1.
+Correction supplement: F01 real-role HTML guards, F07 actual engine/pool integrity, F08 invalid-email no-write
+behavior and F06 computed contrast map to the current correction test files in Section 7.3. Their 20 additional
+variants are included in 735, not in the historical 194 selection.
+
+MYADVISOR  |  COMP 3613  |  ASSIGNMENT 2
+27 October 2026  |  Evidence qualified; acceptance incomplete
+57
+Appendix D — Lecturer Deliverables Checklist
+This checklist preserves the lecturer’s deliverable wording and order. Page references are filled from the final
+PDF’s verified bookmarks in the accompanying checklist. “Included” describes document content; outstanding
+implementation/publication/acceptance requirements remain explicit.
+Lecturer deliverable (exact wording)
+Location / disposition
+Name & ID
+Page 1. Section 1 — verified name/ID.
+Project Description
+Page 3. Section 2 — included.
+Use Case Diagram
+Page 4. Section 3, Figure 3.1 — original included.
+Entity Relationship Diagram
+Page 5. Section 4, Figures 4.1–4.2 — original and
+readable keys included.
+Application Wireframe
+Page 7. Section 5, Figures 5.1–5.4 — original and
+three enlarged panels included.
+Test Plans
+Page 11. Section 6 — plans only; external template
+details unverified.
+User Acceptance Tests Plan
+Page 11. 6.1 — UAT-01–20 with actors,
+preconditions, data, steps, expected results.
+Unit Tests
+Page 23. 6.2 — UT-01–23 specifications and
+isolation/boundary strategy.
+Integration Tests
+Page 27. 6.3 — IT-01–20 specifications and
+corrected-build supplement.
+Implementation
+Page 32. Section 7.
+Link to repository
+Page 32. 7.1 — clickable intended repository;
+corrected publication incomplete.
+Unit Tests
+Page 32. 7.2 — actual pytest files, fixtures/mocks
+and code example.
+Integration Tests
+Page 33. 7.3 — TestClient, isolated DB, actors/auth
+and workflow example.
+API Tests (Postman collection exported to JSON in
+repository)
+Page 34. 7.4 — local genuine export
+described/attached; INCOMPLETE: GitHub JSON
+missing (404).
+Reports
+Page 36. Section 8.
+Unit Tests Report (screenshot of test results)
+Page 36. 8.1, Figures 8.1–8.3 — genuine 113-pass
+marked run.
+Integration Tests Report (screenshot of test results)
+Page 40. 8.2, Figures 8.4–8.6 — genuine 194-pass
+marked run.
+Postman Collection Run report screenshot
+Page 45. 8.3, Figures 8.7–8.12 — genuine
+90-request, 470-pass Runner evidence.
+Incomplete requirements / readiness: repository JSON/current-code/evidence publication; corrected-build
+Postman and manual UAT; degree-data decision; CSRF and production signing-key dispositions; historical
+provenance and collection-assertion limits; inaccessible template requirements. The document is therefore not
+submission-ready.
+Supporting files: use the PDF Attachments panel for original screenshots, exported JSON, complete UAT records, plans,
+traceability, full audits and genuine test logs/XML/source hashes. Attachments do not replace repository publication.

@@ -1,0 +1,5 @@
+.pdf-tools/
+.browser-assets/
+pdf-review/rendered/
+pdf-review/pdf-text.txt
+__pycache__/

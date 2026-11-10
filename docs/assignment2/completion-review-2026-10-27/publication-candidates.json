@@ -1,0 +1,1198 @@
+{
+  "status": "REVIEW CANDIDATES ONLY; NO COPY/STAGE/COMMIT/PUSH AUTHORIZATION",
+  "build": "full-20261028T015858Z-e5cbdcfb",
+  "source_checkout": "C:\\Users\\camer\\OneDrive\\Documents\\UWI COURSES\\Year 3\\Semester 1\\COMP 3613\\Assignments\\Assignment 2\\Assignment 2",
+  "publication_checkout": "C:\\Users\\camer\\OneDrive\\Documents\\UWI COURSES\\Year 3\\Semester 1\\COMP 3613\\Assignments\\Assignment 2\\myadvisor-upload-yfjf6d9s",
+  "required_remote": "https://github.com/Camcoon/MyAdvisorWithTests.git",
+  "exclude_pdfs_until_final_verified": true,
+  "excluded_private_backup_dir": ".local-db-backups/",
+  "scope_note": "Preserve all old evidence. Review updates and superseded statements before copying/staging. Excludes this manifest and verification JSON to avoid self-referential hashes; attach those separately if approved.",
+  "credential_scan": {
+    "scope": "Changed candidate text only, three narrow patterns; no scan of ignored files or Git history",
+    "patterns": [
+      "JWT shape",
+      "Postgres credential URI",
+      "private-key block"
+    ],
+    "hits": [],
+    "blank_collection_passwords_and_tokens": "passed existing Node validator"
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 4785,
+      "sha256": "f39e47713dd46db22204c078f1c5a239c6ffe024eb9a8cfe1ee2729491931048",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "app/cli.py",
+      "bytes": 13061,
+      "sha256": "c65b3fb221ad019f2505ed54fee6f0951428d14044f80bafe1eddefdd4005c93",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "app/config.py",
+      "bytes": 3784,
+      "sha256": "98d30ab9499eb4442c2774a4c81d51da9bd203ed09745bde0be15cdb7ffbac30",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/database.py",
+      "bytes": 8730,
+      "sha256": "dca78c93890f6ce0a134ffc3ea84629ea807ac9703b6b97fa86557ca2e912fb1",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/demo_migration.py",
+      "bytes": 3081,
+      "sha256": "2b76ab544ed7187f5ade13a091ee1aca1e6150751037e80245862be1cd2b2116",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "app/demo_requirements.py",
+      "bytes": 553,
+      "sha256": "a3404d3f84dc1245ad998c7c54625f0107f511c98fb738d193a324dc00161b2b",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "app/dependencies/__init__.py",
+      "bytes": 86,
+      "sha256": "87e3ff435b22c95c87d51095519a5a291e2fff32268b5e5c2b080cb3691502a3",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/dependencies/auth.py",
+      "bytes": 2602,
+      "sha256": "326a32fa8a25fe45e1ca4c80b2346edce67e1ba34a6e0f5ef4f4e3803123d022",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/dependencies/session.py",
+      "bytes": 184,
+      "sha256": "ef7bffe173fe542f6706e9c1e9de96d0283abd64be11d6b08006a693ec6f102b",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/main.py",
+      "bytes": 2977,
+      "sha256": "2020b102e81a83fcf20ffec562a4d148201f1f74cb83ad384525c6b5edadbc09",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/models/__init__.py",
+      "bytes": 455,
+      "sha256": "7002fd396a160de3972ce8ae7a49ec72f1f83729a7eec82546c25df129e106cf",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/models/advising.py",
+      "bytes": 2186,
+      "sha256": "2d1e695dad28f716f476b7b884f0895d576956f99278fd4d9adbe612f679ac1b",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/models/user.py",
+      "bytes": 574,
+      "sha256": "accc83a66cfa41f3cb8f85ac5a0ef6090e39f4e7b5bcb435c612da16dacec9f8",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/report_pdf.py",
+      "bytes": 38882,
+      "sha256": "d00c80989d13837e2f7a20ef1eac5efc6e2bd2ecfe04695e01f6919021c9a4e1",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/repositories/__init__.py",
+      "bytes": 32,
+      "sha256": "b5f1793bec5af339bf474b223cc0ad8da2f2d144e1cae926ce9e6a5e9ebc7e25",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/repositories/advising.py",
+      "bytes": 6650,
+      "sha256": "b777f4bed06b7bc7baf4db9e9ce57252dc3dcef4e852948fbb24866d42d6d52a",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "app/repositories/user.py",
+      "bytes": 2813,
+      "sha256": "4dcebdb1dc2c563fb588658ba8a66d258a585ccf4cba0ba0a69b8211b3f6f71b",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/routers/__init__.py",
+      "bytes": 1313,
+      "sha256": "61ea0167eb4b0f962b51b1869c0943f852c9de07240357b7e24fb724389a5c82",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/routers/admin_home.py",
+      "bytes": 2877,
+      "sha256": "d5777f339a78693a12d2322e168bb3fd3c58c3c35a5380e2ddb3b5c1634e73b1",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/routers/advising_api.py",
+      "bytes": 7548,
+      "sha256": "b4f5f82293a6b03821262737b6596e41ab73f22d3c7ba5c3ec02f18437ac2d03",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/routers/index.py",
+      "bytes": 919,
+      "sha256": "af701e1dda7d2974ea9bce10576ccfaa058ee03c0c9f563bacaa3d777c540c59",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/routers/login.py",
+      "bytes": 1454,
+      "sha256": "4117b812828e6608fd8e3ee7d44c4036b8f0a0759be33a2b0418a4e12e37d192",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/routers/logout.py",
+      "bytes": 471,
+      "sha256": "fe53cad3cd32b0157d9485611ddf4e0666625d38f9520ea7f65839f10b9e347a",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/routers/register.py",
+      "bytes": 1729,
+      "sha256": "f385d3325a1088667cc18979c50937fc2f959b1041d39d3d6c6c7f36d087f5aa",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/routers/server_config.py",
+      "bytes": 13194,
+      "sha256": "db76bccbd1e01acfbda98c3fed56aacc6f71e41567a1851620c1db4724b46608",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/routers/user_home.py",
+      "bytes": 4952,
+      "sha256": "e758aa800f40894cbeadfe826b0c6b0ea4f9463efc677fd3d2bb013110be64cf",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/routers/users.py",
+      "bytes": 493,
+      "sha256": "d047c081e37c0f65332eb02b13a08502563cb959ba3ad82197cc6152e8c14fad",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/schemas/__init__.py",
+      "bytes": 40,
+      "sha256": "86435b9e8db9c487660159bd3428bf50e5c11a36a8043a11de085c5f3c438aec",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/schemas/advising.py",
+      "bytes": 2446,
+      "sha256": "d8f782ef1b93885b87d9cd0a03973242a6b17415f8c714d91f801b4accb6723d",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/schemas/auth.py",
+      "bytes": 189,
+      "sha256": "d3eef72cb0b55e8950345d001e208dc64c9d7ea22fd9996aeb606b3105669f2e",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/schemas/user.py",
+      "bytes": 526,
+      "sha256": "f364f89d682c8ebe62ada0bd77d53506cff435e4f09acc5d2ce5f55ff57d2533",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/services/advising_errors.py",
+      "bytes": 220,
+      "sha256": "1c5918d91a86ac419e506ae79d3a3ab6349553f3ae23eb78295ccdca49f9736a",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/services/advising_service.py",
+      "bytes": 28931,
+      "sha256": "c46abbe7f3195f784e0be815aa3219648c13164b78a7e70d723ab7af8a45e718",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "app/services/auth_service.py",
+      "bytes": 1569,
+      "sha256": "2ed3fb688069aae5589be514ad247c67c30c26cad56bc375a9564a43ca0cf686",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/services/user_service.py",
+      "bytes": 411,
+      "sha256": "cf6927ab6319ba71a8bfbb59124ce85050e2b393855d3cf0c23d02d2f2c2d49c",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/skill_integrity.py",
+      "bytes": 6838,
+      "sha256": "2e045a8989149dda4dfabb7b25be5a15a87b3bd768b5275014da2d5021e36104",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/static/css/app.css",
+      "bytes": 17106,
+      "sha256": "72394d773258b8ea30df110026502bfa298ee400cd6be01cac6a63e537bb8b16",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/static/img/favicon.ico",
+      "bytes": 15406,
+      "sha256": "a849865ba3345531d12fc897547277e293ea0ff2b21dc99cbe7fe02fb6fd81ce",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/static/img/favicon.svg",
+      "bytes": 397,
+      "sha256": "6a28dadc5f847df67f84e3ea6269a960c628ff58e76cfe92220e6bc45c89a117",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/static/js/app.js",
+      "bytes": 2109,
+      "sha256": "ec951e7056b923a12a7bb3117ae02737f1477792d6c17b7776696ab3495fd469",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/templates/401.html",
+      "bytes": 2159,
+      "sha256": "94f36c11505dd6e71742773c303fee2be26ce69fdf44cfa8db9d2ac7bb741cd3",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/templates/admin.html",
+      "bytes": 302,
+      "sha256": "1eff6ed141dd4536092f1c7ddf8fe8ff5f1477407b59f58abf49259c874a84dd",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/templates/advisor_dashboard.html",
+      "bytes": 7048,
+      "sha256": "32fedb1b49a86882302bdd713728e82deed62d356e742655cc67cf4b3ba8b7d2",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/templates/app.html",
+      "bytes": 294,
+      "sha256": "3b9786698a1305e2280cb4737254b540dc29e0caba8b8fd2b2c15d06d87383b2",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/templates/authenticated-base.html",
+      "bytes": 9738,
+      "sha256": "b9a46f869f66ad1549099e1658c5adae831dc9d4bddb3f2773e4e400a6a115a9",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/templates/base.html",
+      "bytes": 2214,
+      "sha256": "08c569f073bffdd8aa0997c56c7e82d4c1e40cc57c2d4664bdbbc916035846f3",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/templates/config.html",
+      "bytes": 8543,
+      "sha256": "50b1d2953588b12405fc4277d2a1db741fa098314447002234f1834908012c30",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/templates/landing.html",
+      "bytes": 1746,
+      "sha256": "1b6b4fb7004427d88d26c40cb6c11f0c3ff1228ffd19076e6ae221be58b7bd70",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/templates/login.html",
+      "bytes": 1267,
+      "sha256": "4151014b5c12baf9249fefc10c5e4a67ef706169f8229a8609e8e48e19919b51",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/templates/myadvisor_dashboard.html",
+      "bytes": 39258,
+      "sha256": "db56c0afc5bbbadd37dab98949e53199d4225297fc4b29824baf47c8b2418624",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "app/templates/register.html",
+      "bytes": 1880,
+      "sha256": "1d650188b91212c30f1cd8c203d1f6bff52ad00a22a1aa6152be3707a147166e",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/transcript_export.py",
+      "bytes": 7439,
+      "sha256": "aab9839b36194361b62380344e0d09e8d4df33caa2bc51dfe8fdba99d8f0f557",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/usecase_diagram.py",
+      "bytes": 13269,
+      "sha256": "936d93c5865941ca8820ee1193a69c35ae86dfca6dc71b6f04b57f286d473aac",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/utilities/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/utilities/flash.py",
+      "bytes": 420,
+      "sha256": "112ead97852859a272a2f09ee87c637070f8f1088850917840731e89d2ac959a",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/utilities/pagination.py",
+      "bytes": 1065,
+      "sha256": "ed8f5e0633f31a7cec0b7b0a6181f175be96c220358e97fc692780b2c0f49e08",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "app/utilities/security.py",
+      "bytes": 1170,
+      "sha256": "49bbb54bf46e445e4242b0ddd3498a9d19430f30f50f4527d41312c6d6686c4e",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/api.md",
+      "bytes": 16344,
+      "sha256": "fd6ff244d544c2c7aa5fb0b6a21343e40a429cd86b9e6ffba396f08397c198e2",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/COMP3613_Assignment2_MyAdvisor_Final_Checklist.md",
+      "bytes": 9263,
+      "sha256": "3affdaed083c8dbec70749d69caaba760025eefd6fbba4d3f18123b9a7a91363",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/completion-review-2026-10-27/remaining-actions.md",
+      "bytes": 18072,
+      "sha256": "c37783509528e4407f6dd2e6c879b1924c004d4df7e4c2a373e7cf44a20a1529",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/authorization-reproduction.json",
+      "bytes": 399,
+      "sha256": "e64b7ec3e4405fb98a68bd3e4a73836da3b74c0c62dbbbe2f6f705d9d3e61db4",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/documentation-checks.json",
+      "bytes": 606,
+      "sha256": "2e68e483070b7b0d43294e3642df1fe1e4666b394179c57d42183c7a94385f5e",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/github-snapshot.json",
+      "bytes": 80551,
+      "sha256": "c1b80b4db62a058cd57c6d06c08891c90b8cbfbfced80fbee1a4003c9cf4a740",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/local-remote-comparison.json",
+      "bytes": 27030,
+      "sha256": "e7d02df6190f651042a750b5b9404269d6f2f8538d14ddcaba75f63dbc4b3f8e",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/pytest-output.txt",
+      "bytes": 1405,
+      "sha256": "4794ac973bbfd326b55c73d6fe406d2651f2d3bd2a311be96ff4d2c82d949bef",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/pytest-results.xml",
+      "bytes": 114650,
+      "sha256": "7d83807e059ddc654a55bcc033f0258d7e13ef371c33857868700244aa67082b",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/pytest-run.json",
+      "bytes": 7600,
+      "sha256": "42c57725de9da97b8a121db59609d95c90108c6057b6fb24000d0ef2ba4fb092",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/registration-reproduction.json",
+      "bytes": 243,
+      "sha256": "4600a97a92b4de2d7883eb235ead75b38f3aabebef533d94948f677633cde62f",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/audit/sqlite-integrity-reproduction.json",
+      "bytes": 332,
+      "sha256": "3b0a2576251e560a791cd72ecaa306e0e4002defb73a1a8f9bb5ddba31cfc457",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-29709f52.json",
+      "bytes": 758,
+      "sha256": "6c6c9d8c2b7450b30bbb1faf9a7a28dbfffb5afffbbdfd577d9eda0765c43eab",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-29709f52.txt",
+      "bytes": 8061,
+      "sha256": "9687887fc6b42053bb4a663588185d251581be2c0436ce7c6af70aeb7f47b34a",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-29709f52.xml",
+      "bytes": 8310,
+      "sha256": "517b501fe9c3380b6cf60c4db82cfc8ded78aa4caebe0f26f6d1b007cc2e9ef3",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-4ddabb8e.json",
+      "bytes": 798,
+      "sha256": "04abdeaf2436bf6cdb720db36c4d4992f6aaf39b1492b36c70709a653a60a704",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-4ddabb8e.txt",
+      "bytes": 5353,
+      "sha256": "56a0e52fefba8be9dbd5d904919c78c3bfb1f86ce170ef973c57a957d7bbc222",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-4ddabb8e.xml",
+      "bytes": 520,
+      "sha256": "90613b885e578bc68dc74fa067718de33bfab64bf60af2842bcd4665822ded22",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-833f7e57.json",
+      "bytes": 758,
+      "sha256": "d66ee74f5f7762ba5bb6ea0d7d43c9d63c65a9b2859e79d8f2cab065d834f2cc",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-833f7e57.txt",
+      "bytes": 8061,
+      "sha256": "dc0e1bb7449f26ac5f68003dbfb583d8e1140f2f02505f21d219244eafb4055d",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/contrast-833f7e57.xml",
+      "bytes": 8310,
+      "sha256": "4f54d812475d6a558a591a960d41f040f5095a805bac195ff08cd53fa2909816",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/f01-before-ae8767c2.json",
+      "bytes": 850,
+      "sha256": "eb41460b54b383e320af94e93d96607c781531420c07fc532c07fcd8c07e46f3",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/f01-before-ae8767c2.txt",
+      "bytes": 28644,
+      "sha256": "864682eb342aca2bb728dff54f3e2b160649a1603f1f239e16c1d1959ec066ee",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/f01-before-ae8767c2.xml",
+      "bytes": 28803,
+      "sha256": "1d63a15bfca78054ec29978b41312041a3185084c60e9fbd26d90cbf99f54791",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.json",
+      "bytes": 8726,
+      "sha256": "6f6f90e82ecd41ce52780a901ec90020cc04cc3481265b173c00df4627d740f5",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.txt",
+      "bytes": 1476,
+      "sha256": "b6a2fef24acfc6c3e406a09dcb09f01bf448f8e3eb024012851e935c8ff78cd8",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/full-20261027T193800Z-7227960f.xml",
+      "bytes": 118072,
+      "sha256": "615f921c84cd218a204ab3df2cf6363aa1b6737624da62ebdad4dd47c1eadf34",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/git-remotes.txt",
+      "bytes": 113,
+      "sha256": "ff10796713dc5c39ce0ccd42137ad46b6b8446505a68da16d602af0b2da53d69",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/publication-review.json",
+      "bytes": 77033,
+      "sha256": "64521ffb7b109fc9b3cbb1c8110f57aa20c8a20604d2f58d4fd4c78062db3000",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/README.md",
+      "bytes": 2596,
+      "sha256": "f332ba7aa1fd85dc558a180be6599a60787d30709a3c22bcb18e0769f4b27c2d",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.json",
+      "bytes": 8824,
+      "sha256": "9f80771b79d926a6fcc62f5d4f8755e63ba6c90b0c15baf41607ff79f8423a59",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.txt",
+      "bytes": 919,
+      "sha256": "904c107fdcdca264d4bf10e81c51b897a88c380688256fc49ce334a13449af9f",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-20261027T193352Z-b6385978.xml",
+      "bytes": 44185,
+      "sha256": "ca15cda1357d9064951dacf19a81b4a26f851d7a4a192c5b5f194d3121140ce4",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-cf752b27.json",
+      "bytes": 7868,
+      "sha256": "34fce00fac4bfca97ef0350d5c55726189cb492a3ee118ce7b5af0209497f1a7",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-cf752b27.txt",
+      "bytes": 909,
+      "sha256": "fb4ee9412804d1e175b0aeebd7705ba389a0e170de334b990612c92a8a193336",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/targeted-cf752b27.xml",
+      "bytes": 43912,
+      "sha256": "b32c5eae7650b339650193fb85358e0274dff081b7ce443dc8a9dc9d9328a360",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/validation-review.json",
+      "bytes": 2808,
+      "sha256": "e59759fce085db89bdfbbcea4805918fe9fd6ac58f9a511d365ac2719b0221d0",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/verified-summary.json",
+      "bytes": 572,
+      "sha256": "b5a15d9e11de30ec46d341a3f4c6d8b421be55848d3a401e385cb3028effd2ab",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/corrections-2026-10-27/working-tree-status.txt",
+      "bytes": 752,
+      "sha256": "510cb29524e3d64d3fcb0655d186d037e56238a5a68e35745bd0cb5e7dc1feae",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/degree-20261028T015715Z-3a5ca51d.json",
+      "bytes": 9394,
+      "sha256": "f4cde673867cc1850a158e98a97596973fce30284bdb2e75190790b6b2619d34",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/degree-20261028T015715Z-3a5ca51d.txt",
+      "bytes": 1518,
+      "sha256": "a22bf240203fae7fc71fc9db22a8b6f452b12c4a3d1ee6fe295a0dfc8122edcd",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/degree-20261028T015715Z-3a5ca51d.xml",
+      "bytes": 944,
+      "sha256": "0b2b20052b10706d5a49bc51666fe4ca57ccaec8ed62f510de94155caf5adec8",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/degree-20261028T015725Z-9c9b9733.json",
+      "bytes": 9412,
+      "sha256": "f10221dbcc5082c6e76212b9c779082f5af26f5cc01b0e3a9a0a80e6d2a880dd",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/degree-20261028T015725Z-9c9b9733.txt",
+      "bytes": 664,
+      "sha256": "89026c8cb89811a947cefa5164ac636dd3ec4eada74b49e2d0a6521bb496fe02",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/degree-20261028T015725Z-9c9b9733.xml",
+      "bytes": 6765,
+      "sha256": "5da73d9a2fbe240dfaa8d4462b11406c024be54c4f0cf52c704064b409921bd2",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/degree-20261028T015838Z-c8b8ad82.json",
+      "bytes": 9412,
+      "sha256": "bcfbcbccf1ab89b3b1e46e206de72d4e96a2caa0b2a3b97edc5f49f1192fee95",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/degree-20261028T015838Z-c8b8ad82.txt",
+      "bytes": 664,
+      "sha256": "8a2b0922ffa976f61198f9fe070dc225666ea1a89881b324b5c14be08c47a305",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/degree-20261028T015838Z-c8b8ad82.xml",
+      "bytes": 7082,
+      "sha256": "dae7cb8a4521f1f3c3dcc031c398df1497d884a2ca9e6998d4069ef0b7357086",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/full-20261028T015858Z-e5cbdcfb.json",
+      "bytes": 9275,
+      "sha256": "d021891195f61026e7cf48758ab34ff1aac47365afa8ef735755ce66e7a3aa0e",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/full-20261028T015858Z-e5cbdcfb.txt",
+      "bytes": 1487,
+      "sha256": "48b217ad48179f51b0f7222f8a0106f2b3fbf5fd6662d201781f5afbb61b9bc9",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/full-20261028T015858Z-e5cbdcfb.xml",
+      "bytes": 120633,
+      "sha256": "460c3a6c8bcad3ced306d1a9869ec437cc8062326d2a28e01cb21a34368a463f",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/local-db-approved-noop.json",
+      "bytes": 684,
+      "sha256": "9714911b4909ccb31a9522a5c4b40acf0a2d70c502964ba1c3009a262ddd9abf",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/local-db-before-migration.json",
+      "bytes": 684,
+      "sha256": "9714911b4909ccb31a9522a5c4b40acf0a2d70c502964ba1c3009a262ddd9abf",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/local-db-unchanged.json",
+      "bytes": 574,
+      "sha256": "27f7f4392aa7f2e68b6ea9b029f30da336c34e27558d77b37ce81aa1dfeab977",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/degree-requirements-2026-10-27/postman-before-approved-allocation.json",
+      "bytes": 593539,
+      "sha256": "409cffa7540cd73880d74139f77346cdb47d06a18d9ae8e1b11cf70ef2c44b6d",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/evidence/student-integration-pytest.txt",
+      "bytes": 9132,
+      "sha256": "d31c4af5c86578ebbffaa7d2ef8f8d11445a51f75e222bd55b2eb059e41ac633",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/evidence/student-integration.md",
+      "bytes": 8411,
+      "sha256": "e84bffb754234c24de614ea9dfd4b1bcc822ed0beef1b126aa5e41db970c04bd",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/pytest-output.txt",
+      "bytes": 25140,
+      "sha256": "c9e3c27c5a16b828f78e73c9e2039d39176a4ebc73fdacce6fa2ef9461732307",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/README.md",
+      "bytes": 2607,
+      "sha256": "ee63e3279743ff0dbcd840894a570cf29bdb858fe120fc855a92839c25c65fd3",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/results.xml",
+      "bytes": 14179,
+      "sha256": "e35cf3090fae104726c4f995e2a44e407989cbc66507d5323acc3719fc686e8c",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow1-api.md",
+      "bytes": 2915,
+      "sha256": "227fdd46a01970a6be22565f580904f18cc795233ab414533943bfdd9674d104",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow2-api.md",
+      "bytes": 4326,
+      "sha256": "2703bd5e36441061ad585080c33c872369104442ce1ed619514c1226d87c6766",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow3-api.md",
+      "bytes": 5322,
+      "sha256": "42435292a85a6ae5d7514deef7771bb8987300b298751119a33f8bd57f144050",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/final-quality-audit.md",
+      "bytes": 52978,
+      "sha256": "7cdbfe163540a27b03c0540b2a055d90301bb676c15d279451b8436e14b15089",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/final-submission-checklist.md",
+      "bytes": 16976,
+      "sha256": "271c1d7f59778c53242f4d1d6542bfa012129c1f555df6c77f3bfbeb208c5dd0",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/official-assignment-brief.md",
+      "bytes": 3029,
+      "sha256": "ad7b448af178c89ef5596c7babba61dfc168acfe197117ea1767b423a0d6fc35",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor-Assignment2.postman_collection.json",
+      "bytes": 595792,
+      "sha256": "6f1a8d297bb5bc4b510963b7a244b7376d60d96531edcaa59c1840f169cad4d3",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012608.png",
+      "bytes": 273662,
+      "sha256": "67133b5e6e06692db4212b0f8cc1b9802130892861f66f11bcb8492681919f60",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012643.png",
+      "bytes": 255284,
+      "sha256": "352634fa1ac1f0564219e9ece89641971024708c49dc0433d748a714e53b4145",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012658.png",
+      "bytes": 255714,
+      "sha256": "6fb2b970c6e1748be3af0aad26e99e4b47136b63c3359a1e97e3f388f11ee991",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012739.png",
+      "bytes": 261362,
+      "sha256": "e90198d68159698fd5deac521d71f259410c235a52375344482ba31d6e550680",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/Postman Screenshots/Screenshot 2026-10-27 012839.png",
+      "bytes": 251518,
+      "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/postman/README.md",
+      "bytes": 15381,
+      "sha256": "b98d55449182a384b130d17a653d33436d6beacae7db282736311637bb8da409",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/postman/validate_collection.cjs",
+      "bytes": 5372,
+      "sha256": "2e8068a14ec6311f4613a53634b09e50e70b9c053e0509f09090933e4ff3a544",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/PROGRESS.md",
+      "bytes": 31820,
+      "sha256": "f2ede423c97f3d91f2c07d1103b300ebf7dcf44c41a19f61aff0bbe1ac46dc39",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/reports/audit-correction-report.md",
+      "bytes": 17913,
+      "sha256": "3799383f072eff4a4b2af944651c67eb61ac6f51b4768db39a3d4e4e34bb225a",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/correction-retest-guide.md",
+      "bytes": 17883,
+      "sha256": "ef7693e7e5cad1171ddf1e9ec0a2f26743042c0de64eafbc4567d8ac29f4fa3b",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/degree-progress-retest.md",
+      "bytes": 1983,
+      "sha256": "683979d3117c8fe8175066eb1a3d05f3e19a3eae141e86a7355af3490c3529aa",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/degree-requirement-correction.md",
+      "bytes": 10027,
+      "sha256": "08b363396fb505b084860a7d17ffe0cd14c396d378e4a5cfd3e9de7d6761bb69",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/evidence-inventory.md",
+      "bytes": 15067,
+      "sha256": "7f2064bb3ef5108995edca88ba724b6d9b449ead29849d41bd8955c53d8e3d90",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/integration-test-report.md",
+      "bytes": 16931,
+      "sha256": "7ef06893e16567069edc657a5282e0a03635aa54cddd9fcdfee647a7f6a86c97",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/reports/postman-test-report.md",
+      "bytes": 18626,
+      "sha256": "c1fa259965afc8404d8f41d3d1d0d8905d5b4e06ab77b06821646d7fa84fcd0f",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/reports/repository-publication-plan.md",
+      "bytes": 6845,
+      "sha256": "45e4b0de7157cdb607be89c11ec8ea186fa6ecdba2dd39c740ecb9176c9f2977",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/requirements-test-traceability.md",
+      "bytes": 11041,
+      "sha256": "f4f689741f789b168a57a8b448df13623171831e0aa5783b013a3e7ce6655263",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-evidence-review.md",
+      "bytes": 23678,
+      "sha256": "81d996a0797436eef1f534392d84b3cef7a9b27d26599efed101052c460932ae",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-execution.md",
+      "bytes": 74071,
+      "sha256": "2a55f7ece5e72a3d6ce310aca3f59caa88b8d5f5d8e0f77f8aeeafb90123b56c",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-final-report.md",
+      "bytes": 20971,
+      "sha256": "427de729ee16fb55480b544c40d70d086348427761f6554203423447410590d4",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/reports/uat-supplemental-evidence.md",
+      "bytes": 10006,
+      "sha256": "21a41db9b1a2b15cbec63c95e10de053f274e0f93079892e0c1884d31794941e",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/reports/unit-test-report.md",
+      "bytes": 11797,
+      "sha256": "c17c9ac335bb3de70d827b7cb4267cb0cb23cc8ae8fdf201d38831a14faccb1c",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/run_correction_checks.py",
+      "bytes": 4416,
+      "sha256": "cdff96e17ccbd7fcb72f02618cf41d0088679e0794c04d4535e6e10ccbc47d0e",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 231956.png",
+      "bytes": 294719,
+      "sha256": "3364ab7f47373b1b33ecea87ee7ac3f1c548f63ebdc9a1b24489ca1ab2f70c79",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232025.png",
+      "bytes": 311214,
+      "sha256": "aa72e3c4d8a74378d73c0ebe058f21fc4629e9ce5cc8c9e2b9aa6957adeff638",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232058.png",
+      "bytes": 287709,
+      "sha256": "c86c7c62b0b441b0b5eaec64477071131d37e86138c21a9fd3966469738667e7",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/screenshots/postman-results.png",
+      "bytes": 251518,
+      "sha256": "beb25082adb584ead84fad6ec008c9cea71417fd75d15b8cbf1e10927f5a531c",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-01.png",
+      "bytes": 591955,
+      "sha256": "bf412eeff9e96cf3db09adf9160fff5917b1eda288c69bc31affbf27cad3715d",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-02.png",
+      "bytes": 480740,
+      "sha256": "24ea5a2fdabf2242b8066d6a339b9ee174f7b33f9aa3c86bd133191f6bfffa48",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-03.png",
+      "bytes": 355247,
+      "sha256": "8d4cec27cd21edae870ae3f1471b62b5210667919271bed326df99601359c4b1",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-04.png",
+      "bytes": 539394,
+      "sha256": "6824dc242e9bb973598674a6036f9f3b2551be523eb15f5843a83bec929352bf",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-05.png",
+      "bytes": 301388,
+      "sha256": "3607804370df6bb5b059ffa25cfb653bbfe85f4aabf83b9a6ae2732c10a5e8b7",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-request-changes.png",
+      "bytes": 236248,
+      "sha256": "8db4bdd961e1d0cf83eb0f58a738b7a863a16d38863dafd7b661049b9ebcbeda",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-07-student-feedback.png",
+      "bytes": 414545,
+      "sha256": "dc2f1005839df415c7cb2a0060bb95fd96c8659fe908588c7105148275dcc602",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-08-resubmitted.png",
+      "bytes": 313746,
+      "sha256": "9966625b1a4e967adf913bf1c0a3ccf8306cd1a9694833634a50e6852b699dd1",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-09-approved.png",
+      "bytes": 412285,
+      "sha256": "e1d75b613bb7f4c14031b80325cf393b718d01ba6ccb722c299c865093e0b8f6",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-10-second-plan.png",
+      "bytes": 406036,
+      "sha256": "f2568f9542ad117328bf0ea2aadeaabd99339ccf39ca3260d3902b50debdd67e",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-11-rejected.png",
+      "bytes": 271613,
+      "sha256": "0bb29427029aceac1497dfe6b67f77fea23909ce7b6875c1a6dcdfabfa58ae97",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-12-pending-plan.png",
+      "bytes": 300422,
+      "sha256": "98cd545c84dfaa5d4f94d2582fad6933714dcc025840987bba933b59315e6d54",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-13-course-removed.png",
+      "bytes": 396848,
+      "sha256": "7331af326052e8a2a50aaafd5b3ab0555a9c3497486b2749ffaecfa2ad29f67b",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-14-approved-cancelled.png",
+      "bytes": 378235,
+      "sha256": "8246babad1e7f4a64c557d92da07847ded7084c0e5f623c6c245f1330841d3f8",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-15-rejected-cancelled.png",
+      "bytes": 374454,
+      "sha256": "c364204a98212b1be1232ffa2e42820bfb4c422ec352ec2d8c88fe9baee13b08",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-16-pending-cancelled.png",
+      "bytes": 380972,
+      "sha256": "6c3105bc588355d900802b4aa94c2fb26dffee37a349227ecc6181e46978bc7c",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-17-new-plan.png",
+      "bytes": 390332,
+      "sha256": "2b2b4ab359fdcdd35b42482db82c4e19dc9687b6868b01a42fd226159c417721",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-20-access-denied.png",
+      "bytes": 662467,
+      "sha256": "67052c79456aaf8b19a4b12cc136e9ce333ccae7fea508a8b6f13cf278a26e52",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/UAT/UAT-20-logged-out.png",
+      "bytes": 1161279,
+      "sha256": "b384522cc18d960ebce781bfb10eccdc219e58a48b0929da714f39ef26b3e6ae",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231703.png",
+      "bytes": 258373,
+      "sha256": "b1562bb4cc08d29b237410a5148539bd8f8e7ee04c17374843a26835893f091e",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231742.png",
+      "bytes": 269167,
+      "sha256": "c2cc2fbfaac255b39c982648c039b658413a7b5e470eaff12505c8e8281ea2b5",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231747.png",
+      "bytes": 266053,
+      "sha256": "ac16371f04d6dade7b85b3053cfc8c9360071ea30722df245bbade67fa56f41a",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "docs/assignment2/test-plans/integration-test-plan.md",
+      "bytes": 47857,
+      "sha256": "994e4d103cd57ddc3c319322256a3fda442fbe6143daeba6bc6ad78f33650af8",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/test-plans/uat-test-plan.md",
+      "bytes": 38768,
+      "sha256": "89e10388b1b68cc8c4a27a11683d12669369e07685bae29c00dde3ddecb992b4",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/assignment2/test-plans/unit-test-plan.md",
+      "bytes": 50961,
+      "sha256": "e023d99af4cd926eaa3f0f78e7ccd47ff288e94d620deaa043f3f909dfdbf481",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "docs/report.md",
+      "bytes": 24523,
+      "sha256": "584dc2ddd7c800f3c352d44524340264ccec964451b0130f59379571cf0c449d",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "README.md",
+      "bytes": 17850,
+      "sha256": "c8af6cd2a57424bedf9f47b2ae5f6a8feb0017781c38783350e450180a9f31fe",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "tests/browser/contrast_probe.cjs",
+      "bytes": 5397,
+      "sha256": "bb27630382f413b2e9acd714c3fbfa5717fe2810529699953c5605cb8eb39aab",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/integration/conftest.py",
+      "bytes": 10297,
+      "sha256": "3acdbb3bcc698b442700ccb1508d89b51187eea78b498b07f2da9415b1f24c3b",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/integration/test_advisor_workflow.py",
+      "bytes": 19842,
+      "sha256": "3a540c9dd00567de4dbee846b2a031e4421f3f68a50c9d05ba3b5a77fc50b9ac",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/integration/test_audit_corrections.py",
+      "bytes": 6654,
+      "sha256": "ee763c698822ff8207479f0e397b46c6e748af28fb12d42aa4b245fea3b115b4",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/integration/test_contrast_regression.py",
+      "bytes": 3850,
+      "sha256": "a37922c40be4b082f241fea13fc349c1979abb36558c9b9aae2b7cb094ee915a",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/integration/test_database_integrity.py",
+      "bytes": 2901,
+      "sha256": "1e8db0969dcb844582bb19e2f1be7d56dba84d02d172d291b0c2c2a143a79ed3",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/integration/test_demo_requirement_migration.py",
+      "bytes": 10329,
+      "sha256": "dd78bd1945c4a94689f3b143521b2e9cd71c434046863ae7fa1d20f18e159490",
+      "publication_checkout": "missing"
+    },
+    {
+      "path": "tests/integration/test_student_workflow.py",
+      "bytes": 21776,
+      "sha256": "e88c6107bc9925c40ff562c42257148ac99de388d516aeb57c14c0f64f75dc28",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/test_advising_api.py",
+      "bytes": 12012,
+      "sha256": "5763e085119065ef6dec6607457cf065e352bc69a666e5a22b2c6119591195d8",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/test_advising_service.py",
+      "bytes": 34436,
+      "sha256": "6a1c60587807e2f31acb72cdb9b704b9afd1a8618dfb0c3cc32b1ea2353e9478",
+      "publication_checkout": "different"
+    },
+    {
+      "path": "tests/test_advisor_plans_api.py",
+      "bytes": 20423,
+      "sha256": "a71b2fc0cfe5d0fc5e9358ad6e1c91c4963a55e530bb38f6040ac76c7f2518b7",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/test_api_security.py",
+      "bytes": 7637,
+      "sha256": "2cfa0cc9d430b4f48a02d289ac04f8864d1cbf7eafd8a8b34f0d0a2b788770a1",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/test_login_routing.py",
+      "bytes": 1479,
+      "sha256": "bb9bf34ac6cfa77dcce9f81e46d6f639834fcc0fedb03cf36411e23f12a011ed",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/test_semester_plans_api.py",
+      "bytes": 20812,
+      "sha256": "cf89bc360ebe1631d4c28a622ae9ddaeb135bc2cdcc92a0d24d1a6d347a381cd",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/unit/conftest.py",
+      "bytes": 2811,
+      "sha256": "f41338c8db7fb0238cda121f06372d733e2833aea0ae43817a0c49907fbe15a1",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/unit/test_advising.py",
+      "bytes": 13517,
+      "sha256": "f410d727f7740e34e9301a3183e71888c98b8681d6e0f6521f6c9b72080d5c71",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/unit/test_auth.py",
+      "bytes": 6309,
+      "sha256": "607013eaf8c5ad9dab2485eb9bfda74b646554193746edd213f4a657cef47fb7",
+      "publication_checkout": "identical"
+    },
+    {
+      "path": "tests/unit/test_demo_requirements.py",
+      "bytes": 2521,
+      "sha256": "d7c174475711c2d8d0e3b2ffe9e171d5167c1c5554d874a0f4d5a7d66f0cb5aa",
+      "publication_checkout": "missing"
+    }
+  ]
+}

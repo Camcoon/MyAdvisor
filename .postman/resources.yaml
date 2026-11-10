@@ -1,0 +1,8 @@
+workspace:
+  id: f9e6cb97-f931-49c2-8e34-402a6c9ab56a
+localResources:
+  collections:
+    - ../docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2
+cloudResources:
+  globals:
+    ../postman/globals/workspace.globals.yaml: ec0dfebf-ff3a-497e-87ab-74d17f72d7a8

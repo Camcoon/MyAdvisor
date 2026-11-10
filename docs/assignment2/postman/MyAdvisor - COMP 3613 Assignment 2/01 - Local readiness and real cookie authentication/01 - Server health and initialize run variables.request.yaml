@@ -1,0 +1,38 @@
+$kind: http-request
+description: Server health and initialize run variables. Run the complete collection in order against the disposable local database; see README.md.
+url: "{{base_url}}/health"
+method: GET
+headers:
+  Accept: application/json
+  Cookie: ""
+scripts:
+  - type: beforeRequest
+    code: |-
+      ["student_token","advisor_token","other_token","plan_id","old_plan_id","course_a_id","course_b_id","blocked_course_id","semester_name","advisor_id","foreign_error","baseline_plans","prerequisite_course_id","prerequisite_reason","student_id","other_id"].forEach(k => { pm.collectionVariables.set(k, ""); pm.variables.set(k, ""); });
+      const run = pm.variables.replaceIn("{{$guid}}").replace(/-/g, "");
+      pm.collectionVariables.set("other_username", "postman_" + run);
+      pm.collectionVariables.set("other_password", "A2!" + run);
+      for (const key of ["student_username","student_password","advisor_username","advisor_password"]) {
+        if (!pm.collectionVariables.get(key)) { pm.execution.setNextRequest(null); throw new Error("Set collection variable " + key + " before running"); }
+      }
+      Object.keys(pm.collectionVariables.toObject()).forEach(k => pm.variables.set(k, pm.collectionVariables.get(k)));
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      try {
+      let assertionFailed = false;
+      function check(name, fn) {
+        pm.test(name, function() {
+          try { fn(); } catch (error) { assertionFailed = true; throw error; }
+        });
+      }
+      check("HTTP 200", () => pm.response.to.have.status(200));
+      check("Server is healthy", () => pm.expect(pm.response.json().ok).to.eql(true));
+      check("Health JSON contract", () => { pm.expect(pm.response.headers.get("Content-Type")).to.include("application/json"); pm.expect(pm.response.json()).to.have.all.keys("ok"); });
+      if (assertionFailed) pm.execution.setNextRequest(null);
+      } catch (error) { pm.execution.setNextRequest(null); throw error; }
+    language: text/javascript
+settings:
+  followRedirects: false
+  disableCookies: true
+order: 1000

@@ -1,0 +1,2503 @@
+{
+  "checked_date": "2026-10-27",
+  "repository": "https://github.com/Camcoon/MyAdvisorWithTests",
+  "branch": "main",
+  "commit": "864386fe10fa5e61869e07500d84e51ff7e46b9b",
+  "tree": "d689197cd3bbfaef08049ed7c0c64ed340e2dfc8",
+  "truncated": false,
+  "entries": [
+    {
+      "path": ".agent.md",
+      "type": "blob",
+      "sha": "a6f5dd554b139d70c7551b84e8f68657d98db4f4",
+      "size": 4267
+    },
+    {
+      "path": ".agents",
+      "type": "tree",
+      "sha": "f8bb4ccfe125b0d2ec5a21bfc3fa36fc27a881e9"
+    },
+    {
+      "path": ".agents/skills.lock.json",
+      "type": "blob",
+      "sha": "f8f7883c1d58cb6dd71962dc2f01bf9368605a40",
+      "size": 1387
+    },
+    {
+      "path": ".agents/skills",
+      "type": "tree",
+      "sha": "7fb666951fdc2ba3a3a941f1095210443e5611bf"
+    },
+    {
+      "path": ".agents/skills/README.md",
+      "type": "blob",
+      "sha": "5f591a467c61c2c5139a6d9485b114e856fc81df",
+      "size": 4416
+    },
+    {
+      "path": ".agents/skills/student-build",
+      "type": "tree",
+      "sha": "cfb3c99d0bfc0ef62d82cc5f9f4bee12e64325aa"
+    },
+    {
+      "path": ".agents/skills/student-build/SKILL.md",
+      "type": "blob",
+      "sha": "82cef54d041952fc81deaeedbcb105613e7f47ef",
+      "size": 42769
+    },
+    {
+      "path": ".agents/skills/student-build/framework-phases.md",
+      "type": "blob",
+      "sha": "b267edde7155c95a7419cf8c43deed98f97570e8",
+      "size": 15108
+    },
+    {
+      "path": ".agents/skills/student-judge",
+      "type": "tree",
+      "sha": "cf82a44cde27654eeeb8ff8ffdbfa7b5b491955e"
+    },
+    {
+      "path": ".agents/skills/student-judge/SKILL.md",
+      "type": "blob",
+      "sha": "d8ffe977ee73d81d63aa190661bcc2887cdc6367",
+      "size": 24081
+    },
+    {
+      "path": ".agents/skills/student-judge/framework-phases.md",
+      "type": "blob",
+      "sha": "b267edde7155c95a7419cf8c43deed98f97570e8",
+      "size": 15108
+    },
+    {
+      "path": ".cursor",
+      "type": "tree",
+      "sha": "98e8fa88139b68cffb334a3a67e57ac162839947"
+    },
+    {
+      "path": ".cursor/mcp.json",
+      "type": "blob",
+      "sha": "0cf57517018c96f2fabbaf2d13f21e876ad23d54",
+      "size": 90
+    },
+    {
+      "path": ".cursor/skills",
+      "type": "tree",
+      "sha": "7fb666951fdc2ba3a3a941f1095210443e5611bf"
+    },
+    {
+      "path": ".cursor/skills/README.md",
+      "type": "blob",
+      "sha": "5f591a467c61c2c5139a6d9485b114e856fc81df",
+      "size": 4416
+    },
+    {
+      "path": ".cursor/skills/student-build",
+      "type": "tree",
+      "sha": "cfb3c99d0bfc0ef62d82cc5f9f4bee12e64325aa"
+    },
+    {
+      "path": ".cursor/skills/student-build/SKILL.md",
+      "type": "blob",
+      "sha": "82cef54d041952fc81deaeedbcb105613e7f47ef",
+      "size": 42769
+    },
+    {
+      "path": ".cursor/skills/student-build/framework-phases.md",
+      "type": "blob",
+      "sha": "b267edde7155c95a7419cf8c43deed98f97570e8",
+      "size": 15108
+    },
+    {
+      "path": ".cursor/skills/student-judge",
+      "type": "tree",
+      "sha": "cf82a44cde27654eeeb8ff8ffdbfa7b5b491955e"
+    },
+    {
+      "path": ".cursor/skills/student-judge/SKILL.md",
+      "type": "blob",
+      "sha": "d8ffe977ee73d81d63aa190661bcc2887cdc6367",
+      "size": 24081
+    },
+    {
+      "path": ".cursor/skills/student-judge/framework-phases.md",
+      "type": "blob",
+      "sha": "b267edde7155c95a7419cf8c43deed98f97570e8",
+      "size": 15108
+    },
+    {
+      "path": ".env.example",
+      "type": "blob",
+      "sha": "0501790469e0d610bbbc03b3536b40b3f3b92c47",
+      "size": 216
+    },
+    {
+      "path": ".gitattributes",
+      "type": "blob",
+      "sha": "1fd26d5c99e25cb8718d949a2807a98a79fbf732",
+      "size": 26
+    },
+    {
+      "path": ".github",
+      "type": "tree",
+      "sha": "15f98621f385dd4b2bd8ea9533c8a71c86ef4c16"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "type": "blob",
+      "sha": "97b07a2951161b43176780b4d29cab7df4df2998",
+      "size": 2475
+    },
+    {
+      "path": ".gitignore",
+      "type": "blob",
+      "sha": "555bb1da2ff47dfb501dd8a2646a14534d1df386",
+      "size": 4556
+    },
+    {
+      "path": ".postman",
+      "type": "tree",
+      "sha": "93eb5e3f48824da2601a30d45ea89046f92437bf"
+    },
+    {
+      "path": ".postman/resources.yaml",
+      "type": "blob",
+      "sha": "dea7502f6b23889c8f53728efe04bf3f4df5e5fe",
+      "size": 265
+    },
+    {
+      "path": ".vscode",
+      "type": "tree",
+      "sha": "8becab675d76c0abc326cfecffa8c93c30d57e4c"
+    },
+    {
+      "path": ".vscode/mcp.json",
+      "type": "blob",
+      "sha": "a0929940f140c756f58500bb574f5d209dc757b0",
+      "size": 418
+    },
+    {
+      "path": ".vscode/settings.json",
+      "type": "blob",
+      "sha": "2f52cd0ae2f6099b35c910cd90e0bec959b653d7",
+      "size": 30
+    },
+    {
+      "path": "AGENTS.md",
+      "type": "blob",
+      "sha": "d710f20eba75dd62028e504dba7e1af22df63c2b",
+      "size": 6621
+    },
+    {
+      "path": "ASSIGNMENT.md",
+      "type": "blob",
+      "sha": "6555022ff0fec70f84578af78fce4efb393cc9a6",
+      "size": 18023
+    },
+    {
+      "path": "Dockerfile",
+      "type": "blob",
+      "sha": "df8c3f09bed19d7baf9d0c5b63713b1a5cda470f",
+      "size": 339
+    },
+    {
+      "path": "README.md",
+      "type": "blob",
+      "sha": "324ba325cd7fe70e60381c983c021990a6d903ef",
+      "size": 15643
+    },
+    {
+      "path": "app",
+      "type": "tree",
+      "sha": "e148e386f1b993175ee00d9eac68ff95448f5282"
+    },
+    {
+      "path": "app/cli.py",
+      "type": "blob",
+      "sha": "bf57948670d22341088f2938dcc3cb6edeec3b3d",
+      "size": 10821
+    },
+    {
+      "path": "app/config.py",
+      "type": "blob",
+      "sha": "4bedaeaa3cceb2836e5ada83c6bf5100d2fec64a",
+      "size": 3660
+    },
+    {
+      "path": "app/database.py",
+      "type": "blob",
+      "sha": "25344120f969b47c32ac1cbace64d7a6179e0eb3",
+      "size": 7436
+    },
+    {
+      "path": "app/dependencies",
+      "type": "tree",
+      "sha": "ab511fee267268cff952bc82a1339b82ece04ab2"
+    },
+    {
+      "path": "app/dependencies/__init__.py",
+      "type": "blob",
+      "sha": "cdca66c004a9960d09cc43c7a19557743a07de4c",
+      "size": 84
+    },
+    {
+      "path": "app/dependencies/auth.py",
+      "type": "blob",
+      "sha": "40e033dcb64de90402bb9581014b37ef8ab2f6e4",
+      "size": 2520
+    },
+    {
+      "path": "app/dependencies/session.py",
+      "type": "blob",
+      "sha": "3e2f6d1ebcb9fe681a0dcbc2fafe3b8b84d3390a",
+      "size": 178
+    },
+    {
+      "path": "app/main.py",
+      "type": "blob",
+      "sha": "dc4db86ce1bbc10fa7a0a96a257e9773ac6e805d",
+      "size": 2882
+    },
+    {
+      "path": "app/models",
+      "type": "tree",
+      "sha": "5be45d71896ad05c352de277ad897ccbc5ae184e"
+    },
+    {
+      "path": "app/models/__init__.py",
+      "type": "blob",
+      "sha": "1c7b1ee3395740dfcbdd3c1bac42aff4005a1408",
+      "size": 431
+    },
+    {
+      "path": "app/models/advising.py",
+      "type": "blob",
+      "sha": "762022cf72ed29567d4b251874368cda54e0cc96",
+      "size": 2128
+    },
+    {
+      "path": "app/models/user.py",
+      "type": "blob",
+      "sha": "1749f2c15322322edc2d3cc2f772390705f14f0b",
+      "size": 555
+    },
+    {
+      "path": "app/report_pdf.py",
+      "type": "blob",
+      "sha": "e0f4f78eac61276e01a57895502c616eca2f36eb",
+      "size": 37815
+    },
+    {
+      "path": "app/repositories",
+      "type": "tree",
+      "sha": "5f2a1391a2f09cd7dd0febff4a3b50028c3ed150"
+    },
+    {
+      "path": "app/repositories/__init__.py",
+      "type": "blob",
+      "sha": "8a66d48769a43218b358dbce21f65b7e5b385ce2",
+      "size": 32
+    },
+    {
+      "path": "app/repositories/advising.py",
+      "type": "blob",
+      "sha": "9cd62491baee75288a50137050cb7d83edb398fb",
+      "size": 6112
+    },
+    {
+      "path": "app/repositories/user.py",
+      "type": "blob",
+      "sha": "e0621ea659edba3ce9790ad7cd3724da265a3fa2",
+      "size": 2734
+    },
+    {
+      "path": "app/routers",
+      "type": "tree",
+      "sha": "0ab1eb9e2b954a7363e174c3c3a8ea9402461552"
+    },
+    {
+      "path": "app/routers/__init__.py",
+      "type": "blob",
+      "sha": "f885b6e3ae6fb39da9ab9b4dc33e8cfcb1398499",
+      "size": 1264
+    },
+    {
+      "path": "app/routers/admin_home.py",
+      "type": "blob",
+      "sha": "b238075b60891e6a87bb077025603408b1eaac7d",
+      "size": 2790
+    },
+    {
+      "path": "app/routers/advising_api.py",
+      "type": "blob",
+      "sha": "0248e3a7964192df4c41985bb09e1999c39c91af",
+      "size": 7548
+    },
+    {
+      "path": "app/routers/index.py",
+      "type": "blob",
+      "sha": "113c443402b8ae511f92e1725573a583b2280625",
+      "size": 889
+    },
+    {
+      "path": "app/routers/login.py",
+      "type": "blob",
+      "sha": "a7189f7a9d8fd13d79e2746c4d961070ceaf7104",
+      "size": 1409
+    },
+    {
+      "path": "app/routers/logout.py",
+      "type": "blob",
+      "sha": "faa3ca357900874ab02d609f086ac616bf32f09f",
+      "size": 456
+    },
+    {
+      "path": "app/routers/register.py",
+      "type": "blob",
+      "sha": "0ce34c23b4f1c7767774480e19312778f91807e8",
+      "size": 1575
+    },
+    {
+      "path": "app/routers/server_config.py",
+      "type": "blob",
+      "sha": "04f7bc7a529a600912f2388a0bf3e8424663c82c",
+      "size": 12793
+    },
+    {
+      "path": "app/routers/user_home.py",
+      "type": "blob",
+      "sha": "1fe21784a6d6e576e2b645800fc8985ee09037c6",
+      "size": 4780
+    },
+    {
+      "path": "app/routers/users.py",
+      "type": "blob",
+      "sha": "12c663ab22f0be5fcefed69d8d3611d1f3a24c9e",
+      "size": 479
+    },
+    {
+      "path": "app/schemas",
+      "type": "tree",
+      "sha": "013725ff053ef7e3002c4d267451ba27a1c0bf88"
+    },
+    {
+      "path": "app/schemas/__init__.py",
+      "type": "blob",
+      "sha": "ac1ca22d9315904b8de310c5ce1356d308fcc62a",
+      "size": 39
+    },
+    {
+      "path": "app/schemas/advising.py",
+      "type": "blob",
+      "sha": "6a97f7021853748afd3907f6031e0ad7873916d5",
+      "size": 2446
+    },
+    {
+      "path": "app/schemas/auth.py",
+      "type": "blob",
+      "sha": "59e38c38a1d790a5e590005562b0005792eb25b3",
+      "size": 180
+    },
+    {
+      "path": "app/schemas/user.py",
+      "type": "blob",
+      "sha": "71bd75c1fbae8a4175df3b556429fad0f9f2e244",
+      "size": 501
+    },
+    {
+      "path": "app/services",
+      "type": "tree",
+      "sha": "33080f454c6cfc5876c8248ad2e0f0fb1784d3a4"
+    },
+    {
+      "path": "app/services/advising_errors.py",
+      "type": "blob",
+      "sha": "a172846f8ab842a66f3eaf3a1ccaebad592c5c0f",
+      "size": 220
+    },
+    {
+      "path": "app/services/advising_service.py",
+      "type": "blob",
+      "sha": "dd560c46da950cfbd76166e9c5d3a4cd736bd328",
+      "size": 26461
+    },
+    {
+      "path": "app/services/auth_service.py",
+      "type": "blob",
+      "sha": "109385d875214b2f25ccb23984ca416e0e41bc77",
+      "size": 1523
+    },
+    {
+      "path": "app/services/user_service.py",
+      "type": "blob",
+      "sha": "5fb6f127d1333dd4fd40189a71374266e65cd5bc",
+      "size": 400
+    },
+    {
+      "path": "app/skill_integrity.py",
+      "type": "blob",
+      "sha": "e9037698e8552d137f0fa8e8f79b0a29d02fa984",
+      "size": 6632
+    },
+    {
+      "path": "app/static",
+      "type": "tree",
+      "sha": "c206b185ddff4295f65690a5533147f9f4e2e106"
+    },
+    {
+      "path": "app/static/css",
+      "type": "tree",
+      "sha": "4f833bade30ea4b9b2e08bce0efa95284531fa26"
+    },
+    {
+      "path": "app/static/css/app.css",
+      "type": "blob",
+      "sha": "529ec06c00aef6bf419a26e54b11d1f8ee2bf08f",
+      "size": 15990
+    },
+    {
+      "path": "app/static/img",
+      "type": "tree",
+      "sha": "906488ed34131cce3bad3ad4dffd6f0e60e2874f"
+    },
+    {
+      "path": "app/static/img/favicon.ico",
+      "type": "blob",
+      "sha": "d735ad93f709f52dd3eb2ecf25bdebda661fb074",
+      "size": 15406
+    },
+    {
+      "path": "app/static/img/favicon.svg",
+      "type": "blob",
+      "sha": "35cf23ae23f5459ba4091e1d71ea2975cee25df6",
+      "size": 390
+    },
+    {
+      "path": "app/static/js",
+      "type": "tree",
+      "sha": "b007aa1d5f68ffd34bfc0f9071927ba8819076b3"
+    },
+    {
+      "path": "app/static/js/app.js",
+      "type": "blob",
+      "sha": "f766407275d0c72b40dead091c0eedc7a9a0c021",
+      "size": 2050
+    },
+    {
+      "path": "app/templates",
+      "type": "tree",
+      "sha": "a013b53f9d122fd2538fe08f290c2985e5400d17"
+    },
+    {
+      "path": "app/templates/401.html",
+      "type": "blob",
+      "sha": "5467474180c73f4bdb2e27285bafc299346945cd",
+      "size": 2080
+    },
+    {
+      "path": "app/templates/admin.html",
+      "type": "blob",
+      "sha": "404883c579f4d3446376e04f00f311229dda3f36",
+      "size": 293
+    },
+    {
+      "path": "app/templates/advisor_dashboard.html",
+      "type": "blob",
+      "sha": "05fe82470846df3a009dd1245ce2adfdb50105f5",
+      "size": 6881
+    },
+    {
+      "path": "app/templates/app.html",
+      "type": "blob",
+      "sha": "233c7cab95ccd236cf7eb52549391879c60f03b1",
+      "size": 285
+    },
+    {
+      "path": "app/templates/authenticated-base.html",
+      "type": "blob",
+      "sha": "42b018bbfbbf49931c962ae27d79728eafdcd111",
+      "size": 9515
+    },
+    {
+      "path": "app/templates/base.html",
+      "type": "blob",
+      "sha": "c7f769504b33d024e7f5ec47afe444869571760d",
+      "size": 2171
+    },
+    {
+      "path": "app/templates/config.html",
+      "type": "blob",
+      "sha": "e9ed991952431c8a18c1de3bbff85b39ca1f30ac",
+      "size": 8346
+    },
+    {
+      "path": "app/templates/landing.html",
+      "type": "blob",
+      "sha": "ab5e6f21e6e5de43c480d9e17b860c7228301057",
+      "size": 1704
+    },
+    {
+      "path": "app/templates/login.html",
+      "type": "blob",
+      "sha": "24348859bd67d7afffd0e4c06e016d11e4bad24b",
+      "size": 1236
+    },
+    {
+      "path": "app/templates/myadvisor_dashboard.html",
+      "type": "blob",
+      "sha": "4937869aa75f4016c2c66103221cc11dbec2cad1",
+      "size": 38254
+    },
+    {
+      "path": "app/templates/register.html",
+      "type": "blob",
+      "sha": "11f433f048a2dbd341bde71c35b16169a8445467",
+      "size": 1837
+    },
+    {
+      "path": "app/transcript_export.py",
+      "type": "blob",
+      "sha": "c0c2424d4d13810b5d4e717c62d562d3fbf49582",
+      "size": 7235
+    },
+    {
+      "path": "app/usecase_diagram.py",
+      "type": "blob",
+      "sha": "f26e19620428d3515d819e12a2216977811bc2f9",
+      "size": 12880
+    },
+    {
+      "path": "app/utilities",
+      "type": "tree",
+      "sha": "1fed6d1fa6ce648132be5301d843e71e0ce67d8d"
+    },
+    {
+      "path": "app/utilities/__init__.py",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "app/utilities/flash.py",
+      "type": "blob",
+      "sha": "5482516df1cef0a15ebfc17c62f403c2361ec2f4",
+      "size": 409
+    },
+    {
+      "path": "app/utilities/pagination.py",
+      "type": "blob",
+      "sha": "d26253148004712fa8dcf3e0280a34f73d695ced",
+      "size": 1030
+    },
+    {
+      "path": "app/utilities/security.py",
+      "type": "blob",
+      "sha": "edf8f10a99861a6a1bf0dbc7bf2b797364f0d162",
+      "size": 1131
+    },
+    {
+      "path": "comp3613a1",
+      "type": "tree",
+      "sha": "f05664f2a376e21de706b84d0eb64f9d105d504b"
+    },
+    {
+      "path": "comp3613a1/.agent.md",
+      "type": "blob",
+      "sha": "a6f5dd554b139d70c7551b84e8f68657d98db4f4",
+      "size": 4267
+    },
+    {
+      "path": "comp3613a1/.agents",
+      "type": "tree",
+      "sha": "f8bb4ccfe125b0d2ec5a21bfc3fa36fc27a881e9"
+    },
+    {
+      "path": "comp3613a1/.agents/skills.lock.json",
+      "type": "blob",
+      "sha": "f8f7883c1d58cb6dd71962dc2f01bf9368605a40",
+      "size": 1387
+    },
+    {
+      "path": "comp3613a1/.agents/skills",
+      "type": "tree",
+      "sha": "7fb666951fdc2ba3a3a941f1095210443e5611bf"
+    },
+    {
+      "path": "comp3613a1/.agents/skills/README.md",
+      "type": "blob",
+      "sha": "5f591a467c61c2c5139a6d9485b114e856fc81df",
+      "size": 4416
+    },
+    {
+      "path": "comp3613a1/.agents/skills/student-build",
+      "type": "tree",
+      "sha": "cfb3c99d0bfc0ef62d82cc5f9f4bee12e64325aa"
+    },
+    {
+      "path": "comp3613a1/.agents/skills/student-build/SKILL.md",
+      "type": "blob",
+      "sha": "82cef54d041952fc81deaeedbcb105613e7f47ef",
+      "size": 42769
+    },
+    {
+      "path": "comp3613a1/.agents/skills/student-build/framework-phases.md",
+      "type": "blob",
+      "sha": "b267edde7155c95a7419cf8c43deed98f97570e8",
+      "size": 15108
+    },
+    {
+      "path": "comp3613a1/.agents/skills/student-judge",
+      "type": "tree",
+      "sha": "cf82a44cde27654eeeb8ff8ffdbfa7b5b491955e"
+    },
+    {
+      "path": "comp3613a1/.agents/skills/student-judge/SKILL.md",
+      "type": "blob",
+      "sha": "d8ffe977ee73d81d63aa190661bcc2887cdc6367",
+      "size": 24081
+    },
+    {
+      "path": "comp3613a1/.agents/skills/student-judge/framework-phases.md",
+      "type": "blob",
+      "sha": "b267edde7155c95a7419cf8c43deed98f97570e8",
+      "size": 15108
+    },
+    {
+      "path": "comp3613a1/.cursor",
+      "type": "tree",
+      "sha": "98e8fa88139b68cffb334a3a67e57ac162839947"
+    },
+    {
+      "path": "comp3613a1/.cursor/mcp.json",
+      "type": "blob",
+      "sha": "0cf57517018c96f2fabbaf2d13f21e876ad23d54",
+      "size": 90
+    },
+    {
+      "path": "comp3613a1/.cursor/skills",
+      "type": "tree",
+      "sha": "7fb666951fdc2ba3a3a941f1095210443e5611bf"
+    },
+    {
+      "path": "comp3613a1/.cursor/skills/README.md",
+      "type": "blob",
+      "sha": "5f591a467c61c2c5139a6d9485b114e856fc81df",
+      "size": 4416
+    },
+    {
+      "path": "comp3613a1/.cursor/skills/student-build",
+      "type": "tree",
+      "sha": "cfb3c99d0bfc0ef62d82cc5f9f4bee12e64325aa"
+    },
+    {
+      "path": "comp3613a1/.cursor/skills/student-build/SKILL.md",
+      "type": "blob",
+      "sha": "82cef54d041952fc81deaeedbcb105613e7f47ef",
+      "size": 42769
+    },
+    {
+      "path": "comp3613a1/.cursor/skills/student-build/framework-phases.md",
+      "type": "blob",
+      "sha": "b267edde7155c95a7419cf8c43deed98f97570e8",
+      "size": 15108
+    },
+    {
+      "path": "comp3613a1/.cursor/skills/student-judge",
+      "type": "tree",
+      "sha": "cf82a44cde27654eeeb8ff8ffdbfa7b5b491955e"
+    },
+    {
+      "path": "comp3613a1/.cursor/skills/student-judge/SKILL.md",
+      "type": "blob",
+      "sha": "d8ffe977ee73d81d63aa190661bcc2887cdc6367",
+      "size": 24081
+    },
+    {
+      "path": "comp3613a1/.cursor/skills/student-judge/framework-phases.md",
+      "type": "blob",
+      "sha": "b267edde7155c95a7419cf8c43deed98f97570e8",
+      "size": 15108
+    },
+    {
+      "path": "comp3613a1/.env.example",
+      "type": "blob",
+      "sha": "0501790469e0d610bbbc03b3536b40b3f3b92c47",
+      "size": 216
+    },
+    {
+      "path": "comp3613a1/.gitattributes",
+      "type": "blob",
+      "sha": "1fd26d5c99e25cb8718d949a2807a98a79fbf732",
+      "size": 26
+    },
+    {
+      "path": "comp3613a1/.github",
+      "type": "tree",
+      "sha": "15f98621f385dd4b2bd8ea9533c8a71c86ef4c16"
+    },
+    {
+      "path": "comp3613a1/.github/copilot-instructions.md",
+      "type": "blob",
+      "sha": "97b07a2951161b43176780b4d29cab7df4df2998",
+      "size": 2475
+    },
+    {
+      "path": "comp3613a1/.gitignore",
+      "type": "blob",
+      "sha": "555bb1da2ff47dfb501dd8a2646a14534d1df386",
+      "size": 4556
+    },
+    {
+      "path": "comp3613a1/.vscode",
+      "type": "tree",
+      "sha": "2afb66404f5b8bb5447a4d299012103f8b66bce9"
+    },
+    {
+      "path": "comp3613a1/.vscode/mcp.json",
+      "type": "blob",
+      "sha": "a0929940f140c756f58500bb574f5d209dc757b0",
+      "size": 418
+    },
+    {
+      "path": "comp3613a1/AGENTS.md",
+      "type": "blob",
+      "sha": "d710f20eba75dd62028e504dba7e1af22df63c2b",
+      "size": 6621
+    },
+    {
+      "path": "comp3613a1/ASSIGNMENT.md",
+      "type": "blob",
+      "sha": "6555022ff0fec70f84578af78fce4efb393cc9a6",
+      "size": 18023
+    },
+    {
+      "path": "comp3613a1/Dockerfile",
+      "type": "blob",
+      "sha": "df8c3f09bed19d7baf9d0c5b63713b1a5cda470f",
+      "size": 339
+    },
+    {
+      "path": "comp3613a1/README.md",
+      "type": "blob",
+      "sha": "7e6ea1236db2fc1f02ee86f2f9e996ec372c91dc",
+      "size": 15305
+    },
+    {
+      "path": "comp3613a1/app",
+      "type": "tree",
+      "sha": "0a8c8ee1f929beb00c39b92253068c6060509c27"
+    },
+    {
+      "path": "comp3613a1/app/cli.py",
+      "type": "blob",
+      "sha": "bf57948670d22341088f2938dcc3cb6edeec3b3d",
+      "size": 10821
+    },
+    {
+      "path": "comp3613a1/app/config.py",
+      "type": "blob",
+      "sha": "81aa096a5f51d303b9f4e428fdc1377dbbf8832a",
+      "size": 4193
+    },
+    {
+      "path": "comp3613a1/app/database.py",
+      "type": "blob",
+      "sha": "25344120f969b47c32ac1cbace64d7a6179e0eb3",
+      "size": 7436
+    },
+    {
+      "path": "comp3613a1/app/dependencies",
+      "type": "tree",
+      "sha": "8c43c8504cc67b296c49f6e24d89effd4ae84b31"
+    },
+    {
+      "path": "comp3613a1/app/dependencies/__init__.py",
+      "type": "blob",
+      "sha": "cdca66c004a9960d09cc43c7a19557743a07de4c",
+      "size": 84
+    },
+    {
+      "path": "comp3613a1/app/dependencies/auth.py",
+      "type": "blob",
+      "sha": "0d349d65eceb51164ab12b73936dc1e6a8ba3fa5",
+      "size": 1750
+    },
+    {
+      "path": "comp3613a1/app/dependencies/session.py",
+      "type": "blob",
+      "sha": "3e2f6d1ebcb9fe681a0dcbc2fafe3b8b84d3390a",
+      "size": 178
+    },
+    {
+      "path": "comp3613a1/app/main.py",
+      "type": "blob",
+      "sha": "238f77b3385e1c5ee0e323b1ab1f6b0859e44979",
+      "size": 2567
+    },
+    {
+      "path": "comp3613a1/app/models",
+      "type": "tree",
+      "sha": "5be45d71896ad05c352de277ad897ccbc5ae184e"
+    },
+    {
+      "path": "comp3613a1/app/models/__init__.py",
+      "type": "blob",
+      "sha": "1c7b1ee3395740dfcbdd3c1bac42aff4005a1408",
+      "size": 431
+    },
+    {
+      "path": "comp3613a1/app/models/advising.py",
+      "type": "blob",
+      "sha": "762022cf72ed29567d4b251874368cda54e0cc96",
+      "size": 2128
+    },
+    {
+      "path": "comp3613a1/app/models/user.py",
+      "type": "blob",
+      "sha": "1749f2c15322322edc2d3cc2f772390705f14f0b",
+      "size": 555
+    },
+    {
+      "path": "comp3613a1/app/report_pdf.py",
+      "type": "blob",
+      "sha": "e0f4f78eac61276e01a57895502c616eca2f36eb",
+      "size": 37815
+    },
+    {
+      "path": "comp3613a1/app/repositories",
+      "type": "tree",
+      "sha": "9dea5b17a40c40a6e5e26695d8533de653e7c660"
+    },
+    {
+      "path": "comp3613a1/app/repositories/__init__.py",
+      "type": "blob",
+      "sha": "8a66d48769a43218b358dbce21f65b7e5b385ce2",
+      "size": 32
+    },
+    {
+      "path": "comp3613a1/app/repositories/advising.py",
+      "type": "blob",
+      "sha": "ccd5af78e828fad1c98dd9c380a7575d01ba3660",
+      "size": 5529
+    },
+    {
+      "path": "comp3613a1/app/repositories/user.py",
+      "type": "blob",
+      "sha": "e0621ea659edba3ce9790ad7cd3724da265a3fa2",
+      "size": 2734
+    },
+    {
+      "path": "comp3613a1/app/routers",
+      "type": "tree",
+      "sha": "531c2b35f8631781c25f31b32331dd6a2de0d658"
+    },
+    {
+      "path": "comp3613a1/app/routers/__init__.py",
+      "type": "blob",
+      "sha": "a0506e6022a50874d9b166c7bd03c26e1d7f6c5f",
+      "size": 1104
+    },
+    {
+      "path": "comp3613a1/app/routers/admin_home.py",
+      "type": "blob",
+      "sha": "b238075b60891e6a87bb077025603408b1eaac7d",
+      "size": 2790
+    },
+    {
+      "path": "comp3613a1/app/routers/index.py",
+      "type": "blob",
+      "sha": "113c443402b8ae511f92e1725573a583b2280625",
+      "size": 889
+    },
+    {
+      "path": "comp3613a1/app/routers/login.py",
+      "type": "blob",
+      "sha": "51fcd76af99000f96946bfb6245b4d62aa31c9d0",
+      "size": 1456
+    },
+    {
+      "path": "comp3613a1/app/routers/logout.py",
+      "type": "blob",
+      "sha": "faa3ca357900874ab02d609f086ac616bf32f09f",
+      "size": 456
+    },
+    {
+      "path": "comp3613a1/app/routers/register.py",
+      "type": "blob",
+      "sha": "0ce34c23b4f1c7767774480e19312778f91807e8",
+      "size": 1575
+    },
+    {
+      "path": "comp3613a1/app/routers/server_config.py",
+      "type": "blob",
+      "sha": "04f7bc7a529a600912f2388a0bf3e8424663c82c",
+      "size": 12793
+    },
+    {
+      "path": "comp3613a1/app/routers/user_home.py",
+      "type": "blob",
+      "sha": "1fe21784a6d6e576e2b645800fc8985ee09037c6",
+      "size": 4780
+    },
+    {
+      "path": "comp3613a1/app/routers/users.py",
+      "type": "blob",
+      "sha": "c6983895a484dc8a5ad6fe09cfcc45ee8fd89188",
+      "size": 610
+    },
+    {
+      "path": "comp3613a1/app/schemas",
+      "type": "tree",
+      "sha": "d19186666879a30d653f0bad4e97b1fda0801e49"
+    },
+    {
+      "path": "comp3613a1/app/schemas/__init__.py",
+      "type": "blob",
+      "sha": "ac1ca22d9315904b8de310c5ce1356d308fcc62a",
+      "size": 39
+    },
+    {
+      "path": "comp3613a1/app/schemas/auth.py",
+      "type": "blob",
+      "sha": "59e38c38a1d790a5e590005562b0005792eb25b3",
+      "size": 180
+    },
+    {
+      "path": "comp3613a1/app/schemas/user.py",
+      "type": "blob",
+      "sha": "71bd75c1fbae8a4175df3b556429fad0f9f2e244",
+      "size": 501
+    },
+    {
+      "path": "comp3613a1/app/services",
+      "type": "tree",
+      "sha": "ad28707732f4d7f16e6f27375cff24196680e984"
+    },
+    {
+      "path": "comp3613a1/app/services/advising_service.py",
+      "type": "blob",
+      "sha": "d5c3e9b6d6a4ed8ffb763ff0fe25ad7fcffb306b",
+      "size": 21985
+    },
+    {
+      "path": "comp3613a1/app/services/auth_service.py",
+      "type": "blob",
+      "sha": "109385d875214b2f25ccb23984ca416e0e41bc77",
+      "size": 1523
+    },
+    {
+      "path": "comp3613a1/app/services/user_service.py",
+      "type": "blob",
+      "sha": "5fb6f127d1333dd4fd40189a71374266e65cd5bc",
+      "size": 400
+    },
+    {
+      "path": "comp3613a1/app/skill_integrity.py",
+      "type": "blob",
+      "sha": "e9037698e8552d137f0fa8e8f79b0a29d02fa984",
+      "size": 6632
+    },
+    {
+      "path": "comp3613a1/app/static",
+      "type": "tree",
+      "sha": "d0c1ec745307579070619ead3039a89ecc608c02"
+    },
+    {
+      "path": "comp3613a1/app/static/css",
+      "type": "tree",
+      "sha": "eae3cc980bb05506d35ed74c690e332b06f7e626"
+    },
+    {
+      "path": "comp3613a1/app/static/css/app.css",
+      "type": "blob",
+      "sha": "ee4fe1ba37357c987e29dd79fb39a26a3b9ded39",
+      "size": 16000
+    },
+    {
+      "path": "comp3613a1/app/static/img",
+      "type": "tree",
+      "sha": "906488ed34131cce3bad3ad4dffd6f0e60e2874f"
+    },
+    {
+      "path": "comp3613a1/app/static/img/favicon.ico",
+      "type": "blob",
+      "sha": "d735ad93f709f52dd3eb2ecf25bdebda661fb074",
+      "size": 15406
+    },
+    {
+      "path": "comp3613a1/app/static/img/favicon.svg",
+      "type": "blob",
+      "sha": "35cf23ae23f5459ba4091e1d71ea2975cee25df6",
+      "size": 390
+    },
+    {
+      "path": "comp3613a1/app/static/js",
+      "type": "tree",
+      "sha": "b007aa1d5f68ffd34bfc0f9071927ba8819076b3"
+    },
+    {
+      "path": "comp3613a1/app/static/js/app.js",
+      "type": "blob",
+      "sha": "f766407275d0c72b40dead091c0eedc7a9a0c021",
+      "size": 2050
+    },
+    {
+      "path": "comp3613a1/app/templates",
+      "type": "tree",
+      "sha": "305ba605cc4ae8b1770f1d34398f57b3594479e7"
+    },
+    {
+      "path": "comp3613a1/app/templates/401.html",
+      "type": "blob",
+      "sha": "5467474180c73f4bdb2e27285bafc299346945cd",
+      "size": 2080
+    },
+    {
+      "path": "comp3613a1/app/templates/admin.html",
+      "type": "blob",
+      "sha": "404883c579f4d3446376e04f00f311229dda3f36",
+      "size": 293
+    },
+    {
+      "path": "comp3613a1/app/templates/advisor_dashboard.html",
+      "type": "blob",
+      "sha": "05fe82470846df3a009dd1245ce2adfdb50105f5",
+      "size": 6881
+    },
+    {
+      "path": "comp3613a1/app/templates/app.html",
+      "type": "blob",
+      "sha": "233c7cab95ccd236cf7eb52549391879c60f03b1",
+      "size": 285
+    },
+    {
+      "path": "comp3613a1/app/templates/authenticated-base.html",
+      "type": "blob",
+      "sha": "42b018bbfbbf49931c962ae27d79728eafdcd111",
+      "size": 9515
+    },
+    {
+      "path": "comp3613a1/app/templates/base.html",
+      "type": "blob",
+      "sha": "c7f769504b33d024e7f5ec47afe444869571760d",
+      "size": 2171
+    },
+    {
+      "path": "comp3613a1/app/templates/config.html",
+      "type": "blob",
+      "sha": "e9ed991952431c8a18c1de3bbff85b39ca1f30ac",
+      "size": 8346
+    },
+    {
+      "path": "comp3613a1/app/templates/landing.html",
+      "type": "blob",
+      "sha": "ab5e6f21e6e5de43c480d9e17b860c7228301057",
+      "size": 1704
+    },
+    {
+      "path": "comp3613a1/app/templates/login.html",
+      "type": "blob",
+      "sha": "24348859bd67d7afffd0e4c06e016d11e4bad24b",
+      "size": 1236
+    },
+    {
+      "path": "comp3613a1/app/templates/myadvisor_dashboard.html",
+      "type": "blob",
+      "sha": "0b51d7d5ce1e3cfa9506d6c26ac71f434ae55d19",
+      "size": 41780
+    },
+    {
+      "path": "comp3613a1/app/templates/register.html",
+      "type": "blob",
+      "sha": "11f433f048a2dbd341bde71c35b16169a8445467",
+      "size": 1837
+    },
+    {
+      "path": "comp3613a1/app/transcript_export.py",
+      "type": "blob",
+      "sha": "c0c2424d4d13810b5d4e717c62d562d3fbf49582",
+      "size": 7235
+    },
+    {
+      "path": "comp3613a1/app/usecase_diagram.py",
+      "type": "blob",
+      "sha": "f26e19620428d3515d819e12a2216977811bc2f9",
+      "size": 12880
+    },
+    {
+      "path": "comp3613a1/app/utilities",
+      "type": "tree",
+      "sha": "1fed6d1fa6ce648132be5301d843e71e0ce67d8d"
+    },
+    {
+      "path": "comp3613a1/app/utilities/__init__.py",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "comp3613a1/app/utilities/flash.py",
+      "type": "blob",
+      "sha": "5482516df1cef0a15ebfc17c62f403c2361ec2f4",
+      "size": 409
+    },
+    {
+      "path": "comp3613a1/app/utilities/pagination.py",
+      "type": "blob",
+      "sha": "d26253148004712fa8dcf3e0280a34f73d695ced",
+      "size": 1030
+    },
+    {
+      "path": "comp3613a1/app/utilities/security.py",
+      "type": "blob",
+      "sha": "edf8f10a99861a6a1bf0dbc7bf2b797364f0d162",
+      "size": 1131
+    },
+    {
+      "path": "comp3613a1/docs",
+      "type": "tree",
+      "sha": "5671c4d3ecaabc74ae6f0d0012d9004e99ad2de4"
+    },
+    {
+      "path": "comp3613a1/docs/diagrams",
+      "type": "tree",
+      "sha": "c8274a452e2c3ccca8778e43f98c1a5b0dba2fea"
+    },
+    {
+      "path": "comp3613a1/docs/diagrams/.gitkeep",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "comp3613a1/docs/diagrams/application-components.jpg",
+      "type": "blob",
+      "sha": "3d2796a6534f2cc77f6b79a379385297e8ee44af",
+      "size": 197680
+    },
+    {
+      "path": "comp3613a1/docs/diagrams/use-case.json",
+      "type": "blob",
+      "sha": "96afbf19e15b7495a277a65c1ef2cf7438e52989",
+      "size": 1084
+    },
+    {
+      "path": "comp3613a1/docs/diagrams/use-case.png",
+      "type": "blob",
+      "sha": "e45b5acad46ebe7dd7b8fd037ddac01b154eebad",
+      "size": 26960
+    },
+    {
+      "path": "comp3613a1/docs/diagrams/use-case.puml",
+      "type": "blob",
+      "sha": "82e2adb208f67fcb130e857a8c27ece0c0c0653c",
+      "size": 1339
+    },
+    {
+      "path": "comp3613a1/docs/judge.md",
+      "type": "blob",
+      "sha": "6c77eaca098ab43f7cc72f94d55ea42130d9089e",
+      "size": 2478
+    },
+    {
+      "path": "comp3613a1/docs/report.md",
+      "type": "blob",
+      "sha": "f00f2f1fce8980f729a0ebf6257e385700cf9c0f",
+      "size": 13531
+    },
+    {
+      "path": "comp3613a1/docs/wireframes",
+      "type": "tree",
+      "sha": "90a513138f01a3cd13164f2635a244b91245f415"
+    },
+    {
+      "path": "comp3613a1/docs/wireframes/.gitkeep",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "comp3613a1/docs/wireframes/Three-Panel Student Advisor Dashboard Mockup.png",
+      "type": "blob",
+      "sha": "90df170a314dca0afba3a0eb00cd9c0baee9485b",
+      "size": 1380454
+    },
+    {
+      "path": "comp3613a1/manage.py",
+      "type": "blob",
+      "sha": "deb83e54b63da7dfb426bdedbf19d6efba373f66",
+      "size": 180
+    },
+    {
+      "path": "comp3613a1/opencode.json",
+      "type": "blob",
+      "sha": "7cdbf504f62f8e591f0540256e3f6fdc35922306",
+      "size": 178
+    },
+    {
+      "path": "comp3613a1/package-lock.json",
+      "type": "blob",
+      "sha": "d2cf2d1c735101b240f0e83e5e1dcba51a7dc4b8",
+      "size": 87403
+    },
+    {
+      "path": "comp3613a1/package.json",
+      "type": "blob",
+      "sha": "f6948317c6f535f4ec5cebd93ba1dba9c3682305",
+      "size": 202
+    },
+    {
+      "path": "comp3613a1/pyproject.toml",
+      "type": "blob",
+      "sha": "e9fc4331f137768e059a713d806a04a9c5777299",
+      "size": 539
+    },
+    {
+      "path": "comp3613a1/render.yaml",
+      "type": "blob",
+      "sha": "8541786c69d0d94cd6dbcbf3c1dee4206b42be1b",
+      "size": 1130
+    },
+    {
+      "path": "comp3613a1/requirements.txt",
+      "type": "blob",
+      "sha": "97bf69cbbafc41cb138cfe114b78c2eecfac538c",
+      "size": 439
+    },
+    {
+      "path": "comp3613a1/runlog.txt",
+      "type": "blob",
+      "sha": "617c448ad554b5accaefd08db17b01186efe3144",
+      "size": 13732
+    },
+    {
+      "path": "comp3613a1/runlog_err.txt",
+      "type": "blob",
+      "sha": "3b8a8aeaf0a64db0e699ae6fcf90709e39e6c6ca",
+      "size": 438
+    },
+    {
+      "path": "comp3613a1/tests",
+      "type": "tree",
+      "sha": "85d54cf274b3df90b30a2a11e216eefaf89d84fa"
+    },
+    {
+      "path": "comp3613a1/tests/test_advising_service.py",
+      "type": "blob",
+      "sha": "9f4a54386a3452c5b3d655b26d309b8a1ee0f40d",
+      "size": 33980
+    },
+    {
+      "path": "comp3613a1/tests/test_login_routing.py",
+      "type": "blob",
+      "sha": "c6734278f1647fb56b225079d82e8856877d4116",
+      "size": 1323
+    },
+    {
+      "path": "comp3613a1/vendor",
+      "type": "tree",
+      "sha": "0115bc551a061b74865aa922b25ae2e3b923ee56"
+    },
+    {
+      "path": "comp3613a1/vendor/README.md",
+      "type": "blob",
+      "sha": "d6a33437ab353757e9567541ec8222a7519fc761",
+      "size": 1238
+    },
+    {
+      "path": "comp3613a1/vendor/fonts",
+      "type": "tree",
+      "sha": "39b5e7c77f8bed720bde89f9dbfb0520f4d545e4"
+    },
+    {
+      "path": "comp3613a1/vendor/fonts/DejaVuSans-Bold.ttf",
+      "type": "blob",
+      "sha": "6d65fa7dc41ae8ffae77a4a843a73ba31ffd78c7",
+      "size": 705684
+    },
+    {
+      "path": "comp3613a1/vendor/fonts/DejaVuSans-BoldOblique.ttf",
+      "type": "blob",
+      "sha": "753f2d80b1f9a13026d641b6fd4cafb8d85dd479",
+      "size": 643292
+    },
+    {
+      "path": "comp3613a1/vendor/fonts/DejaVuSans-Oblique.ttf",
+      "type": "blob",
+      "sha": "999bac7714134bc7d931efac92b962a93c52e094",
+      "size": 635416
+    },
+    {
+      "path": "comp3613a1/vendor/fonts/DejaVuSans.ttf",
+      "type": "blob",
+      "sha": "e5f7eecce43be41ff0703ed99e1553029b849f14",
+      "size": 757076
+    },
+    {
+      "path": "comp3613a1/vendor/fonts/LICENSE",
+      "type": "blob",
+      "sha": "df52c1709bea171104d41bf084313ea434858423",
+      "size": 8816
+    },
+    {
+      "path": "comp3613a1/vendor/manifest.json",
+      "type": "blob",
+      "sha": "5c3529cc0010e8f98e8de7a938f4726d66af3ac1",
+      "size": 1087
+    },
+    {
+      "path": "comp3613a1/vendor/plantuml",
+      "type": "tree",
+      "sha": "a2a27f762c9444aa534f70058cdf33fafc14a17f"
+    },
+    {
+      "path": "comp3613a1/vendor/plantuml/LICENSE.txt",
+      "type": "blob",
+      "sha": "017ea1be988154a5f185f77c76b6c80327640e3c",
+      "size": 3594
+    },
+    {
+      "path": "comp3613a1/vendor/plantuml/plantuml.jar",
+      "type": "blob",
+      "sha": "a261f94eb44e7735d93ba5863066e19216998f63",
+      "size": 17732698
+    },
+    {
+      "path": "docs",
+      "type": "tree",
+      "sha": "fe0c53e9b8758f4e222d720a2f0d31e050acc075"
+    },
+    {
+      "path": "docs/assignment2",
+      "type": "tree",
+      "sha": "774f2edeb103600e76df8a242e4f60b7ecf8d09c"
+    },
+    {
+      "path": "docs/assignment2/PROGRESS.md",
+      "type": "blob",
+      "sha": "fd7a2684e335fd446883b77d4986c39c744449c6",
+      "size": 11759
+    },
+    {
+      "path": "docs/assignment2/api.md",
+      "type": "blob",
+      "sha": "51703bd7429d6e729c966c6339360d54b384b7c3",
+      "size": 15577
+    },
+    {
+      "path": "docs/assignment2/evidence",
+      "type": "tree",
+      "sha": "63a944e4d5073a8b2eb67bfd2a747140123d8b6c"
+    },
+    {
+      "path": "docs/assignment2/evidence/student-integration-pytest.txt",
+      "type": "blob",
+      "sha": "2767736c73d4aa2886fcab6191f1420883f289b1",
+      "size": 9132
+    },
+    {
+      "path": "docs/assignment2/evidence/student-integration.md",
+      "type": "blob",
+      "sha": "d7fc01ac140ec36ed1a0e346758c3a67e24574f9",
+      "size": 8411
+    },
+    {
+      "path": "docs/assignment2/evidence/unit",
+      "type": "tree",
+      "sha": "f91608febb45c9f7aea7e83398ad854104aa4a65"
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/README.md",
+      "type": "blob",
+      "sha": "a2723d44fe20c2e621383d967730d5a83661ebe3",
+      "size": 2607
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/pytest-output.txt",
+      "type": "blob",
+      "sha": "01372784c70a8260748af2431086c4e3eeb2ce05",
+      "size": 25140
+    },
+    {
+      "path": "docs/assignment2/evidence/unit/results.xml",
+      "type": "blob",
+      "sha": "369716178ec5b8e1d604c246881c78e1b45d6831",
+      "size": 14179
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow1-api.md",
+      "type": "blob",
+      "sha": "00b916c3a548a70cdbb8d8cbad8eb377ae0ca532",
+      "size": 2915
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow2-api.md",
+      "type": "blob",
+      "sha": "f31e50e3d3f171b9022b175e8a5b432cb958890e",
+      "size": 4326
+    },
+    {
+      "path": "docs/assignment2/evidence/workflow3-api.md",
+      "type": "blob",
+      "sha": "cf6d77e03f17d38b8c93ffbb9b2f66a13e860e5e",
+      "size": 5322
+    },
+    {
+      "path": "docs/assignment2/postman",
+      "type": "tree",
+      "sha": "33c3592c32485eefb81c390d3153f34076f9631c"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2",
+      "type": "tree",
+      "sha": "3678fadb21783b1af3147f7574ca5355964f5656"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/.resources",
+      "type": "tree",
+      "sha": "0281c493cc158807433656deb2266479f0e46009"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/.resources/definition.yaml",
+      "type": "blob",
+      "sha": "142b2b369f37d4f03ea1469c43197ba58ae110e7",
+      "size": 1743
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication",
+      "type": "tree",
+      "sha": "2b89ac3a5b532d643361982b807bd973d422df54"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/.resources",
+      "type": "tree",
+      "sha": "14635804013fdf8e8de16f6ac95557b76240f7be"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/.resources/definition.yaml",
+      "type": "blob",
+      "sha": "53d990d16bd291c684bb7015325720873841668a",
+      "size": 30
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/01 - Server health and initialize run variables.request.yaml",
+      "type": "blob",
+      "sha": "3e9cd8079a348276f1c00de8d402721fba960b94",
+      "size": 2089
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/02 - Unauthenticated -api-degree-progress.request.yaml",
+      "type": "blob",
+      "sha": "4ad4135e097cc7125021bd94c4a94075cbe265fd",
+      "size": 4557
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/03 - Unauthenticated -api-courses.request.yaml",
+      "type": "blob",
+      "sha": "028fad44cc980201d67c13d6aa1a6887086e9cf4",
+      "size": 4533
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/04 - Unauthenticated -api-semester-plans.request.yaml",
+      "type": "blob",
+      "sha": "2d146b4d7f924600ff08dd6cecdb77d17afa1f7a",
+      "size": 4554
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/05 - Unauthenticated -api-advisor-plans.request.yaml",
+      "type": "blob",
+      "sha": "4d073013f9e4762d9d060d4d97453e800d0e74e3",
+      "size": 4551
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/06 - Unauthenticated -api-users.request.yaml",
+      "type": "blob",
+      "sha": "95147de48c317cf9de91734120f8ed01e596861c",
+      "size": 4527
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/07 - Malformed cookie denied.request.yaml",
+      "type": "blob",
+      "sha": "3bb045a39efb1826edc1fc8dcffe1cd96af7ff75",
+      "size": 4651
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/08 - Incorrect login rejected.request.yaml",
+      "type": "blob",
+      "sha": "adb928194ca282429ece1e10690267f9d9e53b75",
+      "size": 1143
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/09 - Student login and capture cookie.request.yaml",
+      "type": "blob",
+      "sha": "533d8a52f57f52d10092c946ac7753eddc1beeec",
+      "size": 1705
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/10 - Advisor login and capture cookie.request.yaml",
+      "type": "blob",
+      "sha": "41cc74e6def8d71f8c302bb36bdf83e41fcd549e",
+      "size": 1706
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/11 - Register independent student for ownership checks.request.yaml",
+      "type": "blob",
+      "sha": "b8fa96280bbc93639f700caefaa61cea60528ba3",
+      "size": 1136
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/01 - Local readiness and real cookie authentication/12 - Other login and capture cookie.request.yaml",
+      "type": "blob",
+      "sha": "55eb15349b6f15ab949012e5ea60bd370bb9c923",
+      "size": 1698
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue",
+      "type": "tree",
+      "sha": "c6bb2c02548e500ec7ed4e08397cb9e7da32e0e6"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/.resources",
+      "type": "tree",
+      "sha": "0d53c0e02516ef734bc59b1e74efe55c6e95b65a"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/.resources/definition.yaml",
+      "type": "blob",
+      "sha": "6522e17e9b2559e2a5cdb218e0b96f057094751c",
+      "size": 30
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/13 - Student forbidden from -api-advisor-plans.request.yaml",
+      "type": "blob",
+      "sha": "07e31d2aed5220a5d9ac2533c04ed20ccd04b81e",
+      "size": 4470
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/14 - Student forbidden from -api-users.request.yaml",
+      "type": "blob",
+      "sha": "c457cbb858d2cc1f02bb5a5ab50ec20627b77152",
+      "size": 4446
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/15 - Advisor forbidden from -api-degree-progress.request.yaml",
+      "type": "blob",
+      "sha": "902a101530a47f776da04d7cd998b69e0c32e205",
+      "size": 4476
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/16 - Advisor forbidden from -api-courses.request.yaml",
+      "type": "blob",
+      "sha": "ffb4e7c01d9bd01a39d03e77848ea694959a28bb",
+      "size": 4452
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/17 - Advisor forbidden from -api-semester-plans.request.yaml",
+      "type": "blob",
+      "sha": "7f5c6c67a72b8344c594742893fb1363617b7eda",
+      "size": 4473
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/18 - Advisor users list excludes passwords.request.yaml",
+      "type": "blob",
+      "sha": "95dadd4992cb3252ad552b641953be99b77ee4b0",
+      "size": 5303
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/19 - Student degree progress calculations and privacy.request.yaml",
+      "type": "blob",
+      "sha": "bc14ba7f9595f607ae84a7c67d19e9fc8a6a3a17",
+      "size": 5337
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/20 - Discover eligible and blocked dynamic course IDs.request.yaml",
+      "type": "blob",
+      "sha": "b9d7138efd0405aea57ba06e26d20fbbf05fa898",
+      "size": 5693
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/02 - Role boundaries, progress and catalogue/21 - Choose a semester without an existing active plan.request.yaml",
+      "type": "blob",
+      "sha": "b92af61914f21a69828a2254b3d13e0e09296a1b",
+      "size": 5275
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle",
+      "type": "tree",
+      "sha": "be2096a73dc2fe03dd40b0ad208783238e0bfd29"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/.resources",
+      "type": "tree",
+      "sha": "28000a2f598946846ce10e131639b4a5a89a9d47"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/.resources/definition.yaml",
+      "type": "blob",
+      "sha": "40bbb1c54259729067237e4e771902a0f9d3adfe",
+      "size": 30
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/22 - Empty selection rejected.request.yaml",
+      "type": "blob",
+      "sha": "0ad3ed8dc7dcdcd751f1480fdc55b2ebd96e86f6",
+      "size": 4764
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/23 - Duplicate selection rejected.request.yaml",
+      "type": "blob",
+      "sha": "8d3ab7829591836bae7c6240abe427265d18e735",
+      "size": 4786
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/24 - Unknown course rejected.request.yaml",
+      "type": "blob",
+      "sha": "c4cad1a546b66c0bfe044edc256155c480469f87",
+      "size": 4625
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/25 - Missing prerequisites rejected explicitly.request.yaml",
+      "type": "blob",
+      "sha": "be934e0969b607e9bb4c2f20f0b7aab9317da60f",
+      "size": 4808
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/26 - Invalid semester rejected.request.yaml",
+      "type": "blob",
+      "sha": "f13a08e8d69460870f1dee4d97540bff83d3f820",
+      "size": 4767
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/27 - String course ID rejected.request.yaml",
+      "type": "blob",
+      "sha": "7f0e49a3a4d348e0ecd99e4f4e503952569da35d",
+      "size": 4767
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/28 - Spoof student ID rejected.request.yaml",
+      "type": "blob",
+      "sha": "46852d312ac872f90a86a5635fb9a0a7c9012015",
+      "size": 4798
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/29 - Malformed JSON rejected.request.yaml",
+      "type": "blob",
+      "sha": "174acb1817c0ffb0a32d30c9a300133916a2aff4",
+      "size": 4700
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/30 - Verify invalid submissions created no records.request.yaml",
+      "type": "blob",
+      "sha": "51024e47ffcee625669e503157f2277256d57242",
+      "size": 4622
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/31 - Submit two eligible courses and capture plan ID.request.yaml",
+      "type": "blob",
+      "sha": "03aef76cd88e7268f52cdb6e1fcc7c073b5c8a55",
+      "size": 5908
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/32 - Retrieve persisted pending plan.request.yaml",
+      "type": "blob",
+      "sha": "ce5bbd12252318d7afc027df294dd0f43b73aacb",
+      "size": 5282
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/33 - Other student cannot read foreign plan.request.yaml",
+      "type": "blob",
+      "sha": "e316d67d122cb0022c90b7bd960998622ed1c2a1",
+      "size": 4588
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/34 - Missing plan conceals ownership identically.request.yaml",
+      "type": "blob",
+      "sha": "2b3fd493e8af59b6a6ffe70d764a9e5bda4a631a",
+      "size": 4662
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/35 - Other student cannot revise foreign plan.request.yaml",
+      "type": "blob",
+      "sha": "0d42ae9b51c0371cf82248da54d1e9f3e1930008",
+      "size": 4639
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/36 - Other student cannot remove foreign course.request.yaml",
+      "type": "blob",
+      "sha": "ff65dad4310257d723d5a6cbac308efd0466724b",
+      "size": 4546
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/37 - Other student cannot cancel foreign plan.request.yaml",
+      "type": "blob",
+      "sha": "85f5c40bf2da9aa16300131c4b6208e71e3d6936",
+      "size": 4520
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/38 - Other student list excludes foreign plan.request.yaml",
+      "type": "blob",
+      "sha": "8d9c94bd98b20c4fdb9ca4d861d94683db3b411a",
+      "size": 4590
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/39 - Duplicate pending submission conflicts.request.yaml",
+      "type": "blob",
+      "sha": "3d7e48c68fa937685a31b2018f4c0437f8e1a8b5",
+      "size": 4660
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/40 - Pending plan cannot be revised.request.yaml",
+      "type": "blob",
+      "sha": "8241aea97c0c4095c53a4c34ccdfb1ebff44cf46",
+      "size": 4635
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/41 - Invalid path ID rejected.request.yaml",
+      "type": "blob",
+      "sha": "027bad098f027263c3c2cd6c05dfdb044a5a7654",
+      "size": 4644
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/42 - Student denied advisor action detail.request.yaml",
+      "type": "blob",
+      "sha": "d17d3b71778e45371bf191a3ce4bf207e6e6a244",
+      "size": 4425
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/43 - Student denied advisor action -review.request.yaml",
+      "type": "blob",
+      "sha": "9595a9de75bdcc5da469915c769fa59ba2d7e4ae",
+      "size": 4572
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/44 - Student denied advisor action -approve.request.yaml",
+      "type": "blob",
+      "sha": "a01efbc0b1fa6b3703e506b5375d77ea0a3669f6",
+      "size": 4554
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/45 - Student denied advisor action -reject.request.yaml",
+      "type": "blob",
+      "sha": "16d2240413e12ce50d9042de1abe5d0c1fb0429f",
+      "size": 4551
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/46 - Student denied advisor action -request-changes.request.yaml",
+      "type": "blob",
+      "sha": "cf63799165f36d9a7843a51add1c00817660de0c",
+      "size": 4578
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/47 - Verify ownership and role denials left pending plan intact.request.yaml",
+      "type": "blob",
+      "sha": "2d42a1db7a1455cc357081d68a56e7dbbc850e0b",
+      "size": 5401
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/48 - Remove selected course from pending plan.request.yaml",
+      "type": "blob",
+      "sha": "baa69813870a92efc8a3cda05413fc315b3bbb5f",
+      "size": 5268
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/49 - Cannot remove final course.request.yaml",
+      "type": "blob",
+      "sha": "b01013e4d0f124fdec2648d14b14073544f804bc",
+      "size": 4536
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/03 - Submission validation and student plan lifecycle/50 - Absent selected course returns not found.request.yaml",
+      "type": "blob",
+      "sha": "388d0492ce962181ad4b05de9343fe3e1c1ab9a7",
+      "size": 4546
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio",
+      "type": "tree",
+      "sha": "848a00e72e9e8913fd999aee3a540015bcc13801"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/.resources",
+      "type": "tree",
+      "sha": "65f6554c8d799ebfb4e64b01e2a3abbdc6e8c537"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/.resources/definition.yaml",
+      "type": "blob",
+      "sha": "4ac7a631920b8f7da1418ce4c8fe79e1e41577ac",
+      "size": 102
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/51 - Advisor pending queue includes submitted plan.request.yaml",
+      "type": "blob",
+      "sha": "5f2df1a732f7a23a6ea72e9588f29a0e012486b4",
+      "size": 4707
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/52 - Advisor sees student plan detail.request.yaml",
+      "type": "blob",
+      "sha": "ae2a333d1202913799da8c39d9fbf8eef226eae8",
+      "size": 5288
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/53 - Advisor missing plan returns not found.request.yaml",
+      "type": "blob",
+      "sha": "ac14323d8577ec6ba2c1bfce97d770a0d650cfef",
+      "size": 4514
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/54 - Unknown decision rejected.request.yaml",
+      "type": "blob",
+      "sha": "fef47332b9b930b58ce0ea044a5b9c05a7f7a625",
+      "size": 4733
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/55 - Missing decision rejected.request.yaml",
+      "type": "blob",
+      "sha": "848422d6448171ae2f515d5a6f59d7e4d05ca5db",
+      "size": 4725
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/56 - Oversized feedback rejected.request.yaml",
+      "type": "blob",
+      "sha": "fc8db51a0ff042796bcc5121bc4eff93965c6635",
+      "size": 5251
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/57 - Nonstring feedback rejected.request.yaml",
+      "type": "blob",
+      "sha": "13c1d426e8032628c9ade3f1c572e724e3f52d04",
+      "size": 4744
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/58 - Spoof advisor identity rejected.request.yaml",
+      "type": "blob",
+      "sha": "b04b2942679a051b2c4756bbf8e41d25d2a66257",
+      "size": 4779
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/59 - Action cannot override decision rejected.request.yaml",
+      "type": "blob",
+      "sha": "c3d38b29e9744a56b3eb40dd73ee7ac9e319000c",
+      "size": 4769
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/60 - Verify invalid reviews left pending plan unassigned.request.yaml",
+      "type": "blob",
+      "sha": "9cc3d384df3dc1cd3f384117a995b6b644f4f8fd",
+      "size": 5595
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/61 - Generic review requests changes and trims feedback.request.yaml",
+      "type": "blob",
+      "sha": "5994b2c23fbaa2c8e0dc232c7159e7b5b1cdd87e",
+      "size": 5677
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/62 - Reviewed plan leaves pending queue.request.yaml",
+      "type": "blob",
+      "sha": "755ada321181f2c2c7b3860dfd19548af6107b65",
+      "size": 4590
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/63 - Student sees changes and feedback.request.yaml",
+      "type": "blob",
+      "sha": "fbd1a4286d29dde73a051fcb37a66897a07c29ea",
+      "size": 5164
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/64 - Changes requested cannot be cancelled.request.yaml",
+      "type": "blob",
+      "sha": "0f45e3fa8bbfcf9b51f4733eef88e9db0d915250",
+      "size": 4523
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/65 - Student revises and resubmits with same ID.request.yaml",
+      "type": "blob",
+      "sha": "e043fca9315a2e766e11df75254da76e6afaea2a",
+      "size": 5499
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/66 - Advisor assignment cleared after resubmission.request.yaml",
+      "type": "blob",
+      "sha": "14cd1bcd0d27ad8037e07da33d2e975e3e0f41f4",
+      "size": 5391
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/67 - Dedicated request-changes action.request.yaml",
+      "type": "blob",
+      "sha": "d7375d0d41e0404a4b1f9404f94400fd1efa00c9",
+      "size": 5660
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/68 - POST resubmits existing changes-requested plan.request.yaml",
+      "type": "blob",
+      "sha": "7d9c7e191ac1278b679b446102e273080f75c19d",
+      "size": 5436
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/69 - Dedicated reject action accepts 500-character boundary.request.yaml",
+      "type": "blob",
+      "sha": "0bc45adf7bf48513d20c439b0c0502bd7588820c",
+      "size": 6236
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/70 - Student sees rejection.request.yaml",
+      "type": "blob",
+      "sha": "a7a76b09dc3a7682b3130da0c72512eb633d6ee1",
+      "size": 5157
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/71 - Repeated review conflicts.request.yaml",
+      "type": "blob",
+      "sha": "c0e8433e2dd8df2fcf8239082f120b51a089d665",
+      "size": 4584
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/72 - POST resubmits rejected plan with same ID.request.yaml",
+      "type": "blob",
+      "sha": "4bf811ccd922d0adf269762a025f7ab76e628590",
+      "size": 5198
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/73 - Dedicated approve action.request.yaml",
+      "type": "blob",
+      "sha": "fbb142c2e5c193050fcdb8ef0f5d860b8ba51617",
+      "size": 5595
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/74 - Student sees approval and feedback.request.yaml",
+      "type": "blob",
+      "sha": "69a49b7c22747017bfed261891d0bd8f4beb05f1",
+      "size": 5172
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/75 - Approved plan cannot be edited.request.yaml",
+      "type": "blob",
+      "sha": "3c35934722917484a975109081bb8cb4ee1dcaa5",
+      "size": 4635
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/04 - Advisor review, feedback validation and student resubmissio/76 - Approved plan cannot be reviewed again.request.yaml",
+      "type": "blob",
+      "sha": "9637a8b0168d8fba989d0b199177bfa4c1fb2c6a",
+      "size": 4596
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout",
+      "type": "tree",
+      "sha": "d94121349b211490c130498e1aacbe3ac9821575"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/.resources",
+      "type": "tree",
+      "sha": "1cea0fd29f15c83dae84035a70be731e8d5c4ee0"
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/.resources/definition.yaml",
+      "type": "blob",
+      "sha": "afdeb9ac7abab432aea1204ad24512f05f79ef0f",
+      "size": 30
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/77 - Verify forbidden edits and reviews preserved approval.request.yaml",
+      "type": "blob",
+      "sha": "5849103d77a3e427e86bd692cc5a0d7f9026a9a5",
+      "size": 5190
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/78 - Cancel approved plan and retain selections.request.yaml",
+      "type": "blob",
+      "sha": "d09ba6aa721a5d98d4aefe8b9f24800821aa1a34",
+      "size": 5408
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/79 - Repeated cancellation conflicts.request.yaml",
+      "type": "blob",
+      "sha": "1b6e58eede0379a56e99686133d7d02f6cfddae7",
+      "size": 4516
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/80 - Retrieve cancelled history.request.yaml",
+      "type": "blob",
+      "sha": "eac8e5ae2b9bf9293a96f154a4f51cf47efe881a",
+      "size": 5045
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/81 - Cancelled plan remains visible to advisor.request.yaml",
+      "type": "blob",
+      "sha": "6acd699ad98d61610096d7b8ee0c3b3831688723",
+      "size": 5299
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/82 - Cancelled plan cannot be reviewed.request.yaml",
+      "type": "blob",
+      "sha": "adeda943acf8e5234bfc9a9005745a3d3a9d0086",
+      "size": 4591
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/83 - Cancelled plan allows new submission with new ID.request.yaml",
+      "type": "blob",
+      "sha": "f560ac1b0054191f062c01eac6522495818ffee6",
+      "size": 5823
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/84 - Cancel replacement pending plan for repeatable run.request.yaml",
+      "type": "blob",
+      "sha": "c29be59d0274534cc5ed21c56e1becb72cb341a7",
+      "size": 5305
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/85 - Student list retains both cancelled records.request.yaml",
+      "type": "blob",
+      "sha": "54cf9d798651665cc5d640331e52e69d2e940c67",
+      "size": 4769
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/86 - Final advisor queue excludes collection plans.request.yaml",
+      "type": "blob",
+      "sha": "9011c373853dc7e78e1b74f71352e47de5bf56e5",
+      "size": 4662
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/87 - Student logout clears browser cookie.request.yaml",
+      "type": "blob",
+      "sha": "6f4f6827c1f58d61d88cdb4646944b88a791da8d",
+      "size": 1243
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/88 - Advisor logout clears browser cookie.request.yaml",
+      "type": "blob",
+      "sha": "e56026b5a229fa682d08cd4dc8ac457617b5fcbd",
+      "size": 1243
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/89 - Other logout clears browser cookie.request.yaml",
+      "type": "blob",
+      "sha": "04fe0810d42db972bf161fa7c2ccbde748ef4a21",
+      "size": 1327
+    },
+    {
+      "path": "docs/assignment2/postman/MyAdvisor - COMP 3613 Assignment 2/05 - Cancellation, retained history and logout/90 - No cookie after logout is denied.request.yaml",
+      "type": "blob",
+      "sha": "2061f568259f4c50792f7f0893f586b1ff1bb5a7",
+      "size": 4383
+    },
+    {
+      "path": "docs/assignment2/postman/README.md",
+      "type": "blob",
+      "sha": "5d2fcca652fe30c54417d772473707a3b4f69f5d",
+      "size": 14073
+    },
+    {
+      "path": "docs/assignment2/postman/validate_collection.cjs",
+      "type": "blob",
+      "sha": "a9ccd515bd0cf1fd38dabd6573bb26c3895025a8",
+      "size": 3989
+    },
+    {
+      "path": "docs/assignment2/reports",
+      "type": "tree",
+      "sha": "46dc18b2b9b0d956972975ca6b7665e6f4485989"
+    },
+    {
+      "path": "docs/assignment2/reports/integration-test-report.md",
+      "type": "blob",
+      "sha": "0ffc235c1c77c0d9de7b4b4da3b9299f2f60ce3e",
+      "size": 13636
+    },
+    {
+      "path": "docs/assignment2/reports/postman-test-report.md",
+      "type": "blob",
+      "sha": "00cb126be69f859a2afce9f703f47d0f9bd0c64d",
+      "size": 12953
+    },
+    {
+      "path": "docs/assignment2/reports/uat-execution.md",
+      "type": "blob",
+      "sha": "5a6e7f823261cf1f691e2d278041c31ad82d3a8a",
+      "size": 53455
+    },
+    {
+      "path": "docs/assignment2/reports/uat-final-report.md",
+      "type": "blob",
+      "sha": "b46dec5d8840a058eab172645bd08e551c6dcdca",
+      "size": 14581
+    },
+    {
+      "path": "docs/assignment2/reports/unit-test-report.md",
+      "type": "blob",
+      "sha": "c647b41fe08fd663fdc070fe612937bf9b90f7b5",
+      "size": 8504
+    },
+    {
+      "path": "docs/assignment2/screenshots",
+      "type": "tree",
+      "sha": "8e79699c5c2965a63a52dd7f0b45e9754de80a80"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration",
+      "type": "tree",
+      "sha": "b8e5a43fad61f171c21c40705ba0d1b560f4b6ba"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 231956.png",
+      "type": "blob",
+      "sha": "2e926b7f2683682493bc83073df5e3b1077a5ff2",
+      "size": 294719
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232025.png",
+      "type": "blob",
+      "sha": "81447c1cd4d804a066db3575836d4a6245626186",
+      "size": 311214
+    },
+    {
+      "path": "docs/assignment2/screenshots/Integration/Screenshot 2026-10-26 232058.png",
+      "type": "blob",
+      "sha": "327cdc2c78b2d4ab2d33ae5d2c88158b4170d416",
+      "size": 287709
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit",
+      "type": "tree",
+      "sha": "d9ba92c514b64b54ebf214a6d0ea640b780a3ebd"
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231703.png",
+      "type": "blob",
+      "sha": "c77a807e5ad7ea3c5d8b2ae8596a6f0229af1188",
+      "size": 258373
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231742.png",
+      "type": "blob",
+      "sha": "e9e5e72548042b35e980c0ebd3d8be2a059d9372",
+      "size": 269167
+    },
+    {
+      "path": "docs/assignment2/screenshots/Unit/Screenshot 2026-10-26 231747.png",
+      "type": "blob",
+      "sha": "9e11e9b3f8757ee3170a0ee8bb46ba88b20daba1",
+      "size": 266053
+    },
+    {
+      "path": "docs/assignment2/test-plans",
+      "type": "tree",
+      "sha": "d35a3f049bcb947cd99602bafd6b9e2a362f44b4"
+    },
+    {
+      "path": "docs/assignment2/test-plans/integration-test-plan.md",
+      "type": "blob",
+      "sha": "54f3af809e450396c7d71e84556d722d28853cde",
+      "size": 42951
+    },
+    {
+      "path": "docs/assignment2/test-plans/uat-test-plan.md",
+      "type": "blob",
+      "sha": "c20b5559b2dd07acecc76e72275d73b261e5a952",
+      "size": 35058
+    },
+    {
+      "path": "docs/assignment2/test-plans/unit-test-plan.md",
+      "type": "blob",
+      "sha": "31de24f59b06ed701fab71f1f4d0c6060ccb2d41",
+      "size": 46087
+    },
+    {
+      "path": "docs/diagrams",
+      "type": "tree",
+      "sha": "c8274a452e2c3ccca8778e43f98c1a5b0dba2fea"
+    },
+    {
+      "path": "docs/diagrams/.gitkeep",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "docs/diagrams/application-components.jpg",
+      "type": "blob",
+      "sha": "3d2796a6534f2cc77f6b79a379385297e8ee44af",
+      "size": 197680
+    },
+    {
+      "path": "docs/diagrams/use-case.json",
+      "type": "blob",
+      "sha": "96afbf19e15b7495a277a65c1ef2cf7438e52989",
+      "size": 1084
+    },
+    {
+      "path": "docs/diagrams/use-case.png",
+      "type": "blob",
+      "sha": "e45b5acad46ebe7dd7b8fd037ddac01b154eebad",
+      "size": 26960
+    },
+    {
+      "path": "docs/diagrams/use-case.puml",
+      "type": "blob",
+      "sha": "82e2adb208f67fcb130e857a8c27ece0c0c0653c",
+      "size": 1339
+    },
+    {
+      "path": "docs/judge.md",
+      "type": "blob",
+      "sha": "aa7b223d4e1590b9352840ef979a2cdc971ae62a",
+      "size": 4566
+    },
+    {
+      "path": "docs/report.md",
+      "type": "blob",
+      "sha": "0422b53d6fc771ea32e8412a780241dc6d64b55b",
+      "size": 22965
+    },
+    {
+      "path": "docs/wireframes",
+      "type": "tree",
+      "sha": "90a513138f01a3cd13164f2635a244b91245f415"
+    },
+    {
+      "path": "docs/wireframes/.gitkeep",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "docs/wireframes/Three-Panel Student Advisor Dashboard Mockup.png",
+      "type": "blob",
+      "sha": "90df170a314dca0afba3a0eb00cd9c0baee9485b",
+      "size": 1380454
+    },
+    {
+      "path": "manage.py",
+      "type": "blob",
+      "sha": "deb83e54b63da7dfb426bdedbf19d6efba373f66",
+      "size": 180
+    },
+    {
+      "path": "opencode.json",
+      "type": "blob",
+      "sha": "7cdbf504f62f8e591f0540256e3f6fdc35922306",
+      "size": 178
+    },
+    {
+      "path": "package-lock.json",
+      "type": "blob",
+      "sha": "d2cf2d1c735101b240f0e83e5e1dcba51a7dc4b8",
+      "size": 87403
+    },
+    {
+      "path": "package.json",
+      "type": "blob",
+      "sha": "f6948317c6f535f4ec5cebd93ba1dba9c3682305",
+      "size": 202
+    },
+    {
+      "path": "postman",
+      "type": "tree",
+      "sha": "c9723c5db1557bd73cb0173417dec065d8bf78e3"
+    },
+    {
+      "path": "postman/globals",
+      "type": "tree",
+      "sha": "09d67dff82e93614f2a8d573d2157b806a86cdc0"
+    },
+    {
+      "path": "postman/globals/workspace.globals.yaml",
+      "type": "blob",
+      "sha": "e96c6d6030a10520a391d8184d299c8f35b58602",
+      "size": 25
+    },
+    {
+      "path": "pyproject.toml",
+      "type": "blob",
+      "sha": "07c911b5251439996c1f021a897371a47ab47214",
+      "size": 819
+    },
+    {
+      "path": "render.yaml",
+      "type": "blob",
+      "sha": "8541786c69d0d94cd6dbcbf3c1dee4206b42be1b",
+      "size": 1130
+    },
+    {
+      "path": "requirements.txt",
+      "type": "blob",
+      "sha": "97bf69cbbafc41cb138cfe114b78c2eecfac538c",
+      "size": 439
+    },
+    {
+      "path": "runlog.txt",
+      "type": "blob",
+      "sha": "617c448ad554b5accaefd08db17b01186efe3144",
+      "size": 13732
+    },
+    {
+      "path": "runlog_err.txt",
+      "type": "blob",
+      "sha": "3b8a8aeaf0a64db0e699ae6fcf90709e39e6c6ca",
+      "size": 438
+    },
+    {
+      "path": "tests",
+      "type": "tree",
+      "sha": "dd9592a374a55b4241b9537d8ffa0c37aa3482d5"
+    },
+    {
+      "path": "tests/integration",
+      "type": "tree",
+      "sha": "3597c26558d68e7b6bfebb5558eea547c2857a79"
+    },
+    {
+      "path": "tests/integration/conftest.py",
+      "type": "blob",
+      "sha": "aca41c12bb1fc462e66a2a28e35ddfd7f042475d",
+      "size": 10297
+    },
+    {
+      "path": "tests/integration/test_advisor_workflow.py",
+      "type": "blob",
+      "sha": "05afae8d694df48c85cf642f90bfc1444a1d6edf",
+      "size": 19842
+    },
+    {
+      "path": "tests/integration/test_database_integrity.py",
+      "type": "blob",
+      "sha": "69a1e2273fb51eb0f993958db0f3958668658e13",
+      "size": 2901
+    },
+    {
+      "path": "tests/integration/test_student_workflow.py",
+      "type": "blob",
+      "sha": "0b38139b79ef57ea7648b0b9f1807608aa46abc0",
+      "size": 21776
+    },
+    {
+      "path": "tests/test_advising_api.py",
+      "type": "blob",
+      "sha": "112fff9bc2d70251d2027c8b837b5a82112d26fa",
+      "size": 12012
+    },
+    {
+      "path": "tests/test_advising_service.py",
+      "type": "blob",
+      "sha": "1ac619d7d9b6d3ece85f4f50fe60d6e4e03201a2",
+      "size": 33143
+    },
+    {
+      "path": "tests/test_advisor_plans_api.py",
+      "type": "blob",
+      "sha": "4610e5dedc5d560da235b3411c3a1736e600b393",
+      "size": 20423
+    },
+    {
+      "path": "tests/test_api_security.py",
+      "type": "blob",
+      "sha": "712a2e420c67216dc5bdecaf88945da8def9bd5c",
+      "size": 7637
+    },
+    {
+      "path": "tests/test_login_routing.py",
+      "type": "blob",
+      "sha": "799b61737a8d5c81b915ed4b4ed1a7bbc745b578",
+      "size": 1427
+    },
+    {
+      "path": "tests/test_semester_plans_api.py",
+      "type": "blob",
+      "sha": "2a679455455a36ab24e03ce6b8cb506067efadab",
+      "size": 20812
+    },
+    {
+      "path": "tests/unit",
+      "type": "tree",
+      "sha": "971c52933e310c1540b2337f01a24443466cffc0"
+    },
+    {
+      "path": "tests/unit/conftest.py",
+      "type": "blob",
+      "sha": "4db97d20bb6e8ea9b1c625d9e4f2919c35f91e76",
+      "size": 2811
+    },
+    {
+      "path": "tests/unit/test_advising.py",
+      "type": "blob",
+      "sha": "2d48a044c0866949abae02de16cc929e7c885e0b",
+      "size": 13517
+    },
+    {
+      "path": "tests/unit/test_auth.py",
+      "type": "blob",
+      "sha": "f41decf6331ffe907bafd0b93f5d44144d0274d5",
+      "size": 6309
+    },
+    {
+      "path": "vendor",
+      "type": "tree",
+      "sha": "0115bc551a061b74865aa922b25ae2e3b923ee56"
+    },
+    {
+      "path": "vendor/README.md",
+      "type": "blob",
+      "sha": "d6a33437ab353757e9567541ec8222a7519fc761",
+      "size": 1238
+    },
+    {
+      "path": "vendor/fonts",
+      "type": "tree",
+      "sha": "39b5e7c77f8bed720bde89f9dbfb0520f4d545e4"
+    },
+    {
+      "path": "vendor/fonts/DejaVuSans-Bold.ttf",
+      "type": "blob",
+      "sha": "6d65fa7dc41ae8ffae77a4a843a73ba31ffd78c7",
+      "size": 705684
+    },
+    {
+      "path": "vendor/fonts/DejaVuSans-BoldOblique.ttf",
+      "type": "blob",
+      "sha": "753f2d80b1f9a13026d641b6fd4cafb8d85dd479",
+      "size": 643292
+    },
+    {
+      "path": "vendor/fonts/DejaVuSans-Oblique.ttf",
+      "type": "blob",
+      "sha": "999bac7714134bc7d931efac92b962a93c52e094",
+      "size": 635416
+    },
+    {
+      "path": "vendor/fonts/DejaVuSans.ttf",
+      "type": "blob",
+      "sha": "e5f7eecce43be41ff0703ed99e1553029b849f14",
+      "size": 757076
+    },
+    {
+      "path": "vendor/fonts/LICENSE",
+      "type": "blob",
+      "sha": "df52c1709bea171104d41bf084313ea434858423",
+      "size": 8816
+    },
+    {
+      "path": "vendor/manifest.json",
+      "type": "blob",
+      "sha": "5c3529cc0010e8f98e8de7a938f4726d66af3ac1",
+      "size": 1087
+    },
+    {
+      "path": "vendor/plantuml",
+      "type": "tree",
+      "sha": "a2a27f762c9444aa534f70058cdf33fafc14a17f"
+    },
+    {
+      "path": "vendor/plantuml/LICENSE.txt",
+      "type": "blob",
+      "sha": "017ea1be988154a5f185f77c76b6c80327640e3c",
+      "size": 3594
+    },
+    {
+      "path": "vendor/plantuml/plantuml.jar",
+      "type": "blob",
+      "sha": "a261f94eb44e7735d93ba5863066e19216998f63",
+      "size": 17732698
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+ M README.md
+ M app/database.py
+ M app/dependencies/auth.py
+ M app/main.py
+ M app/repositories/advising.py
+ M app/routers/__init__.py
+ M app/routers/login.py
+ M app/routers/register.py
+ M app/routers/user_home.py
+ M app/routers/users.py
+ M app/services/advising_service.py
+ M app/static/css/app.css
+ m comp3613a1
+ M docs/judge.md
+ M docs/report.md
+ M pyproject.toml
+ M tests/test_login_routing.py
+?? .postman/
+?? app/routers/advising_api.py
+?? app/schemas/advising.py
+?? app/services/advising_errors.py
+?? docs/assignment2/
+?? postman/
+?? tests/browser/
+?? tests/integration/
+?? tests/test_advising_api.py
+?? tests/test_advisor_plans_api.py
+?? tests/test_api_security.py
+?? tests/test_semester_plans_api.py
+?? tests/unit/

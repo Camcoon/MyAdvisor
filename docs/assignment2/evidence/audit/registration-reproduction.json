@@ -1,0 +1,7 @@
+{
+  "audit_date": "2026-10-27",
+  "scope": "Anonymous register request against disposable in-memory F2 fixture; not browser UAT",
+  "invalid_email_http": 500,
+  "response_is_generic_internal_error": true,
+  "database_unchanged": true
+}

@@ -1,0 +1,36 @@
+{
+  "allocation": [
+    {
+      "category": "Core Courses",
+      "previous": 36,
+      "required": 36,
+      "changed": false
+    },
+    {
+      "category": "General Education",
+      "previous": 18,
+      "required": 18,
+      "changed": false
+    },
+    {
+      "category": "Electives",
+      "previous": 12,
+      "required": 12,
+      "changed": false
+    },
+    {
+      "category": "Major Requirements",
+      "previous": 18,
+      "required": 18,
+      "changed": false
+    },
+    {
+      "category": "Additional Requirements",
+      "previous": 9,
+      "required": 9,
+      "changed": false
+    }
+  ],
+  "applied": false,
+  "backup": null
+}

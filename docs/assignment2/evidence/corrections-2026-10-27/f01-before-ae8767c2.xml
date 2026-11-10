@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="12" skipped="0" tests="12" time="3.913" timestamp="2026-10-27T15:24:56.936123-04:00" hostname="GamingLarry"><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[submit-student-plan-admin]" time="0.989"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B987FE00&gt;
+role = 'admin', owner = 's1', operation = 'submit'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[submit-student-plan-unrecognized-role]" time="0.209"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9AF8550&gt;
+role = 'unrecognized-role', owner = 's1', operation = 'submit'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[submit-legacy-advisor-plan-admin]" time="0.200"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9AF9D10&gt;
+role = 'admin', owner = 'a1', operation = 'submit'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[submit-legacy-advisor-plan-unrecognized-role]" time="0.202"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9AAEEA0&gt;
+role = 'unrecognized-role', owner = 'a1', operation = 'submit'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[remove-student-plan-admin]" time="0.192"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9AAF820&gt;
+role = 'admin', owner = 's1', operation = 'remove'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[remove-student-plan-unrecognized-role]" time="0.263"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9D20950&gt;
+role = 'unrecognized-role', owner = 's1', operation = 'remove'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[remove-legacy-advisor-plan-admin]" time="0.209"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9AEA140&gt;
+role = 'admin', owner = 'a1', operation = 'remove'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[remove-legacy-advisor-plan-unrecognized-role]" time="0.211"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9DB8270&gt;
+role = 'unrecognized-role', owner = 'a1', operation = 'remove'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[cancel-student-plan-admin]" time="0.233"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9E0DA50&gt;
+role = 'admin', owner = 's1', operation = 'cancel'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[cancel-student-plan-unrecognized-role]" time="0.213"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9E78450&gt;
+role = 'unrecognized-role', owner = 's1', operation = 'cancel'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[cancel-legacy-advisor-plan-admin]" time="0.197"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9E1F5C0&gt;
+role = 'admin', owner = 'a1', operation = 'cancel'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase><testcase classname="tests.integration.test_audit_corrections" name="test_nonstudent_html_mutations_are_forbidden_without_writes[cancel-legacy-advisor-plan-unrecognized-role]" time="0.204"><failure message="assert 303 == 403&#10; +  where 303 = &lt;Response [303 See Other]&gt;.status_code">student_env = &lt;conftest.StudentEnvironment object at 0x000001D5B9F254F0&gt;
+role = 'unrecognized-role', owner = 'a1', operation = 'cancel'
+
+    @pytest.mark.parametrize("role", ["admin", "unrecognized-role"])
+    @pytest.mark.parametrize("owner", ["s1", "a1"], ids=["student-plan", "legacy-advisor-plan"])
+    @pytest.mark.parametrize("operation", ["submit", "remove", "cancel"])
+    def test_nonstudent_html_mutations_are_forbidden_without_writes(
+        student_env, role, owner, operation
+    ):
+        """An authentic Advisor cookie cannot become a Student form credential.
+    
+        Include legacy wrong-role-owned plans: ownership alone previously permitted
+        removal/cancellation, just as AuthDep permitted Advisor-owned creation.
+        Changing the DB role after login also checks that the cookie role is ignored.
+        """
+        from app.models.user import User
+    
+        env = student_env
+        client = env.login("a1")
+        plan_id = env.seed_plan(actor=owner)
+        if role != "admin":
+            with Session(env.engine) as session:
+                account = session.get(User, env.ids["a1"])
+                account.role = role
+                session.add(account)
+                session.commit()
+        before = env.snapshot()
+        if operation == "submit":
+            response = client.post(
+                "/app/plan",
+                content=urlencode({
+                    "course_ids": env.ids["c4"],
+                    "semester_name": "Year 1 semester 2",
+                }),
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            )
+        elif operation == "remove":
+            response = client.post(f"/app/plan/{plan_id}/courses/{env.ids['c4']}/remove")
+        else:
+            response = client.post(f"/app/plan/{plan_id}/cancel")
+&gt;       assert response.status_code == 403
+E       assert 303 == 403
+E        +  where 303 = &lt;Response [303 See Other]&gt;.status_code
+
+tests\integration\test_audit_corrections.py:48: AssertionError</failure></testcase></testsuite></testsuites>

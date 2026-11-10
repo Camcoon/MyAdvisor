@@ -1,0 +1,148 @@
+{
+  "pdf": "docs/assignment2/COMP3613_Assignment2_MyAdvisor_Final_2026-11-05.pdf",
+  "sha256": "3b10b305992e252f8cbad4cc052e09efdee2902ba1554a4218ffc7ea9ced9b08",
+  "bytes": 35361652,
+  "pages": 114,
+  "uat_screenshot_count": 55,
+  "uat_visible_figures": 55,
+  "uat_attachment_count": 55,
+  "total_attachments": 102,
+  "uat_status_counts": {
+    "EXECUTED - PARTIALLY VERIFIED": 12,
+    "PASS": 8
+  },
+  "duplicate_pair_notes": 8,
+  "old_pdf_sha256": "2eec00b9b1d146ebb5d27178c7e1af1c15348c1c899156d0164cc87148a017d8",
+  "previous_final_sha256": "b3854c0f7474a2ba8b67b95718bb8389ac35934d9c72fc529557cbc194f039c0",
+  "toc": [
+    {
+      "level": 1,
+      "title": "1. Cover Page",
+      "page": 1
+    },
+    {
+      "level": 1,
+      "title": "2. Project Description",
+      "page": 3
+    },
+    {
+      "level": 1,
+      "title": "3. Use Case Diagram",
+      "page": 4
+    },
+    {
+      "level": 1,
+      "title": "4. Entity Relationship Diagram",
+      "page": 5
+    },
+    {
+      "level": 2,
+      "title": "4.1 Readable entity keys and relationships",
+      "page": 6
+    },
+    {
+      "level": 1,
+      "title": "5. Application Wireframe",
+      "page": 7
+    },
+    {
+      "level": 1,
+      "title": "6. Test Plans",
+      "page": 11
+    },
+    {
+      "level": 2,
+      "title": "6.1 User Acceptance Test Plan",
+      "page": 11
+    },
+    {
+      "level": 2,
+      "title": "6.2 Unit Test Plan",
+      "page": 23
+    },
+    {
+      "level": 2,
+      "title": "6.3 Integration Test Plan",
+      "page": 27
+    },
+    {
+      "level": 1,
+      "title": "7. Implementation",
+      "page": 32
+    },
+    {
+      "level": 2,
+      "title": "7.1 GitHub Repository",
+      "page": 32
+    },
+    {
+      "level": 2,
+      "title": "7.2 Unit Test Implementation",
+      "page": 32
+    },
+    {
+      "level": 2,
+      "title": "7.3 Integration Test Implementation",
+      "page": 33
+    },
+    {
+      "level": 2,
+      "title": "7.4 API Test Implementation — Postman",
+      "page": 34
+    },
+    {
+      "level": 1,
+      "title": "8. Test Reports",
+      "page": 36
+    },
+    {
+      "level": 2,
+      "title": "8.1 Unit Test Report",
+      "page": 36
+    },
+    {
+      "level": 2,
+      "title": "8.2 Integration Test Report",
+      "page": 40
+    },
+    {
+      "level": 2,
+      "title": "8.3 Postman Collection Run Report",
+      "page": 45
+    },
+    {
+      "level": 1,
+      "title": "Appendix A — UAT Execution Summary",
+      "page": 52
+    },
+    {
+      "level": 2,
+      "title": "A.2 UAT screenshot evidence (55 captures)",
+      "page": 55
+    },
+    {
+      "level": 1,
+      "title": "Appendix B — Findings and Readiness",
+      "page": 111
+    },
+    {
+      "level": 1,
+      "title": "Appendix C — Compact Requirements Traceability",
+      "page": 113
+    },
+    {
+      "level": 1,
+      "title": "Appendix D — Lecturer Deliverables Checklist",
+      "page": 114
+    }
+  ],
+  "checks": {
+    "all_pages_nonempty": true,
+    "no_empty_pages": true,
+    "uat_gallery_one_image_per_page": true,
+    "no_secret_patterns": true,
+    "historical_reports_present": true
+  },
+  "submission_ready": false,
+  "verified_utc": "2026-11-05T01:53:23.116935+00:00"
+}

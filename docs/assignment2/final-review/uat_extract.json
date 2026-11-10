@@ -1,0 +1,142 @@
+[
+  {
+    "case": "UAT-18",
+    "title": "UAT-18 — Student login and clean-run baseline (execute first)",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "Invalid credentials show 'Incorrect username or password' without opening the workspace; Student Home shows Cameron Ramesar with no submitted semester plan and 0 updates. The Home refresh capture is byte-identical to the baseline (SHA-256 59942429...), and empty A/B/C Plan Courses and Messages baselines are not captured. |",
+    "refs": "[UAT-18-invalid-login.png](../screenshots/UAT/UAT-18-invalid-login.png); [UAT-18-baseline.png](../screenshots/UAT/UAT-18-baseline.png); [UAT-18-home.png](../screenshots/UAT/UAT-18-home.png) |"
+  },
+  {
+    "case": "UAT-01",
+    "title": "UAT-01 — View degree progress",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "Degree Progress shows completed 6, in progress 3, remaining 84, required 93 and 6/93 (6%); categories 3/36, 3/18, 0/12, 0/18 and 0/9 total 93; recent activity shows MATH 1200 and COMP 1101 Completed Nov 2026 and COMP 1600 In Progress. The after-refresh screenshot is byte-identical to the initial screenshot (SHA-256 6D9BBB95...), so refresh persistence is not independently established. |",
+    "refs": "[UAT-01-degree-progress.png](../screenshots/UAT/UAT-01-degree-progress.png); [UAT-01-after-refresh.png](../screenshots/UAT/UAT-01-after-refresh.png) |"
+  },
+  {
+    "case": "UAT-02",
+    "title": "UAT-02 — Browse, search, and filter available courses",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "Year 1 semester 1 code search for COMP 1201 shows eligible 3-credit COMP 1201 with prerequisite COMP 1101; the Mathematics filter shows MATH 1200 completed and MATH 1300/2200/2250 eligible; ZZZ-UAT-NO-COURSE shows 'No courses match your search and department filters.' and Clear Filters. Title search, semester switching, combined filters and the catalogue after Clear Filters are not captured. |",
+    "refs": "[UAT-02-search.png](../screenshots/UAT/UAT-02-search.png); [UAT-02-department.png](../screenshots/UAT/UAT-02-department.png); [UAT-02-no-results.png](../screenshots/UAT/UAT-02-no-results.png) |"
+  },
+  {
+    "case": "UAT-03",
+    "title": "UAT-03 — Select only eligible courses and review the selection",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "0 courses selected; COMP 1101/1600/2100 and others show completed, in-progress and missing-prerequisite states; the review step shows COMP 1201 + MATH 2250 and 6 credits; a separate capture preserves the review selection. The zero-selection click prevention and 0-2-1-2 count sequence are not captured, and the ineligible captures use COMP 2611/2700/2800/3001/3100/3200 rather than the three planned examples. |",
+    "refs": "[UAT-03-empty-selection.png](../screenshots/UAT/UAT-03-empty-selection.png); [UAT-03-ineligible-courses.png](../screenshots/UAT/UAT-03-ineligible-courses.png); [UAT-03-review-two-courses.png](../screenshots/UAT/UAT-03-review-two-courses.png); [UAT-03-selection-preserved.png](../screenshots/UAT/UAT-03-selection-preserved.png) |"
+  },
+  {
+    "case": "UAT-04",
+    "title": "UAT-04 — Submit semester plan A",
+    "status": "PASS |",
+    "actual": "'Semester plan submitted for advisor review.'; A is Pending with COMP 1201 + MATH 2250, 2 courses/6 credits. A distinct after-refresh capture shows the same Pending state with the selection form locked and the repeat-submission notice. Complete for the documented outcome. |",
+    "refs": "[UAT-04-submission-success.png](../screenshots/UAT/UAT-04-submission-success.png); [UAT-04-pending-after-refresh.png](../screenshots/UAT/UAT-04-pending-after-refresh.png) |"
+  },
+  {
+    "case": "UAT-05",
+    "title": "UAT-05 — View submission status",
+    "status": "PASS |",
+    "actual": "Home shows A Pending, 2 courses/6 credits and a waiting-for-review message; Messages shows the same semester PENDING; a distinct post-relogin Plan Courses capture still shows the same Pending plan and courses. Complete for the documented outcome. |",
+    "refs": "[UAT-05-home-pending.png](../screenshots/UAT/UAT-05-home-pending.png); [UAT-05-messages-pending.png](../screenshots/UAT/UAT-05-messages-pending.png); [UAT-05-after-relogin.png](../screenshots/UAT/UAT-05-after-relogin.png) |"
+  },
+  {
+    "case": "UAT-19",
+    "title": "UAT-19 — Advisor login (execute after UAT-05, before UAT-06)",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "Invalid credentials show 'Incorrect username or password'; Advisor Home shows Dr. Williams, 1 registered student, 1 awaiting review, 2 reviewed, A at 2 courses/6 credits and Advisor-only navigation. The refresh capture is byte-identical to the initial Advisor Home (SHA-256 AE469C9D...), and a simultaneous separate Student session is not captured. |",
+    "refs": "[UAT-19-invalid-login.png](../screenshots/UAT/UAT-19-invalid-login.png); [UAT-19-advisor-home.png](../screenshots/UAT/UAT-19-advisor-home.png); [UAT-19-after-refresh.png](../screenshots/UAT/UAT-19-after-refresh.png) |"
+  },
+  {
+    "case": "UAT-06",
+    "title": "UAT-06 — Advisor reviews the submitted plan",
+    "status": "PASS |",
+    "actual": "Advisor Review shows Cameron Ramesar, Student ID 12345678, Computer Science, Year 1 semester 1, Submitted Nov 05, 2026, PENDING, COMP 1201 + MATH 2250, 2 courses/6 credits, comments 0/500 and Approve/Reject/Request Changes. Reading the card leaves it Pending. Complete for the review objective; UI contrast is not certified. |",
+    "refs": "[UAT-06-advisor-pending-review.png](../screenshots/UAT/UAT-06-advisor-pending-review.png) |"
+  },
+  {
+    "case": "UAT-07",
+    "title": "UAT-07 — Request changes and deliver feedback",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "Advisor Messages shows A CHANGES REQUESTED, Reviewed Nov 05, 2026, feedback 'Replace MATH 2250 with ENGL 1000, then resubmit.'; Student Messages shows the same feedback and a Review and update plan link; Plan Courses shows Changes Requested with both courses still selected, the update/resubmit instruction and no Cancel. Advisor action confirmation and removal from the Pending queue are not captured. |",
+    "refs": "[UAT-07-advisor-feedback.png](../screenshots/UAT/UAT-07-advisor-feedback.png); [UAT-07-student-message.png](../screenshots/UAT/UAT-07-student-message.png); [UAT-07-editable-plan.png](../screenshots/UAT/UAT-07-editable-plan.png) |"
+  },
+  {
+    "case": "UAT-08",
+    "title": "UAT-08 — Modify and resubmit the returned plan",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "Student A shows revised COMP 1201 + ENGL 1000 Pending, 2 courses/6 credits; the review step shows the same two courses and 6 credits with Resubmit; the Advisor queue shows the revised two-course/6-credit Pending card with an empty comments input. Current Pending Messages with prior feedback cleared is not captured. |",
+    "refs": "[UAT-08-resubmitted-pending.png](../screenshots/UAT/UAT-08-resubmitted-pending.png); [UAT-08-revised-review.png](../screenshots/UAT/UAT-08-revised-review.png); [UAT-08-advisor-revised-queue.png](../screenshots/UAT/UAT-08-advisor-revised-queue.png) |"
+  },
+  {
+    "case": "UAT-09",
+    "title": "UAT-09 — Approve the revised plan",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "Advisor Messages shows A APPROVED with 'Revised selection approved.'; Student A after reload shows Approved, COMP 1201 + ENGL 1000, 2 courses/6 credits and locked selection; Student Messages shows the same approval. Advisor action confirmation and queue removal are not captured. |",
+    "refs": "[UAT-09-advisor-approved.png](../screenshots/UAT/UAT-09-advisor-approved.png); [UAT-09-approved-after-refresh.png](../screenshots/UAT/UAT-09-approved-after-refresh.png); [UAT-09-student-approved-message.png](../screenshots/UAT/UAT-09-student-approved-message.png) |"
+  },
+  {
+    "case": "UAT-10",
+    "title": "UAT-10 — Submit a separate plan for rejection",
+    "status": "PASS |",
+    "actual": "A remains Approved with COMP 1201 + ENGL 1000, 2 courses/6 credits; B submission succeeds and B is Pending with MATH 2250 only, 1 course/3 credits. Complete for the separate-plan objective. |",
+    "refs": "[UAT-10-semester1-still-approved.png](../screenshots/UAT/UAT-10-semester1-still-approved.png); [UAT-10-semester2-pending.png](../screenshots/UAT/UAT-10-semester2-pending.png) |"
+  },
+  {
+    "case": "UAT-11",
+    "title": "UAT-11 — Reject the separate plan",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "Advisor Messages shows B REJECTED with 'Plan rejected for this UAT scenario; choose a different course mix.' and A APPROVED; Student Messages shows the same B rejection plus A approval; B Plan Courses is editable with MATH 2250 selected and Cancel available. Advisor action confirmation and queue removal are not captured. |",
+    "refs": "[UAT-11-advisor-rejected.png](../screenshots/UAT/UAT-11-advisor-rejected.png); [UAT-11-student-rejected.png](../screenshots/UAT/UAT-11-student-rejected.png); [UAT-11-rejected-editable.png](../screenshots/UAT/UAT-11-rejected-editable.png) |"
+  },
+  {
+    "case": "UAT-12",
+    "title": "UAT-12 — Submit a pending plan for cancellation checks",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "Advisor Review shows C Pending, Submitted Nov 05, 2026, COMP 1201 + MATH 2250, 2 courses/6 credits, comments and all decisions; Student C shows the same Pending plan. A Approved and B Rejected are not co-visible with this C state. |",
+    "refs": "[UAT-12-advisor-pending.png](../screenshots/UAT/UAT-12-advisor-pending.png); [UAT-12-student-pending.png](../screenshots/UAT/UAT-12-student-pending.png) |"
+  },
+  {
+    "case": "UAT-13",
+    "title": "UAT-13 — Remove a course from a Pending plan and protect the last course",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "'Course removed from the submitted plan.'; C remains Pending with COMP 1201 only, 1 course/3 credits; the final-course guard 'Cancel the plan to remove its last course.' is visible; the Advisor queue shows C at 1 course/3 credits. The Remove confirmation dismissal/no-change state is not captured. |",
+    "refs": "[UAT-13-one-course-remaining.png](../screenshots/UAT/UAT-13-one-course-remaining.png); [UAT-13-advisor-updated.png](../screenshots/UAT/UAT-13-advisor-updated.png) |"
+  },
+  {
+    "case": "UAT-14",
+    "title": "UAT-14 — Cancel an Approved plan",
+    "status": "PASS |",
+    "actual": "A cancellation succeeds and A is Cancelled with 'Revised selection approved.' retained and zero selected; the dismissed-confirmation capture still shows A Approved, proving dismissal changed nothing; Messages shows A CANCELLED, B REJECTED, C PENDING. Complete for the documented outcome. |",
+    "refs": "[UAT-14-approved-cancelled.png](../screenshots/UAT/UAT-14-approved-cancelled.png); [UAT-14-cancellation-dismissed.png](../screenshots/UAT/UAT-14-cancellation-dismissed.png); [UAT-14-messages-cancelled.png](../screenshots/UAT/UAT-14-messages-cancelled.png) |"
+  },
+  {
+    "case": "UAT-15",
+    "title": "UAT-15 — Cancel a Rejected plan",
+    "status": "PASS |",
+    "actual": "B cancellation succeeds; B is Cancelled with the rejection feedback retained, zero selected and a new-selection instruction; Messages shows A CANCELLED, B CANCELLED, C PENDING. Complete for the documented outcome. |",
+    "refs": "[UAT-15-rejected-cancelled.png](../screenshots/UAT/UAT-15-rejected-cancelled.png); [UAT-15-messages-cancelled.png](../screenshots/UAT/UAT-15-messages-cancelled.png) |"
+  },
+  {
+    "case": "UAT-16",
+    "title": "UAT-16 — Cancel a Pending plan and remove it from the review queue",
+    "status": "PASS |",
+    "actual": "C cancellation succeeds with zero selected; Messages shows A, B and C all CANCELLED and C's cancellation text; Advisor Review shows 'All caught up' with no pending plans. Complete for the documented outcome. |",
+    "refs": "[UAT-16-pending-cancelled.png](../screenshots/UAT/UAT-16-pending-cancelled.png); [UAT-16-messages-cancelled.png](../screenshots/UAT/UAT-16-messages-cancelled.png); [UAT-16-advisor-queue-cleared.png](../screenshots/UAT/UAT-16-advisor-queue-cleared.png) |"
+  },
+  {
+    "case": "UAT-17",
+    "title": "UAT-17 — Start a new plan after cancellation",
+    "status": "PASS |",
+    "actual": "After cancellation, the C review shows ENGL 1000 only at 3 credits; submission produces C Pending with ENGL 1000 only, 1 course/3 credits; the Advisor queue shows exactly one active C card for ENGL 1000/3 credits. Complete for the documented outcome. |",
+    "refs": "[UAT-17-new-selection-review.png](../screenshots/UAT/UAT-17-new-selection-review.png); [UAT-17-new-pending-plan.png](../screenshots/UAT/UAT-17-new-pending-plan.png); [UAT-17-advisor-new-plan.png](../screenshots/UAT/UAT-17-advisor-new-plan.png) |"
+  },
+  {
+    "case": "UAT-20",
+    "title": "UAT-20 — Browser-visible role and signed-out restrictions (execute last)",
+    "status": "EXECUTED - PARTIALLY VERIFIED |",
+    "actual": "Logged-in Student access to the Advisor/admin resource returns JSON detail 'You are not authorized to access this resource' (403); Advisor ?tab=plan-courses and ?tab=degree-progress both fall back to Advisor Home without exposing Student views; one signed-out 401 Session Expired page is captured. The student and advisor 401 files are byte-identical (SHA-256 67052C79...), so separate post-logout checks for both roles are not independently established. |",
+    "refs": "[UAT-20-student-401.png](../screenshots/UAT/UAT-20-student-401.png); [UAT-20-advisor-401.png](../screenshots/UAT/UAT-20-advisor-401.png); [UAT-20-student-403.png](../screenshots/UAT/UAT-20-student-403.png); [UAT-20-advisor-plan-fallback.png](../screenshots/UAT/UAT-20-advisor-plan-fallback.png); [UAT-20-advisor-progress-fallback.png](../screenshots/UAT/UAT-20-advisor-progress-fallback.png) |"
+  }
+]

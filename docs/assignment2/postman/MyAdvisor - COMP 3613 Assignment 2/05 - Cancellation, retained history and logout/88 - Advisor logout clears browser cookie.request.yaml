@@ -1,0 +1,29 @@
+$kind: http-request
+description: Advisor logout clears browser cookie. Run the complete collection in order against the disposable local database; see README.md.
+url: "{{base_url}}/logout"
+method: GET
+headers:
+  Accept: application/json
+  Cookie: access_token={{advisor_token}}
+scripts:
+  - type: afterResponse
+    code: |-
+      try {
+      let assertionFailed = false;
+      function check(name, fn) {
+        pm.test(name, function() {
+          try { fn(); } catch (error) { assertionFailed = true; throw error; }
+        });
+      }
+      check("HTTP 303", () => pm.response.to.have.status(303));
+      check("Logout redirects to login", () => pm.expect(pm.response.headers.get("Location")).to.match(/\/login$/));
+      check("Cookie deletion sent", () => pm.expect(pm.response.headers.all().filter(h=>h.key.toLowerCase()==="set-cookie").map(h=>h.value).join(";")).to.match(/access_token=.*Max-Age=0/i));
+      pm.collectionVariables.unset("advisor_token");
+      pm.variables.unset("advisor_token");
+      if (assertionFailed) pm.execution.setNextRequest(null);
+      } catch (error) { pm.execution.setNextRequest(null); throw error; }
+    language: text/javascript
+settings:
+  followRedirects: false
+  disableCookies: true
+order: 12000

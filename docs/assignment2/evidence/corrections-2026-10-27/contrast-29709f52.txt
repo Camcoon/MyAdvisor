@@ -1,0 +1,136 @@
+FF
+================================== FAILURES ===================================
+______________ test_rendered_text_contrast_in_chromium[advisor] _______________
+
+student_env = <conftest.StudentEnvironment object at 0x0000020DD50C7620>
+tmp_path = WindowsPath('C:/Users/camer/AppData/Local/Temp/MyAdvisor-A2-Corrections-lcuhvnft/pytest-base/test_rendered_text_contrast_in0')
+screen = 'advisor'
+
+    @pytest.mark.parametrize("screen", ["advisor", "approved"])
+    def test_rendered_text_contrast_in_chromium(student_env, tmp_path, screen):
+        node = shutil.which("node")
+        browser = next((str(p) for p in [
+            Path("C:/Program Files/Google/Chrome/Application/chrome.exe"),
+            Path("C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"),
+            Path(shutil.which("chromium") or "/nonexistent-chromium"),
+        ] if p.is_file()), None)
+        assets = ROOT / "docs/assignment2/.browser-assets"
+        if not node or not browser or not all((assets / f).is_file() for f in [
+            "bootstrap.min.css", "adminlte.min.css"
+        ]):
+            pytest.skip("Contrast needs Node, Chromium and the pinned CSS assets; see correction report")
+        env = student_env
+        env.seed_plan(status="Pending" if screen == "advisor" else "Approved")
+        client = env.login("a1" if screen == "advisor" else "s1")
+        url = "/admin" if screen == "advisor" else "/app?tab=plan-courses"
+        response = client.get(url)
+        assert response.status_code == 200
+        markup = re.sub(r"<script\b[^>]*>.*?</script>", "", response.text, flags=re.S | re.I)
+        sources = []
+    
+        def stylesheet(match):
+            tag = match.group(0)
+            href = re.search(r'href="([^"]+)"', tag)
+            if not href:
+                return ""
+            href = href.group(1)
+            if "bootstrap@5.3.8/" in href:
+                content = (assets / "bootstrap.min.css").read_bytes()
+                expected = re.search(r'integrity="sha384-([^"]+)"', tag).group(1)
+                assert base64.b64encode(hashlib.sha384(content).digest()).decode() == expected
+            elif "admin-lte@4.10.0/" in href:
+                content = (assets / "adminlte.min.css").read_bytes()
+            elif "/static/css/app.css" in href:
+                content = (ROOT / "app/static/css/app.css").read_bytes()
+            else:
+                return ""  # Fonts/icons cannot supply the audited table/notice colors.
+            sources.append({"href": href, "sha256": hashlib.sha256(content).hexdigest()})
+            return "<style>" + content.decode("utf-8") + "</style>"
+    
+        # Replace links in place to preserve the real stylesheet order/specificity.
+        markup = re.sub(r"<link\b[^>]*>", stylesheet, markup, flags=re.I)
+        html_path = tmp_path / f"contrast-{screen}.html"
+        html_path.write_text(markup, encoding="utf-8")
+        result = subprocess.run(
+            [node, str(ROOT / "tests/browser/contrast_probe.cjs"), browser, str(html_path)],
+            capture_output=True, text=True, timeout=35,
+        )
+>       assert result.returncode == 0, result.stderr
+E       AssertionError: Browser contrast probe timed out
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Program Files\\nodejs\\node.EXE', 'C:\\Users\\camer\\OneDrive\\Documents\\UWI COURSES\\Yea...dered_text_contrast_in0\\contrast-advisor.html'], returncode=1, stdout='', stderr='Browser contrast probe timed out\n').returncode
+
+tests\integration\test_contrast_regression.py:70: AssertionError
+______________ test_rendered_text_contrast_in_chromium[approved] ______________
+
+student_env = <conftest.StudentEnvironment object at 0x0000020DD5344910>
+tmp_path = WindowsPath('C:/Users/camer/AppData/Local/Temp/MyAdvisor-A2-Corrections-lcuhvnft/pytest-base/test_rendered_text_contrast_in1')
+screen = 'approved'
+
+    @pytest.mark.parametrize("screen", ["advisor", "approved"])
+    def test_rendered_text_contrast_in_chromium(student_env, tmp_path, screen):
+        node = shutil.which("node")
+        browser = next((str(p) for p in [
+            Path("C:/Program Files/Google/Chrome/Application/chrome.exe"),
+            Path("C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"),
+            Path(shutil.which("chromium") or "/nonexistent-chromium"),
+        ] if p.is_file()), None)
+        assets = ROOT / "docs/assignment2/.browser-assets"
+        if not node or not browser or not all((assets / f).is_file() for f in [
+            "bootstrap.min.css", "adminlte.min.css"
+        ]):
+            pytest.skip("Contrast needs Node, Chromium and the pinned CSS assets; see correction report")
+        env = student_env
+        env.seed_plan(status="Pending" if screen == "advisor" else "Approved")
+        client = env.login("a1" if screen == "advisor" else "s1")
+        url = "/admin" if screen == "advisor" else "/app?tab=plan-courses"
+        response = client.get(url)
+        assert response.status_code == 200
+        markup = re.sub(r"<script\b[^>]*>.*?</script>", "", response.text, flags=re.S | re.I)
+        sources = []
+    
+        def stylesheet(match):
+            tag = match.group(0)
+            href = re.search(r'href="([^"]+)"', tag)
+            if not href:
+                return ""
+            href = href.group(1)
+            if "bootstrap@5.3.8/" in href:
+                content = (assets / "bootstrap.min.css").read_bytes()
+                expected = re.search(r'integrity="sha384-([^"]+)"', tag).group(1)
+                assert base64.b64encode(hashlib.sha384(content).digest()).decode() == expected
+            elif "admin-lte@4.10.0/" in href:
+                content = (assets / "adminlte.min.css").read_bytes()
+            elif "/static/css/app.css" in href:
+                content = (ROOT / "app/static/css/app.css").read_bytes()
+            else:
+                return ""  # Fonts/icons cannot supply the audited table/notice colors.
+            sources.append({"href": href, "sha256": hashlib.sha256(content).hexdigest()})
+            return "<style>" + content.decode("utf-8") + "</style>"
+    
+        # Replace links in place to preserve the real stylesheet order/specificity.
+        markup = re.sub(r"<link\b[^>]*>", stylesheet, markup, flags=re.I)
+        html_path = tmp_path / f"contrast-{screen}.html"
+        html_path.write_text(markup, encoding="utf-8")
+        result = subprocess.run(
+            [node, str(ROOT / "tests/browser/contrast_probe.cjs"), browser, str(html_path)],
+            capture_output=True, text=True, timeout=35,
+        )
+>       assert result.returncode == 0, result.stderr
+E       AssertionError: Browser contrast probe timed out
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Program Files\\nodejs\\node.EXE', 'C:\\Users\\camer\\OneDrive\\Documents\\UWI COURSES\\Yea...ered_text_contrast_in1\\contrast-approved.html'], returncode=1, stdout='', stderr='Browser contrast probe timed out\n').returncode
+
+tests\integration\test_contrast_regression.py:70: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\camer\OneDrive\Documents\UWI COURSES\Year 3\Semester 1\COMP 3613\Assignments\Assignment 2\Assignment 2\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/integration/test_contrast_regression.py::test_rendered_text_contrast_in_chromium[advisor]
+FAILED tests/integration/test_contrast_regression.py::test_rendered_text_contrast_in_chromium[approved]
+2 failed, 1 warning in 53.46s
